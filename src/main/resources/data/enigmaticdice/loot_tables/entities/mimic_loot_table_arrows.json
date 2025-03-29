@@ -1,0 +1,54 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:tipped_arrow",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{Potion:\"minecraft:strong_healing\"}"
+            },
+            {
+              "function": "set_count",
+              "count": 32
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:tipped_arrow",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{Potion:\"minecraft:strong_harming\"}"
+            },
+            {
+              "function": "set_count",
+              "count": 32
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:tipped_arrow",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{CustomPotionColor:1908001,CustomPotionEffects:[{Id:20,Duration:9600},{Id:18,Duration:9600},{Id:2,Duration:9600}],display:{Name:'{\"translate\":\"item.enigmaticdice.arrow_of_doom\",\"italic\":false}'}}"
+            },
+            {
+              "function": "set_count",
+              "count": 32
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

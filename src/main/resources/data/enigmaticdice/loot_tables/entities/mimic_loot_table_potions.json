@@ -1,0 +1,121 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 3
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{CustomPotionColor:3847130,CustomPotionEffects:[{Id:1,Duration:12000,Amplifier:1},{Id:8,Duration:12000,Amplifier:1}],display:{Name:'{\"translate\":\"item.enigmaticdice.traveler_potion\",\"italic\":false}'}}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 3
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{CustomPotionColor:16701501,CustomPotionEffects:[{Id:3,Duration:12000,Amplifier:1},{Id:16,Duration:12000}],display:{Name:'{\"translate\":\"item.enigmaticdice.miner_potion\",\"italic\":false}'}}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 3
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{CustomPotionColor:11546150,CustomPotionEffects:[{Id:3,Duration:12000,Amplifier:1},{Id:5,Duration:12000,Amplifier:1}],display:{Name:'{\"translate\":\"item.enigmaticdice.warrior_potion\",\"italic\":false}'}}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 3
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{CustomPotionColor:3949738,CustomPotionEffects:[{Id:13,Duration:12000},{Id:30,Duration:12000,Amplifier:1}],display:{Name:'{\"translate\":\"item.enigmaticdice.diver_potion\",\"italic\":false}'}}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 3
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{CustomPotionColor:15961002,CustomPotionEffects:[{Id:21,Duration:12000,Amplifier:1},{Id:10,Duration:12000}],display:{Name:'{\"translate\":\"item.enigmaticdice.potion_of_life\",\"italic\":false}'}}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 3
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{CustomPotionColor:4673362,CustomPotionEffects:[{Id:11,Duration:12000},{Id:12,Duration:12000}],display:{Name:'{\"translate\":\"item.enigmaticdice.iron_skin_potion\",\"italic\":false}'}}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 3
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{CustomPotionColor:8439583,CustomPotionEffects:[{Id:26,Duration:12000,Amplifier:1}],display:{Name:'{\"translate\":\"item.enigmaticdice.luck_potion\",\"italic\":false}'}}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 3
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{CustomPotionColor:16772413,CustomPotionEffects:[{Id:22,Duration:12000,Amplifier:4}],display:{Name:'{\"translate\":\"item.enigmaticdice.temporal_protection_potion\",\"italic\":false}'}}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

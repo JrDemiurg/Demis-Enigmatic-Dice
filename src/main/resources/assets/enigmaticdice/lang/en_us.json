@@ -1,0 +1,29 @@
+{
+  "creativetab.enigmaticdice_tab": "§5Enigmatic Dice",
+  "item.enigmaticdice.enigmatic_die": "§dEnigmatic Die",
+  "tooltip.enigmaticdice.enigmatic_die": "§5A gift from Pandora...",
+  "tooltip.enigmaticdice.enigmatic_die_2": "§6Do not use at home!",
+
+  "enigmaticdice.effect.luck": "§d§oMay luck always be on your side",
+  "enigmaticdice.effect.damage_boost": "§d§oYou are stronger than you think",
+  "enigmaticdice.effect.movement_speed": "§d§oHurry up!",
+  "enigmaticdice.effect.dig_speed": "§d§oI believe in you",
+  "enigmaticdice.effect.health_boost": "§d§oTake care of yourself",
+  "enigmaticdice.effect.night_vision": "§d§oBe more attentive",
+  "enigmaticdice.effect.invisibility": "§d§oBe careful",
+  "enigmaticdice.effect.fire_resistance": "§d§oEven fire can't take you down",
+  "enigmaticdice.effect.regeneration": "§d§oLet the wound become just a memory",
+
+  "item.enigmaticdice.traveler_potion": "Traveler's Potion",
+  "item.enigmaticdice.miner_potion": "Miner's Potion",
+  "item.enigmaticdice.warrior_potion": "Warrior's Potion",
+  "item.enigmaticdice.diver_potion": "Diver's Potion",
+  "item.enigmaticdice.potion_of_life": "Potion of Life",
+  "item.enigmaticdice.iron_skin_potion": "Iron Skin Potion",
+  "item.enigmaticdice.luck_potion": "Luck Potion",
+  "item.enigmaticdice.temporal_protection_potion": "Potion of Temporal Protection",
+  "item.enigmaticdice.arrow_of_doom": "Arrow of Doom",
+
+  "enigmaticdice.renameditem.the_one_ring": "§4The One Ring",
+  "enigmaticdice.renameditem.earth_heart": "§dHeart of Creation"
+}
