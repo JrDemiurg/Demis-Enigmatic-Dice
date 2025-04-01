@@ -77,9 +77,8 @@ public class SummonWarpedToadsEvent implements RandomEvent {
 
             }, 10 * i, 0); // 10 тиков = 0.5 секунд задержки
         }
-        // Знакомься, это твои новые друзья
-        MutableComponent message = Component.literal("Looks like the universe decided you didn't have enough toads. Now you have three.")
-                .withStyle(getColorForRarity(rarity));
+
+        MutableComponent message = Component.translatable("enigmaticdice.event.warped_toads");
         pPlayer.displayClientMessage(message, false);
         return true;
     }

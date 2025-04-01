@@ -28,7 +28,7 @@ import org.slf4j.Logger;
 @Mod(EnigmaticDice.MOD_ID)
 public class EnigmaticDice {
     public static final String MOD_ID = "enigmaticdice";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public EnigmaticDice() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

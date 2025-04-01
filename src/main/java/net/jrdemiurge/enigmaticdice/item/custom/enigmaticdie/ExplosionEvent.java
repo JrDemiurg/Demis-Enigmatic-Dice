@@ -6,13 +6,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.levelgen.Heightmap;
 
 public class ExplosionEvent implements RandomEvent {
     private final float power;
@@ -46,7 +42,7 @@ public class ExplosionEvent implements RandomEvent {
             pLevel.explode(null, tntPos.getX(), tntPos.getY(), tntPos.getZ(), power, causesFire, breakBlocks ? Level.ExplosionInteraction.BLOCK : Level.ExplosionInteraction.NONE);
         }, 75, 0);
 
-        pPlayer.displayClientMessage(Component.literal("§cEXPLOSIONS?"), false);
+        pPlayer.displayClientMessage(Component.translatable("enigmaticdice.event.explosion"), false);
         return true;
     }
 

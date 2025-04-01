@@ -1,6 +1,5 @@
 package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -47,20 +46,9 @@ public class SummonMimic implements RandomEvent {
             livingEntity.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(0);
         }
 
-        MutableComponent message = Component.literal("Oh, looks like you've got a new friend! Though… I think he's more interested in your inventory.")
-                .withStyle(getColorForRarity(rarity));
+        MutableComponent message = Component.translatable("enigmaticdice.event.mimic");
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    private ChatFormatting getColorForRarity(int rarity) {
-        return switch (rarity) {
-            case 1 -> ChatFormatting.BLUE;      // Синий
-            case 2 -> ChatFormatting.DARK_PURPLE; // Фиолетовый
-            case 3 -> ChatFormatting.GOLD;      // Оранжевый
-            case 4 -> ChatFormatting.DARK_RED; // Бирюзовый
-            default -> ChatFormatting.WHITE;    // Белый
-        };
     }
 
     @Override

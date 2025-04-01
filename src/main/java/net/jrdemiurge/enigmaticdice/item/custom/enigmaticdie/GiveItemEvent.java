@@ -1,6 +1,9 @@
 package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 
-import net.minecraft.ChatFormatting;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.jrdemiurge.enigmaticdice.EnigmaticDice;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.TagParser;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -15,17 +18,15 @@ public class GiveItemEvent implements RandomEvent {
     private final String itemIdentifier;
     private final int rarity;
     private final int quantity;
+    private final String nbtString;
+    private final String chatMessage;
 
-    public GiveItemEvent(String itemIdentifier, int rarity) {
+    public GiveItemEvent(String itemIdentifier, int rarity, int quantity, String nbtString, String chatMessage) {
         this.itemIdentifier = itemIdentifier;
         this.rarity = rarity;
-        this.quantity = 1;
-    }
-
-    public GiveItemEvent(String itemIdentifier, int rarity, int quantity) {
-        this.itemIdentifier = itemIdentifier;
-        this.rarity = rarity;
-        this.quantity = Math.max(quantity, 1);  // Минимальное количество — 1
+        this.quantity = Math.max(quantity, 1);
+        this.nbtString = nbtString;
+        this.chatMessage = chatMessage;
     }
 
     @Override
@@ -37,35 +38,33 @@ public class GiveItemEvent implements RandomEvent {
         Item item = ForgeRegistries.ITEMS.getValue(resourceLocation);
 
         if (item == null) {
-            pPlayer.displayClientMessage(Component.literal("Item not found: " + itemIdentifier), false);
+            EnigmaticDice.LOGGER.error("Item not found: {}", itemIdentifier);
             return false;
         }
 
-        // ItemStack itemStack = new ItemStack(item);
+        ItemStack itemStack = new ItemStack(item, quantity);
+
+        if (!nbtString.isEmpty()) {
+            try {
+                CompoundTag nbt = TagParser.parseTag(nbtString);
+                itemStack.setTag(nbt);
+            } catch (CommandSyntaxException e) {
+                EnigmaticDice.LOGGER.error("Error while parsing nbt: ", e);
+            }
+        }
 
         ItemEntity keyEntity = new ItemEntity(
                 pLevel,
                 pPlayer.getX(),
                 pPlayer.getY() + 1,
                 pPlayer.getZ(),
-                new ItemStack(item, quantity)
+                itemStack
         );
         pLevel.addFreshEntity(keyEntity);
 
-        MutableComponent message = Component.literal("Here, it's a gift.")
-                .withStyle(getColorForRarity(rarity));
+        MutableComponent message = Component.translatable(chatMessage);
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    private ChatFormatting getColorForRarity(int rarity) {
-        return switch (rarity) {
-            case 1 -> ChatFormatting.BLUE;      // Синий
-            case 2 -> ChatFormatting.DARK_PURPLE; // Фиолетовый
-            case 3 -> ChatFormatting.GOLD;      // Оранжевый
-            case 4 -> ChatFormatting.DARK_RED; // Бирюзовый
-            default -> ChatFormatting.WHITE;    // Белый
-        };
     }
 
     @Override

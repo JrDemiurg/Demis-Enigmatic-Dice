@@ -17,11 +17,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class EnigmaticDie extends Item {
-    private final RandomEventManager eventManager;
+    private RandomEventManager eventManager;
 
     public EnigmaticDie(Properties pProperties) {
         super(pProperties);
-        this.eventManager = new RandomEventManager();
     }
 
     @Override
@@ -29,6 +28,10 @@ public class EnigmaticDie extends Item {
         ItemStack itemStack = pPlayer.getItemInHand(pUsedHand);
         if (pLevel.isClientSide) {
             return InteractionResultHolder.pass(itemStack);
+        }
+
+        if (eventManager == null){
+            eventManager = new RandomEventManager();
         }
 
         eventManager.triggerRandomEvent(pLevel, pPlayer);

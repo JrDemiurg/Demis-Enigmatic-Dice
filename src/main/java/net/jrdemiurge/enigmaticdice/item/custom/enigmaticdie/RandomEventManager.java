@@ -1,5 +1,9 @@
 package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 
+import net.jrdemiurge.enigmaticdice.EnigmaticDice;
+import net.jrdemiurge.enigmaticdice.config.EnigmaticDiceConfig;
+import net.jrdemiurge.enigmaticdice.config.UniqueEventConfig;
+import net.jrdemiurge.enigmaticdice.config.ItemEventConfig;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -19,79 +23,87 @@ public class RandomEventManager {
     private final List<String> eventNames = new ArrayList<>();
 
     public RandomEventManager() {
-        events.add(new ExplosionEvent(4f, false, false, 0));
-        eventNames.add("explosion");
-        events.add(new LightningStrikeEvent(0));
-        eventNames.add("lightning_strike");
-        /*events.add(new GoldenRain(0));
-        eventNames.add("golden_rain");*/
-        events.add(new PermanentBuffEvent(0));
-        eventNames.add("permanent_buff");
-        events.add(new AncientDebrisCageEvent(2));
-        eventNames.add("ancient_debris_cage");
-
-        if (ModList.get().isLoaded("simplyswords")) {
-            events.add(new GiveSimplySword(3));
-            eventNames.add("give_simply_sword");
-            events.add(new GiveItemEvent("simplyswords:runic_tablet", 2));
-            eventNames.add("give_runic_tablet");
+        if (EnigmaticDiceConfig.configData != null) {
+            if (EnigmaticDiceConfig.configData.uniqueEvents != null) {
+                loadUniqueEvents();
+            }
+            if (EnigmaticDiceConfig.configData.itemEvents != null) {
+                loadItemEvents();
+            }
         }
+    }
 
-        if (ModList.get().isLoaded("born_in_chaos_v1")) {
-            events.add(new GiveItemEvent("born_in_chaos_v1:phantom_bomb", 1, 16));
-            eventNames.add("give_phantom_bomb");
-            events.add(new GiveItemEvent("born_in_chaos_v1:bone_heart", 1, 16));
-            eventNames.add("give_bone_heart");
-            events.add(new GiveItemEvent("born_in_chaos_v1:dark_atrium", 1, 4));
-            eventNames.add("give_dark_atrium");
-            events.add(new GiveItemEvent("born_in_chaos_v1:elixir_of_vampirism", 1, 8));
-            eventNames.add("give_elixir_of_vampirism");
-            events.add(new GiveItemEvent("born_in_chaos_v1:potion_of_rampage", 1, 8));
-            eventNames.add("give_potion_of_rampage");
+    private void loadItemEvents() {
+        for (Map.Entry<String, ItemEventConfig> entry : EnigmaticDiceConfig.configData.itemEvents.entrySet()) {
+            String eventName = entry.getKey();
+            ItemEventConfig config = entry.getValue();
+
+            if (!config.enabled){
+                EnigmaticDice.LOGGER.info("Config {} is disabled.", eventName);
+                continue;
+            }
+
+            if (!ModList.get().isLoaded(config.requiredMod)) {
+                EnigmaticDice.LOGGER.info("Skipping event {}: required mod {} is missing.", eventName, config.requiredMod);
+                continue;
+            }
+
+            events.add(new GiveItemEvent(config.item, config.rarity, config.amount, config.nbt, config.chatMessage));
+            eventNames.add(eventName);
         }
+    }
 
-        if (ModList.get().isLoaded("supplementaries")) {
-            events.add(new GiveItemEvent("supplementaries:bomb", 1, 32));
-            eventNames.add("give_bomb");
-            events.add(new GiveItemEvent("supplementaries:bomb_blue", 1, 8));
-            eventNames.add("give_bomb_blue");
+    private void loadUniqueEvents() {
+        for (Map.Entry<String, UniqueEventConfig> entry : EnigmaticDiceConfig.configData.uniqueEvents.entrySet()) {
+            String eventName = entry.getKey();
+            UniqueEventConfig config = entry.getValue();
+
+            if (!config.enabled) {
+                EnigmaticDice.LOGGER.info("Config {} is disabled.", eventName);
+                continue;
+            }
+
+            if (!ModList.get().isLoaded(config.requiredMod)) {
+                EnigmaticDice.LOGGER.info("Skipping event {}: required mod {} is missing.", eventName, config.requiredMod);
+                continue;
+            }
+
+            switch (eventName) {
+                case "minecraft_explosion" -> {
+                    events.add(new ExplosionEvent(4f, false, false,config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_lightning_strike" -> {
+                    events.add(new LightningStrikeEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_permanent_buff" -> {
+                    events.add(new PermanentBuffEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_ancient_debris_cage" -> {
+                    events.add(new AncientDebrisCageEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "alexsmobs_summon_warped_toads" -> {
+                    events.add(new SummonWarpedToadsEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "alexsmobs_summon_centipede" -> {
+                    events.add(new SummonCentipedeEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "artifacts_summon_mimic" -> {
+                    events.add(new SummonMimic(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "artifacts_wonderland_field" -> {
+                    events.add(new WonderlandField(config.rarity));
+                    eventNames.add(eventName);
+                }
+                default -> EnigmaticDice.LOGGER.warn("Unknown fixed event in config: {}", eventName);
+            }
         }
-
-        if (ModList.get().isLoaded("enigmaticlegacy")) {
-            events.add(new GiveSpellStone(3));
-            eventNames.add("give_spell_stone");
-            events.add(new GiveItemEvent("enigmaticlegacy:soul_crystal", 4, 1));
-            eventNames.add("give_soul_crystal");
-            events.add(new GiveItemEvent("enigmaticlegacy:redemption_potion", 3, 1));
-            eventNames.add("give_redemption_potion");
-            events.add(new GiveNamedItemEvent("enigmaticlegacy:earth_heart","enigmaticdice.renameditem.earth_heart", 2, 1)); // переименовывание в Heart of Creation наверное розовым
-            eventNames.add("give_earth_heart");
-            events.add(new GiveNamedItemEvent("enigmaticlegacy:golden_ring","enigmaticdice.renameditem.the_one_ring", 2, 1));
-            eventNames.add("give_the_one_ring");
-            events.add(new GiveItemEvent("enigmaticlegacy:cosmic_cake", 3, 1));
-            eventNames.add("give_cosmic_cake");
-            // ещё мб бутылочку мёда с названием зелья искупления
-            // предмет с остротой с названием судья ???
-            // проклятие вечной привязки на 1 элемент брони
-            // доп слот под амулет ???
-            // забыть всю книгу ???
-        }
-
-        if (ModList.get().isLoaded("alexsmobs")) {
-            events.add(new SummonWarpedToadsEvent(1));
-            eventNames.add("summon_warped_toads");
-            events.add(new SummonCentipedeEvent(1));
-            eventNames.add("summon_centipede");
-        }
-
-        if (ModList.get().isLoaded("artifacts")) {
-            events.add(new SummonMimic(2));
-            eventNames.add("summon_mimic");
-            events.add(new WonderlandField(2));
-            eventNames.add("wonderland_field");
-        }
-
-        // клетка из обломков, эпик
     }
 
     public void triggerRandomEvent(Level pLevel, Player pPlayer) {

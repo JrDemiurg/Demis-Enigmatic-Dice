@@ -59,7 +59,7 @@ public class LightningStrikeEvent implements RandomEvent {
             }, delay, 0);
         }
 
-        pPlayer.displayClientMessage(Component.literal("§cThis is what divine wrath looks like!"), false);
+        pPlayer.displayClientMessage(Component.translatable("enigmaticdice.event.lightning_wrath"), false);
         return true;
     }
 
