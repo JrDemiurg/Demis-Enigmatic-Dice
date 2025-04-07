@@ -1,13 +1,11 @@
 package net.jrdemiurge.enigmaticdice;
 
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -111,11 +109,37 @@ public class Config
                     "Value is between 0.0 and 1.0. For example, 0.1 means a 10% chance.")
             .defineInRange("enigmaticDieChestChance", 0.1, 0.0, 1.0);
 
+    private static final ForgeConfigSpec.ConfigValue<Integer> STRUCTURE_SEARCH_RADIUS = BUILDER
+            .comment("Radius within which the structure is searched for during the 'minecraft_teleport_to_structure' event. Default is 100.\n" +
+                    "Higher values search further but may impact performance.")
+            .defineInRange("structureSearchRadius", 100, 1, 10000);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> BIOME_SEARCH_RADIUS = BUILDER
+            .comment("Radius (in blocks) to search for the target biome during the 'minecraft_teleport_to_biome' event.\n" +
+                    "Higher values search further but may impact performance.")
+            .defineInRange("biomeSearchRadius", 4480, 256, 10000);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> BIOME_HORIZONTAL_STEP = BUILDER
+            .comment("Horizontal search step when scanning for biomes in the 'minecraft_teleport_to_biome' event.\n" +
+                    "Smaller values may increase accuracy but reduce performance.")
+            .defineInRange("biomeHorizontalStep", 64, 1, 512);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> BIOME_VERTICAL_STEP = BUILDER
+            .comment("Vertical search step when scanning for biomes in the 'minecraft_teleport_to_biome' event.\n" +
+                    "Smaller values may increase accuracy but reduce performance.")
+            .defineInRange("biomeVerticalStep", 128, 1, 512);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static double EnigmaticDieMobDropChance;
     public static double EnigmaticDieBlockDropChance;
     public static double EnigmaticDieChestChance;
+    public static int StructureSearchRadius;
+    public static int BiomeSearchRadius;
+    public static int BiomeHorizontalStep;
+    public static int BiomeVerticalStep;
+
+
 
     public static List<ResourceLocation> lootTables;
 
@@ -130,6 +154,10 @@ public class Config
         EnigmaticDieMobDropChance = ENIGMATIC_DIE_MOB_DROP_CHANCE.get();
         EnigmaticDieBlockDropChance = ENIGMATIC_DIE_BLOCK_DROP_CHANCE.get();
         EnigmaticDieChestChance = ENIGMATIC_DIE_CHEST_CHANCE.get();
+        StructureSearchRadius = STRUCTURE_SEARCH_RADIUS.get();
+        BiomeSearchRadius = BIOME_SEARCH_RADIUS.get();
+        BiomeHorizontalStep = BIOME_HORIZONTAL_STEP.get();
+        BiomeVerticalStep = BIOME_VERTICAL_STEP.get();
 
         lootTables = LOOT_TABLES.get().stream()
                 .map(ResourceLocation::new)

@@ -85,12 +85,24 @@ public class RandomEventManager {
                     events.add(new AncientDebrisCageEvent(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "minecraft_teleport_to_biome" -> {
+                    events.add(new TeleportToBiomeEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_teleport_to_structure" -> {
+                    events.add(new TeleportToStructureEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
                 case "alexsmobs_summon_warped_toads" -> {
                     events.add(new SummonWarpedToadsEvent(config.rarity));
                     eventNames.add(eventName);
                 }
                 case "alexsmobs_summon_centipede" -> {
                     events.add(new SummonCentipedeEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "alexscaves_nuclear_bomb" -> {
+                    events.add(new NuclearBombEvent(config.rarity));
                     eventNames.add(eventName);
                 }
                 case "artifacts_summon_mimic" -> {

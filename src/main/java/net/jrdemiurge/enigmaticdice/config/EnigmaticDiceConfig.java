@@ -11,6 +11,7 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EnigmaticDiceConfig {
@@ -31,6 +32,8 @@ public class EnigmaticDiceConfig {
             configData = new ModConfig();
             configData.uniqueEvents = new HashMap<>();
             configData.itemEvents = new HashMap<>();
+            configData.teleportBiomes = new ArrayList<>();
+            configData.teleportStructures = new ArrayList<>();
         }
     }
 

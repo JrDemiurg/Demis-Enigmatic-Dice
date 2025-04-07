@@ -37,6 +37,17 @@
   "enigmaticdice.event.wonderland_field.4": "§5If I were you, I'd take a look around… There might be something valuable nearby!",
   "enigmaticdice.event.wonderland_field.5": "§5Good news: chests have appeared nearby! No bad news. Probably.",
 
+  "enigmaticdice.event.teleport_to_biome.0": "§5A wonderful place!",
+  "enigmaticdice.event.teleport_to_biome.1": "§5Here's a new point on your adventure map!",
+  "enigmaticdice.event.teleport_to_biome.2": "§5Try not to ruin this biome, okay?",
+  "enigmaticdice.event.teleport_to_biome.3": "§5You have no idea where you're about to end up...",
+  "enigmaticdice.event.teleport_to_biome.4": "§5Congratulations, you've discovered another corner of this world!",
+  "enigmaticdice.event.teleport_to_biome.5": "§5Sometimes the most amazing adventures begin with a single teleport...",
+
+  "enigmaticdice.event.teleport_to_structure.0" : "§5Adventure awaits!",
+  "enigmaticdice.event.teleport_to_structure.1" : "§5There's something interesting ahead!",
+  "enigmaticdice.event.teleport_to_structure.2" : "§5Looks like you need to go west.",
+  "enigmaticdice.event.teleport_to_structure.3" : "§5It seems like you're getting close to something important.",
 
   "enigmaticdice.gift.white": "§fHere, it's a gift.",
   "enigmaticdice.gift.dark_green": "§2Here, it's a gift.",
