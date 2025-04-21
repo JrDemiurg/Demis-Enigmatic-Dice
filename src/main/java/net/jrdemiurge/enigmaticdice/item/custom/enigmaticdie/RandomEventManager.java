@@ -93,6 +93,10 @@ public class RandomEventManager {
                     events.add(new TeleportToStructureEvent(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "minecraft_summon_horse" -> {
+                    events.add(new SummonTamedHorse(config.rarity));
+                    eventNames.add(eventName);
+                }
                 case "alexsmobs_summon_warped_toads" -> {
                     events.add(new SummonWarpedToadsEvent(config.rarity));
                     eventNames.add(eventName);
@@ -105,12 +109,32 @@ public class RandomEventManager {
                     events.add(new NuclearBombEvent(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "alexscaves_summon_raycat" -> {
+                    events.add(new SummonRaycatEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "alexscaves_summon_subterranodon" -> {
+                    events.add(new SummonSubterranodonEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "alexscaves_summon_vallumraptor" -> {
+                    events.add(new SummonVallumraptorEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "alexscaves_summon_candicorn" -> {
+                    events.add(new SummonCandicornEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
                 case "artifacts_summon_mimic" -> {
                     events.add(new SummonMimic(config.rarity));
                     eventNames.add(eventName);
                 }
                 case "artifacts_wonderland_field" -> {
                     events.add(new WonderlandField(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "netherexp_summon_carcass" -> {
+                    events.add(new SummonCarcassEvent(config.rarity));
                     eventNames.add(eventName);
                 }
                 default -> EnigmaticDice.LOGGER.warn("Unknown fixed event in config: {}", eventName);

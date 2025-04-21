@@ -31,7 +31,7 @@ public class WonderlandField implements RandomEvent {
     @Override
     public boolean  execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
         }
 
         EntityType<?> entityType = EntityType.byString("artifacts:mimic").orElse(null);
@@ -75,7 +75,7 @@ public class WonderlandField implements RandomEvent {
 
         pLevel.addFreshEntity(entity);
 
-        MutableComponent message = Component.translatable("enigmaticdice.event.wonderland_field." + pLevel.random.nextInt(6));
+        MutableComponent message = Component.translatable("enigmaticdice.event.wonderland_field." + pLevel.random.nextInt(3));
         pPlayer.displayClientMessage(message, false);
         return true;
     }
@@ -92,6 +92,6 @@ public class WonderlandField implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
     }
 }

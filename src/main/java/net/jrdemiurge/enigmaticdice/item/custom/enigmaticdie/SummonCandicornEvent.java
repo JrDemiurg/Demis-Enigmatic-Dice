@@ -3,17 +3,22 @@ package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
+import java.lang.reflect.Method;
 
-public class SummonMimic implements RandomEvent {
+public class SummonCandicornEvent implements RandomEvent {
     private final int rarity;
 
-    public SummonMimic(int rarity) {
+    public SummonCandicornEvent(int rarity) {
         this.rarity = rarity;
     }
 
@@ -32,21 +37,34 @@ public class SummonMimic implements RandomEvent {
             return false;
         }
 
-        EntityType<?> entityType = EntityType.byString("artifacts:mimic").orElse(null);
+        EntityType<?> entityType = EntityType.byString("alexscaves:candicorn").orElse(null);
         if (entityType == null) return false;
 
         Entity entity = entityType.create(pLevel);
         if (entity == null) return false;
 
         entity.moveTo(spawnPos.x, spawnPos.y, spawnPos.z, 0, 0);
-        entity.setCustomName(Component.literal("Minic")); // Название
         pLevel.addFreshEntity(entity);
 
-        if (entity instanceof LivingEntity livingEntity) {
-            livingEntity.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(0);
+        if (entity instanceof TamableAnimal tamable) {
+            tamable.tame(pPlayer);
+            tamable.setOwnerUUID(pPlayer.getUUID());
+            tamable.addEffect(new MobEffectInstance(MobEffects.REGENERATION, MobEffectInstance.INFINITE_DURATION, 0, false, false));
         }
 
-        MutableComponent message = Component.translatable("enigmaticdice.event.mimic");
+        try {
+            Class<?> candicornClass = Class.forName("com.github.alexmodguy.alexscaves.server.entity.living.CandicornEntity");
+            if (candicornClass.isInstance(entity)) {
+                Method setCommandMethod = candicornClass.getMethod("setCommand", int.class);
+                setCommandMethod.invoke(entity, 2);
+                Method setSeddledMethod = candicornClass.getMethod("setSaddled", boolean.class);
+                setSeddledMethod.invoke(entity, true);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        MutableComponent message = Component.translatable("enigmaticdice.event.candicorn");
         pPlayer.displayClientMessage(message, false);
         return true;
     }

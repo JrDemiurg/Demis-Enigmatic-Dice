@@ -33,7 +33,7 @@ public class PermanentBuffEvent implements RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
         }
 
         MobEffect[] effects = EFFECT_MESSAGES.keySet().toArray(new MobEffect[0]);
@@ -58,7 +58,7 @@ public class PermanentBuffEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
     }
 }
 

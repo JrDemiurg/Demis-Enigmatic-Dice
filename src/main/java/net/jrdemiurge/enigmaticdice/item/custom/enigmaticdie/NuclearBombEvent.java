@@ -27,7 +27,7 @@ public class NuclearBombEvent implements RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, false)) return false;
         }
 
         Vec3 lookVec = pPlayer.getLookAngle();
@@ -57,6 +57,6 @@ public class NuclearBombEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, false);
     }
 }

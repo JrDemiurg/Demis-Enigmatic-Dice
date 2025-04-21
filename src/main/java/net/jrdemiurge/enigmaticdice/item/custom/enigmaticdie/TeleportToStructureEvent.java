@@ -32,7 +32,7 @@ public class TeleportToStructureEvent implements RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
         }
 
         if (!(pLevel instanceof ServerLevel serverLevel)) {
@@ -107,6 +107,6 @@ public class TeleportToStructureEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level level, Player player) {
-        return RandomEvent.rollChance(level, player, rarity);
+        return RandomEvent.rollChance(level, player, rarity, true);
     }
 }

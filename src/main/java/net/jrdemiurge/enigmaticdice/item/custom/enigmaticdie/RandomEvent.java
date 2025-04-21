@@ -13,13 +13,22 @@ public interface RandomEvent {
 
     boolean simulationExecute(Level pLevel, Player pPlayer);
 
-    static boolean rollChance(Level pLevel, Player pPlayer, int rarity) {
-        int attempts = 1 + Math.max(0, (int) pPlayer.getLuck());
+    static boolean rollChance(Level pLevel, Player pPlayer, int rarity, boolean isPositiveEvent) {
+        float luck = pPlayer.getLuck();
+        int attempts;
+
+        if (isPositiveEvent) {
+            attempts = 1 + Math.max(0, (int) luck);
+        } else {
+            attempts = 1 + Math.max(0, -(int) luck);
+        }
+
         for (int i = 0; i < attempts; i++) {
             if (pLevel.getRandom().nextInt(rarity) == 0) {
                 return true;
             }
         }
+
         return false;
     }
 }

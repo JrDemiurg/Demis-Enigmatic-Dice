@@ -30,6 +30,11 @@
       "requiredMod": "minecraft",
       "rarity": 20
     },
+    "minecraft_summon_horse": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 5
+    },
     "alexsmobs_summon_warped_toads": {
       "enabled": true,
       "requiredMod": "alexsmobs",
@@ -45,6 +50,26 @@
       "requiredMod": "alexscaves",
       "rarity": 1000
     },
+    "alexscaves_summon_raycat": {
+      "enabled": true,
+      "requiredMod": "alexscaves",
+      "rarity": 5
+    },
+    "alexscaves_summon_subterranodon": {
+      "enabled": true,
+      "requiredMod": "alexscaves",
+      "rarity": 5
+    },
+    "alexscaves_summon_vallumraptor": {
+      "enabled": true,
+      "requiredMod": "alexscaves",
+      "rarity": 5
+    },
+    "alexscaves_summon_candicorn": {
+      "enabled": true,
+      "requiredMod": "alexscaves",
+      "rarity": 5
+    },
     "artifacts_summon_mimic": {
       "enabled": true,
       "requiredMod": "artifacts",
@@ -54,6 +79,11 @@
       "enabled": true,
       "requiredMod": "artifacts",
       "rarity": 20
+    },
+    "netherexp_summon_carcass": {
+      "enabled": true,
+      "requiredMod": "netherexp",
+      "rarity": 5
     }
   },
   "itemEvents": {
@@ -388,6 +418,15 @@
       "amount": 1,
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.dark_purple"
+    },
+    "alexscaves_give_desolate_dagger": {
+      "enabled": true,
+      "requiredMod": "alexscaves",
+      "rarity": 20,
+      "item": "alexscaves:desolate_dagger",
+      "amount": 1,
+      "nbt": "{Enchantments:[{id:\"alexscaves:double_stab\",lvl:4}]}",
+      "chatMessage": "enigmaticdice.gift.dark_purple"
     }
   },
   "teleportBiomes": [
@@ -400,7 +439,14 @@
     "terralith:scarlet_mountains",
     "terralith:mirage_isles",
     "terralith:warped_mesa",
-    "terralith:jungle_mountains"
+    "terralith:jungle_mountains",
+    "biomesoplenty:auroral_garden",
+    "biomesoplenty:bayou",
+    "biomesoplenty:hot_springs",
+    "biomesoplenty:mystic_grove",
+    "biomesoplenty:rainforest",
+    "biomesoplenty:rocky_rainforest",
+    "biomesoplenty:tropics"
   ],
   "teleportStructures": [
     "minecraft:mansion",

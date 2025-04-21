@@ -22,7 +22,7 @@ public class GoldenRain implements RandomEvent{
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel,pPlayer, rarity)) return false;
+            if (!RandomEvent.rollChance(pLevel,pPlayer, rarity, true)) return false;
         }
 
         BlockPos pos = pPlayer.blockPosition();
@@ -46,6 +46,6 @@ public class GoldenRain implements RandomEvent{
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
     }
 }

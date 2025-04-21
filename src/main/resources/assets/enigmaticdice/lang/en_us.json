@@ -14,7 +14,7 @@
   "enigmaticdice.effect.fire_resistance": "§d§oEven fire can't take you down",
   "enigmaticdice.effect.regeneration": "§d§oLet the wound become just a memory",
 
-  "enigmaticdice.event.safe_message": "§6Now you are safe.",
+  "enigmaticdice.event.safe_message": "§6Now you are safe",
   "enigmaticdice.event.explosion": "§cEXPLOSIONS?",
   "enigmaticdice.event.lightning_wrath": "§cThis is what divine wrath looks like!",
   "enigmaticdice.event.mimic": "§5Oh, looks like you've got a new friend! Though… I think he's more interested in your inventory.",
@@ -31,11 +31,8 @@
   "enigmaticdice.event.centipede.8": "§9You woke it up. It got out on the wrong foot… or maybe the wrong hundred.",
 
   "enigmaticdice.event.wonderland_field.0": "§5There's a sense of treasure in the air... Maybe you should take a look around?",
-  "enigmaticdice.event.wonderland_field.1": "§5Oh, how interesting! They just appeared out of nowhere...",
-  "enigmaticdice.event.wonderland_field.2": "§5How strange... A second ago, this definitely wasn’t here.",
-  "enigmaticdice.event.wonderland_field.3": "§5More chests out of thin air again!",
-  "enigmaticdice.event.wonderland_field.4": "§5If I were you, I'd take a look around… There might be something valuable nearby!",
-  "enigmaticdice.event.wonderland_field.5": "§5Good news: chests have appeared nearby! No bad news. Probably.",
+  "enigmaticdice.event.wonderland_field.1": "§5If I were you, I'd take a look around… There might be something valuable nearby!",
+  "enigmaticdice.event.wonderland_field.2": "§5Good news: chests have appeared nearby! No bad news. Probably.",
 
   "enigmaticdice.event.teleport_to_biome.0": "§5A wonderful place!",
   "enigmaticdice.event.teleport_to_biome.1": "§5Here's a new point on your adventure map!",
@@ -48,6 +45,15 @@
   "enigmaticdice.event.teleport_to_structure.1" : "§5There's something interesting ahead!",
   "enigmaticdice.event.teleport_to_structure.2" : "§5Looks like you need to go west.",
   "enigmaticdice.event.teleport_to_structure.3" : "§5It seems like you're getting close to something important.",
+
+  "enigmaticdice.event.horse.0" : "§9Don't tell me you don't have a driver's license for a horse.",
+  "enigmaticdice.event.horse.1" : "§9Did someone call Uber DeLuxe?",
+
+  "enigmaticdice.event.candicorn": "§9You called for a dessert with hooves. Get out the marmalade sword!",
+  "enigmaticdice.event.carcass": "§9Now you have your own undead army.",
+  "enigmaticdice.event.raycat": "§9Is it sure it has nine lives?",
+  "enigmaticdice.event.subterranodon": "§9Is it a glider?",
+  "enigmaticdice.event.vallumraptor": "§9Looks like you've made some new friends.",
 
   "enigmaticdice.gift.white": "§fHere, it's a gift.",
   "enigmaticdice.gift.dark_green": "§2Here, it's a gift.",

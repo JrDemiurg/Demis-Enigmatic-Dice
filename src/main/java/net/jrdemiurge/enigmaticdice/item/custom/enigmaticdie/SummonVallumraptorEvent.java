@@ -1,7 +1,6 @@
 package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 
 import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -16,16 +15,10 @@ import net.minecraft.world.phys.Vec3;
 import java.lang.reflect.Method;
 import java.util.List;
 
-public class SummonWarpedToadsEvent implements RandomEvent {
-    private static final List<String> NAMES = List.of(
-            "Jabba the Hopp", "Kermit's Cousin", "Trevor", "Pepe", "Sir Ribbit",
-            "Croakmaster", "Frogzilla", "The Toadfather", "Frogger", "Toadally Buggin",
-            "Hopkins", "Ribbert", "Slippy", "Rana", "Greninja",
-            "Jiraiya", "Quackson"
-    );
+public class SummonVallumraptorEvent implements RandomEvent {
     private final int rarity;
 
-    public SummonWarpedToadsEvent(int rarity) {
+    public SummonVallumraptorEvent(int rarity) {
         this.rarity = rarity;
     }
 
@@ -49,7 +42,7 @@ public class SummonWarpedToadsEvent implements RandomEvent {
 
                 Vec3 pos = playerPos.add(offsetX, offsetY, offsetZ);
 
-                EntityType<?> entityType = EntityType.byString("alexsmobs:warped_toad").orElse(null);
+                EntityType<?> entityType = EntityType.byString("alexscaves:vallumraptor").orElse(null);
                 if (entityType == null) return;
 
                 Entity entity = entityType.create(pLevel);
@@ -59,26 +52,25 @@ public class SummonWarpedToadsEvent implements RandomEvent {
                 pLevel.addFreshEntity(entity);
 
                 if (entity instanceof TamableAnimal tamable) {
-                    tamable.tame(pPlayer); // Приручаем лягушку
-                    tamable.setOwnerUUID(pPlayer.getUUID()); // Привязываем к игроку
-                    tamable.setCustomName(Component.literal(NAMES.get(pLevel.getRandom().nextInt(NAMES.size())))); // Название
+                    tamable.tame(pPlayer);
+                    tamable.setOwnerUUID(pPlayer.getUUID());
                     tamable.addEffect(new MobEffectInstance(MobEffects.REGENERATION, MobEffectInstance.INFINITE_DURATION, 0, false, false));
                 }
 
                 try {
-                    Class<?> toadClass = Class.forName("com.github.alexthe666.alexsmobs.entity.EntityWarpedToad");
-                    if (toadClass.isInstance(entity)) {
-                        Method setCommandMethod = toadClass.getMethod("setCommand", int.class);
-                        setCommandMethod.invoke(entity, 1);
+                    Class<?> dinosaurClass = Class.forName("com.github.alexmodguy.alexscaves.server.entity.living.DinosaurEntity");
+                    if (dinosaurClass.isInstance(entity)) {
+                        Method setCommandMethod = dinosaurClass.getMethod("setCommand", int.class);
+                        setCommandMethod.invoke(entity, 2);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
-            }, 10 * i, 0); // 10 тиков = 0.5 секунд задержки
+            }, 10 * i, 0);
         }
 
-        MutableComponent message = Component.translatable("enigmaticdice.event.warped_toads");
+        MutableComponent message = Component.translatable("enigmaticdice.event.vallumraptor");
         pPlayer.displayClientMessage(message, false);
         return true;
     }
