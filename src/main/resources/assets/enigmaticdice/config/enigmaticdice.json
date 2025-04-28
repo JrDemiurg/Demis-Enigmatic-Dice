@@ -87,6 +87,15 @@
     }
   },
   "itemEvents": {
+    "enigmaticdice_give_unequal_exchange": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 1000,
+      "item": "enigmaticdice:unequal_exchange",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.aqua"
+    },
     "born_in_chaos_give_phantom_bomb": {
       "enabled": true,
       "requiredMod": "born_in_chaos_v1",

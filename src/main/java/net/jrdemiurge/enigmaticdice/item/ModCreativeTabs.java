@@ -18,6 +18,7 @@ public class ModCreativeTabs {
                     .title(Component.translatable("creativetab.enigmaticdice_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ENIGAMTIC_DIE.get());
+                        output.accept(ModItems.UNEQUAL_EXCHANGE.get());
                     })
                     .build());
 

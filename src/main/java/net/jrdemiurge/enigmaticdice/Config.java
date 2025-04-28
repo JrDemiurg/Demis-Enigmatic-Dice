@@ -129,6 +129,26 @@ public class Config
                     "Smaller values may increase accuracy but reduce performance.")
             .defineInRange("biomeVerticalStep", 128, 1, 512);
 
+    private static final ForgeConfigSpec.ConfigValue<Double> UNEQUAL_EXCHANGE_TARGET_HEALTH_REDUCTION = BUILDER
+            .comment("Percentage of target's max health reduced per hit by Unequal Exchange sword.\n" +
+                    "Example: 0.10 = 10% of target's max health.")
+            .defineInRange("unequalExchangeTargetHealthReduction", 0.10, 0.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> UNEQUAL_EXCHANGE_PLAYER_HEALTH_REDUCTION = BUILDER
+            .comment("Percentage of player's max health reduced per hit by Unequal Exchange sword.\n" +
+                    "Example: 0.20 = 20% of player's max health.")
+            .defineInRange("unequalExchangePlayerHealthReduction", 0.20, 0.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> UNEQUAL_EXCHANGE_STAT_DEBUFF = BUILDER
+            .comment("Percentage reduction of player's stats (armor, speed, etc.) per hit by Unequal Exchange sword.\n" +
+                    "Example: 0.20 = 20% reduction.")
+            .defineInRange("unequalExchangeStatDebuff", 0.20, 0.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> UNEQUAL_EXCHANGE_DEBUFF_DURATION = BUILDER
+            .comment("Duration of the Unequal Exchange debuff (stat reduction) in seconds.\n" +
+                    "Each hit refreshes this timer.")
+            .defineInRange("unequalExchangeDebuffDuration", 30, 0, 10000);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static double EnigmaticDieMobDropChance;
@@ -138,8 +158,10 @@ public class Config
     public static int BiomeSearchRadius;
     public static int BiomeHorizontalStep;
     public static int BiomeVerticalStep;
-
-
+    public static double UnequalExchangeTargetHealthReduction;
+    public static double UnequalExchangePlayerHealthReduction;
+    public static double UnequalExchangeStatDebuff;
+    public static int UnequalExchangeDebuffDuration;
 
     public static List<ResourceLocation> lootTables;
 
@@ -158,6 +180,10 @@ public class Config
         BiomeSearchRadius = BIOME_SEARCH_RADIUS.get();
         BiomeHorizontalStep = BIOME_HORIZONTAL_STEP.get();
         BiomeVerticalStep = BIOME_VERTICAL_STEP.get();
+        UnequalExchangeTargetHealthReduction = UNEQUAL_EXCHANGE_TARGET_HEALTH_REDUCTION.get();
+        UnequalExchangePlayerHealthReduction = UNEQUAL_EXCHANGE_PLAYER_HEALTH_REDUCTION.get();
+        UnequalExchangeStatDebuff = UNEQUAL_EXCHANGE_STAT_DEBUFF.get();
+        UnequalExchangeDebuffDuration = UNEQUAL_EXCHANGE_DEBUFF_DURATION.get();
 
         lootTables = LOOT_TABLES.get().stream()
                 .map(ResourceLocation::new)

@@ -1,8 +1,23 @@
 {
   "creativetab.enigmaticdice_tab": "§5Enigmatic Dice",
   "item.enigmaticdice.enigmatic_die": "§dEnigmatic Die",
-  "tooltip.enigmaticdice.enigmatic_die": "§5A gift from Pandora...",
-  "tooltip.enigmaticdice.enigmatic_die_2": "§6Do not use at home!",
+  "item.enigmaticdice.unequal_exchange": "§4Unequal Exchange",
+
+  "tooltip.enigmaticdice.holdShift": "§5Hold §6Shift§5 to see details.",
+
+  "tooltip.enigmaticdice.enigmatic_die": "§dA gift from Pandora...",
+  "tooltip.enigmaticdice.enigmatic_die_2": "§5Causes a random §6event§5 when used.",
+  "tooltip.enigmaticdice.enigmatic_die_3": "§4Do not use at home!",
+
+  "tooltip.enigmaticdice.unequal_exchange_1": "§dOn hit:",
+  "tooltip.enigmaticdice.unequal_exchange_2": "§5- The target takes damage equal to §6%1$s §dof its maximum health.",
+  "tooltip.enigmaticdice.unequal_exchange_3": "§5- The wielder takes damage equal to §6%1$s §dof their maximum health.",
+  "tooltip.enigmaticdice.unequal_exchange_4": "§dWith each hit§5, the wielder receives a §6%1$s-second§5 debuff:",
+  "tooltip.enigmaticdice.unequal_exchange_5": "§6-%1$s§d Maximum Health",
+  "tooltip.enigmaticdice.unequal_exchange_6": "§6-%1$s§d Movement Speed",
+  "tooltip.enigmaticdice.unequal_exchange_7": "§6-%1$s§d Attack Speed",
+  "tooltip.enigmaticdice.unequal_exchange_8": "§6-%1$s§d Armor",
+  "tooltip.enigmaticdice.unequal_exchange_9": "§6-%1$s§d Armor Toughness",
 
   "enigmaticdice.effect.luck": "§d§oMay luck always be on your side",
   "enigmaticdice.effect.damage_boost": "§d§oYou are stronger than you think",
@@ -74,5 +89,7 @@
   "item.enigmaticdice.arrow_of_doom": "Arrow of Doom",
 
   "enigmaticdice.renameditem.the_one_ring": "§4The One Ring",
-  "enigmaticdice.renameditem.earth_heart": "§dHeart of Creation"
+  "enigmaticdice.renameditem.earth_heart": "§dHeart of Creation",
+
+  "sounds.enigmaticdice.unequal_exchange_hit" : "Unequal Exchange hit"
 }

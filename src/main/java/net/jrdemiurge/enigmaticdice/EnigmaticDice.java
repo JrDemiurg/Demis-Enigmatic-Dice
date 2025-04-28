@@ -11,6 +11,7 @@ import net.jrdemiurge.enigmaticdice.event.MobRenderHandler;
 import net.jrdemiurge.enigmaticdice.item.ModCreativeTabs;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
 import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
+import net.jrdemiurge.enigmaticdice.sound.ModSounds;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -35,6 +36,7 @@ public class EnigmaticDice {
 
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModSounds.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

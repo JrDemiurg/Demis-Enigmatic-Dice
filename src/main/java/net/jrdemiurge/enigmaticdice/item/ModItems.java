@@ -2,7 +2,9 @@ package net.jrdemiurge.enigmaticdice.item;
 
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
 import net.jrdemiurge.enigmaticdice.item.custom.EnigmaticDie;
+import net.jrdemiurge.enigmaticdice.item.custom.UnequalExchange;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -14,6 +16,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> ENIGAMTIC_DIE = ITEMS.register("enigmatic_die",
             () -> new EnigmaticDie(new Item.Properties()));
+
+    public static final RegistryObject<Item> UNEQUAL_EXCHANGE = ITEMS.register("unequal_exchange",
+            () -> new UnequalExchange(Tiers.NETHERITE, -4, -2.4F, new Item.Properties().fireResistant()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
