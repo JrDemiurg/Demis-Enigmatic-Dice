@@ -149,6 +149,34 @@ public class Config
                     "Each hit refreshes this timer.")
             .defineInRange("unequalExchangeDebuffDuration", 30, 0, 10000);
 
+    private static final ForgeConfigSpec.ConfigValue<Double> SOUL_EATER_CHARGED_ATTACK_DAMAGE_PER_HP = BUILDER
+            .comment("Extra magic damage of Soul Eater's charged attack per HP spent.")
+            .defineInRange("soulEaterChargedAttackDamagePerHP", 2.5, 0.0, 100.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> SOUL_EATER_CHARGE_DURATION = BUILDER
+            .comment("The duration of the effect of a charged Soul Eater attack (in seconds).")
+            .defineInRange("soulEaterChargeDuration", 60, 0, 100000);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> SOUL_EATER_HEAL_PERCENT_ON_KILL = BUILDER
+            .comment("Percent of killed enemy's max HP restored to the player.\n" +
+                    "Example: 0.1 = 10% of target's max HP.")
+            .defineInRange("soulEaterHealPercentOnKill", 0.1, 0.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> SOUL_EATER_MAX_HEALTH_STEAL_PERCENT = BUILDER
+            .comment("Percent of killed enemy's max HP added to player's max HP as bonus.\n" +
+                    "Example: 0.1 = +10% max HP of killed enemy.")
+            .defineInRange("soulEaterMaxHealthStealPercent", 0.1, 0.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> SOUL_EATER_MAX_HEALTH_BUFF_DURATION = BUILDER
+            .comment("Duration (in seconds) of max health buff after killing an enemy.")
+            .defineInRange("soulEaterMaxHealthBuffDuration", 300, 0, 100000);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> SOUL_EATER_MAX_HEALTH_MULTIPLIER_LIMIT = BUILDER
+            .comment("Maximum multiplier for player's max HP from Soul Eater.\n" +
+                    "Example: 2.0 = Player's max HP can be increased up to 200%.")
+            .defineInRange("soulEaterMaxHealthMultiplierLimit", 2.0, 0.0, 100.0);
+
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static double EnigmaticDieMobDropChance;
@@ -162,6 +190,12 @@ public class Config
     public static double UnequalExchangePlayerHealthReduction;
     public static double UnequalExchangeStatDebuff;
     public static int UnequalExchangeDebuffDuration;
+    public static double SoulEaterChargedAttackDamagePerHP;
+    public static int SoulEaterChargeDuration;
+    public static double SoulEaterHealPercentOnKill;
+    public static double SoulEaterMaxHealthStealPercent;
+    public static int SoulEaterMaxHealthBuffDuration;
+    public static double SoulEaterMaxHealthMultiplierLimit;
 
     public static List<ResourceLocation> lootTables;
 
@@ -184,6 +218,12 @@ public class Config
         UnequalExchangePlayerHealthReduction = UNEQUAL_EXCHANGE_PLAYER_HEALTH_REDUCTION.get();
         UnequalExchangeStatDebuff = UNEQUAL_EXCHANGE_STAT_DEBUFF.get();
         UnequalExchangeDebuffDuration = UNEQUAL_EXCHANGE_DEBUFF_DURATION.get();
+        SoulEaterChargedAttackDamagePerHP = SOUL_EATER_CHARGED_ATTACK_DAMAGE_PER_HP.get();
+        SoulEaterChargeDuration = SOUL_EATER_CHARGE_DURATION.get();
+        SoulEaterHealPercentOnKill = SOUL_EATER_HEAL_PERCENT_ON_KILL.get();
+        SoulEaterMaxHealthStealPercent = SOUL_EATER_MAX_HEALTH_STEAL_PERCENT.get();
+        SoulEaterMaxHealthBuffDuration = SOUL_EATER_MAX_HEALTH_BUFF_DURATION.get();
+        SoulEaterMaxHealthMultiplierLimit = SOUL_EATER_MAX_HEALTH_MULTIPLIER_LIMIT.get();
 
         lootTables = LOOT_TABLES.get().stream()
                 .map(ResourceLocation::new)

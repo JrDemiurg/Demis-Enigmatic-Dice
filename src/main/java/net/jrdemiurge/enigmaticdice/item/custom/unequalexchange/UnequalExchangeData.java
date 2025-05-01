@@ -26,6 +26,10 @@ public class UnequalExchangeData {
         return hitCount;
     }
 
+    public int getTimeLeftTicks() {
+        return timeLeftTicks;
+    }
+
     public void reset() {
         hitCount = 0;
         timeLeftTicks = -10;

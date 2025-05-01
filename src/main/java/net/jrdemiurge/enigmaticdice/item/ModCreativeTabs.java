@@ -19,6 +19,7 @@ public class ModCreativeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ENIGAMTIC_DIE.get());
                         output.accept(ModItems.UNEQUAL_EXCHANGE.get());
+                        output.accept(ModItems.SOUL_EATER.get());
                     })
                     .build());
 

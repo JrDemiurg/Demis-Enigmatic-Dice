@@ -2,6 +2,7 @@
   "creativetab.enigmaticdice_tab": "§5Enigmatic Dice",
   "item.enigmaticdice.enigmatic_die": "§dEnigmatic Die",
   "item.enigmaticdice.unequal_exchange": "§4Unequal Exchange",
+  "item.enigmaticdice.soul_eater": "§dSoul Eater",
 
   "tooltip.enigmaticdice.holdShift": "§5Hold §6Shift§5 to see details.",
 
@@ -18,6 +19,14 @@
   "tooltip.enigmaticdice.unequal_exchange_7": "§6-%1$s§d Attack Speed",
   "tooltip.enigmaticdice.unequal_exchange_8": "§6-%1$s§d Armor",
   "tooltip.enigmaticdice.unequal_exchange_9": "§6-%1$s§d Armor Toughness",
+
+  "tooltip.enigmaticdice.soul_eater_1": "§dOn Use:",
+  "tooltip.enigmaticdice.soul_eater_2": "§5- You take damage equal to §620% §dof your maximum health§5 every §60.5 second.",
+  "tooltip.enigmaticdice.soul_eater_3": "§5- Your next attack will deal an additional §6%1$s §dmagic damage§5 for every §61§d health§5 spent.",
+  "tooltip.enigmaticdice.soul_eater_4": "§5- If this attack kills the target, you will restore §650% §dof the health spent.",
+  "tooltip.enigmaticdice.soul_eater_5": "§dOn Kill:",
+  "tooltip.enigmaticdice.soul_eater_6": "§5- You restore §6%1$s §dof the target’s maximum health.",
+  "tooltip.enigmaticdice.soul_eater_7": "§5- You get a maximum health boost equal to §6%1$s §dof the target's maximum health §5for §6%2$s §dminutes§5, but no more than §6%3$s §dof your maximum health.",
 
   "enigmaticdice.effect.luck": "§d§oMay luck always be on your side",
   "enigmaticdice.effect.damage_boost": "§d§oYou are stronger than you think",
@@ -91,5 +100,10 @@
   "enigmaticdice.renameditem.the_one_ring": "§4The One Ring",
   "enigmaticdice.renameditem.earth_heart": "§dHeart of Creation",
 
-  "sounds.enigmaticdice.unequal_exchange_hit" : "Unequal Exchange hit"
+  "effect.enigmaticdice.soul_eater_charged_hit": "Charged Hit",
+  "effect.enigmaticdice.soul_eater_health_boost": "Health Boost",
+  "effect.enigmaticdice.unequal_exchange_debuffs": "Unequal Exchange",
+
+  "sounds.enigmaticdice.unequal_exchange_hit" : "Unequal Exchange hit",
+  "sounds.enigmaticdice.soul_eater_charged_hit" : "Soul Eater Charged Hit"
 }

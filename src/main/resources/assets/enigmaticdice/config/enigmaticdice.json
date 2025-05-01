@@ -96,6 +96,15 @@
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.aqua"
     },
+    "enigmaticdice_give_soul_eater": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 100,
+      "item": "enigmaticdice:soul_eater",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.gold"
+    },
     "born_in_chaos_give_phantom_bomb": {
       "enabled": true,
       "requiredMod": "born_in_chaos_v1",

@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.jrdemiurge.enigmaticdice.commands.EnigmaticDiceCommand;
 import net.jrdemiurge.enigmaticdice.commands.EnigmaticDiceGetLuckCommand;
 import net.jrdemiurge.enigmaticdice.commands.EnigmaticDiceSimulateCommand;
+import net.jrdemiurge.enigmaticdice.effect.ModEffects;
 import net.jrdemiurge.enigmaticdice.event.BlockBreakHandler;
 import net.jrdemiurge.enigmaticdice.event.LootEventHandler;
 import net.jrdemiurge.enigmaticdice.event.MobDropHandler;
@@ -37,6 +38,7 @@ public class EnigmaticDice {
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModSounds.register(modEventBus);
+        ModEffects.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

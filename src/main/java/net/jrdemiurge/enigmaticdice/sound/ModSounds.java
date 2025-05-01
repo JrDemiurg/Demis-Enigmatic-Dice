@@ -14,6 +14,8 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> UNEQUAL_EXCHANGE_HIT = registerSoundEvents("unequal_exchange_hit");
 
+    public static final RegistryObject<SoundEvent> SOUL_EATER_CHARGED_HIT = registerSoundEvents("soul_eater_charged_hit");
+
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(EnigmaticDice.MOD_ID, name)));

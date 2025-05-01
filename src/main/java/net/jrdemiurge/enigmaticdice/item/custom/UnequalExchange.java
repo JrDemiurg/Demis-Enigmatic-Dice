@@ -1,6 +1,7 @@
 package net.jrdemiurge.enigmaticdice.item.custom;
 
 import net.jrdemiurge.enigmaticdice.Config;
+import net.jrdemiurge.enigmaticdice.effect.ModEffects;
 import net.jrdemiurge.enigmaticdice.item.custom.unequalexchange.UnequalExchangeData;
 import net.jrdemiurge.enigmaticdice.item.custom.unequalexchange.UnequalExchangeDataStorage;
 import net.jrdemiurge.enigmaticdice.sound.ModSounds;
@@ -10,6 +11,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -38,7 +40,7 @@ public class UnequalExchange extends SwordItem {
     private static final UUID ARMOR_TOUGHNESS_DEBUFF_UUID = UUID.fromString("a6fb771d-97de-4883-86a8-1ba2b8db59c2");
     private static final UUID SPEED_DEBUFF_UUID = UUID.fromString("68403af9-c76e-4b08-8196-f264d872876d");
 
-    // залить мод
+    // добавить чёрный список мобов
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (!attacker.level().isClientSide && attacker instanceof Player player) {
@@ -93,6 +95,8 @@ public class UnequalExchange extends SwordItem {
         if (player.getHealth() > player.getMaxHealth()) {
             player.setHealth(player.getMaxHealth());
         }
+
+        player.addEffect(new MobEffectInstance(ModEffects.UNEQUAL_EXCHANGE_DEBUFFS.get(), data.getTimeLeftTicks(), data.getHitCount() - 1));
     }
 
     private static void removeModifierIfExists(Player player, Attribute attribute, UUID uuid) {

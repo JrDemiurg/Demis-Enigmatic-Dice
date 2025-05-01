@@ -4,5 +4,11 @@
     "sounds" : [
       "enigmaticdice:unequal_exchange_hit"
     ]
+  },
+  "soul_eater_charged_hit": {
+    "subtitles": "sounds.enigmaticdice.soul_eater_charged_hit",
+    "sounds" : [
+      "enigmaticdice:soul_eater_charged_hit"
+    ]
   }
 }
