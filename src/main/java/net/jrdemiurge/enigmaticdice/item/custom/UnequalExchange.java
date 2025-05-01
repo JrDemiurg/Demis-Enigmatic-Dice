@@ -11,6 +11,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -51,9 +52,15 @@ public class UnequalExchange extends SwordItem {
 
                 float targetNewHealth = target.getHealth() - targetMaxHealth * (float) Config.UnequalExchangeTargetHealthReduction;
                 target.setHealth(Math.max(targetNewHealth, 0.0F));
+                if (target.getHealth() <= 0.0F) {
+                    target.die(attacker.damageSources().playerAttack(player));
+                }
 
                 float attackerNewHealth = attacker.getHealth() - attackerMaxHealth * (float) Config.UnequalExchangePlayerHealthReduction;
                 attacker.setHealth(Math.max(attackerNewHealth, 0.0F));
+                if (attacker.getHealth() <= 0.0F) {
+                    attacker.die(attacker.damageSources().playerAttack(player));
+                }
 
                 UnequalExchangeData data = UnequalExchangeDataStorage.get(player);
                 data.onHit();
