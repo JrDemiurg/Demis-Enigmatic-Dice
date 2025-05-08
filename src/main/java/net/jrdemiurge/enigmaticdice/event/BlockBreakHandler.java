@@ -26,7 +26,6 @@ public class BlockBreakHandler {
             if (level.random.nextFloat() < Config.EnigmaticDieBlockDropChance) {
                 ItemStack drop = new ItemStack(ModItems.ENIGAMTIC_DIE.get());
 
-                // Создаем предмет в мире на месте сломанного блока
                 ItemEntity entity = new ItemEntity(level,
                         event.getPos().getX() + 0.5,
                         event.getPos().getY() + 0.5,
@@ -34,7 +33,7 @@ public class BlockBreakHandler {
                         drop);
 
                 level.addFreshEntity(entity);
-                player.displayClientMessage(Component.literal("§6How did this end up here?"), false);
+                player.displayClientMessage(Component.translatable("enigmaticdice.block_break"), false);
             }
         }
     }

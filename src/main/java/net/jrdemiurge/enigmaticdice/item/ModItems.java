@@ -1,11 +1,8 @@
 package net.jrdemiurge.enigmaticdice.item;
 
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
-import net.jrdemiurge.enigmaticdice.item.custom.EnigmaticDie;
-import net.jrdemiurge.enigmaticdice.item.custom.SoulEater;
-import net.jrdemiurge.enigmaticdice.item.custom.UnequalExchange;
+import net.jrdemiurge.enigmaticdice.item.custom.*;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -24,6 +21,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> SOUL_EATER = ITEMS.register("soul_eater",
             () -> new SoulEater(Tiers.NETHERITE, 5, -2F, new Item.Properties().fireResistant()));
+
+    public static final RegistryObject<Item> ANTIMATTER = ITEMS.register("antimatter",
+            () -> new Antimatter(new Item.Properties()));
+
+    public static final RegistryObject<Item> FOURLEAFCLEVER = ITEMS.register("four_leaf_clever",
+            () -> new FourLeafClover(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

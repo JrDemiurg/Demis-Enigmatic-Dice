@@ -30,6 +30,11 @@
       "requiredMod": "minecraft",
       "rarity": 20
     },
+    "minecraft_teleport_to_world_edge": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 100
+    },
     "minecraft_summon_horse": {
       "enabled": true,
       "requiredMod": "minecraft",
@@ -87,6 +92,24 @@
     }
   },
   "itemEvents": {
+    "minecraft_give_bedrock": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 1000,
+      "item": "minecraft:bedrock",
+      "amount": 8,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.aqua"
+    },
+    "minecraft_give_light": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 1000,
+      "item": "minecraft:light",
+      "amount": 16,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.aqua"
+    },
     "enigmaticdice_give_unequal_exchange": {
       "enabled": true,
       "requiredMod": "enigmaticdice",
@@ -104,6 +127,24 @@
       "amount": 1,
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.gold"
+    },
+    "enigmaticdice_give_four_leaf_clever": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 5,
+      "item": "enigmaticdice:four_leaf_clever",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.blue"
+    },
+    "enigmaticdice_give_antimatter": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 100,
+      "item": "enigmaticdice:antimatter",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.antimatter"
     },
     "born_in_chaos_give_phantom_bomb": {
       "enabled": true,
@@ -167,6 +208,15 @@
       "amount": 8,
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.blue"
+    },
+    "enigmaticlegacy_give_twisted_potion": {
+      "enabled": true,
+      "requiredMod": "enigmaticlegacy",
+      "rarity": 20,
+      "item": "enigmaticlegacy:twisted_potion",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.dark_purple"
     },
     "enigmaticlegacy_give_golem_heart": {
       "enabled": true,
@@ -445,6 +495,15 @@
       "amount": 1,
       "nbt": "{Enchantments:[{id:\"alexscaves:double_stab\",lvl:4}]}",
       "chatMessage": "enigmaticdice.gift.dark_purple"
+    },
+    "skyarena_give_mob_analyzer": {
+      "enabled": true,
+      "requiredMod": "skyarena",
+      "rarity": 1000,
+      "item": "skyarena:mob_analyzer",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.aqua"
     }
   },
   "teleportBiomes": [

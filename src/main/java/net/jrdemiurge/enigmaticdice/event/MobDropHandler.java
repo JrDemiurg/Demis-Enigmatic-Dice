@@ -3,6 +3,7 @@ package net.jrdemiurge.enigmaticdice.event;
 import net.jrdemiurge.enigmaticdice.Config;
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -24,12 +25,13 @@ public class MobDropHandler {
             if (player.level().random.nextFloat() < Config.EnigmaticDieMobDropChance) {
                 ItemStack drop = new ItemStack(ModItems.ENIGAMTIC_DIE.get());
 
-                // Добавляем предмет в дроп
                 event.getDrops().add(new ItemEntity(player.level(),
                         event.getEntity().getX(),
                         event.getEntity().getY(),
                         event.getEntity().getZ(),
                         drop));
+
+                player.displayClientMessage(Component.translatable("enigmaticdice.mob_drop."+ player.level().random.nextInt(5)), false);
             }
         }
     }

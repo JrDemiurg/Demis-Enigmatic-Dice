@@ -93,6 +93,10 @@ public class RandomEventManager {
                     events.add(new TeleportToStructureEvent(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "minecraft_teleport_to_world_edge" -> {
+                    events.add(new TeleportToWorldEdgeEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
                 case "minecraft_summon_horse" -> {
                     events.add(new SummonTamedHorse(config.rarity));
                     eventNames.add(eventName);
