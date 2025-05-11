@@ -1,0 +1,135 @@
+{
+  "creativetab.enigmaticdice_tab": "§5Enigmatic Dice",
+  "item.enigmaticdice.enigmatic_die": "§dЗагадочная игральная кость",
+  "item.enigmaticdice.unequal_exchange": "§4Неравный обмен",
+  "item.enigmaticdice.soul_eater": "§dПожиратель душ",
+  "item.enigmaticdice.antimatter": "§dАнтиматерия",
+  "item.enigmaticdice.four_leaf_clever": "§dЧетырёхлистный клевер",
+
+  "tooltip.enigmaticdice.holdShift": "§5Удерживайте §6Shift§5 для деталей.",
+
+  "tooltip.enigmaticdice.enigmatic_die": "§dПодарок Пандоры...",
+  "tooltip.enigmaticdice.enigmatic_die_2": "§5Вызывает случайное §6событие§5 при использовании.",
+  "tooltip.enigmaticdice.enigmatic_die_3": "§4Не используйте дома!",
+
+  "tooltip.enigmaticdice.unequal_exchange_1": "§dПри ударе:",
+  "tooltip.enigmaticdice.unequal_exchange_2": "§5- Цель получает урон, равный §6%1$s §dот её максимального здоровья.",
+  "tooltip.enigmaticdice.unequal_exchange_3": "§5- Вы получаете урон, равный §6%1$s §dот своего максимального здоровья.",
+  "tooltip.enigmaticdice.unequal_exchange_4": "§dС каждым ударом§5 вы получаете дебафф на §6%1$s секунд§5:",
+  "tooltip.enigmaticdice.unequal_exchange_5": "§6-%1$s§d к максимальному здоровью",
+  "tooltip.enigmaticdice.unequal_exchange_6": "§6-%1$s§d к скорости передвижения",
+  "tooltip.enigmaticdice.unequal_exchange_7": "§6-%1$s§d к скорости атаки",
+  "tooltip.enigmaticdice.unequal_exchange_8": "§6-%1$s§d к броне",
+  "tooltip.enigmaticdice.unequal_exchange_9": "§6-%1$s§d к твёрдости брони",
+
+  "tooltip.enigmaticdice.soul_eater_1": "§dПри использовании:",
+  "tooltip.enigmaticdice.soul_eater_2": "§5- Вы получаете урон в размере §620% §dот максимального здоровья§5 каждые §60.5 секунд.",
+  "tooltip.enigmaticdice.soul_eater_3": "§5- Следующая атака нанесёт дополнительных §6%1$s §dмагического урона§5 за каждую потраченную §61§d единицу здоровья.",
+  "tooltip.enigmaticdice.soul_eater_4": "§5- Если атака убивает цель, вы восстанавливаете §650% §dот потраченного на атаку здоровья.",
+  "tooltip.enigmaticdice.soul_eater_5": "§dПри убийстве:",
+  "tooltip.enigmaticdice.soul_eater_6": "§5- Вы восстанавливаете §6%1$s §dот максимального здоровья цели.",
+  "tooltip.enigmaticdice.soul_eater_7": "§5- Вы получаете прирост к макс. здоровью равный §6%1$s §dот макс. здоровья цели §5на §6%2$s §dминут§5, но не более §6%3$s §dот вашего макс. здоровья.",
+
+  "tooltip.enigmaticdice.antimatter.1": "§6Shift + ПКМ§5 по блоку, чтобы его §6аннигилировать§5.",
+  "tooltip.enigmaticdice.antimatter.2": "§5Также вызывает мощный §6взрыв.",
+  "tooltip.enigmaticdice.antimatter.3": "§5Можно использовать §6раздатчиком.",
+
+  "tooltip.enigmaticdice.four_leaf_clever": "§6+1 §dк Удаче§5 за каждый §6Клевер§5 в инвентаре.",
+
+  "enigmaticdice.block_break": "§6Откуда это здесь?",
+
+  "enigmaticdice.mob_drop.0": "§6Интересно... даже из них это начало выпадать.",
+  "enigmaticdice.mob_drop.1": "§6Забавно. Он носил с собой то, что принадлежит тебе.",
+  "enigmaticdice.mob_drop.2": "§6Ты забрал то, что всегда было твоим.",
+  "enigmaticdice.mob_drop.3": "§6Похоже, он и не знал, что носит это с собой.",
+  "enigmaticdice.mob_drop.4": "§6А зачем он вообще это носил с собой?",
+
+  "enigmaticdice.advancement_earned.0": "§6Хмм... достойное достижение. Полагаю, ты это заслужил.",
+  "enigmaticdice.advancement_earned.1": "§6Кто бы мог подумать... а ты не так прост. Возьми кубик.",
+  "enigmaticdice.advancement_earned.2": "§6Что ж, неплохо. Держи за старания.",
+  "enigmaticdice.advancement_earned.3": "§6Так держать. Думаю, ты это заслужил.",
+  "enigmaticdice.advancement_earned.4": "§6Отличная работа. Это тебе.",
+
+  "enigmaticdice.effect.luck": "§d§oПусть удача всегда будет на твоей стороне",
+  "enigmaticdice.effect.damage_boost": "§d§oТы сильнее, чем думаешь",
+  "enigmaticdice.effect.movement_speed": "§d§oПоспеши!",
+  "enigmaticdice.effect.dig_speed": "§d§oЯ верю в тебя",
+  "enigmaticdice.effect.health_boost": "§d§oБереги себя",
+  "enigmaticdice.effect.night_vision": "§d§oБудь внимательнее",
+  "enigmaticdice.effect.invisibility": "§d§oБудь осторожен",
+  "enigmaticdice.effect.fire_resistance": "§d§oДаже огню тебя не взять",
+  "enigmaticdice.effect.regeneration": "§d§oПусть рана станет лишь воспоминанием",
+
+  "enigmaticdice.event.safe_message": "§6Теперь ты в безопасности",
+  "enigmaticdice.event.explosion": "§cВЗРЫВ?",
+  "enigmaticdice.event.lightning_wrath": "§cВот как выглядит божественный гнев!",
+  "enigmaticdice.event.mimic": "§5О, похоже, у тебя новый друг! Хотя... скорее он заинтересован твоим инвентарём.",
+  "enigmaticdice.event.warped_toads": "§9Похоже, вселенная решила, что тебе не хватает жаб. Вот тебе три.",
+
+  "enigmaticdice.event.centipede.0": "§9Почему в этом мире так много ног? Ах да... Это теперь твоя проблема.",
+  "enigmaticdice.event.centipede.1": "§9Сколько ног у сороконожки? Надеюсь, у тебя есть время посчитать.",
+  "enigmaticdice.event.centipede.2": "§9Кто заказывал сверхдлинного монстра?",
+  "enigmaticdice.event.centipede.3": "§9Он мог бы быть и больше... но тогда игра бы вылетела.",
+  "enigmaticdice.event.centipede.4": "§9Если это сон — пора просыпаться. А если нет... то пора бежать!.",
+  "enigmaticdice.event.centipede.5": "§9Поздравляем! Ты призвал самого длинного питомца! Жаль, он тебя не любит.",
+  "enigmaticdice.event.centipede.6": "§9Из всех возможных исходов... Тебе достался самый многоногий.",
+  "enigmaticdice.event.centipede.7": "§9Жуки в доме — это плохо. А когда дом внутри жука — ещё хуже.",
+  "enigmaticdice.event.centipede.8": "§9Ты его разбудил. Похоже он встал не с той ноги...",
+
+  "enigmaticdice.event.wonderland_field.0": "§5Чувствуется запах сокровищ... Может, осмотришься?",
+  "enigmaticdice.event.wonderland_field.1": "§5На твоём месте я бы осмотрелся... Возможно, рядом что-то ценное!",
+  "enigmaticdice.event.wonderland_field.2": "§5Хорошие новости: поблизости появились сундуки! Плохих новостей нет. Наверное...",
+
+  "enigmaticdice.event.teleport_to_biome.0": "§5Прекрасное место!",
+  "enigmaticdice.event.teleport_to_biome.1": "§5Вот новая точка на твоей карте приключений!",
+  "enigmaticdice.event.teleport_to_biome.2": "§5Постарайся не испортить этот биом, ладно?",
+  "enigmaticdice.event.teleport_to_biome.3": "§5Ты понятия не имеешь, куда тебя занесёт...",
+  "enigmaticdice.event.teleport_to_biome.4": "§5Поздравляю, ты открыл ещё один уголок мира!",
+  "enigmaticdice.event.teleport_to_biome.5": "§5Иногда самые удивительные приключения начинаются с одного телепорта...",
+
+  "enigmaticdice.event.teleport_to_structure.0": "§5Приключение зовёт на запад!",
+  "enigmaticdice.event.teleport_to_structure.1": "§5На западе что-то интересное!",
+  "enigmaticdice.event.teleport_to_structure.2": "§5Похоже, тебе нужно идти на запад.",
+  "enigmaticdice.event.teleport_to_structure.3": "§5Ты близок к чему-то важному — иди на запад!",
+
+  "enigmaticdice.event.teleport_to_world_edge": "§6Похоже, путь домой будет долгим.",
+
+  "enigmaticdice.event.horse.0": "§9Только не говори, что у тебя нет водительских прав на лошадь.",
+  "enigmaticdice.event.horse.1": "§9Кто вызывал Uber DeLuxe?",
+
+  "enigmaticdice.event.candicorn": "§9Ты призвал десерт с копытами. Доставай мармеладный меч!",
+  "enigmaticdice.event.carcass": "§9Теперь у тебя есть собственная армия нежити.",
+  "enigmaticdice.event.raycat": "§9У него точно девять жизней?",
+  "enigmaticdice.event.subterranodon": "§9Это планер?",
+  "enigmaticdice.event.vallumraptor": "§9Похоже, у тебя новые друзья.",
+
+  "enigmaticdice.gift.white": "§fВот, это подарок.",
+  "enigmaticdice.gift.dark_green": "§2Вот, это подарок.",
+  "enigmaticdice.gift.blue": "§9Вот, это подарок.",
+  "enigmaticdice.gift.dark_purple": "§5Вот, это подарок.",
+  "enigmaticdice.gift.gold": "§6Вот, это подарок.",
+  "enigmaticdice.gift.aqua": "§bВот, это подарок.",
+  "enigmaticdice.gift.red": "§cВот, это подарок.",
+
+  "enigmaticdice.gift.antimatter": "§6Кто бы мог подумать, что антиматерия выглядит именно так?",
+
+  "item.enigmaticdice.traveler_potion": "Зелье путешественника",
+  "item.enigmaticdice.miner_potion": "Зелье шахтёра",
+  "item.enigmaticdice.warrior_potion": "Зелье воина",
+  "item.enigmaticdice.diver_potion": "Зелье дайвера",
+  "item.enigmaticdice.potion_of_life": "Зелье жизни",
+  "item.enigmaticdice.iron_skin_potion": "Зелье железной кожи",
+  "item.enigmaticdice.luck_potion": "Зелье удачи",
+  "item.enigmaticdice.temporal_protection_potion": "Зелье временной защиты",
+  "item.enigmaticdice.arrow_of_doom": "Проклятая стрела",
+
+  "enigmaticdice.renameditem.the_one_ring": "§4Кольцо всевластия",
+  "enigmaticdice.renameditem.earth_heart": "§dСердце Мироздания",
+
+  "effect.enigmaticdice.soul_eater_charged_hit": "Заряженный удар",
+  "effect.enigmaticdice.soul_eater_health_boost": "Прилив здоровья",
+  "effect.enigmaticdice.unequal_exchange_debuffs": "Неравный обмен",
+
+  "sounds.enigmaticdice.unequal_exchange_hit": "Удар неравного обмена",
+  "sounds.enigmaticdice.soul_eater_charged_hit": "Заряженный удар пожирателя душ"
+}

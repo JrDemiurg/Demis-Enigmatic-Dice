@@ -1,0 +1,135 @@
+{
+  "creativetab.enigmaticdice_tab": "§5Enigmatic Dice",
+  "item.enigmaticdice.enigmatic_die": "§dDado Enigmático",
+  "item.enigmaticdice.unequal_exchange": "§4Intercambio Desigual",
+  "item.enigmaticdice.soul_eater": "§dDevorador de Almas",
+  "item.enigmaticdice.antimatter": "§dAntimateria",
+  "item.enigmaticdice.four_leaf_clever": "§dTrébol de Cuatro Hojas",
+
+  "tooltip.enigmaticdice.holdShift": "§5Mantén presionado §6Shift§5 para ver los detalles.",
+
+  "tooltip.enigmaticdice.enigmatic_die": "§dUn regalo de Pandora...",
+  "tooltip.enigmaticdice.enigmatic_die_2": "§5Causa un §6evento§5 aleatorio al usarse.",
+  "tooltip.enigmaticdice.enigmatic_die_3": "§4¡No lo uses en casa!",
+
+  "tooltip.enigmaticdice.unequal_exchange_1": "§dAl golpear:",
+  "tooltip.enigmaticdice.unequal_exchange_2": "§5- El objetivo recibe daño igual al §6%1$s §dde su salud máxima.",
+  "tooltip.enigmaticdice.unequal_exchange_3": "§5- El portador recibe daño igual al §6%1$s §dde su salud máxima.",
+  "tooltip.enigmaticdice.unequal_exchange_4": "§dCon cada golpe§5, el portador recibe un §6debuff de %1$s segundos§5:",
+  "tooltip.enigmaticdice.unequal_exchange_5": "§6-%1$s§d Salud Máxima",
+  "tooltip.enigmaticdice.unequal_exchange_6": "§6-%1$s§d Velocidad de Movimiento",
+  "tooltip.enigmaticdice.unequal_exchange_7": "§6-%1$s§d Velocidad de Ataque",
+  "tooltip.enigmaticdice.unequal_exchange_8": "§6-%1$s§d Armadura",
+  "tooltip.enigmaticdice.unequal_exchange_9": "§6-%1$s§d Dureza de la Armadura",
+
+  "tooltip.enigmaticdice.soul_eater_1": "§dAl usar:",
+  "tooltip.enigmaticdice.soul_eater_2": "§5- Recibes daño igual al §620% §dde tu salud máxima§5 cada §60.5 segundos.",
+  "tooltip.enigmaticdice.soul_eater_3": "§5- Tu próximo ataque causará §6%1$s §dde daño mágico§5 adicional por cada §61§d de salud§5 gastada.",
+  "tooltip.enigmaticdice.soul_eater_4": "§5- Si este ataque mata al objetivo, restauras el §650% §dde la salud gastada en el ataque.",
+  "tooltip.enigmaticdice.soul_eater_5": "§dAl matar:",
+  "tooltip.enigmaticdice.soul_eater_6": "§5- Restauras el §6%1$s §dde la salud máxima del objetivo.",
+  "tooltip.enigmaticdice.soul_eater_7": "§5- Ganas un aumento de salud máxima igual al §6%1$s §dde la salud máxima del objetivo §5por §6%2$s §dminutos§5, pero no más del §6%3$s §dde tu salud máxima.",
+
+  "tooltip.enigmaticdice.antimatter.1": "§6Shift + Clic derecho§5 en cualquier bloque para §6aniquilarlo§5.",
+  "tooltip.enigmaticdice.antimatter.2": "§5También activa una §6explosión muy poderosa.",
+  "tooltip.enigmaticdice.antimatter.3": "§5Puede usarse con un §6dispensador.",
+
+  "tooltip.enigmaticdice.four_leaf_clever": "§6+1 §da la Suerte§5 por cada §6Trébol§5 en tu inventario.",
+
+  "enigmaticdice.block_break": "§6¿Cómo terminó esto aquí?",
+
+  "enigmaticdice.mob_drop.0": "§6Interesante... incluso ellos han empezado a soltarlo.",
+  "enigmaticdice.mob_drop.1": "§6Gracioso. Llevaba algo que te pertenece.",
+  "enigmaticdice.mob_drop.2": "§6Tomaste lo que siempre debió ser tuyo.",
+  "enigmaticdice.mob_drop.3": "§6Parece que ni sabía que lo llevaba.",
+  "enigmaticdice.mob_drop.4": "§6¿Y por qué lo estaba cargando, de todos modos?",
+
+  "enigmaticdice.advancement_earned.0": "§6Hmm... un logro digno. Supongo que te lo has ganado.",
+  "enigmaticdice.advancement_earned.1": "§6Quién lo diría... no eres tan simple después de todo. Toma el dado.",
+  "enigmaticdice.advancement_earned.2": "§6Vaya, no está mal. Toma esto por tu esfuerzo.",
+  "enigmaticdice.advancement_earned.3": "§6Sigue así. Diría que te lo has ganado.",
+  "enigmaticdice.advancement_earned.4": "§6Bien hecho. Esto es para ti.",
+
+  "enigmaticdice.effect.luck": "§d§oQue la suerte siempre esté de tu lado",
+  "enigmaticdice.effect.damage_boost": "§d§oEres más fuerte de lo que crees",
+  "enigmaticdice.effect.movement_speed": "§d§o¡Apresúrate!",
+  "enigmaticdice.effect.dig_speed": "§d§oCreo en ti",
+  "enigmaticdice.effect.health_boost": "§d§oCuídate",
+  "enigmaticdice.effect.night_vision": "§d§oSé más atento",
+  "enigmaticdice.effect.invisibility": "§d§oTen cuidado",
+  "enigmaticdice.effect.fire_resistance": "§d§oNi el fuego puede contigo",
+  "enigmaticdice.effect.regeneration": "§d§oQue la herida se vuelva solo un recuerdo",
+
+  "enigmaticdice.event.safe_message": "§6Ahora estás a salvo",
+  "enigmaticdice.event.explosion": "§c¿EXPLOSIÓN?",
+  "enigmaticdice.event.lightning_wrath": "§c¡Así se ve la ira divina!",
+  "enigmaticdice.event.mimic": "§5¡Oh, parece que tienes un nuevo amigo! Aunque... creo que le interesa más tu inventario.",
+  "enigmaticdice.event.warped_toads": "§9Parece que el universo decidió que no tenías suficientes sapos. Ahora tienes tres.",
+
+  "enigmaticdice.event.centipede.0": "§9¿Por qué hay tantas patas en este mundo? Ah, claro... Ese es tu problema.",
+  "enigmaticdice.event.centipede.1": "§9¿Cuántas patas tiene un ciempiés? Espero que tengas tiempo para contarlas.",
+  "enigmaticdice.event.centipede.2": "§9¿Alguien pidió un monstruo extra largo? ¡Sin reembolsos!",
+  "enigmaticdice.event.centipede.3": "§9Pudo haber sido más grande... pero entonces el juego se habría bloqueado.",
+  "enigmaticdice.event.centipede.4": "§9Si esto es un sueño, es hora de despertar. Si no lo es... entonces estás perdido.",
+  "enigmaticdice.event.centipede.5": "§9¡Felicidades! ¡Has invocado a la mascota más larga! Lástima que no le gustas.",
+  "enigmaticdice.event.centipede.6": "§9De todos los posibles resultados... Te tocó el que tiene más patas.",
+  "enigmaticdice.event.centipede.7": "§9Los bichos en casa son molestos. Pero cuando la casa está dentro del bicho, es peor.",
+  "enigmaticdice.event.centipede.8": "§9Lo despertaste. Se levantó con el pie equivocado... o con los cien equivocados.",
+
+  "enigmaticdice.event.wonderland_field.0": "§5Se siente un aire de tesoro... ¿Tal vez deberías echar un vistazo?",
+  "enigmaticdice.event.wonderland_field.1": "§5Si fuera tú, miraría a mi alrededor… ¡Puede que haya algo valioso cerca!",
+  "enigmaticdice.event.wonderland_field.2": "§5Buenas noticias: ¡han aparecido cofres cerca! No hay malas noticias. Probablemente.",
+
+  "enigmaticdice.event.teleport_to_biome.0": "§5¡Un lugar maravilloso!",
+  "enigmaticdice.event.teleport_to_biome.1": "§5¡Aquí tienes un nuevo punto en tu mapa de aventuras!",
+  "enigmaticdice.event.teleport_to_biome.2": "§5Intenta no arruinar este bioma, ¿de acuerdo?",
+  "enigmaticdice.event.teleport_to_biome.3": "§5No tienes idea de dónde vas a terminar...",
+  "enigmaticdice.event.teleport_to_biome.4": "§5¡Felicidades, has descubierto otro rincón de este mundo!",
+  "enigmaticdice.event.teleport_to_biome.5": "§5A veces las aventuras más increíbles comienzan con un solo teletransporte...",
+
+  "enigmaticdice.event.teleport_to_structure.0": "§5¡La aventura te espera al oeste!",
+  "enigmaticdice.event.teleport_to_structure.1": "§5¡Hay algo interesante al oeste!",
+  "enigmaticdice.event.teleport_to_structure.2": "§5Parece que debes ir hacia el oeste.",
+  "enigmaticdice.event.teleport_to_structure.3": "§5Parece que te estás acercando a algo importante — ¡ve al oeste!",
+
+  "enigmaticdice.event.teleport_to_world_edge": "§6Parece que tu viaje de regreso a casa será largo.",
+
+  "enigmaticdice.event.horse.0": "§9No me digas que no tienes licencia de conducir para caballos.",
+  "enigmaticdice.event.horse.1": "§9¿Alguien pidió un Uber DeLuxe?",
+
+  "enigmaticdice.event.candicorn": "§9Pediste un postre con pezuñas. ¡Saca la espada de mermelada!",
+  "enigmaticdice.event.carcass": "§9Ahora tienes tu propio ejército de no-muertos.",
+  "enigmaticdice.event.raycat": "§9¿Está seguro de que tiene nueve vidas?",
+  "enigmaticdice.event.subterranodon": "§9¿Es un planeador?",
+  "enigmaticdice.event.vallumraptor": "§9Parece que has hecho nuevos amigos.",
+
+  "enigmaticdice.gift.white": "§fToma, es un regalo.",
+  "enigmaticdice.gift.dark_green": "§2Toma, es un regalo.",
+  "enigmaticdice.gift.blue": "§9Toma, es un regalo.",
+  "enigmaticdice.gift.dark_purple": "§5Toma, es un regalo.",
+  "enigmaticdice.gift.gold": "§6Toma, es un regalo.",
+  "enigmaticdice.gift.aqua": "§bToma, es un regalo.",
+  "enigmaticdice.gift.red": "§cToma, es un regalo.",
+
+  "enigmaticdice.gift.antimatter": "§6¿Quién lo diría? Así es como luce la antimateria.",
+
+  "item.enigmaticdice.traveler_potion": "Poción del Viajero",
+  "item.enigmaticdice.miner_potion": "Poción del Minero",
+  "item.enigmaticdice.warrior_potion": "Poción del Guerrero",
+  "item.enigmaticdice.diver_potion": "Poción del Buzo",
+  "item.enigmaticdice.potion_of_life": "Poción de la Vida",
+  "item.enigmaticdice.iron_skin_potion": "Poción de Piel de Hierro",
+  "item.enigmaticdice.luck_potion": "Poción de la Suerte",
+  "item.enigmaticdice.temporal_protection_potion": "Poción de Protección Temporal",
+  "item.enigmaticdice.arrow_of_doom": "Flecha de la Perdición",
+
+  "enigmaticdice.renameditem.the_one_ring": "§4El Anillo Único",
+  "enigmaticdice.renameditem.earth_heart": "§dCorazón de la Creación",
+
+  "effect.enigmaticdice.soul_eater_charged_hit": "Golpe Cargado",
+  "effect.enigmaticdice.soul_eater_health_boost": "Aumento de Salud",
+  "effect.enigmaticdice.unequal_exchange_debuffs": "Intercambio Desigual",
+
+  "sounds.enigmaticdice.unequal_exchange_hit": "Golpe de Intercambio Desigual",
+  "sounds.enigmaticdice.soul_eater_charged_hit": "Golpe Cargado del Devorador de Almas"
+}

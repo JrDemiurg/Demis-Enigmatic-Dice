@@ -25,7 +25,7 @@
   "tooltip.enigmaticdice.soul_eater_1": "§dOn Use:",
   "tooltip.enigmaticdice.soul_eater_2": "§5- You take damage equal to §620% §dof your maximum health§5 every §60.5 second.",
   "tooltip.enigmaticdice.soul_eater_3": "§5- Your next attack will deal an additional §6%1$s §dmagic damage§5 for every §61§d health§5 spent.",
-  "tooltip.enigmaticdice.soul_eater_4": "§5- If this attack kills the target, you will restore §650% §dof the health spent.",
+  "tooltip.enigmaticdice.soul_eater_4": "§5- If this attack kills the target, you will restore §650% §dof the health spent on the attack.",
   "tooltip.enigmaticdice.soul_eater_5": "§dOn Kill:",
   "tooltip.enigmaticdice.soul_eater_6": "§5- You restore §6%1$s §dof the target’s maximum health.",
   "tooltip.enigmaticdice.soul_eater_7": "§5- You get a maximum health boost equal to §6%1$s §dof the target's maximum health §5for §6%2$s §dminutes§5, but no more than §6%3$s §dof your maximum health.",
@@ -61,7 +61,7 @@
   "enigmaticdice.effect.regeneration": "§d§oLet the wound become just a memory",
 
   "enigmaticdice.event.safe_message": "§6Now you are safe",
-  "enigmaticdice.event.explosion": "§cEXPLOSIONS?",
+  "enigmaticdice.event.explosion": "§cEXPLOSION?",
   "enigmaticdice.event.lightning_wrath": "§cThis is what divine wrath looks like!",
   "enigmaticdice.event.mimic": "§5Oh, looks like you've got a new friend! Though… I think he's more interested in your inventory.",
   "enigmaticdice.event.warped_toads": "§9Looks like the universe decided you didn't have enough toads. Now you have three.",
