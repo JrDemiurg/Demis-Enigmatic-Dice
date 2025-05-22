@@ -1,5 +1,6 @@
 package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 
+import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -39,7 +40,7 @@ public class SummonMimic implements RandomEvent {
         if (entity == null) return false;
 
         entity.moveTo(spawnPos.x, spawnPos.y, spawnPos.z, 0, 0);
-        entity.setCustomName(Component.literal("Minic")); // Название
+        entity.setCustomName(Component.literal("Minic"));
         pLevel.addFreshEntity(entity);
 
         if (entity instanceof LivingEntity livingEntity) {

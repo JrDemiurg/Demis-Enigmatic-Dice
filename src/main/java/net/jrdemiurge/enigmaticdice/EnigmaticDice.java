@@ -8,7 +8,6 @@ import net.jrdemiurge.enigmaticdice.effect.ModEffects;
 import net.jrdemiurge.enigmaticdice.event.BlockBreakHandler;
 import net.jrdemiurge.enigmaticdice.event.LootEventHandler;
 import net.jrdemiurge.enigmaticdice.event.MobDropHandler;
-import net.jrdemiurge.enigmaticdice.event.MobRenderHandler;
 import net.jrdemiurge.enigmaticdice.item.ModCreativeTabs;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
 import net.jrdemiurge.enigmaticdice.item.custom.Antimatter;
@@ -48,7 +47,6 @@ public class EnigmaticDice {
         MinecraftForge.EVENT_BUS.register(new LootEventHandler());
         MinecraftForge.EVENT_BUS.register(new MobDropHandler());
         MinecraftForge.EVENT_BUS.register(new BlockBreakHandler());
-        MinecraftForge.EVENT_BUS.register(new MobRenderHandler());
         modEventBus.addListener(this::addCreative);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);

@@ -16,6 +16,7 @@ public class EnigmaticDiceSimulateCommand {
 
     public static LiteralArgumentBuilder<CommandSourceStack> create() {
         return Commands.literal("enigmaticDiceSimulate")
+                .requires(source -> source.hasPermission(2))
                 .then(Commands.argument("count", IntegerArgumentType.integer(1))
                         .executes(EnigmaticDiceSimulateCommand::simulateEvents));
     }

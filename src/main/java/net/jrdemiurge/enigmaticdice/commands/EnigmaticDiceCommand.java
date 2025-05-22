@@ -21,6 +21,7 @@ public class EnigmaticDiceCommand {
 
     public static LiteralArgumentBuilder<CommandSourceStack> create() {
         return Commands.literal("enigmaticDice")
+                .requires(source -> source.hasPermission(2))
                 .executes(EnigmaticDiceCommand::triggerRandomEvent)
                 .then(Commands.argument("eventType", StringArgumentType.string())
                         .suggests(EnigmaticDiceCommand::suggestEventTypes)
