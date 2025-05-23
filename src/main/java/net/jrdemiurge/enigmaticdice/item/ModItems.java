@@ -25,8 +25,11 @@ public class ModItems {
     public static final RegistryObject<Item> ANTIMATTER = ITEMS.register("antimatter",
             () -> new Antimatter(new Item.Properties()));
 
-    public static final RegistryObject<Item> FOURLEAFCLEVER = ITEMS.register("four_leaf_clever",
+    public static final RegistryObject<Item> FOUR_LEAF_CLEVER = ITEMS.register("four_leaf_clever",
             () -> new FourLeafClover(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> GIANTS_RING = ITEMS.register("giants_ring",
+            () -> new GiantsRing(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

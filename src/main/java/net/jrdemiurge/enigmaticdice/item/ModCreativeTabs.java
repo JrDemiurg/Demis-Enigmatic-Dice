@@ -20,8 +20,9 @@ public class ModCreativeTabs {
                         output.accept(ModItems.ENIGAMTIC_DIE.get());
                         output.accept(ModItems.UNEQUAL_EXCHANGE.get());
                         output.accept(ModItems.SOUL_EATER.get());
-                        output.accept(ModItems.FOURLEAFCLEVER.get());
+                        output.accept(ModItems.FOUR_LEAF_CLEVER.get());
                         output.accept(ModItems.ANTIMATTER.get());
+                        output.accept(ModItems.GIANTS_RING.get());
                     })
                     .build());
 

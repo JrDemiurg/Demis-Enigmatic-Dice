@@ -146,6 +146,15 @@
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.antimatter"
     },
+    "enigmaticdice_give_giants_ring": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 100,
+      "item": "enigmaticdice:giants_ring",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.gold"
+    },
     "born_in_chaos_give_phantom_bomb": {
       "enabled": true,
       "requiredMod": "born_in_chaos_v1",

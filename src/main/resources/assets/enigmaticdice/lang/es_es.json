@@ -5,6 +5,7 @@
   "item.enigmaticdice.soul_eater": "§dDevorador de Almas",
   "item.enigmaticdice.antimatter": "§dAntimateria",
   "item.enigmaticdice.four_leaf_clever": "§dTrébol de Cuatro Hojas",
+  "item.enigmaticdice.giants_ring": "§dAnillo del Gigante",
 
   "tooltip.enigmaticdice.holdShift": "§5Mantén presionado §6Shift§5 para ver los detalles.",
 
@@ -35,6 +36,10 @@
   "tooltip.enigmaticdice.antimatter.3": "§5Puede usarse con un §6dispensador.",
 
   "tooltip.enigmaticdice.four_leaf_clever": "§6+1 §da la Suerte§5 por cada §6Trébol§5 en tu inventario.",
+
+  "tooltip.enigmaticdice.giants_ring_0": "§dSiente el poder de los gigantes.",
+  "tooltip.enigmaticdice.giants_ring_1": "§5Aumenta el §dtamaño§5 del portador en §61.5×§5.",
+  "tooltip.enigmaticdice.giants_ring_2": "§5Al §6correr§5, pisotea a los enemigos cercanos §6más pequeños que tú§5, causando daño según tu §6daño de ataque§5.",
 
   "enigmaticdice.block_break": "§6¿Cómo terminó esto aquí?",
 

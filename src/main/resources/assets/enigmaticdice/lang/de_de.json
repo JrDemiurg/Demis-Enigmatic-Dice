@@ -5,6 +5,7 @@
   "item.enigmaticdice.soul_eater": "§dSeelenfresser",
   "item.enigmaticdice.antimatter": "§dAntimaterie",
   "item.enigmaticdice.four_leaf_clever": "§dVierblättriges Kleeblatt",
+  "item.enigmaticdice.giants_ring": "§dRing der Riesen",
 
   "tooltip.enigmaticdice.holdShift": "§5Halte §6Shift§5, um Details zu sehen.",
 
@@ -35,6 +36,10 @@
   "tooltip.enigmaticdice.antimatter.3": "§5Kann mit einem §6Werfer§5 verwendet werden.",
 
   "tooltip.enigmaticdice.four_leaf_clever": "§6+1 §dGlück§5 für jedes §6Kleeblatt§5 im Inventar.",
+
+  "tooltip.enigmaticdice.giants_ring_0": "§dSpüre die Macht der Riesen.",
+  "tooltip.enigmaticdice.giants_ring_1": "§5Erhöht die §dGröße§5 des Trägers um §61,5×§5.",
+  "tooltip.enigmaticdice.giants_ring_2": "§5Beim §6Sprinten§5 zertrittst du nahe Feinde, die §6kleiner als du§5 sind, und verursachst Schaden basierend auf deinem §6Angriffsschaden§5.",
 
   "enigmaticdice.block_break": "§6Wie ist das hierher gekommen?",
 

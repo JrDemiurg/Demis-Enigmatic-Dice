@@ -5,6 +5,7 @@
   "item.enigmaticdice.soul_eater": "§dПожиратель душ",
   "item.enigmaticdice.antimatter": "§dАнтиматерия",
   "item.enigmaticdice.four_leaf_clever": "§dЧетырёхлистный клевер",
+  "item.enigmaticdice.giants_ring": "§dКольцо великана",
 
   "tooltip.enigmaticdice.holdShift": "§5Удерживайте §6Shift§5 для деталей.",
 
@@ -35,6 +36,10 @@
   "tooltip.enigmaticdice.antimatter.3": "§5Можно использовать §6раздатчиком.",
 
   "tooltip.enigmaticdice.four_leaf_clever": "§6+1 §dк Удаче§5 за каждый §6Клевер§5 в инвентаре.",
+
+  "tooltip.enigmaticdice.giants_ring_0": "§dОщути мощь гигантов.",
+  "tooltip.enigmaticdice.giants_ring_1": "§5Увеличивает §dразмер§5 владельца в §61.5 раза.",
+  "tooltip.enigmaticdice.giants_ring_2": "§6Во время бега§5 вы давите врагов, §6уступающих вам в размерах§5, нанося им урон, зависящий от §6вашей атаки§5.",
 
   "enigmaticdice.block_break": "§6Откуда это здесь?",
 
@@ -81,7 +86,7 @@
   "enigmaticdice.event.wonderland_field.2": "§5Хорошие новости: поблизости появились сундуки! Плохих новостей нет. Наверное...",
 
   "enigmaticdice.event.teleport_to_biome.0": "§5Прекрасное место!",
-  "enigmaticdice.event.teleport_to_biome.1": "§5Вот новая точка на твоей карте приключений!",
+  "enigmaticdice.event.teleport_to_biome.1": "§5Новая точка на твоей карте приключений!",
   "enigmaticdice.event.teleport_to_biome.2": "§5Постарайся не испортить этот биом, ладно?",
   "enigmaticdice.event.teleport_to_biome.3": "§5Ты понятия не имеешь, куда тебя занесёт...",
   "enigmaticdice.event.teleport_to_biome.4": "§5Поздравляю, ты открыл ещё один уголок мира!",
@@ -103,13 +108,13 @@
   "enigmaticdice.event.subterranodon": "§9Это планер?",
   "enigmaticdice.event.vallumraptor": "§9Похоже, у тебя новые друзья.",
 
-  "enigmaticdice.gift.white": "§fВот, это подарок.",
-  "enigmaticdice.gift.dark_green": "§2Вот, это подарок.",
-  "enigmaticdice.gift.blue": "§9Вот, это подарок.",
-  "enigmaticdice.gift.dark_purple": "§5Вот, это подарок.",
-  "enigmaticdice.gift.gold": "§6Вот, это подарок.",
-  "enigmaticdice.gift.aqua": "§bВот, это подарок.",
-  "enigmaticdice.gift.red": "§cВот, это подарок.",
+  "enigmaticdice.gift.white": "§fДержи, это подарок.",
+  "enigmaticdice.gift.dark_green": "§2Держи, это подарок.",
+  "enigmaticdice.gift.blue": "§9Держи, это подарок.",
+  "enigmaticdice.gift.dark_purple": "§5Держи, это подарок.",
+  "enigmaticdice.gift.gold": "§6Держи, это подарок.",
+  "enigmaticdice.gift.aqua": "§bДержи, это подарок.",
+  "enigmaticdice.gift.red": "§cДержи, это подарок.",
 
   "enigmaticdice.gift.antimatter": "§6Кто бы мог подумать, что антиматерия выглядит именно так?",
 

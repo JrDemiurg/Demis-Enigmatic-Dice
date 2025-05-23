@@ -5,6 +5,7 @@
   "item.enigmaticdice.soul_eater": "§dSoul Eater",
   "item.enigmaticdice.antimatter": "§dAntimatter",
   "item.enigmaticdice.four_leaf_clever": "§dFour-Leaf Clover",
+  "item.enigmaticdice.giants_ring": "§dGiant's Ring",
 
   "tooltip.enigmaticdice.holdShift": "§5Hold §6Shift§5 to see details.",
 
@@ -35,6 +36,10 @@
   "tooltip.enigmaticdice.antimatter.3": "§5Can be used with a §6dispenser.",
 
   "tooltip.enigmaticdice.four_leaf_clever": "§6+1 §dto Luck§5 for each §6Clover§5 in your inventory.",
+
+  "tooltip.enigmaticdice.giants_ring_0": "§dFeel the might of giants.",
+  "tooltip.enigmaticdice.giants_ring_1": "§5Increases the wearer's §dsize§5 by §61.5×§5.",
+  "tooltip.enigmaticdice.giants_ring_2": "§5While §6sprinting§5, trample nearby enemies §6smaller than yourself§5, dealing damage based on your §6attack damage§5.",
 
   "enigmaticdice.block_break": "§6How did this end up here?",
 

@@ -8,9 +8,12 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "MimicEntityMixin"
+    "ClientEventHandlerMixin",
+    "MimicEntityMixin",
+    "PlayerMixin"
   ],
   "client": [
-    "MimicRendererMixin"
+    "MimicRendererMixin",
+    "PlayerRendererMixin"
   ]
 }

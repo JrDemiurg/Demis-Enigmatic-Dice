@@ -5,6 +5,7 @@
   "item.enigmaticdice.soul_eater": "§dDévoreur d'Âmes",
   "item.enigmaticdice.antimatter": "§dAntimatière",
   "item.enigmaticdice.four_leaf_clever": "§dTrèfle à Quatre Feuilles",
+  "item.enigmaticdice.giants_ring": "§dAnneau du Géant",
 
   "tooltip.enigmaticdice.holdShift": "§5Maintenez §6Shift§5 pour voir les détails.",
 
@@ -35,6 +36,10 @@
   "tooltip.enigmaticdice.antimatter.3": "§5Peut être utilisé avec un §6distributeur.",
 
   "tooltip.enigmaticdice.four_leaf_clever": "§6+1 §dde Chance§5 pour chaque §6Trèfle§5 dans votre inventaire.",
+
+  "tooltip.enigmaticdice.giants_ring_0": "§dRessens la puissance des géants.",
+  "tooltip.enigmaticdice.giants_ring_1": "§5Augmente la §dtaille§5 du porteur de §61,5×§5.",
+  "tooltip.enigmaticdice.giants_ring_2": "§5En §6sprintant§5, piétinez les ennemis proches §6plus petits que vous§5, infligeant des dégâts basés sur votre §6dégâts d'attaque§5.",
 
   "enigmaticdice.block_break": "§6Comment cela a-t-il atterri ici ?",
 
