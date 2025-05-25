@@ -70,6 +70,7 @@
   "enigmaticdice.event.lightning_wrath": "§c¡Así se ve la ira divina!",
   "enigmaticdice.event.mimic": "§5¡Oh, parece que tienes un nuevo amigo! Aunque... creo que le interesa más tu inventario.",
   "enigmaticdice.event.warped_toads": "§9Parece que el universo decidió que no tenías suficientes sapos. Ahora tienes tres.",
+  "enigmaticdice.event.black_hole_bomb" : "§cMantente alejado del horizonte de sucesos",
 
   "enigmaticdice.event.centipede.0": "§9¿Por qué hay tantas patas en este mundo? Ah, claro... Ese es tu problema.",
   "enigmaticdice.event.centipede.1": "§9¿Cuántas patas tiene un ciempiés? Espero que tengas tiempo para contarlas.",

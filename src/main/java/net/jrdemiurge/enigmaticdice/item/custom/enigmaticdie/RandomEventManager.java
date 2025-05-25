@@ -141,6 +141,18 @@ public class RandomEventManager {
                     events.add(new SummonCarcassEvent(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "terramity_black_hole_bomb" -> {
+                    events.add(new BlackHoleBombEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "terramity_macro_black_hole_bomb" -> {
+                    events.add(new MacroBlackHoleBombEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "terramity_antimatter_bomb" -> {
+                    events.add(new AntimatterBombEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
                 default -> EnigmaticDice.LOGGER.warn("Unknown fixed event in config: {}", eventName);
             }
         }

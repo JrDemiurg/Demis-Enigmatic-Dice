@@ -70,6 +70,7 @@
   "enigmaticdice.event.lightning_wrath": "§cВот как выглядит божественный гнев!",
   "enigmaticdice.event.mimic": "§5О, похоже, у тебя новый друг! Хотя... скорее он заинтересован твоим инвентарём.",
   "enigmaticdice.event.warped_toads": "§9Похоже, вселенная решила, что тебе не хватает жаб. Вот тебе три.",
+  "enigmaticdice.event.black_hole_bomb" : "§cОстерегайся горизонта событий",
 
   "enigmaticdice.event.centipede.0": "§9Почему в этом мире так много ног? Ах да... Это теперь твоя проблема.",
   "enigmaticdice.event.centipede.1": "§9Сколько ног у сороконожки? Надеюсь, у тебя есть время посчитать.",

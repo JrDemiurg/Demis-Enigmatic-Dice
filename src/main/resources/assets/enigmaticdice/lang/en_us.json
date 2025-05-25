@@ -70,6 +70,7 @@
   "enigmaticdice.event.lightning_wrath": "§cThis is what divine wrath looks like!",
   "enigmaticdice.event.mimic": "§5Oh, looks like you've got a new friend! Though… I think he's more interested in your inventory.",
   "enigmaticdice.event.warped_toads": "§9Looks like the universe decided you didn't have enough toads. Now you have three.",
+  "enigmaticdice.event.black_hole_bomb" : "§cStay away from the event horizon",
 
   "enigmaticdice.event.centipede.0": "§9Why are there so many legs in this world? Oh right… That’s your problem.",
   "enigmaticdice.event.centipede.1": "§9How many legs does a centipede have? I hope you have enough time to count them.",

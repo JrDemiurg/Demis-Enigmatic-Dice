@@ -89,6 +89,21 @@
       "enabled": true,
       "requiredMod": "netherexp",
       "rarity": 5
+    },
+    "terramity_black_hole_bomb": {
+      "enabled": true,
+      "requiredMod": "terramity",
+      "rarity": 100
+    },
+    "terramity_macro_black_hole_bomb": {
+      "enabled": true,
+      "requiredMod": "terramity",
+      "rarity": 1000
+    },
+    "terramity_antimatter_bomb": {
+      "enabled": true,
+      "requiredMod": "terramity",
+      "rarity": 1000
     }
   },
   "itemEvents": {
