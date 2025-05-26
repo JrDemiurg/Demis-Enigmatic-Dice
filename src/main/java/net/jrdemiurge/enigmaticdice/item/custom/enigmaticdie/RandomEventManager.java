@@ -153,6 +153,10 @@ public class RandomEventManager {
                     events.add(new AntimatterBombEvent(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "quark_give_ancient_tome" -> {
+                    events.add(new GiveAncientTomeEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
                 default -> EnigmaticDice.LOGGER.warn("Unknown fixed event in config: {}", eventName);
             }
         }

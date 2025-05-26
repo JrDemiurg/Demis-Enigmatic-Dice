@@ -104,6 +104,11 @@
       "enabled": true,
       "requiredMod": "terramity",
       "rarity": 1000
+    },
+    "quark_give_ancient_tome": {
+      "enabled": true,
+      "requiredMod": "quark",
+      "rarity": 5
     }
   },
   "itemEvents": {
