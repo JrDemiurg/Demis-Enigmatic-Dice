@@ -6,6 +6,7 @@
   "item.enigmaticdice.antimatter": "§dАнтиматерия",
   "item.enigmaticdice.four_leaf_clever": "§dЧетырёхлистный клевер",
   "item.enigmaticdice.giants_ring": "§dКольцо великана",
+  "item.enigmaticdice.moon_shard": "§dЛунный осколок",
 
   "tooltip.enigmaticdice.holdShift": "§5Удерживайте §6Shift§5 для деталей.",
 
@@ -42,6 +43,10 @@
   "tooltip.enigmaticdice.giants_ring_2": "§6Во время бега§5 вы давите врагов, §6уступающих вам в размерах§5, нанося им урон, зависящий от §6вашей атаки§5.",
 
   "enigmaticdice.block_break": "§6Откуда это здесь?",
+
+  "tooltip.enigmaticdice.moon_shard_0": "§5Уменьшает §6гравитацию§5, находясь на §6панели быстрого доступа",
+  "tooltip.enigmaticdice.moon_shard_1": "§5Удерживайте §6Shift§5 для отключения эффекта.",
+  "tooltip.enigmaticdice.moon_shard_2": "§5Даёт неуязвимость к §6урону от падения.",
 
   "enigmaticdice.mob_drop.0": "§6Интересно... даже из них это начало выпадать.",
   "enigmaticdice.mob_drop.1": "§6Забавно. Он носил с собой то, что принадлежит тебе.",

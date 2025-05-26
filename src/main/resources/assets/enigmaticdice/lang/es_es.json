@@ -6,6 +6,7 @@
   "item.enigmaticdice.antimatter": "§dAntimateria",
   "item.enigmaticdice.four_leaf_clever": "§dTrébol de Cuatro Hojas",
   "item.enigmaticdice.giants_ring": "§dAnillo del Gigante",
+  "item.enigmaticdice.moon_shard": "§dFragmento Lunar",
 
   "tooltip.enigmaticdice.holdShift": "§5Mantén presionado §6Shift§5 para ver los detalles.",
 
@@ -40,6 +41,10 @@
   "tooltip.enigmaticdice.giants_ring_0": "§dSiente el poder de los gigantes.",
   "tooltip.enigmaticdice.giants_ring_1": "§5Aumenta el §dtamaño§5 del portador en §61.5×§5.",
   "tooltip.enigmaticdice.giants_ring_2": "§5Al §6correr§5, pisotea a los enemigos cercanos §6más pequeños que tú§5, causando daño según tu §6daño de ataque§5.",
+
+  "tooltip.enigmaticdice.moon_shard_0": "§5Reduce la §6gravedad§5 mientras esté en la §6barra rápida",
+  "tooltip.enigmaticdice.moon_shard_1": "§5Mantén presionado §6Shift§5 para desactivar el efecto",
+  "tooltip.enigmaticdice.moon_shard_2": "§5Otorga inmunidad al §6daño por caída",
 
   "enigmaticdice.block_break": "§6¿Cómo terminó esto aquí?",
 

@@ -23,6 +23,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.FOUR_LEAF_CLEVER.get());
                         output.accept(ModItems.ANTIMATTER.get());
                         output.accept(ModItems.GIANTS_RING.get());
+                        output.accept(ModItems.MOON_SHARD.get());
                     })
                     .build());
 

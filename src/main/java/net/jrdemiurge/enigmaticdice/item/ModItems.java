@@ -31,6 +31,9 @@ public class ModItems {
     public static final RegistryObject<Item> GIANTS_RING = ITEMS.register("giants_ring",
             () -> new GiantsRing(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> MOON_SHARD = ITEMS.register("moon_shard",
+            () -> new MoonShard(new Item.Properties().stacksTo(1)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

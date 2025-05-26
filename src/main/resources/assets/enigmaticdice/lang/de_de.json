@@ -6,6 +6,7 @@
   "item.enigmaticdice.antimatter": "§dAntimaterie",
   "item.enigmaticdice.four_leaf_clever": "§dVierblättriges Kleeblatt",
   "item.enigmaticdice.giants_ring": "§dRing der Riesen",
+  "item.enigmaticdice.moon_shard": "§dMondsplitter",
 
   "tooltip.enigmaticdice.holdShift": "§5Halte §6Shift§5, um Details zu sehen.",
 
@@ -40,6 +41,10 @@
   "tooltip.enigmaticdice.giants_ring_0": "§dSpüre die Macht der Riesen.",
   "tooltip.enigmaticdice.giants_ring_1": "§5Erhöht die §dGröße§5 des Trägers um §61,5×§5.",
   "tooltip.enigmaticdice.giants_ring_2": "§5Beim §6Sprinten§5 zertrittst du nahe Feinde, die §6kleiner als du§5 sind, und verursachst Schaden basierend auf deinem §6Angriffsschaden§5.",
+
+  "tooltip.enigmaticdice.moon_shard_0": "§5Reduziert die §6Schwerkraft§5, wenn im §6Hotbar§5",
+  "tooltip.enigmaticdice.moon_shard_1": "§5Halte §6Shift§5 gedrückt, um den Effekt zu deaktivieren",
+  "tooltip.enigmaticdice.moon_shard_2": "§5Gewährt Immunität gegen §6Fallschaden",
 
   "enigmaticdice.block_break": "§6Wie ist das hierher gekommen?",
 

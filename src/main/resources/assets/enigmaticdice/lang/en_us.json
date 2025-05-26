@@ -6,6 +6,7 @@
   "item.enigmaticdice.antimatter": "§dAntimatter",
   "item.enigmaticdice.four_leaf_clever": "§dFour-Leaf Clover",
   "item.enigmaticdice.giants_ring": "§dGiant's Ring",
+  "item.enigmaticdice.moon_shard": "§dMoon Shard",
 
   "tooltip.enigmaticdice.holdShift": "§5Hold §6Shift§5 to see details.",
 
@@ -40,6 +41,10 @@
   "tooltip.enigmaticdice.giants_ring_0": "§dFeel the might of giants.",
   "tooltip.enigmaticdice.giants_ring_1": "§5Increases the wearer's §dsize§5 by §61.5×§5.",
   "tooltip.enigmaticdice.giants_ring_2": "§5While §6sprinting§5, trample nearby enemies §6smaller than yourself§5, dealing damage based on your §6attack damage§5.",
+
+  "tooltip.enigmaticdice.moon_shard_0": "§5Reduces §6gravity§5 while in the §6hotbar",
+  "tooltip.enigmaticdice.moon_shard_1": "§5Hold §6Shift§5 to disable the effect",
+  "tooltip.enigmaticdice.moon_shard_2": "§5Grants immunity to §6fall damage",
 
   "enigmaticdice.block_break": "§6How did this end up here?",
 

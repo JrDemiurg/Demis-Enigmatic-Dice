@@ -175,6 +175,15 @@
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.gold"
     },
+    "enigmaticdice_give_moon_shard": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 20,
+      "item": "enigmaticdice:moon_shard",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.dark_purple"
+    },
     "born_in_chaos_give_phantom_bomb": {
       "enabled": true,
       "requiredMod": "born_in_chaos_v1",
