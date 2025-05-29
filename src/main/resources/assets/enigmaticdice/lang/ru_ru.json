@@ -7,6 +7,7 @@
   "item.enigmaticdice.four_leaf_clever": "§dЧетырёхлистный клевер",
   "item.enigmaticdice.giants_ring": "§dКольцо великана",
   "item.enigmaticdice.moon_shard": "§dЛунный осколок",
+  "item.enigmaticdice.gravity_core": "§dГравитационное ядро",
 
   "tooltip.enigmaticdice.holdShift": "§5Удерживайте §6Shift§5 для деталей.",
 
@@ -42,11 +43,16 @@
   "tooltip.enigmaticdice.giants_ring_1": "§5Увеличивает §dразмер§5 владельца в §61.5 раза.",
   "tooltip.enigmaticdice.giants_ring_2": "§6Во время бега§5 вы давите врагов, §6уступающих вам в размерах§5, нанося им урон, зависящий от §6вашей атаки§5.",
 
-  "enigmaticdice.block_break": "§6Откуда это здесь?",
-
   "tooltip.enigmaticdice.moon_shard_0": "§5Уменьшает §6гравитацию§5, находясь на §6панели быстрого доступа",
   "tooltip.enigmaticdice.moon_shard_1": "§5Удерживайте §6Shift§5 для отключения эффекта.",
   "tooltip.enigmaticdice.moon_shard_2": "§5Даёт неуязвимость к §6урону от падения.",
+
+  "tooltip.enigmaticdice.gravity_core_1": "§5Двойное нажатие §6Прыжка§5, чтобы совершить §6мощный прыжок.",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Нажмите §6Shift§5 в воздухе, чтобы увеличить §dгравитацию§5 в §65 раз§5 и обрушиться на землю, §6нанося урон врагам вокруг.",
+  "tooltip.enigmaticdice.gravity_core_3": "§6Урон§5 зависит от §6скорости приземления§5 и §6урона игрока",
+  "tooltip.enigmaticdice.gravity_core_4": "§6Радиус поражения§5 зависит от §6скорости приземления.",
+
+  "enigmaticdice.block_break": "§6Откуда это здесь?",
 
   "enigmaticdice.mob_drop.0": "§6Интересно... даже из них это начало выпадать.",
   "enigmaticdice.mob_drop.1": "§6Забавно. Он носил с собой то, что принадлежит тебе.",

@@ -53,7 +53,7 @@
     "alexscaves_nuclear_bomb": {
       "enabled": true,
       "requiredMod": "alexscaves",
-      "rarity": 1000
+      "rarity": 100
     },
     "alexscaves_summon_raycat": {
       "enabled": true,
@@ -93,17 +93,17 @@
     "terramity_black_hole_bomb": {
       "enabled": true,
       "requiredMod": "terramity",
-      "rarity": 100
+      "rarity": 20
     },
     "terramity_macro_black_hole_bomb": {
       "enabled": true,
       "requiredMod": "terramity",
-      "rarity": 1000
+      "rarity": 100
     },
     "terramity_antimatter_bomb": {
       "enabled": true,
       "requiredMod": "terramity",
-      "rarity": 1000
+      "rarity": 100
     },
     "quark_give_ancient_tome": {
       "enabled": true,
@@ -183,6 +183,15 @@
       "amount": 1,
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.dark_purple"
+    },
+    "enigmaticdice_give_gravity_core": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 100,
+      "item": "enigmaticdice:gravity_core",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.gold"
     },
     "born_in_chaos_give_phantom_bomb": {
       "enabled": true,

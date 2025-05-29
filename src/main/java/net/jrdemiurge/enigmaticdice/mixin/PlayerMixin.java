@@ -41,34 +41,22 @@ public abstract class PlayerMixin extends LivingEntity {
         }
     }
 
-    @Override
-    public EntityDimensions getDimensions(Pose pose) {
-        EntityDimensions base = super.getDimensions(pose);
+    @Inject(method = "getDimensions", at = @At("TAIL"), cancellable = true)
+    public void getDimensions(Pose pPose, CallbackInfoReturnable<EntityDimensions> cir) {
         if (isSmall) {
-            return base.scale(1.5F);
+            EntityDimensions original = cir.getReturnValue();
+            cir.setReturnValue(original.scale(1.5F));
         }
-        return base;
     }
 
-    @Inject(method = "getStandingEyeHeight", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "getStandingEyeHeight", at = @At("RETURN"), cancellable = true)
     private void modifyEyeHeight(Pose pose, EntityDimensions size, CallbackInfoReturnable<Float> cir) {
         Player player = (Player)(Object)this;
 
         // Пример: если держит палку — уменьшаем точку обзора
         if (player.getInventory() != null && isWearingGiantRing(player)) {
-            switch (pose) {
-                case SWIMMING:
-                case FALL_FLYING:
-                case SPIN_ATTACK:
-                    cir.setReturnValue(0.6F); // половина от 0.4F
-                    break;
-                case CROUCHING:
-                    cir.setReturnValue(1.905F); // половина от 1.27F
-                    break;
-                default:
-                    cir.setReturnValue(2.43F); // половина от 1.62F
-                    break;
-            }
+            Float original = cir.getReturnValue();
+            cir.setReturnValue(original * 1.5F);
         }
     }
 }

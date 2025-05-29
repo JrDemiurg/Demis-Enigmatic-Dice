@@ -16,13 +16,16 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
+import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.WeakHashMap;
 
 public class MoonShard extends Item {
 
     private static final UUID GRAVITY_MODIFIER_UUID = UUID.fromString("205dfaf9-1a96-4005-9a30-5d736a87c9b4");
+    private static final WeakHashMap<Player, Boolean> gravityDisable = new WeakHashMap<>();
 
     public MoonShard(Properties pProperties) {
         super(pProperties);
@@ -32,24 +35,47 @@ public class MoonShard extends Item {
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!pLevel.isClientSide && pEntity instanceof Player player) {
             if (pSlotId >= 0 && pSlotId <= 8) {
-                boolean isHoldingShift = player.isShiftKeyDown();
+                boolean isSneaking = player.isShiftKeyDown();
                 AttributeInstance gravityAttribute = player.getAttribute(ForgeMod.ENTITY_GRAVITY.get());
 
                 if (gravityAttribute != null) {
                     AttributeModifier existingModifier = gravityAttribute.getModifier(GRAVITY_MODIFIER_UUID);
 
-                    if (!isHoldingShift) {
-                        if (existingModifier == null) {
-                            gravityAttribute.addTransientModifier(new AttributeModifier(
-                                    GRAVITY_MODIFIER_UUID,
-                                    "MoonShard gravity reduction",
-                                    -0.06,
-                                    AttributeModifier.Operation.ADDITION
-                            ));
+                    if (isWearingGravityCore(player)){
+                        boolean gravityDisabled = gravityDisable.getOrDefault(player, false);
+
+                        if (isSneaking && !player.onGround() && !gravityDisabled) {
+                            gravityDisable.put(player, true);
+                            if (existingModifier != null) {
+                                gravityAttribute.removeModifier(GRAVITY_MODIFIER_UUID);
+                            }
+                        }
+
+                        if (player.onGround()) {
+                            gravityDisable.put(player, false);
+                            if (existingModifier == null) {
+                                gravityAttribute.addTransientModifier(new AttributeModifier(
+                                        GRAVITY_MODIFIER_UUID,
+                                        "MoonShard gravity reduction",
+                                        -0.06,
+                                        AttributeModifier.Operation.ADDITION
+                                ));
+                            }
                         }
                     } else {
-                        if (existingModifier != null) {
-                            gravityAttribute.removeModifier(GRAVITY_MODIFIER_UUID);
+                        if (!isSneaking) {
+                            if (existingModifier == null) {
+                                gravityAttribute.addTransientModifier(new AttributeModifier(
+                                        GRAVITY_MODIFIER_UUID,
+                                        "MoonShard gravity reduction",
+                                        -0.06,
+                                        AttributeModifier.Operation.ADDITION
+                                ));
+                            }
+                        } else {
+                            if (existingModifier != null) {
+                                gravityAttribute.removeModifier(GRAVITY_MODIFIER_UUID);
+                            }
                         }
                     }
                 }
@@ -74,6 +100,12 @@ public class MoonShard extends Item {
                 }, 10, 0);
             }
         }
+    }
+
+    private static boolean isWearingGravityCore(Player player) {
+        return CuriosApi.getCuriosInventory(player)
+                .map(handler -> !handler.findCurios(ModItems.GRAVITY_CORE.get()).isEmpty())
+                .orElse(false);
     }
 
     @Override

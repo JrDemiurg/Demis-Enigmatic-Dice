@@ -7,6 +7,7 @@
   "item.enigmaticdice.four_leaf_clever": "§dTrébol de Cuatro Hojas",
   "item.enigmaticdice.giants_ring": "§dAnillo del Gigante",
   "item.enigmaticdice.moon_shard": "§dFragmento Lunar",
+  "item.enigmaticdice.gravity_core": "§dNúcleo de Gravedad",
 
   "tooltip.enigmaticdice.holdShift": "§5Mantén presionado §6Shift§5 para ver los detalles.",
 
@@ -45,6 +46,11 @@
   "tooltip.enigmaticdice.moon_shard_0": "§5Reduce la §6gravedad§5 mientras esté en la §6barra rápida",
   "tooltip.enigmaticdice.moon_shard_1": "§5Mantén presionado §6Shift§5 para desactivar el efecto",
   "tooltip.enigmaticdice.moon_shard_2": "§5Otorga inmunidad al §6daño por caída",
+
+  "tooltip.enigmaticdice.gravity_core_1": "§5Pulsa §6Saltar§5 dos veces rápidamente para realizar un §6salto poderoso§5.",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Pulsa §6Shift§5 en el aire para aumentar la §dgravedad§5 §6x5§5 y estrellarte contra el suelo, §6dañando a los enemigos cercanos§5.",
+  "tooltip.enigmaticdice.gravity_core_3": "§6El daño§5 escala con tu §6velocidad al aterrizar§5 y tu §6daño de ataque§5.",
+  "tooltip.enigmaticdice.gravity_core_4": "§6El radio de la onda expansiva§5 escala con tu §6velocidad al aterrizar§5.",
 
   "enigmaticdice.block_break": "§6¿Cómo terminó esto aquí?",
 

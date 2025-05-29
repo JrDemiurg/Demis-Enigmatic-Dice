@@ -7,6 +7,7 @@
   "item.enigmaticdice.four_leaf_clever": "§dVierblättriges Kleeblatt",
   "item.enigmaticdice.giants_ring": "§dRing der Riesen",
   "item.enigmaticdice.moon_shard": "§dMondsplitter",
+  "item.enigmaticdice.gravity_core": "§dGravitationskern",
 
   "tooltip.enigmaticdice.holdShift": "§5Halte §6Shift§5, um Details zu sehen.",
 
@@ -45,6 +46,11 @@
   "tooltip.enigmaticdice.moon_shard_0": "§5Reduziert die §6Schwerkraft§5, wenn im §6Hotbar§5",
   "tooltip.enigmaticdice.moon_shard_1": "§5Halte §6Shift§5 gedrückt, um den Effekt zu deaktivieren",
   "tooltip.enigmaticdice.moon_shard_2": "§5Gewährt Immunität gegen §6Fallschaden",
+
+  "tooltip.enigmaticdice.gravity_core_1": "§5Drücke §6Springen§5 zweimal schnell, um einen §6mächtigen Sprung§5 auszuführen.",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Drücke §6Shift§5 in der Luft, um die §dGravitation§5 um §65x§5 zu erhöhen und mit Wucht zu landen – §6verletzt Gegner in der Nähe§5.",
+  "tooltip.enigmaticdice.gravity_core_3": "§6Schaden§5 skaliert mit deiner §6Landegeschwindigkeit§5 und §6Angriffsstärke§5.",
+  "tooltip.enigmaticdice.gravity_core_4": "§6Stoßwellen-Radius§5 skaliert mit deiner §6Landegeschwindigkeit§5.",
 
   "enigmaticdice.block_break": "§6Wie ist das hierher gekommen?",
 

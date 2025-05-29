@@ -7,6 +7,7 @@
   "item.enigmaticdice.four_leaf_clever": "§dFour-Leaf Clover",
   "item.enigmaticdice.giants_ring": "§dGiant's Ring",
   "item.enigmaticdice.moon_shard": "§dMoon Shard",
+  "item.enigmaticdice.gravity_core": "§dGravity Core",
 
   "tooltip.enigmaticdice.holdShift": "§5Hold §6Shift§5 to see details.",
 
@@ -45,6 +46,11 @@
   "tooltip.enigmaticdice.moon_shard_0": "§5Reduces §6gravity§5 while in the §6hotbar",
   "tooltip.enigmaticdice.moon_shard_1": "§5Hold §6Shift§5 to disable the effect",
   "tooltip.enigmaticdice.moon_shard_2": "§5Grants immunity to §6fall damage",
+
+  "tooltip.enigmaticdice.gravity_core_1": "§5Double-tap §6Jump§5 to perform a §6powerful leap.",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Press §6Shift§5 mid-air to increase §dgravity §65x§5 and crash into the ground, §6damaging nearby enemies.",
+  "tooltip.enigmaticdice.gravity_core_3": "§6Damage§5 scales with your §6landing speed§5 and §6attack damage.",
+  "tooltip.enigmaticdice.gravity_core_4": "§6Shockwave radius§5 scales with your §6landing speed.",
 
   "enigmaticdice.block_break": "§6How did this end up here?",
 

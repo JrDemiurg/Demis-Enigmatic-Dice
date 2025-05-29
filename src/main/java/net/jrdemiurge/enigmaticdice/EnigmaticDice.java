@@ -11,6 +11,7 @@ import net.jrdemiurge.enigmaticdice.event.MobDropHandler;
 import net.jrdemiurge.enigmaticdice.item.ModCreativeTabs;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
 import net.jrdemiurge.enigmaticdice.item.custom.Antimatter;
+import net.jrdemiurge.enigmaticdice.network.NetworkHandler;
 import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.jrdemiurge.enigmaticdice.sound.ModSounds;
 import net.minecraftforge.api.distmarker.Dist;
@@ -34,6 +35,8 @@ public class EnigmaticDice {
 
     public EnigmaticDice() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        NetworkHandler.register();
 
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);

@@ -7,6 +7,7 @@
   "item.enigmaticdice.four_leaf_clever": "§dTrèfle à Quatre Feuilles",
   "item.enigmaticdice.giants_ring": "§dAnneau du Géant",
   "item.enigmaticdice.moon_shard": "§dÉclat de Lune",
+  "item.enigmaticdice.gravity_core": "§dNoyau de Gravité",
 
   "tooltip.enigmaticdice.holdShift": "§5Maintenez §6Shift§5 pour voir les détails.",
 
@@ -45,6 +46,11 @@
   "tooltip.enigmaticdice.moon_shard_0": "§5Réduit la §6gravité§5 lorsqu'il est dans la §6barre rapide",
   "tooltip.enigmaticdice.moon_shard_1": "§5Maintenez §6Shift§5 pour désactiver l'effet",
   "tooltip.enigmaticdice.moon_shard_2": "§5Confère une immunité aux §6dégâts de chute",
+
+  "tooltip.enigmaticdice.gravity_core_1": "§5Appuyez deux fois sur §6Saut§5 pour effectuer un §6saut puissant§5.",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Appuyez sur §6Shift§5 en l'air pour multiplier la §dgravité§5 par §65§5 et vous écraser au sol, §6infligeant des dégâts aux ennemis proches§5.",
+  "tooltip.enigmaticdice.gravity_core_3": "§6Les dégâts§5 dépendent de votre §6vitesse d'atterrissage§5 et de vos §6dégâts d'attaque§5.",
+  "tooltip.enigmaticdice.gravity_core_4": "§6Le rayon de l'onde de choc§5 dépend de votre §6vitesse d'atterrissage§5.",
 
   "enigmaticdice.block_break": "§6Comment cela a-t-il atterri ici ?",
 
