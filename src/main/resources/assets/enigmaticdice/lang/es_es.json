@@ -7,9 +7,13 @@
   "item.enigmaticdice.four_leaf_clever": "§dTrébol de Cuatro Hojas",
   "item.enigmaticdice.giants_ring": "§dAnillo del Gigante",
   "item.enigmaticdice.moon_shard": "§dFragmento Lunar",
+  "item.enigmaticdice.moon": "§dLuna",
   "item.enigmaticdice.gravity_core": "§dNúcleo de Gravedad",
 
   "tooltip.enigmaticdice.holdShift": "§5Mantén presionado §6Shift§5 para ver los detalles.",
+
+  "tooltip.enigmaticdice.while_hotbar": "§dMientras esté en la barra rápida:",
+  "tooltip.enigmaticdice.while_held": "§dMientras se sostiene:",
 
   "tooltip.enigmaticdice.enigmatic_die": "§dUn regalo de Pandora...",
   "tooltip.enigmaticdice.enigmatic_die_2": "§5Causa un §6evento§5 aleatorio al usarse.",
@@ -43,14 +47,19 @@
   "tooltip.enigmaticdice.giants_ring_1": "§5Aumenta el §dtamaño§5 del portador en §61.5×§5.",
   "tooltip.enigmaticdice.giants_ring_2": "§5Al §6correr§5, pisotea a los enemigos cercanos §6más pequeños que tú§5, causando daño según tu §6daño de ataque§5.",
 
-  "tooltip.enigmaticdice.moon_shard_0": "§5Reduce la §6gravedad§5 mientras esté en la §6barra rápida",
-  "tooltip.enigmaticdice.moon_shard_1": "§5Mantén presionado §6Shift§5 para desactivar el efecto",
-  "tooltip.enigmaticdice.moon_shard_2": "§5Otorga inmunidad al §6daño por caída",
+  "tooltip.enigmaticdice.moon_shard_1": "§5- Reduce la §6gravedad§5",
+  "tooltip.enigmaticdice.moon_shard_2": "§5- Otorga inmunidad al §6daño por caída",
+  "tooltip.enigmaticdice.moon_shard_3": "§5Mantén §6Shift§5 para desactivar el efecto de gravedad",
 
-  "tooltip.enigmaticdice.gravity_core_1": "§5Pulsa §6Saltar§5 dos veces rápidamente para realizar un §6salto poderoso§5.",
-  "tooltip.enigmaticdice.gravity_core_2": "§5Pulsa §6Shift§5 en el aire para aumentar la §dgravedad§5 §6x5§5 y estrellarte contra el suelo, §6dañando a los enemigos cercanos§5.",
-  "tooltip.enigmaticdice.gravity_core_3": "§6El daño§5 escala con tu §6velocidad al aterrizar§5 y tu §6daño de ataque§5.",
-  "tooltip.enigmaticdice.gravity_core_4": "§6El radio de la onda expansiva§5 escala con tu §6velocidad al aterrizar§5.",
+  "tooltip.enigmaticdice.gravity_core_1": "§5Presiona dos veces §6Saltar§5 para realizar un §6salto potente",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Presiona §6Shift§5 en el aire para aumentar la §dgravedad §65x§5 y estrellarte contra el suelo, §6dañando a enemigos cercanos",
+  "tooltip.enigmaticdice.gravity_core_3": "§6El daño§5 escala con tu §6velocidad al aterrizar§5 y tu §6daño de ataque",
+  "tooltip.enigmaticdice.gravity_core_4": "§6El radio de onda expansiva§5 escala con tu §6velocidad de caída",
+  "tooltip.enigmaticdice.gravity_core_5": "§5Otorga inmunidad al §6daño por caída",
+
+  "tooltip.enigmaticdice.moon_1": "§5- §6Reduce en gran medida§5 la §6gravedad§5, haciéndola §6negativa",
+  "tooltip.enigmaticdice.moon_2": "§5- Otorga inmunidad al §6daño por caída",
+  "tooltip.enigmaticdice.moon_3": "§5Mantén §6Shift§5 para desactivar el efecto de gravedad",
 
   "enigmaticdice.block_break": "§6¿Cómo terminó esto aquí?",
 

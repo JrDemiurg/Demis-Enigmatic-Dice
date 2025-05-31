@@ -41,6 +41,13 @@ public class MoonShard extends Item {
                 if (gravityAttribute != null) {
                     AttributeModifier existingModifier = gravityAttribute.getModifier(GRAVITY_MODIFIER_UUID);
 
+                    if (player.getMainHandItem().is(ModItems.MOON.get()) || player.getOffhandItem().is(ModItems.MOON.get())){
+                        if (existingModifier != null) {
+                            gravityAttribute.removeModifier(GRAVITY_MODIFIER_UUID);
+                        }
+                        return;
+                    }
+
                     if (isWearingGravityCore(player)){
                         boolean gravityDisabled = gravityDisable.getOrDefault(player, false);
 
@@ -112,10 +119,11 @@ public class MoonShard extends Item {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.moon_shard_0"));
+            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.while_hotbar"));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.moon_shard_1"));
-            pTooltipComponents.add(Component.literal(" "));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.moon_shard_2"));
+            pTooltipComponents.add(Component.literal(" "));
+            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.moon_shard_3"));
         } else {
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.holdShift"));
         }

@@ -29,6 +29,8 @@ public class ClientTickHandler {
 
         if (!isWearingGravityCore(player)) return;
 
+        if (player.isCreative() || player.isSpectator()) return;
+
         if (player.onGround()) {
             wasJumping.put(player, false);
         }

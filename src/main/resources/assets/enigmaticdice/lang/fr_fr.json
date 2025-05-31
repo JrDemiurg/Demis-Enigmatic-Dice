@@ -7,9 +7,13 @@
   "item.enigmaticdice.four_leaf_clever": "§dTrèfle à Quatre Feuilles",
   "item.enigmaticdice.giants_ring": "§dAnneau du Géant",
   "item.enigmaticdice.moon_shard": "§dÉclat de Lune",
+  "item.enigmaticdice.moon": "§dLune",
   "item.enigmaticdice.gravity_core": "§dNoyau de Gravité",
 
   "tooltip.enigmaticdice.holdShift": "§5Maintenez §6Shift§5 pour voir les détails.",
+
+  "tooltip.enigmaticdice.while_hotbar": "§dQuand dans la barre rapide :",
+  "tooltip.enigmaticdice.while_held": "§dQuand tenu en main :",
 
   "tooltip.enigmaticdice.enigmatic_die": "§dUn cadeau de Pandore...",
   "tooltip.enigmaticdice.enigmatic_die_2": "§5Déclenche un §6événement§5 aléatoire lorsqu'il est utilisé.",
@@ -43,14 +47,19 @@
   "tooltip.enigmaticdice.giants_ring_1": "§5Augmente la §dtaille§5 du porteur de §61,5×§5.",
   "tooltip.enigmaticdice.giants_ring_2": "§5En §6sprintant§5, piétinez les ennemis proches §6plus petits que vous§5, infligeant des dégâts basés sur votre §6dégâts d'attaque§5.",
 
-  "tooltip.enigmaticdice.moon_shard_0": "§5Réduit la §6gravité§5 lorsqu'il est dans la §6barre rapide",
-  "tooltip.enigmaticdice.moon_shard_1": "§5Maintenez §6Shift§5 pour désactiver l'effet",
-  "tooltip.enigmaticdice.moon_shard_2": "§5Confère une immunité aux §6dégâts de chute",
+  "tooltip.enigmaticdice.moon_shard_1": "§5- Réduit la §6gravité§5",
+  "tooltip.enigmaticdice.moon_shard_2": "§5- Confère une immunité aux §6dégâts de chute",
+  "tooltip.enigmaticdice.moon_shard_3": "§5Maintenez §6Shift§5 pour désactiver l'effet de gravité",
 
-  "tooltip.enigmaticdice.gravity_core_1": "§5Appuyez deux fois sur §6Saut§5 pour effectuer un §6saut puissant§5.",
-  "tooltip.enigmaticdice.gravity_core_2": "§5Appuyez sur §6Shift§5 en l'air pour multiplier la §dgravité§5 par §65§5 et vous écraser au sol, §6infligeant des dégâts aux ennemis proches§5.",
-  "tooltip.enigmaticdice.gravity_core_3": "§6Les dégâts§5 dépendent de votre §6vitesse d'atterrissage§5 et de vos §6dégâts d'attaque§5.",
-  "tooltip.enigmaticdice.gravity_core_4": "§6Le rayon de l'onde de choc§5 dépend de votre §6vitesse d'atterrissage§5.",
+  "tooltip.enigmaticdice.gravity_core_1": "§5Appuyez deux fois sur §6Sauter§5 pour effectuer un §6saut puissant",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Appuyez sur §6Shift§5 en l'air pour augmenter la §dgravité §6x5§5 et vous écraser au sol, §6infligeant des dégâts aux ennemis proches",
+  "tooltip.enigmaticdice.gravity_core_3": "§6Les dégâts§5 dépendent de votre §6vitesse de chute§5 et de vos §6dégâts d'attaque",
+  "tooltip.enigmaticdice.gravity_core_4": "§6Le rayon d'onde de choc§5 dépend de votre §6vitesse de chute",
+  "tooltip.enigmaticdice.gravity_core_5": "§5Confère une immunité aux §6dégâts de chute",
+
+  "tooltip.enigmaticdice.moon_1": "§5- §6Réduit fortement§5 la §6gravité§5, la rendant §6négative",
+  "tooltip.enigmaticdice.moon_2": "§5- Confère une immunité aux §6dégâts de chute",
+  "tooltip.enigmaticdice.moon_3": "§5Maintenez §6Shift§5 pour désactiver l'effet de gravité",
 
   "enigmaticdice.block_break": "§6Comment cela a-t-il atterri ici ?",
 

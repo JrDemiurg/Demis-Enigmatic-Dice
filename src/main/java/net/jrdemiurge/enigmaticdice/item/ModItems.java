@@ -37,6 +37,9 @@ public class ModItems {
     public static final RegistryObject<Item> GRAVITY_CORE = ITEMS.register("gravity_core",
             () -> new GravityCore(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> MOON = ITEMS.register("moon",
+            () -> new Moon(new Item.Properties().stacksTo(1)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

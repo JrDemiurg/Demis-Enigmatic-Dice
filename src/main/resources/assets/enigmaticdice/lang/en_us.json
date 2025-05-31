@@ -7,9 +7,13 @@
   "item.enigmaticdice.four_leaf_clever": "§dFour-Leaf Clover",
   "item.enigmaticdice.giants_ring": "§dGiant's Ring",
   "item.enigmaticdice.moon_shard": "§dMoon Shard",
+  "item.enigmaticdice.moon": "§dMoon",
   "item.enigmaticdice.gravity_core": "§dGravity Core",
 
   "tooltip.enigmaticdice.holdShift": "§5Hold §6Shift§5 to see details.",
+
+  "tooltip.enigmaticdice.while_hotbar": "§dWhile in the hotbar:",
+  "tooltip.enigmaticdice.while_held": "§dWhile held:",
 
   "tooltip.enigmaticdice.enigmatic_die": "§dA gift from Pandora...",
   "tooltip.enigmaticdice.enigmatic_die_2": "§5Causes a random §6event§5 when used.",
@@ -43,14 +47,19 @@
   "tooltip.enigmaticdice.giants_ring_1": "§5Increases the wearer's §dsize§5 by §61.5×§5.",
   "tooltip.enigmaticdice.giants_ring_2": "§5While §6sprinting§5, trample nearby enemies §6smaller than yourself§5, dealing damage based on your §6attack damage§5.",
 
-  "tooltip.enigmaticdice.moon_shard_0": "§5Reduces §6gravity§5 while in the §6hotbar",
-  "tooltip.enigmaticdice.moon_shard_1": "§5Hold §6Shift§5 to disable the effect",
-  "tooltip.enigmaticdice.moon_shard_2": "§5Grants immunity to §6fall damage",
+  "tooltip.enigmaticdice.moon_shard_1": "§5- Reduces §6gravity§5",
+  "tooltip.enigmaticdice.moon_shard_2": "§5- Grants immunity to §6fall damage",
+  "tooltip.enigmaticdice.moon_shard_3": "§5Hold §6Shift§5 to disable the gravity effect",
 
-  "tooltip.enigmaticdice.gravity_core_1": "§5Double-tap §6Jump§5 to perform a §6powerful leap.",
-  "tooltip.enigmaticdice.gravity_core_2": "§5Press §6Shift§5 mid-air to increase §dgravity §65x§5 and crash into the ground, §6damaging nearby enemies.",
-  "tooltip.enigmaticdice.gravity_core_3": "§6Damage§5 scales with your §6landing speed§5 and §6attack damage.",
-  "tooltip.enigmaticdice.gravity_core_4": "§6Shockwave radius§5 scales with your §6landing speed.",
+  "tooltip.enigmaticdice.gravity_core_1": "§5Double-tap §6Jump§5 to perform a §6powerful leap",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Press §6Shift§5 mid-air to increase §dgravity §65x§5 and crash into the ground, §6damaging nearby enemies",
+  "tooltip.enigmaticdice.gravity_core_3": "§6Damage§5 scales with your §6landing speed§5 and §6attack damage",
+  "tooltip.enigmaticdice.gravity_core_4": "§6Shockwave radius§5 scales with your §6landing speed",
+  "tooltip.enigmaticdice.gravity_core_5": "§5Grants immunity to §6fall damage",
+
+  "tooltip.enigmaticdice.moon_1": "§5- §6Greatly §5reduces §6gravity§5, making it §6negative",
+  "tooltip.enigmaticdice.moon_2": "§5- Grants immunity to §6fall damage",
+  "tooltip.enigmaticdice.moon_3": "§5Hold §6Shift§5 to disable the gravity effect",
 
   "enigmaticdice.block_break": "§6How did this end up here?",
 

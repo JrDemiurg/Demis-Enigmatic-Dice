@@ -7,9 +7,13 @@
   "item.enigmaticdice.four_leaf_clever": "§dVierblättriges Kleeblatt",
   "item.enigmaticdice.giants_ring": "§dRing der Riesen",
   "item.enigmaticdice.moon_shard": "§dMondsplitter",
+  "item.enigmaticdice.moon": "§dMond",
   "item.enigmaticdice.gravity_core": "§dGravitationskern",
 
   "tooltip.enigmaticdice.holdShift": "§5Halte §6Shift§5, um Details zu sehen.",
+
+  "tooltip.enigmaticdice.while_hotbar": "§dWenn in der Schnellzugriffsleiste:",
+  "tooltip.enigmaticdice.while_held": "§dWenn gehalten:",
 
   "tooltip.enigmaticdice.enigmatic_die": "§dEin Geschenk von Pandora...",
   "tooltip.enigmaticdice.enigmatic_die_2": "§5Löst bei Benutzung ein zufälliges §6Ereignis§5 aus.",
@@ -43,14 +47,19 @@
   "tooltip.enigmaticdice.giants_ring_1": "§5Erhöht die §dGröße§5 des Trägers um §61,5×§5.",
   "tooltip.enigmaticdice.giants_ring_2": "§5Beim §6Sprinten§5 zertrittst du nahe Feinde, die §6kleiner als du§5 sind, und verursachst Schaden basierend auf deinem §6Angriffsschaden§5.",
 
-  "tooltip.enigmaticdice.moon_shard_0": "§5Reduziert die §6Schwerkraft§5, wenn im §6Hotbar§5",
-  "tooltip.enigmaticdice.moon_shard_1": "§5Halte §6Shift§5 gedrückt, um den Effekt zu deaktivieren",
-  "tooltip.enigmaticdice.moon_shard_2": "§5Gewährt Immunität gegen §6Fallschaden",
+  "tooltip.enigmaticdice.moon_shard_1": "§5- Verringert die §6Schwerkraft§5",
+  "tooltip.enigmaticdice.moon_shard_2": "§5- Gewährt Immunität gegen §6Fallschaden",
+  "tooltip.enigmaticdice.moon_shard_3": "§5Halte §6Shift§5, um den Gravitationseffekt zu deaktivieren",
 
-  "tooltip.enigmaticdice.gravity_core_1": "§5Drücke §6Springen§5 zweimal schnell, um einen §6mächtigen Sprung§5 auszuführen.",
-  "tooltip.enigmaticdice.gravity_core_2": "§5Drücke §6Shift§5 in der Luft, um die §dGravitation§5 um §65x§5 zu erhöhen und mit Wucht zu landen – §6verletzt Gegner in der Nähe§5.",
-  "tooltip.enigmaticdice.gravity_core_3": "§6Schaden§5 skaliert mit deiner §6Landegeschwindigkeit§5 und §6Angriffsstärke§5.",
-  "tooltip.enigmaticdice.gravity_core_4": "§6Stoßwellen-Radius§5 skaliert mit deiner §6Landegeschwindigkeit§5.",
+  "tooltip.enigmaticdice.gravity_core_1": "§5Doppeltippen auf §6Springen§5, um einen §6mächtigen Sprung§5 auszuführen",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Drücke §6Shift§5 in der Luft, um die §dSchwerkraft §65x§5 zu erhöhen und mit Wucht auf den Boden zu krachen, §6Feinde in der Nähe zu verletzen",
+  "tooltip.enigmaticdice.gravity_core_3": "§6Schaden§5 skaliert mit deiner §6Landegeschwindigkeit§5 und §6Angriffsstärke",
+  "tooltip.enigmaticdice.gravity_core_4": "§6Schockwellenradius§5 skaliert mit deiner §6Landegeschwindigkeit",
+  "tooltip.enigmaticdice.gravity_core_5": "§5Gewährt Immunität gegen §6Fallschaden",
+
+  "tooltip.enigmaticdice.moon_1": "§5- §6Stark§5 verringerte §6Schwerkraft§5, wird §6negativ",
+  "tooltip.enigmaticdice.moon_2": "§5- Gewährt Immunität gegen §6Fallschaden",
+  "tooltip.enigmaticdice.moon_3": "§5Halte §6Shift§5, um den Gravitationseffekt zu deaktivieren",
 
   "enigmaticdice.block_break": "§6Wie ist das hierher gekommen?",
 

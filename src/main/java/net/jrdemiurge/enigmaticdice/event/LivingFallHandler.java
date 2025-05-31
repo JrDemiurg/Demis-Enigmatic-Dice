@@ -23,7 +23,7 @@ public class LivingFallHandler {
 
         for (int i = 0; i <= 8; i++) {
             ItemStack stack = player.getInventory().getItem(i);
-            if (stack.is(ModItems.MOON_SHARD.get())) {
+            if (stack.is(ModItems.MOON_SHARD.get()) || stack.is(ModItems.MOON.get())) {
                 event.setDamageMultiplier(0);
                 break;
             }

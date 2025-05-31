@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "enigmaticdice:moon_shard"
+    }
+  },
+  "result": {
+    "item": "enigmaticdice:moon",
+    "count": 1
+  }
+}

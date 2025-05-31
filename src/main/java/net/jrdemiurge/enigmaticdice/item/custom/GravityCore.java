@@ -67,6 +67,8 @@ public class GravityCore extends Item implements ICurioItem {
         if (slotContext.entity().level().isClientSide || !(slotContext.entity() instanceof Player player))
             return;
 
+        if (player.isCreative() || player.isSpectator()) return;
+
         AttributeInstance gravityAttr = player.getAttribute(ForgeMod.ENTITY_GRAVITY.get());
         if (gravityAttr == null) return;
 
@@ -192,7 +194,7 @@ public class GravityCore extends Item implements ICurioItem {
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.gravity_core_3"));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.gravity_core_4"));
             pTooltipComponents.add(Component.literal(" "));
-            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.moon_shard_2"));
+            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.gravity_core_5"));
         } else {
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.holdShift"));
         }

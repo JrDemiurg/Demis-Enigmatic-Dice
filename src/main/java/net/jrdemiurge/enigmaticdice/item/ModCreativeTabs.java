@@ -24,6 +24,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.ANTIMATTER.get());
                         output.accept(ModItems.GIANTS_RING.get());
                         output.accept(ModItems.MOON_SHARD.get());
+                        output.accept(ModItems.MOON.get());
                         output.accept(ModItems.GRAVITY_CORE.get());
                     })
                     .build());
