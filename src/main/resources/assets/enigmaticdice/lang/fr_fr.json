@@ -10,6 +10,9 @@
   "item.enigmaticdice.moon": "§dLune",
   "item.enigmaticdice.gravity_core": "§dNoyau de Gravité",
 
+  "stat.enigmaticdice.obtained_dice_from_block": "Dés des blocs",
+  "stat.enigmaticdice.obtained_dice_from_mob": "Dés des mobs",
+
   "tooltip.enigmaticdice.holdShift": "§5Maintenez §6Shift§5 pour voir les détails.",
 
   "tooltip.enigmaticdice.while_hotbar": "§dQuand dans la barre rapide :",
@@ -128,6 +131,11 @@
   "enigmaticdice.event.raycat": "§9Est-ce qu’il est sûr d’avoir neuf vies ?",
   "enigmaticdice.event.subterranodon": "§9Est-ce un planeur ?",
   "enigmaticdice.event.vallumraptor": "§9On dirait que tu t’es fait de nouveaux amis.",
+
+  "enigmaticdice.event.creeper_party.level.1": "§cFête des Creepers ! Édition légère",
+  "enigmaticdice.event.creeper_party.level.2": "§cFête des Creepers ! Où sont-ils ?",
+  "enigmaticdice.event.creeper_party.level.3": "§cFête des Creepers ! Parade fantôme",
+  "enigmaticdice.event.creeper_party.level.4": "§cFête des Creepers ! Chaos total",
 
   "enigmaticdice.gift.white": "§fTiens, un cadeau.",
   "enigmaticdice.gift.dark_green": "§2Tiens, un cadeau.",

@@ -10,6 +10,9 @@
   "item.enigmaticdice.moon": "§dMond",
   "item.enigmaticdice.gravity_core": "§dGravitationskern",
 
+  "stat.enigmaticdice.obtained_dice_from_block": "Würfel aus Blöcken",
+  "stat.enigmaticdice.obtained_dice_from_mob": "Würfel von Mobs",
+
   "tooltip.enigmaticdice.holdShift": "§5Halte §6Shift§5, um Details zu sehen.",
 
   "tooltip.enigmaticdice.while_hotbar": "§dWenn in der Schnellzugriffsleiste:",
@@ -128,6 +131,11 @@
   "enigmaticdice.event.raycat": "§9Bist du sicher, dass es neun Leben hat?",
   "enigmaticdice.event.subterranodon": "§9Ist das ein Gleiter?",
   "enigmaticdice.event.vallumraptor": "§9Sieht aus, als hättest du neue Freunde gefunden.",
+
+  "enigmaticdice.event.creeper_party.level.1": "§cCreeper-Party! Leichte Ausgabe",
+  "enigmaticdice.event.creeper_party.level.2": "§cCreeper-Party! Jetzt siehst du sie nicht",
+  "enigmaticdice.event.creeper_party.level.3": "§cCreeper-Party! Phantom-Parade",
+  "enigmaticdice.event.creeper_party.level.4": "§cCreeper-Party! Totales Chaos",
 
   "enigmaticdice.gift.white": "§fHier, ein Geschenk.",
   "enigmaticdice.gift.dark_green": "§2Hier, ein Geschenk.",

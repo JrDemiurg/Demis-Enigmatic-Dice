@@ -10,6 +10,9 @@
   "item.enigmaticdice.moon": "§dЛуна",
   "item.enigmaticdice.gravity_core": "§dГравитационное ядро",
 
+  "stat.enigmaticdice.obtained_dice_from_block": "Игральных костей из блоков",
+  "stat.enigmaticdice.obtained_dice_from_mob": "Игральных костей с мобов",
+
   "tooltip.enigmaticdice.holdShift": "§5Удерживайте §6Shift§5 для деталей.",
 
   "tooltip.enigmaticdice.while_hotbar": "§dПока на панели быстрого доступа:",
@@ -128,6 +131,11 @@
   "enigmaticdice.event.raycat": "§9У него точно девять жизней?",
   "enigmaticdice.event.subterranodon": "§9Это планер?",
   "enigmaticdice.event.vallumraptor": "§9Похоже, у тебя новые друзья.",
+
+  "enigmaticdice.event.creeper_party.level.1": "§cКрипер-пати! Лёгкая версия",
+  "enigmaticdice.event.creeper_party.level.2": "§cКрипер-пати! А где они?",
+  "enigmaticdice.event.creeper_party.level.3": "§cКрипер-пати! Призрачный парад",
+  "enigmaticdice.event.creeper_party.level.4": "§cКрипер-пати! Полный хаос",
 
   "enigmaticdice.gift.white": "§fДержи, это подарок.",
   "enigmaticdice.gift.dark_green": "§2Держи, это подарок.",

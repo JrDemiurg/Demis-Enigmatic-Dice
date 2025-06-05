@@ -10,6 +10,9 @@
   "item.enigmaticdice.moon": "§dLuna",
   "item.enigmaticdice.gravity_core": "§dNúcleo de Gravedad",
 
+  "stat.enigmaticdice.obtained_dice_from_block": "Dados de bloques",
+  "stat.enigmaticdice.obtained_dice_from_mob": "Dados de mobs",
+
   "tooltip.enigmaticdice.holdShift": "§5Mantén presionado §6Shift§5 para ver los detalles.",
 
   "tooltip.enigmaticdice.while_hotbar": "§dMientras esté en la barra rápida:",
@@ -128,6 +131,11 @@
   "enigmaticdice.event.raycat": "§9¿Está seguro de que tiene nueve vidas?",
   "enigmaticdice.event.subterranodon": "§9¿Es un planeador?",
   "enigmaticdice.event.vallumraptor": "§9Parece que has hecho nuevos amigos.",
+
+  "enigmaticdice.event.creeper_party.level.1": "§c¡Fiesta de Creepers! Edición ligera",
+  "enigmaticdice.event.creeper_party.level.2": "§c¡Fiesta de Creepers! ¿Dónde están?",
+  "enigmaticdice.event.creeper_party.level.3": "§c¡Fiesta de Creepers! Desfile fantasma",
+  "enigmaticdice.event.creeper_party.level.4": "§c¡Fiesta de Creepers! Caos total",
 
   "enigmaticdice.gift.white": "§fToma, es un regalo.",
   "enigmaticdice.gift.dark_green": "§2Toma, es un regalo.",

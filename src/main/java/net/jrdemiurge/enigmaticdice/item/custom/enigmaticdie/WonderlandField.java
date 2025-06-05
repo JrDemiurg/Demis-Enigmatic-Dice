@@ -22,7 +22,7 @@ import java.util.Random;
 public class WonderlandField implements RandomEvent {
     private final int rarity;
     private static final int MIMIC_COUNT = 10;
-    private static final int SPAWN_RADIUS = 40;
+    private static final int SPAWN_RADIUS = 30;
 
     public WonderlandField(int rarity) {
         this.rarity = rarity;
@@ -82,7 +82,7 @@ public class WonderlandField implements RandomEvent {
 
     private Vec3 findValidSpawnPosition(Level level, Player player, Random random) {
         double angle = random.nextDouble() * Math.PI * 2;
-        double distance = SPAWN_RADIUS * (0.25 + 0.75 * random.nextDouble());
+        double distance = SPAWN_RADIUS * (0.15 + 0.85 * random.nextDouble());
         int x = (int) (player.getX() + Math.cos(angle) * distance);
         int z = (int) (player.getZ() + Math.sin(angle) * distance);
         BlockPos surfacePos = level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, new BlockPos(x, 0, z));

@@ -10,6 +10,9 @@
   "item.enigmaticdice.moon": "§dMoon",
   "item.enigmaticdice.gravity_core": "§dGravity Core",
 
+  "stat.enigmaticdice.obtained_dice_from_block": "Enigmatic Dice From Blocks",
+  "stat.enigmaticdice.obtained_dice_from_mob": "Enigmatic Dice From Mobs",
+
   "tooltip.enigmaticdice.holdShift": "§5Hold §6Shift§5 to see details.",
 
   "tooltip.enigmaticdice.while_hotbar": "§dWhile in the hotbar:",
@@ -128,6 +131,11 @@
   "enigmaticdice.event.raycat": "§9Is it sure it has nine lives?",
   "enigmaticdice.event.subterranodon": "§9Is it a glider?",
   "enigmaticdice.event.vallumraptor": "§9Looks like you've made some new friends.",
+
+  "enigmaticdice.event.creeper_party.level.1": "§cCreeper Party! Light Edition",
+  "enigmaticdice.event.creeper_party.level.2": "§cCreeper Party! Now You Don't See Them",
+  "enigmaticdice.event.creeper_party.level.3": "§cCreeper Party! Phantom Parade",
+  "enigmaticdice.event.creeper_party.level.4": "§cCreeper Party! Total Chaos",
 
   "enigmaticdice.gift.white": "§fHere, it's a gift.",
   "enigmaticdice.gift.dark_green": "§2Here, it's a gift.",

@@ -101,6 +101,22 @@ public class RandomEventManager {
                     events.add(new SummonTamedHorse(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "minecraft_mass_creeper_summon_1" -> {
+                    events.add(new MassCreeperSummonEvent(config.rarity, 1));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_mass_creeper_summon_2" -> {
+                    events.add(new MassCreeperSummonEvent(config.rarity, 2));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_mass_creeper_summon_3" -> {
+                    events.add(new MassCreeperSummonEvent(config.rarity, 3));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_mass_creeper_summon_4" -> {
+                    events.add(new MassCreeperSummonEvent(config.rarity, 4));
+                    eventNames.add(eventName);
+                }
                 case "alexsmobs_summon_warped_toads" -> {
                     events.add(new SummonWarpedToadsEvent(config.rarity));
                     eventNames.add(eventName);

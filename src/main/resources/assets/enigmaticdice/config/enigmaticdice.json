@@ -40,6 +40,26 @@
       "requiredMod": "minecraft",
       "rarity": 5
     },
+    "minecraft_mass_creeper_summon_1": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 5
+    },
+    "minecraft_mass_creeper_summon_2": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 20
+    },
+    "minecraft_mass_creeper_summon_3": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 100
+    },
+    "minecraft_mass_creeper_summon_4": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 1000
+    },
     "alexsmobs_summon_warped_toads": {
       "enabled": true,
       "requiredMod": "alexsmobs",

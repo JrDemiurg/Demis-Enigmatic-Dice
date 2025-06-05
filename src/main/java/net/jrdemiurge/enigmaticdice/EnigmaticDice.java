@@ -14,6 +14,7 @@ import net.jrdemiurge.enigmaticdice.item.custom.Antimatter;
 import net.jrdemiurge.enigmaticdice.network.NetworkHandler;
 import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.jrdemiurge.enigmaticdice.sound.ModSounds;
+import net.jrdemiurge.enigmaticdice.stat.ModStats;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -57,6 +58,7 @@ public class EnigmaticDice {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(Antimatter::init);
+        event.enqueueWork(ModStats::registerCustomStats);
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {

@@ -99,10 +99,26 @@ public class Config
                     "For example, a value of 0.005 means a 0.5% chance to drop.")
             .defineInRange("enigmaticDieDropChance", 0.005, 0.0, 1.0);
 
+    private static final ForgeConfigSpec.ConfigValue<Integer> MOB_DICE_TIME_INTERVAL = BUILDER
+            .comment("Defines the time requirement (in minutes) for earning Enigmatic Dice from killing mobs.\n" +
+                    "This is NOT a cooldown.\n" +
+                    "For every X minutes the player spends in the world, they are allowed to obtain 1 die from mobs.\n" +
+                    "Example: If set to 10, then after 60 minutes of total playtime, the player may have earned up to 6 dice from mobs.\n" +
+                    "Set to 0 to disable the limitation entirely.")
+            .defineInRange("mobDiceTimeInterval", 10, 0, 100000);
+
     private static final ForgeConfigSpec.ConfigValue<Double> ENIGMATIC_DIE_BLOCK_DROP_CHANCE = BUILDER
             .comment("Chance for Enigmatic Die to drop from a block when broken by a player.\n" +
                     "For example, a value of 0.001 means a 0.1% chance to drop.")
             .defineInRange("enigmaticDieBlockDropChance", 0.001, 0.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> BLOCK_DICE_TIME_INTERVAL = BUILDER
+            .comment("Defines the time requirement (in minutes) for earning Enigmatic Dice from breaking blocks.\n" +
+                    "This is NOT a cooldown.\n" +
+                    "For every X minutes the player spends in the world, they are allowed to obtain 1 die from blocks.\n" +
+                    "Example: If set to 10, then after 60 minutes of total playtime, the player may have earned up to 6 dice from blocks.\n" +
+                    "Set to 0 to disable the limitation entirely.")
+            .defineInRange("blockDiceTimeInterval", 10, 0, 100000);
 
     private static final ForgeConfigSpec.ConfigValue<Double> ENIGMATIC_DIE_CHEST_CHANCE = BUILDER
             .comment("Chance for Enigmatic Die to appear in a chest.\n" +
@@ -182,6 +198,8 @@ public class Config
     public static double EnigmaticDieMobDropChance;
     public static double EnigmaticDieBlockDropChance;
     public static double EnigmaticDieChestChance;
+    public static int BlockDiceTimeInterval;
+    public static int MobDiceTimeInterval;
     public static int StructureSearchRadius;
     public static int BiomeSearchRadius;
     public static int BiomeHorizontalStep;
@@ -210,6 +228,8 @@ public class Config
         EnigmaticDieMobDropChance = ENIGMATIC_DIE_MOB_DROP_CHANCE.get();
         EnigmaticDieBlockDropChance = ENIGMATIC_DIE_BLOCK_DROP_CHANCE.get();
         EnigmaticDieChestChance = ENIGMATIC_DIE_CHEST_CHANCE.get();
+        BlockDiceTimeInterval = BLOCK_DICE_TIME_INTERVAL.get();
+        MobDiceTimeInterval = MOB_DICE_TIME_INTERVAL.get();
         StructureSearchRadius = STRUCTURE_SEARCH_RADIUS.get();
         BiomeSearchRadius = BIOME_SEARCH_RADIUS.get();
         BiomeHorizontalStep = BIOME_HORIZONTAL_STEP.get();
