@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "enigmaticdice:item/clever5"
+    "layer0": "enigmaticdice:item/four_leaf_clever"
   }
 }

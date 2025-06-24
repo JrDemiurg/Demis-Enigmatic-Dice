@@ -11,7 +11,6 @@ import net.minecraft.world.level.levelgen.Heightmap;
 
 public class TeleportToWorldEdgeEvent implements RandomEvent {
     private final int rarity;
-    private static final int WORLD_BORDER = 29_999_980;
 
     public TeleportToWorldEdgeEvent(int rarity) {
         this.rarity = rarity;
@@ -31,8 +30,22 @@ public class TeleportToWorldEdgeEvent implements RandomEvent {
             boolean xEdge = pLevel.random.nextBoolean();
             boolean positive = pLevel.random.nextBoolean();
 
-            int targetX = xEdge ? (positive ? WORLD_BORDER : -WORLD_BORDER) : pPlayer.blockPosition().getX();
-            int targetZ = xEdge ? pPlayer.blockPosition().getZ() : (positive ? WORLD_BORDER : -WORLD_BORDER);
+            double borderHalfSize = serverLevel.getWorldBorder().getSize() / 2.0 - 10.0; // -10 блоков от края
+            double borderCenterX = serverLevel.getWorldBorder().getCenterX();
+            double borderCenterZ = serverLevel.getWorldBorder().getCenterZ();
+
+            final int MAX_WORLD_COORD = 29_999_974;
+
+            int rawX = xEdge
+                    ? (int) (borderCenterX + (positive ? borderHalfSize : -borderHalfSize))
+                    : pPlayer.blockPosition().getX();
+
+            int rawZ = xEdge
+                    ? pPlayer.blockPosition().getZ()
+                    : (int) (borderCenterZ + (positive ? borderHalfSize : -borderHalfSize));
+
+            int targetX = Math.max(-MAX_WORLD_COORD, Math.min(MAX_WORLD_COORD, rawX));
+            int targetZ = Math.max(-MAX_WORLD_COORD, Math.min(MAX_WORLD_COORD, rawZ));
 
             serverLevel.getChunkSource().getChunk(targetX >> 4, targetZ >> 4, ChunkStatus.FULL, true);
             int surfaceY = serverLevel.getHeight(Heightmap.Types.WORLD_SURFACE, targetX, targetZ);

@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class PermanentBuffEvent implements RandomEvent {
     private static final Map<MobEffect, String> EFFECT_MESSAGES = Map.of(
-            MobEffects.LUCK, "enigmaticdice.effect.luck",
+            // MobEffects.LUCK, "enigmaticdice.effect.luck",
             MobEffects.DAMAGE_BOOST, "enigmaticdice.effect.damage_boost",
             MobEffects.MOVEMENT_SPEED, "enigmaticdice.effect.movement_speed",
             MobEffects.DIG_SPEED, "enigmaticdice.effect.dig_speed",
@@ -22,7 +22,7 @@ public class PermanentBuffEvent implements RandomEvent {
             MobEffects.REGENERATION, "enigmaticdice.effect.regeneration"
     );
 
-    private static final int MAX_LEVEL = 3;
+    private static final int MAX_LEVEL = 2;
     private static final int MAX_LEVEL_SINGLE = 1;
     private final int rarity;
 
