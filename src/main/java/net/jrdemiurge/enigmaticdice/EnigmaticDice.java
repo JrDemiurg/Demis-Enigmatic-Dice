@@ -51,7 +51,6 @@ public class EnigmaticDice {
         MinecraftForge.EVENT_BUS.register(new LootEventHandler());
         MinecraftForge.EVENT_BUS.register(new MobDropHandler());
         MinecraftForge.EVENT_BUS.register(new BlockBreakHandler());
-        modEventBus.addListener(this::addCreative);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -59,9 +58,6 @@ public class EnigmaticDice {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(Antimatter::init);
         event.enqueueWork(ModStats::registerCustomStats);
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
     }
 
     @SubscribeEvent
@@ -75,13 +71,5 @@ public class EnigmaticDice {
         event.getServer().getCommands().getDispatcher().register(
                 EnigmaticDiceGetLuckCommand.create()
         );
-    }
-
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-
-        }
     }
 }

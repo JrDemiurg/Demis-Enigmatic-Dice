@@ -1,5 +1,6 @@
 package net.jrdemiurge.enigmaticdice.item.custom;
 
+import net.jrdemiurge.enigmaticdice.Config;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
 import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.minecraft.client.gui.screens.Screen;
@@ -46,7 +47,7 @@ public class Moon extends Item {
                             gravityAttribute.addTransientModifier(new AttributeModifier(
                                     GRAVITY_MODIFIER_UUID,
                                     "Moon gravity reduction",
-                                    -0.1,
+                                    Config.MoonGravityReduction,
                                     AttributeModifier.Operation.ADDITION
                             ));
                         }
@@ -68,7 +69,7 @@ public class Moon extends Item {
                         gravityAttributeLater.removeModifier(GRAVITY_MODIFIER_UUID);
                     }
                 }
-            }, 1, 0);
+            }, 4, 0);
         }
     }
 

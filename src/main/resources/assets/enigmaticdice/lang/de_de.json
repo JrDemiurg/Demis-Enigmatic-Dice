@@ -9,6 +9,7 @@
   "item.enigmaticdice.moon_shard": "§dMondsplitter",
   "item.enigmaticdice.moon": "§dMond",
   "item.enigmaticdice.gravity_core": "§dGravitationskern",
+  "item.enigmaticdice.ring_of_agility": "§dRing der Beweglichkeit",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Würfel aus Blöcken",
   "stat.enigmaticdice.obtained_dice_from_mob": "Würfel von Mobs",
@@ -55,7 +56,7 @@
   "tooltip.enigmaticdice.moon_shard_3": "§5Halte §6Shift§5, um den Gravitationseffekt zu deaktivieren",
 
   "tooltip.enigmaticdice.gravity_core_1": "§5Doppeltippen auf §6Springen§5, um einen §6mächtigen Sprung§5 auszuführen",
-  "tooltip.enigmaticdice.gravity_core_2": "§5Drücke §6Shift§5 in der Luft, um die §dSchwerkraft §65x§5 zu erhöhen und mit Wucht auf den Boden zu krachen, §6Feinde in der Nähe zu verletzen",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Drücke §6Shift§5 in der Luft, um die §dSchwerkraft §6%sx§5 zu erhöhen und mit Wucht auf den Boden zu krachen, §6Feinde in der Nähe zu verletzen",
   "tooltip.enigmaticdice.gravity_core_3": "§6Schaden§5 skaliert mit deiner §6Landegeschwindigkeit§5 und §6Angriffsstärke",
   "tooltip.enigmaticdice.gravity_core_4": "§6Schockwellenradius§5 skaliert mit deiner §6Landegeschwindigkeit",
   "tooltip.enigmaticdice.gravity_core_5": "§5Gewährt Immunität gegen §6Fallschaden",
@@ -64,13 +65,15 @@
   "tooltip.enigmaticdice.moon_2": "§5- Gewährt Immunität gegen §6Fallschaden",
   "tooltip.enigmaticdice.moon_3": "§5Halte §6Shift§5, um den Gravitationseffekt zu deaktivieren",
 
+  "tooltip.enigmaticdice.ring_of_agility_1": "§5Gewährt eine §6%s%% Chance§5, §6Angriffen§5 auszuweichen.",
+  "tooltip.enigmaticdice.ring_of_agility_2": "§5Die Chance steigt mit deiner §6Bewegungsgeschwindigkeit§5.",
+
   "enigmaticdice.block_break": "§6Wie ist das hierher gekommen?",
 
-  "enigmaticdice.mob_drop.0": "§6Interessant... selbst sie lassen es jetzt fallen.",
-  "enigmaticdice.mob_drop.1": "§6Lustig. Er hatte etwas bei sich, das dir gehört.",
-  "enigmaticdice.mob_drop.2": "§6Du hast genommen, was dir schon immer gehört hat.",
-  "enigmaticdice.mob_drop.3": "§6Sieht aus, als hätte er nicht mal gewusst, dass er es hatte.",
-  "enigmaticdice.mob_drop.4": "§6Und warum hat er das überhaupt mit sich herumgetragen?",
+  "enigmaticdice.mob_drop.0": "§6Lustig. Er hatte etwas bei sich, das dir gehört.",
+  "enigmaticdice.mob_drop.1": "§6Du hast genommen, was dir schon immer gehört hat.",
+  "enigmaticdice.mob_drop.2": "§6Sieht aus, als hätte er nicht mal gewusst, dass er es hatte.",
+  "enigmaticdice.mob_drop.3": "§6Und warum hat er das überhaupt mit sich herumgetragen?",
 
   "enigmaticdice.advancement_earned.0": "§6Hmm... eine würdige Leistung. Ich schätze, du hast es dir verdient.",
   "enigmaticdice.advancement_earned.1": "§6Wer hätte das gedacht... du bist doch nicht so simpel. Nimm den Würfel.",

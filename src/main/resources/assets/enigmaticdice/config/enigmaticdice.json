@@ -213,6 +213,15 @@
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.gold"
     },
+    "enigmaticdice_give_ring_of_agility": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 100,
+      "item": "enigmaticdice:ring_of_agility",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.gold"
+    },
     "born_in_chaos_give_phantom_bomb": {
       "enabled": true,
       "requiredMod": "born_in_chaos_v1",

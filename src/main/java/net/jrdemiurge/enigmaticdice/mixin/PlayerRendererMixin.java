@@ -2,6 +2,7 @@ package net.jrdemiurge.enigmaticdice.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
+import net.jrdemiurge.enigmaticdice.item.custom.GiantsRing;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -22,15 +23,9 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<Player, P
         super(ctx, model, shadowRadius);
     }
 
-    private boolean isWearingGiantRing(Player player) {
-        return CuriosApi.getCuriosInventory(player)
-                .map(handler -> !handler.findCurios(ModItems.GIANTS_RING.get()).isEmpty())
-                .orElse(false);
-    }
-
     @Inject(method = "render", at = @At("HEAD"))
     private void scaleSmallPlayer(AbstractClientPlayer player, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight, CallbackInfo ci) {
-        if (isWearingGiantRing(player)) {
+        if (GiantsRing.isWearingGiantRing(player)) {
             poseStack.pushPose();
             poseStack.scale(1.5F, 1.5F, 1.5F);
         }
@@ -38,7 +33,7 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<Player, P
 
     @Inject(method = "render", at = @At("RETURN"))
     private void scaleSmallPlayerEnd(AbstractClientPlayer player, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight, CallbackInfo ci) {
-        if (isWearingGiantRing(player)) {
+        if (GiantsRing.isWearingGiantRing(player)) {
             poseStack.popPose();
         }
     }

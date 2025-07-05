@@ -9,6 +9,7 @@
   "item.enigmaticdice.moon_shard": "§dÉclat de Lune",
   "item.enigmaticdice.moon": "§dLune",
   "item.enigmaticdice.gravity_core": "§dNoyau de Gravité",
+  "item.enigmaticdice.ring_of_agility": "§dAnneau d'Agilité",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Dés des blocs",
   "stat.enigmaticdice.obtained_dice_from_mob": "Dés des mobs",
@@ -55,7 +56,7 @@
   "tooltip.enigmaticdice.moon_shard_3": "§5Maintenez §6Shift§5 pour désactiver l'effet de gravité",
 
   "tooltip.enigmaticdice.gravity_core_1": "§5Appuyez deux fois sur §6Sauter§5 pour effectuer un §6saut puissant",
-  "tooltip.enigmaticdice.gravity_core_2": "§5Appuyez sur §6Shift§5 en l'air pour augmenter la §dgravité §6x5§5 et vous écraser au sol, §6infligeant des dégâts aux ennemis proches",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Appuyez sur §6Shift§5 en l'air pour augmenter la §dgravité §6x%s§5 et vous écraser au sol, §6infligeant des dégâts aux ennemis proches",
   "tooltip.enigmaticdice.gravity_core_3": "§6Les dégâts§5 dépendent de votre §6vitesse de chute§5 et de vos §6dégâts d'attaque",
   "tooltip.enigmaticdice.gravity_core_4": "§6Le rayon d'onde de choc§5 dépend de votre §6vitesse de chute",
   "tooltip.enigmaticdice.gravity_core_5": "§5Confère une immunité aux §6dégâts de chute",
@@ -64,13 +65,15 @@
   "tooltip.enigmaticdice.moon_2": "§5- Confère une immunité aux §6dégâts de chute",
   "tooltip.enigmaticdice.moon_3": "§5Maintenez §6Shift§5 pour désactiver l'effet de gravité",
 
+  "tooltip.enigmaticdice.ring_of_agility_1": "§5Confère §6%s%% de chance§5 d'§6esquiver§5 les attaques.",
+  "tooltip.enigmaticdice.ring_of_agility_2": "§5La chance augmente avec votre §6vitesse de déplacement§5.",
+
   "enigmaticdice.block_break": "§6Comment cela a-t-il atterri ici ?",
 
-  "enigmaticdice.mob_drop.0": "§6Intéressant... même eux ont commencé à le faire tomber.",
-  "enigmaticdice.mob_drop.1": "§6Drôle. Il transportait quelque chose qui t'appartient.",
-  "enigmaticdice.mob_drop.2": "§6Tu as pris ce qui aurait dû être à toi depuis le début.",
-  "enigmaticdice.mob_drop.3": "§6On dirait qu’il ne savait même pas qu’il le portait.",
-  "enigmaticdice.mob_drop.4": "§6Et pourquoi se baladait-il avec ça, au fait ?",
+  "enigmaticdice.mob_drop.0": "§6Drôle. Il transportait quelque chose qui t'appartient.",
+  "enigmaticdice.mob_drop.1": "§6Tu as pris ce qui aurait dû être à toi depuis le début.",
+  "enigmaticdice.mob_drop.2": "§6On dirait qu’il ne savait même pas qu’il le portait.",
+  "enigmaticdice.mob_drop.3": "§6Et pourquoi se baladait-il avec ça, au fait ?",
 
   "enigmaticdice.advancement_earned.0": "§6Hmm... un exploit digne. Je suppose que tu as mérité cela.",
   "enigmaticdice.advancement_earned.1": "§6Qui l'aurait cru... tu n'es pas si simple finalement. Prends le dé.",

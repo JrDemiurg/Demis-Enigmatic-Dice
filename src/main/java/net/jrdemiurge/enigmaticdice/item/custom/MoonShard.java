@@ -1,5 +1,6 @@
 package net.jrdemiurge.enigmaticdice.item.custom;
 
+import net.jrdemiurge.enigmaticdice.Config;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
 import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.minecraft.client.gui.screens.Screen;
@@ -64,7 +65,7 @@ public class MoonShard extends Item {
                                 gravityAttribute.addTransientModifier(new AttributeModifier(
                                         GRAVITY_MODIFIER_UUID,
                                         "MoonShard gravity reduction",
-                                        -0.06,
+                                        Config.MoonShardGravityReduction,
                                         AttributeModifier.Operation.ADDITION
                                 ));
                             }
@@ -75,7 +76,7 @@ public class MoonShard extends Item {
                                 gravityAttribute.addTransientModifier(new AttributeModifier(
                                         GRAVITY_MODIFIER_UUID,
                                         "MoonShard gravity reduction",
-                                        -0.06,
+                                        Config.MoonShardGravityReduction,
                                         AttributeModifier.Operation.ADDITION
                                 ));
                             }

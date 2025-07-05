@@ -133,7 +133,7 @@ public class Config
     private static final ForgeConfigSpec.ConfigValue<Integer> BIOME_SEARCH_RADIUS = BUILDER
             .comment("Radius (in blocks) to search for the target biome during the 'minecraft_teleport_to_biome' event.\n" +
                     "Higher values search further but may impact performance.")
-            .defineInRange("biomeSearchRadius", 4480, 256, 10000);
+            .defineInRange("biomeSearchRadius", 4480, 256, 100000);
 
     private static final ForgeConfigSpec.ConfigValue<Integer> BIOME_HORIZONTAL_STEP = BUILDER
             .comment("Horizontal search step when scanning for biomes in the 'minecraft_teleport_to_biome' event.\n" +
@@ -165,6 +165,14 @@ public class Config
                     "Each hit refreshes this timer.")
             .defineInRange("unequalExchangeDebuffDuration", 30, 0, 10000);
 
+    private static final ForgeConfigSpec.ConfigValue<Double> UNEQUAL_EXCHANGE_ATTACK_DAMAGE = BUILDER
+            .comment("Unequal Exchange Attack Damage.")
+            .define("unequalExchangeAttackDamage", 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> UNEQUAL_EXCHANGE_ATTACK_SPEED = BUILDER
+            .comment("Unequal Exchange Attack Speed.")
+            .define("unequalExchangeAttackSpeed", 1.6);
+
     private static final ForgeConfigSpec.ConfigValue<Double> SOUL_EATER_CHARGED_ATTACK_DAMAGE_PER_HP = BUILDER
             .comment("Extra magic damage of Soul Eater's charged attack per HP spent.")
             .defineInRange("soulEaterChargedAttackDamagePerHP", 2.5, 0.0, 100.0);
@@ -189,9 +197,70 @@ public class Config
 
     private static final ForgeConfigSpec.ConfigValue<Double> SOUL_EATER_MAX_HEALTH_MULTIPLIER_LIMIT = BUILDER
             .comment("Maximum multiplier for player's max HP from Soul Eater.\n" +
-                    "Example: 2.0 = Player's max HP can be increased up to 200%.")
-            .defineInRange("soulEaterMaxHealthMultiplierLimit", 2.0, 0.0, 100.0);
+                    "Example: 1.0 = Player's max HP can be increased up to 100%.")
+            .defineInRange("soulEaterMaxHealthMultiplierLimit", 1.0, 0.0, 100.0);
 
+    private static final ForgeConfigSpec.ConfigValue<Double> SOUL_EATER_ATTACK_DAMAGE = BUILDER
+            .comment("Soul Eater Attack Damage.")
+            .define("soulEaterAttackDamage", 10.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> SOUL_EATER_ATTACK_SPEED = BUILDER
+            .comment("Soul Eater Attack Speed.")
+            .define("soulEaterAttackSpeed", 2.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> GIANTS_RING_ATTACK_DAMAGE = BUILDER
+            .comment("Bonus attack damage granted by Giant's Ring.")
+            .defineInRange("giantsRingAttackDamage", 3.0, 0.0, 1024.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> GIANTS_RING_MAX_HEALTH = BUILDER
+            .comment("Bonus max health granted by Giant's Ring.")
+            .defineInRange("giantsRingMaxHealth", 10.0, 0.0, 1024.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> GIANTS_RING_KNOCKBACK_RESISTANCE = BUILDER
+            .comment("Bonus knockback resistance granted by Giant's Ring.")
+            .defineInRange("giantsRingKnockbackResistance", 1, 0.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> MOON_SHARD_GRAVITY_REDUCTION  = BUILDER
+            .comment("Gravity change applied while Moon Shard is in hotbar.\n" +
+                    "Default Minecraft gravity is 0.08.")
+            .defineInRange("moonShardGravityReduction", -0.06, -1.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> MOON_GRAVITY_REDUCTION  = BUILDER
+            .comment("Gravity change applied while holding the Moon item.\n" +
+                    "Default Minecraft gravity is 0.08.")
+            .defineInRange("moonGravityReduction", -0.1, -1.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> GRAVITY_CORE_GRAVITY_MULTIPLIER = BUILDER
+            .comment("Multiplier applied to gravity when holding SHIFT with Gravity Core.")
+            .defineInRange("gravityCoreGravityMultiplier", 5.0, 0.0, 100.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> GRAVITY_CORE_IMPACT_RADIUS_COEFFICIENT = BUILDER
+            .comment("Impact radius coefficient when falling with Gravity Core.\n" +
+                    "Impact radius = fall speed * this value.")
+            .defineInRange("gravityCoreImpactRadiusCoefficient", 1.0, 0.0, 10.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> GRAVITY_CORE_IMPACT_DAMAGE_COEFFICIENT = BUILDER
+            .comment("Impact damage coefficient when falling with Gravity Core.\n" +
+                    "Damage = player's attack damage * fall speed * this value.")
+            .defineInRange("gravityCoreImpactDamageCoefficient", 0.5, 0.0, 10.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> GRAVITY_CORE_JUMP_STRENGTH = BUILDER
+            .comment("Jump strength boost applied when using Gravity Core.")
+            .defineInRange("gravityCoreJumpStrength", 5.0, 0.0, 50.0);
+
+    private static final ForgeConfigSpec.IntValue GRAVITY_CORE_COOLDOWN = BUILDER
+            .comment("Cooldown in ticks for Gravity Core jump (20 ticks = 1 second).")
+            .defineInRange("gravityCoreCooldown", 0, 0, 100000);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> RING_OF_AGILITY_CHANCE_SCALE = BUILDER
+            .comment("Multiplier for movement speed in dodge chance formula.\n" +
+                    "Formula: dodgeChance = 1.0 - pow(0.99, movementSpeed * 100 * scale)")
+            .defineInRange("ringOfAgilityChanceScale", 1.0, 0.0, 100.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> RING_OF_AGILITY_MAX_DODGE_CHANCE = BUILDER
+            .comment("Maximum dodge chance.\n" +
+                    "Example: 0.9 = 90% maximum dodge chance.")
+            .defineInRange("ringOfAgilityMaxDodgeChance", 0.9, 0.0, 1.0);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
@@ -208,12 +277,28 @@ public class Config
     public static double UnequalExchangePlayerHealthReduction;
     public static double UnequalExchangeStatDebuff;
     public static int UnequalExchangeDebuffDuration;
+    public static double UnequalExchangeAttackDamage;
+    public static double UnequalExchangeAttackSpeed;
     public static double SoulEaterChargedAttackDamagePerHP;
     public static int SoulEaterChargeDuration;
     public static double SoulEaterHealPercentOnKill;
     public static double SoulEaterMaxHealthStealPercent;
     public static int SoulEaterMaxHealthBuffDuration;
     public static double SoulEaterMaxHealthMultiplierLimit;
+    public static double SoulEaterAttackDamage;
+    public static double SoulEaterAttackSpeed;
+    public static double GiantsRingAttackDamage;
+    public static double GiantsRingMaxHealth;
+    public static double GiantsRingKnockbackResistance;
+    public static double MoonShardGravityReduction;
+    public static double MoonGravityReduction;
+    public static double GravityCoreGravityMultiplier;
+    public static double GravityCoreImpactRadiusCoefficient;
+    public static double GravityCoreImpactDamageCoefficient;
+    public static double GravityCoreJumpStrength;
+    public static int GravityCoreCooldown;
+    public static double RingOfAgilityChanceScale;
+    public static double RingOfAgilityMaxDodgeChance;
 
     public static List<ResourceLocation> lootTables;
 
@@ -238,12 +323,28 @@ public class Config
         UnequalExchangePlayerHealthReduction = UNEQUAL_EXCHANGE_PLAYER_HEALTH_REDUCTION.get();
         UnequalExchangeStatDebuff = UNEQUAL_EXCHANGE_STAT_DEBUFF.get();
         UnequalExchangeDebuffDuration = UNEQUAL_EXCHANGE_DEBUFF_DURATION.get();
+        UnequalExchangeAttackDamage = UNEQUAL_EXCHANGE_ATTACK_DAMAGE.get();
+        UnequalExchangeAttackSpeed = UNEQUAL_EXCHANGE_ATTACK_SPEED.get();
         SoulEaterChargedAttackDamagePerHP = SOUL_EATER_CHARGED_ATTACK_DAMAGE_PER_HP.get();
         SoulEaterChargeDuration = SOUL_EATER_CHARGE_DURATION.get();
         SoulEaterHealPercentOnKill = SOUL_EATER_HEAL_PERCENT_ON_KILL.get();
         SoulEaterMaxHealthStealPercent = SOUL_EATER_MAX_HEALTH_STEAL_PERCENT.get();
         SoulEaterMaxHealthBuffDuration = SOUL_EATER_MAX_HEALTH_BUFF_DURATION.get();
         SoulEaterMaxHealthMultiplierLimit = SOUL_EATER_MAX_HEALTH_MULTIPLIER_LIMIT.get();
+        SoulEaterAttackDamage = SOUL_EATER_ATTACK_DAMAGE.get();
+        SoulEaterAttackSpeed = SOUL_EATER_ATTACK_SPEED.get();
+        GiantsRingAttackDamage = GIANTS_RING_ATTACK_DAMAGE.get();
+        GiantsRingMaxHealth = GIANTS_RING_MAX_HEALTH.get();
+        GiantsRingKnockbackResistance = GIANTS_RING_KNOCKBACK_RESISTANCE.get();
+        MoonShardGravityReduction = MOON_SHARD_GRAVITY_REDUCTION.get();
+        MoonGravityReduction = MOON_GRAVITY_REDUCTION.get();
+        GravityCoreGravityMultiplier = GRAVITY_CORE_GRAVITY_MULTIPLIER.get();
+        GravityCoreImpactRadiusCoefficient = GRAVITY_CORE_IMPACT_RADIUS_COEFFICIENT.get();
+        GravityCoreImpactDamageCoefficient = GRAVITY_CORE_IMPACT_DAMAGE_COEFFICIENT.get();
+        GravityCoreJumpStrength = GRAVITY_CORE_JUMP_STRENGTH.get();
+        GravityCoreCooldown = Config.GRAVITY_CORE_COOLDOWN.get();
+        RingOfAgilityChanceScale = RING_OF_AGILITY_CHANCE_SCALE.get();
+        RingOfAgilityMaxDodgeChance = RING_OF_AGILITY_MAX_DODGE_CHANCE.get();
 
         lootTables = LOOT_TABLES.get().stream()
                 .map(ResourceLocation::new)

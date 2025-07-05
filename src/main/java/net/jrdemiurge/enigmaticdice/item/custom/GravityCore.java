@@ -1,5 +1,8 @@
 package net.jrdemiurge.enigmaticdice.item.custom;
 
+import net.jrdemiurge.enigmaticdice.Config;
+import net.jrdemiurge.enigmaticdice.item.ModItems;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -30,6 +33,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
@@ -38,8 +42,7 @@ import java.util.*;
 public class GravityCore extends Item implements ICurioItem {
 
     private static final UUID GRAVITY_BOOST_UUID = UUID.fromString("fa944f2a-d00f-48bb-a6c9-b2d0115ba628");
-    private static final AttributeModifier GRAVITY_MODIFIER =
-            new AttributeModifier(GRAVITY_BOOST_UUID, "Gravity boost", 4.0, AttributeModifier.Operation.MULTIPLY_TOTAL);
+    private static AttributeModifier GRAVITY_MODIFIER;
 
     private static final WeakHashMap<Player, Boolean> gravityActive = new WeakHashMap<>();
     private static final WeakHashMap<Player, Deque<Double>> lastYVelocities = new WeakHashMap<>();
@@ -56,6 +59,9 @@ public class GravityCore extends Item implements ICurioItem {
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (slotContext.entity().level().isClientSide || !(slotContext.entity() instanceof Player player))
             return;
+        if (GRAVITY_MODIFIER == null) {
+            GRAVITY_MODIFIER = new AttributeModifier(GRAVITY_BOOST_UUID, "Gravity boost", Config.GravityCoreGravityMultiplier - 1, AttributeModifier.Operation.MULTIPLY_TOTAL);
+        }
         AttributeInstance gravityAttr = player.getAttribute(ForgeMod.ENTITY_GRAVITY.get());
         if (gravityAttr != null && gravityAttr.hasModifier(GRAVITY_MODIFIER)) {
             gravityAttr.removeModifier(GRAVITY_MODIFIER);
@@ -71,6 +77,10 @@ public class GravityCore extends Item implements ICurioItem {
 
         AttributeInstance gravityAttr = player.getAttribute(ForgeMod.ENTITY_GRAVITY.get());
         if (gravityAttr == null) return;
+
+        if (GRAVITY_MODIFIER == null) {
+            GRAVITY_MODIFIER = new AttributeModifier(GRAVITY_BOOST_UUID, "Gravity boost", Config.GravityCoreGravityMultiplier - 1, AttributeModifier.Operation.MULTIPLY_TOTAL);
+        }
 
         boolean gravityEnabled = gravityActive.getOrDefault(player, false);
 
@@ -104,8 +114,8 @@ public class GravityCore extends Item implements ICurioItem {
 
             world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.GENERIC_EXPLODE, SoundSource.PLAYERS, 1.5f, 1F / (player.getRandom().nextFloat() * 0.4F + 0.8F));
 
-            double totalDamage = player.getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.33 * Math.abs(minY);
-            float radius = (float) Math.abs(minY) * 0.75F;
+            double totalDamage = player.getAttributeValue(Attributes.ATTACK_DAMAGE) * Config.GravityCoreImpactDamageCoefficient * Math.abs(minY);
+            float radius = (float) Math.abs(minY) * (float) Config.GravityCoreImpactRadiusCoefficient;
             AABB stompBox = new AABB(
                     player.getX() - radius, player.getY() - 1.1, player.getZ() - radius,
                     player.getX() + radius, player.getY() + 1.1, player.getZ() + radius
@@ -147,7 +157,11 @@ public class GravityCore extends Item implements ICurioItem {
     }
 
     public static void jump(Player player) {
-        double jumpMultiplier = 5;
+        if (player.getCooldowns().isOnCooldown(ModItems.GRAVITY_CORE.get())) {
+            return;
+        }
+
+        double jumpMultiplier = Config.GravityCoreJumpStrength;
         double jumpBoostPower = player.hasEffect(MobEffects.JUMP) ? 0.1F * ((float)player.getEffect(MobEffects.JUMP).getAmplifier() + 1.0F) : 0.0F;
         double jumpPower = (0.42 + jumpBoostPower) * jumpMultiplier;
 
@@ -162,6 +176,10 @@ public class GravityCore extends Item implements ICurioItem {
         player.awardStat(Stats.JUMP);
 
         ((ServerPlayer) player).connection.send(new ClientboundSetEntityMotionPacket(player));
+
+        if (Config.GravityCoreCooldown != 0) {
+            player.getCooldowns().addCooldown(ModItems.GRAVITY_CORE.get(), Config.GravityCoreCooldown);
+        }
     }
 
     public static boolean checkFriendlyFire(LivingEntity target, LivingEntity attacker) {
@@ -184,13 +202,22 @@ public class GravityCore extends Item implements ICurioItem {
         }
     }
 
+    public static boolean isWearingGravityCore(LivingEntity livingEntity) {
+        return CuriosApi.getCuriosInventory(livingEntity)
+                .map(handler -> !handler.findCurios(ModItems.GRAVITY_CORE.get()).isEmpty())
+                .orElse(false);
+    }
+
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
+            int gravityMultiplier = (int) Config.GravityCoreGravityMultiplier;
+
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.gravity_core_1"));
             pTooltipComponents.add(Component.literal(" "));
-            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.gravity_core_2"));
+            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.gravity_core_2", gravityMultiplier)
+                    .withStyle(ChatFormatting.GOLD));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.gravity_core_3"));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.gravity_core_4"));
             pTooltipComponents.add(Component.literal(" "));

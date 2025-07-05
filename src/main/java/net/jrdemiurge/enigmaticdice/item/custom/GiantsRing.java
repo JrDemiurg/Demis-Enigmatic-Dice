@@ -4,8 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.jrdemiurge.enigmaticdice.Config;
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
+import net.jrdemiurge.enigmaticdice.item.ModItems;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -26,6 +25,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
@@ -133,12 +133,18 @@ public class GiantsRing extends Item implements ICurioItem {
         }
     }
 
+    public static boolean isWearingGiantRing(LivingEntity livingEntity) {
+        return CuriosApi.getCuriosInventory(livingEntity)
+                .map(handler -> !handler.findCurios(ModItems.GIANTS_RING.get()).isEmpty())
+                .orElse(false);
+    }
+
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> attributes = HashMultimap.create();
-        attributes.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("cc5c05c0-916a-4165-bd3f-61a6b9ccfab0"), EnigmaticDice.MOD_ID+":giants_ring_damage_bonus", 3.0, AttributeModifier.Operation.ADDITION));
-        attributes.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("44aeda56-97d8-40d8-9c57-3727f50bea16"), EnigmaticDice.MOD_ID+":giants_ring_health_bonus", 10.0, AttributeModifier.Operation.ADDITION));
-        attributes.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.fromString("3c9941fd-4924-4510-9e25-0d8f420e5266"), EnigmaticDice.MOD_ID+":giants_ring_knockback_resistance_bonus", 1.0, AttributeModifier.Operation.ADDITION));
+        attributes.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("cc5c05c0-916a-4165-bd3f-61a6b9ccfab0"), EnigmaticDice.MOD_ID+":giants_ring_damage_bonus", Config.GiantsRingAttackDamage, AttributeModifier.Operation.ADDITION));
+        attributes.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("44aeda56-97d8-40d8-9c57-3727f50bea16"), EnigmaticDice.MOD_ID+":giants_ring_health_bonus", Config.GiantsRingMaxHealth, AttributeModifier.Operation.ADDITION));
+        attributes.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.fromString("3c9941fd-4924-4510-9e25-0d8f420e5266"), EnigmaticDice.MOD_ID+":giants_ring_knockback_resistance_bonus", Config.GiantsRingKnockbackResistance, AttributeModifier.Operation.ADDITION));
         return attributes;
     }
 

@@ -9,6 +9,7 @@
   "item.enigmaticdice.moon_shard": "§dMoon Shard",
   "item.enigmaticdice.moon": "§dMoon",
   "item.enigmaticdice.gravity_core": "§dGravity Core",
+  "item.enigmaticdice.ring_of_agility": "§dRing of Agility",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Enigmatic Dice From Blocks",
   "stat.enigmaticdice.obtained_dice_from_mob": "Enigmatic Dice From Mobs",
@@ -55,7 +56,7 @@
   "tooltip.enigmaticdice.moon_shard_3": "§5Hold §6Shift§5 to disable the gravity effect",
 
   "tooltip.enigmaticdice.gravity_core_1": "§5Double-tap §6Jump§5 to perform a §6powerful leap",
-  "tooltip.enigmaticdice.gravity_core_2": "§5Press §6Shift§5 mid-air to increase §dgravity §65x§5 and crash into the ground, §6damaging nearby enemies",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Press §6Shift§5 mid-air to increase §dgravity §6%sx§5 and crash into the ground, §6damaging nearby enemies",
   "tooltip.enigmaticdice.gravity_core_3": "§6Damage§5 scales with your §6landing speed§5 and §6attack damage",
   "tooltip.enigmaticdice.gravity_core_4": "§6Shockwave radius§5 scales with your §6landing speed",
   "tooltip.enigmaticdice.gravity_core_5": "§5Grants immunity to §6fall damage",
@@ -64,13 +65,15 @@
   "tooltip.enigmaticdice.moon_2": "§5- Grants immunity to §6fall damage",
   "tooltip.enigmaticdice.moon_3": "§5Hold §6Shift§5 to disable the gravity effect",
 
+  "tooltip.enigmaticdice.ring_of_agility_1": "§5Grants a §6%s%% chance§5 to §6dodge§5 incoming attacks.",
+  "tooltip.enigmaticdice.ring_of_agility_2": "§5The chance increases with your §6movement speed.",
+
   "enigmaticdice.block_break": "§6How did this end up here?",
 
-  "enigmaticdice.mob_drop.0": "§6Interesting... even they’ve started dropping it.",
-  "enigmaticdice.mob_drop.1": "§6Funny. He was carrying something that belongs to you.",
-  "enigmaticdice.mob_drop.2": "§6You took what should’ve been yours all along.",
-  "enigmaticdice.mob_drop.3": "§6Looks like he didn’t even know he was carrying it.",
-  "enigmaticdice.mob_drop.4": "§6And why was he lugging that around, anyway?",
+  "enigmaticdice.mob_drop.0": "§6Funny. He was carrying something that belongs to you.",
+  "enigmaticdice.mob_drop.1": "§6You took what should’ve been yours all along.",
+  "enigmaticdice.mob_drop.2": "§6Looks like he didn’t even know he was carrying it.",
+  "enigmaticdice.mob_drop.3": "§6And why was he lugging that around, anyway?",
 
   "enigmaticdice.advancement_earned.0" : "§6Hmm... a worthy achievement. I suppose you've earned this.",
   "enigmaticdice.advancement_earned.1" : "§6Who would've thought... you're not that simple after all. Take the die.",

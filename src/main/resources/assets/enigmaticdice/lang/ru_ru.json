@@ -9,6 +9,7 @@
   "item.enigmaticdice.moon_shard": "§dЛунный осколок",
   "item.enigmaticdice.moon": "§dЛуна",
   "item.enigmaticdice.gravity_core": "§dГравитационное ядро",
+  "item.enigmaticdice.ring_of_agility": "§dКольцо ловкости",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Игральных костей из блоков",
   "stat.enigmaticdice.obtained_dice_from_mob": "Игральных костей с мобов",
@@ -55,7 +56,7 @@
   "tooltip.enigmaticdice.moon_shard_3": "§5Удерживайте §6Shift§5, чтобы отключить гравитационный эффект",
 
   "tooltip.enigmaticdice.gravity_core_1": "§5Двойное нажатие §6Прыжка§5, чтобы совершить §6мощный прыжок",
-  "tooltip.enigmaticdice.gravity_core_2": "§5Нажмите §6Shift§5 в воздухе, чтобы увеличить §dгравитацию§5 в §65 раз§5 и обрушиться на землю, §6нанося урон врагам вокруг",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Нажмите §6Shift§5 в воздухе, чтобы увеличить §dгравитацию§5 в §6%s раз§5 и обрушиться на землю, §6нанося урон врагам вокруг",
   "tooltip.enigmaticdice.gravity_core_3": "§6Урон§5 зависит от §6скорости приземления§5 и §6урона игрока",
   "tooltip.enigmaticdice.gravity_core_4": "§6Радиус поражения§5 зависит от §6скорости приземления",
   "tooltip.enigmaticdice.gravity_core_5": "§5Даёт неуязвимость к §6урону от падения",
@@ -64,13 +65,15 @@
   "tooltip.enigmaticdice.moon_2": "§5- Даёт неуязвимость к §6урону от падения.",
   "tooltip.enigmaticdice.moon_3": "§5Удерживайте §6Shift§5, чтобы отключить гравитационный эффект",
 
+  "tooltip.enigmaticdice.ring_of_agility_1": "§5Даёт §6%s%% шанс уклониться§5 от атаки.",
+  "tooltip.enigmaticdice.ring_of_agility_2": "§5Шанс растёт с вашей §6скоростью передвижения§5.",
+
   "enigmaticdice.block_break": "§6Откуда это здесь?",
 
-  "enigmaticdice.mob_drop.0": "§6Интересно... даже из них это начало выпадать.",
-  "enigmaticdice.mob_drop.1": "§6Забавно. Он носил с собой то, что принадлежит тебе.",
-  "enigmaticdice.mob_drop.2": "§6Ты забрал то, что всегда было твоим.",
-  "enigmaticdice.mob_drop.3": "§6Похоже, он и не знал, что носит это с собой.",
-  "enigmaticdice.mob_drop.4": "§6А зачем он вообще это носил с собой?",
+  "enigmaticdice.mob_drop.0": "§6Забавно. Он носил с собой то, что принадлежит тебе.",
+  "enigmaticdice.mob_drop.1": "§6Ты забрал то, что всегда было твоим.",
+  "enigmaticdice.mob_drop.2": "§6Похоже, он и не знал, что носит это с собой.",
+  "enigmaticdice.mob_drop.3": "§6А зачем он вообще носил это с собой?",
 
   "enigmaticdice.advancement_earned.0": "§6Хмм... достойное достижение. Полагаю, ты это заслужил.",
   "enigmaticdice.advancement_earned.1": "§6Кто бы мог подумать... а ты не так прост. Возьми кубик.",

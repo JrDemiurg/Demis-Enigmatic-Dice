@@ -1,6 +1,7 @@
 package net.jrdemiurge.enigmaticdice.mixin;
 
 import net.jrdemiurge.enigmaticdice.item.ModItems;
+import net.jrdemiurge.enigmaticdice.item.custom.GiantsRing;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -23,17 +24,11 @@ public abstract class PlayerMixin extends LivingEntity {
 
     private boolean isSmall = false;
 
-    private boolean isWearingGiantRing(Player player) {
-        return CuriosApi.getCuriosInventory(player)
-                .map(handler -> !handler.findCurios(ModItems.GIANTS_RING.get()).isEmpty())
-                .orElse(false);
-    }
-
     @Inject(method = "tick", at = @At("TAIL"))
     private void onTick(CallbackInfo ci) {
         Player player = (Player)(Object)this;
 
-        boolean shouldBeSmall = isWearingGiantRing(player);
+        boolean shouldBeSmall = GiantsRing.isWearingGiantRing(player);
 
         if (shouldBeSmall != isSmall) {
             isSmall = shouldBeSmall;
@@ -53,8 +48,7 @@ public abstract class PlayerMixin extends LivingEntity {
     private void modifyEyeHeight(Pose pose, EntityDimensions size, CallbackInfoReturnable<Float> cir) {
         Player player = (Player)(Object)this;
 
-        // Пример: если держит палку — уменьшаем точку обзора
-        if (player.getInventory() != null && isWearingGiantRing(player)) {
+        if (player.getInventory() != null && GiantsRing.isWearingGiantRing(player)) {
             Float original = cir.getReturnValue();
             cir.setReturnValue(original * 1.5F);
         }

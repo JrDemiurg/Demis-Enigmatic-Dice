@@ -26,6 +26,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.MOON_SHARD.get());
                         output.accept(ModItems.MOON.get());
                         output.accept(ModItems.GRAVITY_CORE.get());
+                        output.accept(ModItems.RING_OF_AGILITY.get());
                     })
                     .build());
 

@@ -21,7 +21,8 @@ public abstract class ClientEventHandlerMixin{
     private void onTick(ItemTooltipEvent evt, CallbackInfo ci) {
         ItemStack stack = evt.getItemStack();
 
-        if (stack.getItem() == ModItems.GIANTS_RING.get()) {
+        if (stack.getItem() == ModItems.GIANTS_RING.get()
+                || stack.getItem() == ModItems.RING_OF_AGILITY.get()) {
             List<Component> tooltip = evt.getToolTip();
 
             if (tooltip.size() > 1) {

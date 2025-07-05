@@ -9,7 +9,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.util.FakePlayer;
@@ -23,6 +25,12 @@ public class MobDropHandler {
     @SubscribeEvent
     public static void onMobDeath(LivingDropsEvent event) {
         DamageSource source = event.getSource();
+
+        LivingEntity killed = event.getEntity();
+        if (!(killed instanceof Monster)) {
+            return;
+        }
+
         if (source.getEntity() instanceof Player player && !(source.getEntity() instanceof FakePlayer)) {
             if (player.level().random.nextFloat() < Config.EnigmaticDieMobDropChance) {
                 if (canObtainDice(player, ModStats.OBTAINED_DICE_FROM_MOB)) {
@@ -35,7 +43,7 @@ public class MobDropHandler {
                             drop));
 
                     player.awardStat(ModStats.OBTAINED_DICE_FROM_MOB);
-                    player.displayClientMessage(Component.translatable("enigmaticdice.mob_drop." + player.level().random.nextInt(5)), false);
+                    player.displayClientMessage(Component.translatable("enigmaticdice.mob_drop." + player.level().random.nextInt(4)), false);
                 }
             }
         }

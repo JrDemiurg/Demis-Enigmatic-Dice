@@ -40,6 +40,9 @@ public class ModItems {
     public static final RegistryObject<Item> MOON = ITEMS.register("moon",
             () -> new Moon(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> RING_OF_AGILITY = ITEMS.register("ring_of_agility",
+            () -> new RingOfAgility(new Item.Properties().stacksTo(1)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

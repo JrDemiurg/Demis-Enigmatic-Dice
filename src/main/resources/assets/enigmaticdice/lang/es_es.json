@@ -9,6 +9,7 @@
   "item.enigmaticdice.moon_shard": "§dFragmento Lunar",
   "item.enigmaticdice.moon": "§dLuna",
   "item.enigmaticdice.gravity_core": "§dNúcleo de Gravedad",
+  "item.enigmaticdice.ring_of_agility": "§dAnillo de Agilidad",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Dados de bloques",
   "stat.enigmaticdice.obtained_dice_from_mob": "Dados de mobs",
@@ -55,7 +56,7 @@
   "tooltip.enigmaticdice.moon_shard_3": "§5Mantén §6Shift§5 para desactivar el efecto de gravedad",
 
   "tooltip.enigmaticdice.gravity_core_1": "§5Presiona dos veces §6Saltar§5 para realizar un §6salto potente",
-  "tooltip.enigmaticdice.gravity_core_2": "§5Presiona §6Shift§5 en el aire para aumentar la §dgravedad §65x§5 y estrellarte contra el suelo, §6dañando a enemigos cercanos",
+  "tooltip.enigmaticdice.gravity_core_2": "§5Presiona §6Shift§5 en el aire para aumentar la §dgravedad §6%sx§5 y estrellarte contra el suelo, §6dañando a enemigos cercanos",
   "tooltip.enigmaticdice.gravity_core_3": "§6El daño§5 escala con tu §6velocidad al aterrizar§5 y tu §6daño de ataque",
   "tooltip.enigmaticdice.gravity_core_4": "§6El radio de onda expansiva§5 escala con tu §6velocidad de caída",
   "tooltip.enigmaticdice.gravity_core_5": "§5Otorga inmunidad al §6daño por caída",
@@ -64,13 +65,15 @@
   "tooltip.enigmaticdice.moon_2": "§5- Otorga inmunidad al §6daño por caída",
   "tooltip.enigmaticdice.moon_3": "§5Mantén §6Shift§5 para desactivar el efecto de gravedad",
 
+  "tooltip.enigmaticdice.ring_of_agility_1": "§5Otorga un §6%s%% de probabilidad§5 de §6esquivar§5 ataques.",
+  "tooltip.enigmaticdice.ring_of_agility_2": "§5La probabilidad aumenta con tu §6velocidad de movimiento§5.",
+
   "enigmaticdice.block_break": "§6¿Cómo terminó esto aquí?",
 
-  "enigmaticdice.mob_drop.0": "§6Interesante... incluso ellos han empezado a soltarlo.",
-  "enigmaticdice.mob_drop.1": "§6Gracioso. Llevaba algo que te pertenece.",
-  "enigmaticdice.mob_drop.2": "§6Tomaste lo que siempre debió ser tuyo.",
-  "enigmaticdice.mob_drop.3": "§6Parece que ni sabía que lo llevaba.",
-  "enigmaticdice.mob_drop.4": "§6¿Y por qué lo estaba cargando, de todos modos?",
+  "enigmaticdice.mob_drop.0": "§6Gracioso. Llevaba algo que te pertenece.",
+  "enigmaticdice.mob_drop.1": "§6Tomaste lo que siempre debió ser tuyo.",
+  "enigmaticdice.mob_drop.2": "§6Parece que ni sabía que lo llevaba.",
+  "enigmaticdice.mob_drop.3": "§6¿Y por qué lo estaba cargando, de todos modos?",
 
   "enigmaticdice.advancement_earned.0": "§6Hmm... un logro digno. Supongo que te lo has ganado.",
   "enigmaticdice.advancement_earned.1": "§6Quién lo diría... no eres tan simple después de todo. Toma el dado.",
