@@ -10,6 +10,7 @@
   "item.enigmaticdice.moon": "§dMond",
   "item.enigmaticdice.gravity_core": "§dGravitationskern",
   "item.enigmaticdice.ring_of_agility": "§dRing der Beweglichkeit",
+  "item.enigmaticdice.divine_shield": "§dGöttlicher Schild",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Würfel aus Blöcken",
   "stat.enigmaticdice.obtained_dice_from_mob": "Würfel von Mobs",
@@ -65,8 +66,13 @@
   "tooltip.enigmaticdice.moon_2": "§5- Gewährt Immunität gegen §6Fallschaden",
   "tooltip.enigmaticdice.moon_3": "§5Halte §6Shift§5, um den Gravitationseffekt zu deaktivieren",
 
+  "tooltip.enigmaticdice.ring_of_agility_0": "§dAnmut in Metall gebannt.",
   "tooltip.enigmaticdice.ring_of_agility_1": "§5Gewährt eine §6%s%% Chance§5, §6Angriffen§5 auszuweichen.",
   "tooltip.enigmaticdice.ring_of_agility_2": "§5Die Chance steigt mit deiner §6Bewegungsgeschwindigkeit§5.",
+
+  "tooltip.enigmaticdice.divine_shield_0": "§dEin Funke göttlicher Gnade.",
+  "tooltip.enigmaticdice.divine_shield_1": "§6Blockt§5 eingehenden Schaden alle §6%s Sekunden§5.",
+  "tooltip.enigmaticdice.divine_shield_2": "§5Gewährt §6%s§5 Sekunden §6Unverwundbarkeit§5 nach Aktivierung.",
 
   "enigmaticdice.block_break": "§6Wie ist das hierher gekommen?",
 
@@ -95,8 +101,14 @@
   "enigmaticdice.event.explosion": "§cEXPLOSION?",
   "enigmaticdice.event.lightning_wrath": "§cSo sieht göttlicher Zorn aus!",
   "enigmaticdice.event.mimic": "§5Oh, sieht aus, als hättest du einen neuen Freund! Aber… ich glaube, er interessiert sich mehr für dein Inventar.",
+  "enigmaticdice.event.dummy_chest": "§5Knack ihn auf, wenn du kannst… drinnen wartet ein Schatz!",
   "enigmaticdice.event.warped_toads": "§9Sieht so aus, als hätte das Universum entschieden, dass du nicht genug Kröten hast. Jetzt hast du drei.",
   "enigmaticdice.event.black_hole_bomb" : "§cHalte dich vom Ereignishorizont fern",
+  "enigmaticdice.event.brood_awakens" : "§cWar das dein Plan? Die Welt in Beinen und Flügeln zu ertränken?",
+  "enigmaticdice.event.binding_curse" : "§cHoffentlich gefällt dir deine Rüstung",
+  "enigmaticdice.event.eternal_binding": "§cIch hoffe, du liebst deine Rüstung wirklich",
+  "enigmaticdice.event.vanilla_random_potion": "§5Trank?",
+  "enigmaticdice.event.modded_random_potion": "§6Trank?",
 
   "enigmaticdice.event.centipede.0": "§9Warum gibt es in dieser Welt so viele Beine? Ach ja… Das ist dein Problem.",
   "enigmaticdice.event.centipede.1": "§9Wie viele Beine hat ein Tausendfüßler? Ich hoffe, du hast genug Zeit zum Zählen.",
@@ -159,6 +171,8 @@
   "item.enigmaticdice.luck_potion": "Trank des Glücks",
   "item.enigmaticdice.temporal_protection_potion": "Trank des Zeitlichen Schutzes",
   "item.enigmaticdice.arrow_of_doom": "Pfeil des Verderbens",
+  "item.enigmaticdice.vanilla_random_splash_potion": "§5??? Wurftrank",
+  "item.enigmaticdice.modded_random_splash_potion": "§6??? Wurftrank",
 
   "enigmaticdice.renameditem.the_one_ring": "§4Der Eine Ring",
   "enigmaticdice.renameditem.earth_heart": "§dHerz der Schöpfung",

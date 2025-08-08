@@ -117,6 +117,22 @@ public class RandomEventManager {
                     events.add(new MassCreeperSummonEvent(config.rarity, 4));
                     eventNames.add(eventName);
                 }
+                case "minecraft_give_vanilla_random_potion" -> {
+                    events.add(new GiveRandomPotionEvent(config.rarity, true));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_give_modded_random_potion" -> {
+                    events.add(new GiveRandomPotionEvent(config.rarity, false));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_curse_binding" -> {
+                    events.add(new CurseBindingEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "enigmaticlegacy_eternal_binding" -> {
+                    events.add(new EternalBindingEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
                 case "alexsmobs_summon_warped_toads" -> {
                     events.add(new SummonWarpedToadsEvent(config.rarity));
                     eventNames.add(eventName);
@@ -153,6 +169,10 @@ public class RandomEventManager {
                     events.add(new WonderlandField(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "artifacts_summon_dummy_chest" -> {
+                    events.add(new SummonDummyChest(config.rarity));
+                    eventNames.add(eventName);
+                }
                 case "netherexp_summon_carcass" -> {
                     events.add(new SummonCarcassEvent(config.rarity));
                     eventNames.add(eventName);
@@ -171,6 +191,10 @@ public class RandomEventManager {
                 }
                 case "quark_give_ancient_tome" -> {
                     events.add(new GiveAncientTomeEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "born_in_chaos_brood_awakens" -> {
+                    events.add(new BroodAwakensEvent(config.rarity));
                     eventNames.add(eventName);
                 }
                 default -> EnigmaticDice.LOGGER.warn("Unknown fixed event in config: {}", eventName);

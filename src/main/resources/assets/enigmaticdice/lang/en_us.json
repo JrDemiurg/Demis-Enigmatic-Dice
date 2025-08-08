@@ -10,6 +10,7 @@
   "item.enigmaticdice.moon": "§dMoon",
   "item.enigmaticdice.gravity_core": "§dGravity Core",
   "item.enigmaticdice.ring_of_agility": "§dRing of Agility",
+  "item.enigmaticdice.divine_shield": "§dDivine Shield",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Enigmatic Dice From Blocks",
   "stat.enigmaticdice.obtained_dice_from_mob": "Enigmatic Dice From Mobs",
@@ -65,8 +66,13 @@
   "tooltip.enigmaticdice.moon_2": "§5- Grants immunity to §6fall damage",
   "tooltip.enigmaticdice.moon_3": "§5Hold §6Shift§5 to disable the gravity effect",
 
+  "tooltip.enigmaticdice.ring_of_agility_0": "§dGrace bound in metal.",
   "tooltip.enigmaticdice.ring_of_agility_1": "§5Grants a §6%s%% chance§5 to §6dodge§5 incoming attacks.",
   "tooltip.enigmaticdice.ring_of_agility_2": "§5The chance increases with your §6movement speed.",
+
+  "tooltip.enigmaticdice.divine_shield_0": "§dA spark of divine mercy.",
+  "tooltip.enigmaticdice.divine_shield_1": "§6Blocks§5 incoming damage once every §6%s seconds.",
+  "tooltip.enigmaticdice.divine_shield_2": "§5Grants §6%s§5 seconds of §6invulnerability§5 upon activation.",
 
   "enigmaticdice.block_break": "§6How did this end up here?",
 
@@ -95,8 +101,14 @@
   "enigmaticdice.event.explosion": "§cEXPLOSION?",
   "enigmaticdice.event.lightning_wrath": "§cThis is what divine wrath looks like!",
   "enigmaticdice.event.mimic": "§5Oh, looks like you've got a new friend! Though… I think he's more interested in your inventory.",
+  "enigmaticdice.event.dummy_chest": "§5Crack it open if you can… there's treasure inside!",
   "enigmaticdice.event.warped_toads": "§9Looks like the universe decided you didn't have enough toads. Now you have three.",
   "enigmaticdice.event.black_hole_bomb" : "§cStay away from the event horizon",
+  "enigmaticdice.event.brood_awakens" : "§cIs this your plan? Drown the world in legs and wings?",
+  "enigmaticdice.event.binding_curse" : "§cHope you like your armor",
+  "enigmaticdice.event.eternal_binding": "§cHope you really like your armor",
+  "enigmaticdice.event.vanilla_random_potion": "§5Potion?",
+  "enigmaticdice.event.modded_random_potion": "§6Potion?",
 
   "enigmaticdice.event.centipede.0": "§9Why are there so many legs in this world? Oh right… That’s your problem.",
   "enigmaticdice.event.centipede.1": "§9How many legs does a centipede have? I hope you have enough time to count them.",
@@ -159,6 +171,8 @@
   "item.enigmaticdice.luck_potion": "Luck Potion",
   "item.enigmaticdice.temporal_protection_potion": "Potion of Temporal Protection",
   "item.enigmaticdice.arrow_of_doom": "Arrow of Doom",
+  "item.enigmaticdice.vanilla_random_splash_potion": "§5??? Splash Potion",
+  "item.enigmaticdice.modded_random_splash_potion": "§6??? Splash Potion",
 
   "enigmaticdice.renameditem.the_one_ring": "§4The One Ring",
   "enigmaticdice.renameditem.earth_heart": "§dHeart of Creation",

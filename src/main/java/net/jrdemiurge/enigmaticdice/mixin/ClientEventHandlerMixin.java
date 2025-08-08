@@ -22,7 +22,8 @@ public abstract class ClientEventHandlerMixin{
         ItemStack stack = evt.getItemStack();
 
         if (stack.getItem() == ModItems.GIANTS_RING.get()
-                || stack.getItem() == ModItems.RING_OF_AGILITY.get()) {
+                || stack.getItem() == ModItems.RING_OF_AGILITY.get()
+                || stack.getItem() == ModItems.DIVINE_SHIELD.get()) {
             List<Component> tooltip = evt.getToolTip();
 
             if (tooltip.size() > 1) {

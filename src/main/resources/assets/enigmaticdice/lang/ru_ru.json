@@ -10,6 +10,7 @@
   "item.enigmaticdice.moon": "§dЛуна",
   "item.enigmaticdice.gravity_core": "§dГравитационное ядро",
   "item.enigmaticdice.ring_of_agility": "§dКольцо ловкости",
+  "item.enigmaticdice.divine_shield": "§dБожественный щит",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Игральных костей из блоков",
   "stat.enigmaticdice.obtained_dice_from_mob": "Игральных костей с мобов",
@@ -65,8 +66,13 @@
   "tooltip.enigmaticdice.moon_2": "§5- Даёт неуязвимость к §6урону от падения.",
   "tooltip.enigmaticdice.moon_3": "§5Удерживайте §6Shift§5, чтобы отключить гравитационный эффект",
 
+  "tooltip.enigmaticdice.ring_of_agility_0": "§dИзящность, закованная в металл.",
   "tooltip.enigmaticdice.ring_of_agility_1": "§5Даёт §6%s%% шанс уклониться§5 от атаки.",
   "tooltip.enigmaticdice.ring_of_agility_2": "§5Шанс растёт с вашей §6скоростью передвижения§5.",
+
+  "tooltip.enigmaticdice.divine_shield_0": "§dИскра божественной милости.",
+  "tooltip.enigmaticdice.divine_shield_1": "§6Блокирует§5 входящий урон раз в §6%s секунд§5.",
+  "tooltip.enigmaticdice.divine_shield_2": "§5Дарует §6%s§5 секунды §6неуязвимости§5 после активации.",
 
   "enigmaticdice.block_break": "§6Откуда это здесь?",
 
@@ -95,8 +101,14 @@
   "enigmaticdice.event.explosion": "§cВЗРЫВ?",
   "enigmaticdice.event.lightning_wrath": "§cВот как выглядит божественный гнев!",
   "enigmaticdice.event.mimic": "§5О, похоже, у тебя новый друг! Хотя... скорее он заинтересован твоим инвентарём.",
+  "enigmaticdice.event.dummy_chest": "§5Открой его, если сможешь... внутри сокровище!",
   "enigmaticdice.event.warped_toads": "§9Похоже, вселенная решила, что тебе не хватает жаб. Вот тебе три.",
   "enigmaticdice.event.black_hole_bomb" : "§cОстерегайся горизонта событий",
+  "enigmaticdice.event.brood_awakens" : "§cЭто и был твой план? Утопить мир в лапках и крылышках?",
+  "enigmaticdice.event.binding_curse" : "§cНадеюсь, тебе нравится твоя броня",
+  "enigmaticdice.event.eternal_binding": "§cНадеюсь, тебе очень нравится твоя броня",
+  "enigmaticdice.event.vanilla_random_potion": "§5Зелье?",
+  "enigmaticdice.event.modded_random_potion": "§6Зелье?",
 
   "enigmaticdice.event.centipede.0": "§9Почему в этом мире так много ног? Ах да... Это теперь твоя проблема.",
   "enigmaticdice.event.centipede.1": "§9Сколько ног у сороконожки? Надеюсь, у тебя есть время посчитать.",
@@ -159,6 +171,8 @@
   "item.enigmaticdice.luck_potion": "Зелье удачи",
   "item.enigmaticdice.temporal_protection_potion": "Зелье временной защиты",
   "item.enigmaticdice.arrow_of_doom": "Проклятая стрела",
+  "item.enigmaticdice.vanilla_random_splash_potion": "§5??? Взрывное зелье",
+  "item.enigmaticdice.modded_random_splash_potion": "§6??? Взрывное зелье",
 
   "enigmaticdice.renameditem.the_one_ring": "§4Кольцо всевластия",
   "enigmaticdice.renameditem.earth_heart": "§dСердце Мироздания",

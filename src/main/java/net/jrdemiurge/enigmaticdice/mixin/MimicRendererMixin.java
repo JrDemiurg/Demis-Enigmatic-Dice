@@ -20,11 +20,18 @@ public abstract class MimicRendererMixin {
             matrixStack.pushPose();
             matrixStack.scale(0.5F, 0.5F, 0.5F); // Уменьшаем модель в 2 раза
         }
+        if ("Dummy Chest".equalsIgnoreCase(mimic.getName().getString())) {
+            matrixStack.pushPose();
+            matrixStack.scale(2F, 2F, 2F);
+        }
     }
 
     @Inject(method = "render", at = @At("RETURN"), remap = false)
     private void onRenderEnd(MimicEntity mimic, float entityYaw, float partialTicks, PoseStack matrixStack, MultiBufferSource buffer, int packedLight, CallbackInfo ci) {
         if ("Minic".equalsIgnoreCase(mimic.getName().getString())) {
+            matrixStack.popPose();
+        }
+        if ("Dummy Chest".equalsIgnoreCase(mimic.getName().getString())) {
             matrixStack.popPose();
         }
     }

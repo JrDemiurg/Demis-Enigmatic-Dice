@@ -127,9 +127,10 @@ dependencies {
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    compileOnly fg.deobf("curse.maven:artifacts-312353:6399828")
-
     implementation fg.deobf("curse.maven:curios-309927:6418456")
+    compileOnly fg.deobf("curse.maven:artifacts-312353:6399828")
+    compileOnly fg.deobf("curse.maven:born-in-chaos-686437:6833957")
+
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

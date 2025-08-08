@@ -9,6 +9,7 @@
   },
   "mixins": [
     "ClientEventHandlerMixin",
+    "LivingEntityAccessor",
     "MimicEntityMixin",
     "PlayerMixin"
   ],

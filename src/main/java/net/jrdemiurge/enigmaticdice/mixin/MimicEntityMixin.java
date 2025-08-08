@@ -24,7 +24,8 @@ public abstract class MimicEntityMixin extends Mob {
 
     @Inject(method = "tick", at = @At("TAIL"))
     private void injectRefreshDimensions(CallbackInfo ci) {
-        if (!dimensionsRefreshed && "Minic".equalsIgnoreCase(this.getName().getString())) {
+        if (!dimensionsRefreshed &&
+                ("Minic".equalsIgnoreCase(this.getName().getString()) || "Dummy Chest".equalsIgnoreCase(this.getName().getString()))) {
             this.refreshDimensions();
             dimensionsRefreshed = true;
         }
@@ -34,6 +35,9 @@ public abstract class MimicEntityMixin extends Mob {
     public EntityDimensions getDimensions(Pose pose) {
         if ("Minic".equalsIgnoreCase(this.getName().getString())) {
             return super.getDimensions(pose).scale(0.5F);
+        }
+        if ("Dummy Chest".equalsIgnoreCase(this.getName().getString())) {
+            return super.getDimensions(pose).scale(2F);
         }
         return super.getDimensions(pose);
     }

@@ -5,6 +5,8 @@ import net.jrdemiurge.enigmaticdice.commands.EnigmaticDiceCommand;
 import net.jrdemiurge.enigmaticdice.commands.EnigmaticDiceGetLuckCommand;
 import net.jrdemiurge.enigmaticdice.commands.EnigmaticDiceSimulateCommand;
 import net.jrdemiurge.enigmaticdice.effect.ModEffects;
+import net.jrdemiurge.enigmaticdice.entity.ModEntities;
+import net.jrdemiurge.enigmaticdice.entity.client.DragonclawHookRender;
 import net.jrdemiurge.enigmaticdice.event.BlockBreakHandler;
 import net.jrdemiurge.enigmaticdice.event.LootEventHandler;
 import net.jrdemiurge.enigmaticdice.event.MobDropHandler;
@@ -15,9 +17,9 @@ import net.jrdemiurge.enigmaticdice.network.NetworkHandler;
 import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.jrdemiurge.enigmaticdice.sound.ModSounds;
 import net.jrdemiurge.enigmaticdice.stat.ModStats;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -43,6 +45,7 @@ public class EnigmaticDice {
         ModItems.register(modEventBus);
         ModSounds.register(modEventBus);
         ModEffects.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -71,5 +74,13 @@ public class EnigmaticDice {
         event.getServer().getCommands().getDispatcher().register(
                 EnigmaticDiceGetLuckCommand.create()
         );
+    }
+
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntities.DRAGONCLAW_HOOK.get(), DragonclawHookRender::new);
+        }
     }
 }

@@ -10,6 +10,7 @@
   "item.enigmaticdice.moon": "§dLune",
   "item.enigmaticdice.gravity_core": "§dNoyau de Gravité",
   "item.enigmaticdice.ring_of_agility": "§dAnneau d'Agilité",
+  "item.enigmaticdice.divine_shield": "§dBouclier Divin",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Dés des blocs",
   "stat.enigmaticdice.obtained_dice_from_mob": "Dés des mobs",
@@ -65,8 +66,13 @@
   "tooltip.enigmaticdice.moon_2": "§5- Confère une immunité aux §6dégâts de chute",
   "tooltip.enigmaticdice.moon_3": "§5Maintenez §6Shift§5 pour désactiver l'effet de gravité",
 
+  "tooltip.enigmaticdice.ring_of_agility_0": "§dGrâce enfermée dans le métal.",
   "tooltip.enigmaticdice.ring_of_agility_1": "§5Confère §6%s%% de chance§5 d'§6esquiver§5 les attaques.",
   "tooltip.enigmaticdice.ring_of_agility_2": "§5La chance augmente avec votre §6vitesse de déplacement§5.",
+
+  "tooltip.enigmaticdice.divine_shield_0": "§dUne étincelle de miséricorde divine.",
+  "tooltip.enigmaticdice.divine_shield_1": "§6Bloque§5 les dégâts entrants toutes les §6%s secondes§5.",
+  "tooltip.enigmaticdice.divine_shield_2": "§5Confère §6%s§5 secondes d’§6invulnérabilité§5 après activation.",
 
   "enigmaticdice.block_break": "§6Comment cela a-t-il atterri ici ?",
 
@@ -95,8 +101,14 @@
   "enigmaticdice.event.explosion": "§cEXPLOSION ?",
   "enigmaticdice.event.lightning_wrath": "§cVoici à quoi ressemble la colère divine !",
   "enigmaticdice.event.mimic": "§5Oh, on dirait que tu as un nouvel ami ! Mais... je crois qu’il est plus intéressé par ton inventaire.",
+  "enigmaticdice.event.dummy_chest": "§5Brise-le si tu peux… un trésor se cache à l’intérieur !",
   "enigmaticdice.event.warped_toads": "§9On dirait que l’univers a décidé que tu n'avais pas assez de crapauds. En voilà trois de plus.",
   "enigmaticdice.event.black_hole_bomb" : "§cReste à l’écart de l’horizon des événements",
+  "enigmaticdice.event.brood_awakens" : "§cC’était ça ton plan ? Noyer le monde sous des pattes et des ailes ?",
+  "enigmaticdice.event.binding_curse" : "§cTu aimes ton armure ? J’espère bien",
+  "enigmaticdice.event.eternal_binding": "§cJ’espère que tu aimes vraiment ton armure",
+  "enigmaticdice.event.vanilla_random_potion": "§5Potion ?",
+  "enigmaticdice.event.modded_random_potion": "§6Potion ?",
 
   "enigmaticdice.event.centipede.0": "§9Pourquoi y a-t-il autant de pattes dans ce monde ? Ah oui… C’est ton problème.",
   "enigmaticdice.event.centipede.1": "§9Combien de pattes a un mille-pattes ? J’espère que tu as le temps de les compter.",
@@ -159,6 +171,8 @@
   "item.enigmaticdice.luck_potion": "Potion de Chance",
   "item.enigmaticdice.temporal_protection_potion": "Potion de Protection Temporelle",
   "item.enigmaticdice.arrow_of_doom": "Flèche de la Fatalité",
+  "item.enigmaticdice.vanilla_random_splash_potion": "§5??? Potion jetable",
+  "item.enigmaticdice.modded_random_splash_potion": "§6??? Potion jetable",
 
   "enigmaticdice.renameditem.the_one_ring": "§4L’Anneau Unique",
   "enigmaticdice.renameditem.earth_heart": "§dCœur de la Création",

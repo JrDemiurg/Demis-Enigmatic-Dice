@@ -60,6 +60,26 @@
       "requiredMod": "minecraft",
       "rarity": 1000
     },
+    "minecraft_give_vanilla_random_potion": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 5
+    },
+    "minecraft_give_modded_random_potion": {
+      "enabled": false,
+      "requiredMod": "minecraft",
+      "rarity": 20
+    },
+    "minecraft_curse_binding": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 20
+    },
+    "enigmaticlegacy_eternal_binding": {
+      "enabled": true,
+      "requiredMod": "enigmaticlegacy",
+      "rarity": 100
+    },
     "alexsmobs_summon_warped_toads": {
       "enabled": true,
       "requiredMod": "alexsmobs",
@@ -105,6 +125,11 @@
       "requiredMod": "artifacts",
       "rarity": 20
     },
+    "artifacts_summon_dummy_chest": {
+      "enabled": true,
+      "requiredMod": "artifacts",
+      "rarity": 20
+    },
     "netherexp_summon_carcass": {
       "enabled": true,
       "requiredMod": "netherexp",
@@ -129,6 +154,11 @@
       "enabled": true,
       "requiredMod": "quark",
       "rarity": 5
+    },
+    "born_in_chaos_brood_awakens": {
+      "enabled": true,
+      "requiredMod": "born_in_chaos_v1",
+      "rarity": 20
     }
   },
   "itemEvents": {
@@ -218,6 +248,15 @@
       "requiredMod": "enigmaticdice",
       "rarity": 100,
       "item": "enigmaticdice:ring_of_agility",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.gold"
+    },
+    "enigmaticdice_give_divine_shield": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 100,
+      "item": "enigmaticdice:divine_shield",
       "amount": 1,
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.gold"

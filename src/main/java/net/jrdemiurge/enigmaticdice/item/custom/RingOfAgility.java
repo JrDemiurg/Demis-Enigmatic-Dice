@@ -76,6 +76,7 @@ public class RingOfAgility extends Item implements ICurioItem {
                         .withStyle(ChatFormatting.GOLD));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.ring_of_agility_2"));
         } else {
+            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.ring_of_agility_0"));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.holdShift"));
         }
     }

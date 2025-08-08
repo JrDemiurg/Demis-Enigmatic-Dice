@@ -10,6 +10,7 @@
   "item.enigmaticdice.moon": "§dLuna",
   "item.enigmaticdice.gravity_core": "§dNúcleo de Gravedad",
   "item.enigmaticdice.ring_of_agility": "§dAnillo de Agilidad",
+  "item.enigmaticdice.divine_shield": "§dEscudo Divino",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Dados de bloques",
   "stat.enigmaticdice.obtained_dice_from_mob": "Dados de mobs",
@@ -65,8 +66,13 @@
   "tooltip.enigmaticdice.moon_2": "§5- Otorga inmunidad al §6daño por caída",
   "tooltip.enigmaticdice.moon_3": "§5Mantén §6Shift§5 para desactivar el efecto de gravedad",
 
+  "tooltip.enigmaticdice.ring_of_agility_0": "§dGracia encadenada en metal.",
   "tooltip.enigmaticdice.ring_of_agility_1": "§5Otorga un §6%s%% de probabilidad§5 de §6esquivar§5 ataques.",
   "tooltip.enigmaticdice.ring_of_agility_2": "§5La probabilidad aumenta con tu §6velocidad de movimiento§5.",
+
+  "tooltip.enigmaticdice.divine_shield_0": "§dUna chispa de misericordia divina.",
+  "tooltip.enigmaticdice.divine_shield_1": "§6Bloquea§5 el daño recibido cada §6%s segundos§5.",
+  "tooltip.enigmaticdice.divine_shield_2": "§5Otorga §6%s§5 segundos de §6invulnerabilidad§5 al activarse.",
 
   "enigmaticdice.block_break": "§6¿Cómo terminó esto aquí?",
 
@@ -95,8 +101,14 @@
   "enigmaticdice.event.explosion": "§c¿EXPLOSIÓN?",
   "enigmaticdice.event.lightning_wrath": "§c¡Así se ve la ira divina!",
   "enigmaticdice.event.mimic": "§5¡Oh, parece que tienes un nuevo amigo! Aunque... creo que le interesa más tu inventario.",
+  "enigmaticdice.event.dummy_chest": "§5¡Ábrelo si puedes… hay un tesoro dentro!",
   "enigmaticdice.event.warped_toads": "§9Parece que el universo decidió que no tenías suficientes sapos. Ahora tienes tres.",
   "enigmaticdice.event.black_hole_bomb" : "§cMantente alejado del horizonte de sucesos",
+  "enigmaticdice.event.brood_awakens" : "§c¿Ese era tu plan? ¿Ahogar el mundo en patas y alas?",
+  "enigmaticdice.event.binding_curse" : "§c¿Te gusta tu armadura? Espero que sí",
+  "enigmaticdice.event.eternal_binding": "§cEspero que de verdad te guste tu armadura",
+  "enigmaticdice.event.vanilla_random_potion": "§5¿Poción?",
+  "enigmaticdice.event.modded_random_potion": "§6¿Poción?",
 
   "enigmaticdice.event.centipede.0": "§9¿Por qué hay tantas patas en este mundo? Ah, claro... Ese es tu problema.",
   "enigmaticdice.event.centipede.1": "§9¿Cuántas patas tiene un ciempiés? Espero que tengas tiempo para contarlas.",
@@ -159,6 +171,8 @@
   "item.enigmaticdice.luck_potion": "Poción de la Suerte",
   "item.enigmaticdice.temporal_protection_potion": "Poción de Protección Temporal",
   "item.enigmaticdice.arrow_of_doom": "Flecha de la Perdición",
+  "item.enigmaticdice.vanilla_random_splash_potion": "§5??? Poción arrojadiza",
+  "item.enigmaticdice.modded_random_splash_potion": "§6??? Poción arrojadiza",
 
   "enigmaticdice.renameditem.the_one_ring": "§4El Anillo Único",
   "enigmaticdice.renameditem.earth_heart": "§dCorazón de la Creación",

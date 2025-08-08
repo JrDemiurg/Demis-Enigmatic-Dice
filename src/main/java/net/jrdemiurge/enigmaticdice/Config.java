@@ -262,6 +262,14 @@ public class Config
                     "Example: 0.9 = 90% maximum dodge chance.")
             .defineInRange("ringOfAgilityMaxDodgeChance", 0.9, 0.0, 1.0);
 
+    private static final ForgeConfigSpec.ConfigValue<Integer> DIVINE_SHIELD_COOLDOWN_TICKS = BUILDER
+            .comment("Cooldown duration of the Divine Shield in ticks. (1 second = 20 ticks)")
+            .defineInRange("divineShieldCooldownTicks", 400, 0, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> DIVINE_SHIELD_IMMUNITY_TICKS = BUILDER
+            .comment("Duration of invulnerability after blocking damage with Divine Shield, in ticks. (1 second = 20 ticks)")
+            .defineInRange("divineShieldImmunityTicks", 40, 0, Integer.MAX_VALUE);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static double EnigmaticDieMobDropChance;
@@ -299,6 +307,8 @@ public class Config
     public static int GravityCoreCooldown;
     public static double RingOfAgilityChanceScale;
     public static double RingOfAgilityMaxDodgeChance;
+    public static int DivineShieldCooldownTicks;
+    public static int DivineShieldImmunityTicks;
 
     public static List<ResourceLocation> lootTables;
 
@@ -345,6 +355,8 @@ public class Config
         GravityCoreCooldown = Config.GRAVITY_CORE_COOLDOWN.get();
         RingOfAgilityChanceScale = RING_OF_AGILITY_CHANCE_SCALE.get();
         RingOfAgilityMaxDodgeChance = RING_OF_AGILITY_MAX_DODGE_CHANCE.get();
+        DivineShieldCooldownTicks = DIVINE_SHIELD_COOLDOWN_TICKS.get();
+        DivineShieldImmunityTicks = DIVINE_SHIELD_IMMUNITY_TICKS.get();
 
         lootTables = LOOT_TABLES.get().stream()
                 .map(ResourceLocation::new)
