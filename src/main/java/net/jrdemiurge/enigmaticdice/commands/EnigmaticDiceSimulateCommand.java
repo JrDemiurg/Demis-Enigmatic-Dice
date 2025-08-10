@@ -29,6 +29,7 @@ public class EnigmaticDiceSimulateCommand {
         int count = IntegerArgumentType.getInteger(context, "count");
 
         eventManager.simulationRandomEvent(pLevel, pPlayer, count);
+        eventManager.saveLuckRangeResultsToFile(pLevel, pPlayer,eventManager.buildLuckRangeResults(pLevel, pPlayer,count),count);
         pPlayer.displayClientMessage(Component.literal("Simulated " + count + " events successfully!"), false);
         pPlayer.displayClientMessage(Component.literal("Results saved in the world folder as: enigmatic_die_simulation_results.txt"), false);
         return 1;

@@ -8,4 +8,5 @@ public class ModConfig {
     public Map<String, ItemEventConfig> itemEvents;
     public List<String> teleportBiomes;
     public List<String> teleportStructures;
+    public List<String> negativeEvents;
 }

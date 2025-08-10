@@ -19,7 +19,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 
 import java.util.List;
 
-public class TeleportToBiomeEvent implements RandomEvent {
+public class TeleportToBiomeEvent extends RandomEvent {
     private final int rarity;
 
     public TeleportToBiomeEvent(int rarity) {
@@ -29,7 +29,7 @@ public class TeleportToBiomeEvent implements RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         if (!(pLevel instanceof ServerLevel serverLevel)) {
@@ -90,6 +90,6 @@ public class TeleportToBiomeEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

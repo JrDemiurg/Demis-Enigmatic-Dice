@@ -15,7 +15,7 @@ import net.minecraft.world.phys.Vec3;
 import java.lang.reflect.Method;
 import java.util.List;
 
-public class SummonCarcassEvent implements RandomEvent {
+public class SummonCarcassEvent extends RandomEvent {
     private final int rarity;
 
     public SummonCarcassEvent(int rarity) {
@@ -25,7 +25,7 @@ public class SummonCarcassEvent implements RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         Vec3 playerPos = pPlayer.position();
@@ -61,6 +61,6 @@ public class SummonCarcassEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

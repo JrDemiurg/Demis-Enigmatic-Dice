@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Random;
 
 // можно сделать чтобы число эффектов, уровни и длительность увеличивались с удачей
-public class GiveRandomPotionEvent implements RandomEvent {
+public class GiveRandomPotionEvent extends RandomEvent {
     private final int rarity;
     private final boolean onlyVanillaEffects;
     private final Random random = new Random();
@@ -34,7 +34,7 @@ public class GiveRandomPotionEvent implements RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         ItemStack potion = new ItemStack(Items.SPLASH_POTION);
@@ -105,6 +105,6 @@ public class GiveRandomPotionEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

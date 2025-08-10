@@ -22,7 +22,7 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 
 import java.util.List;
 
-public class TeleportToStructureEvent implements RandomEvent {
+public class TeleportToStructureEvent extends RandomEvent {
     private final int rarity;
 
     public TeleportToStructureEvent(int rarity) {
@@ -32,7 +32,7 @@ public class TeleportToStructureEvent implements RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         if (!(pLevel instanceof ServerLevel serverLevel)) {
@@ -107,6 +107,6 @@ public class TeleportToStructureEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level level, Player player) {
-        return RandomEvent.rollChance(level, player, rarity, true);
+        return RandomEvent.rollChance(level, player, rarity, isPositiveEvent());
     }
 }

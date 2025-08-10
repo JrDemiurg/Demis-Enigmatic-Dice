@@ -5,6 +5,8 @@ import net.jrdemiurge.enigmaticdice.config.EnigmaticDiceConfig;
 import net.jrdemiurge.enigmaticdice.config.UniqueEventConfig;
 import net.jrdemiurge.enigmaticdice.config.ItemEventConfig;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.LevelResource;
@@ -13,10 +15,7 @@ import net.minecraftforge.fml.ModList;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class RandomEventManager {
     private final List<RandomEvent> events = new ArrayList<>();
@@ -29,6 +28,14 @@ public class RandomEventManager {
             }
             if (EnigmaticDiceConfig.configData.itemEvents != null) {
                 loadItemEvents();
+            }
+            if (EnigmaticDiceConfig.configData.negativeEvents != null) {
+                for (int i = 0; i < events.size(); i++) {
+                    String name = eventNames.get(i);
+                    if (EnigmaticDiceConfig.configData.negativeEvents.contains(name)) {
+                        events.get(i).setPositiveEvent(false);
+                    }
+                }
             }
         }
     }
@@ -239,14 +246,30 @@ public class RandomEventManager {
 
     private void saveResultsToFile(Level pLevel, Player pPlayer, Map<String, Integer> eventWinCounts, int totalSimulations) {
         MinecraftServer server = pLevel.getServer();
-        if (server == null) return; // Безопасность на случай, если уровень не загружен на сервере
+        if (server == null) return;
 
         File worldFolder = server.getWorldPath(LevelResource.ROOT).toFile();
         File resultFile = new File(worldFolder, "enigmatic_die_simulation_results.txt");
 
         try (FileWriter writer = new FileWriter(resultFile)) {
             writer.write("Total simulations: " + totalSimulations + "\n");
-            writer.write("Player Luck: " + String.format("%.2f", pPlayer.getLuck()) + "\n\n");
+            writer.write("Player Luck: " + String.format("%.2f", pPlayer.getLuck()) + "\n");
+
+            // ===== Подсчёт негативных событий =====
+            if (EnigmaticDiceConfig.configData != null && EnigmaticDiceConfig.configData.negativeEvents != null) {
+                int negativeCount = 0;
+
+                for (String negativeEventName : EnigmaticDiceConfig.configData.negativeEvents) {
+                    Integer count = eventWinCounts.get(negativeEventName);
+                    if (count != null) {
+                        negativeCount += count;
+                    }
+                }
+
+                double negativeChance = (negativeCount / (double) totalSimulations) * 100;
+                writer.write("Negative events total: " + negativeCount + " occurrences (" +
+                        String.format("%.2f", negativeChance) + "%)\n\n");
+            }
 
             List<Map.Entry<String, Integer>> sortedEntries = new ArrayList<>(eventWinCounts.entrySet());
             sortedEntries.sort((e1, e2) -> {
@@ -265,6 +288,191 @@ public class RandomEventManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Выполняет симуляции для всех уровней удачи от -10 до 10 и возвращает карту:
+     * luckLevel -> ( eventName -> chancePercent )
+     */
+    public Map<Integer, Map<String, Double>> buildLuckRangeResults(Level pLevel, Player pPlayer, int simulationsCount) {
+        // Сохраняем оригинальную удачу и подготовка
+        double originalLuck = 0;
+        AttributeInstance luckAttr = pPlayer.getAttribute(Attributes.LUCK);
+        if (luckAttr != null) originalLuck = luckAttr.getBaseValue();
+
+        Map<Integer, Map<String, Double>> luckPercentages = new LinkedHashMap<>(); // сохраняет порядок ключей
+
+        // Кешим набор негативных ивентов для быстрого поиска (можно null-проверить)
+        Set<String> negativeSet = null;
+        if (EnigmaticDiceConfig.configData != null && EnigmaticDiceConfig.configData.negativeEvents != null) {
+            negativeSet = new HashSet<>(EnigmaticDiceConfig.configData.negativeEvents);
+        }
+
+        // Локальные ссылки чтобы немного ускорить доступ
+        List<RandomEvent> localEvents = this.events;
+        List<String> localEventNames = this.eventNames;
+        int eventsCount = localEvents.size();
+        if (eventsCount == 0) return luckPercentages; // ничего не делать
+
+        // Для каждого уровня удачи один цикл симуляций
+        List<Integer> luckLevels = buildCustomLuckLevels();
+        for (int luck : luckLevels) {
+            // Устанавливаем удачу игрока (если атрибут есть)
+            if (luckAttr != null) {
+                luckAttr.setBaseValue(luck);
+            }
+
+            // Счётчики
+            Map<String, Integer> counts = new LinkedHashMap<>();
+            for (String name : localEventNames) counts.put(name, 0);
+
+            // Основные симуляции
+            for (int i = 0; i < simulationsCount; i++) {
+                String eventName;
+                boolean triggered;
+                RandomEvent event;
+                // выбираем случайный ивент, пока не сработает (как у тебя было)
+                do {
+                    int idx = pLevel.getRandom().nextInt(eventsCount);
+                    event = localEvents.get(idx);
+                    eventName = localEventNames.get(idx);
+                    triggered = event.simulationExecute(pLevel, pPlayer);
+                } while (!triggered);
+
+                counts.put(eventName, counts.get(eventName) + 1);
+            }
+
+            // Конвертируем в проценты и сохраняем в результат
+            Map<String, Double> percentages = new LinkedHashMap<>();
+            for (String name : localEventNames) {
+                int c = counts.getOrDefault(name, 0);
+                double pct = (c / (double) simulationsCount) * 100.0;
+                percentages.put(name, pct);
+            }
+
+            luckPercentages.put(luck, percentages);
+        }
+
+        // Восстанавливаем удачу
+        if (luckAttr != null) luckAttr.setBaseValue(originalLuck);
+
+        return luckPercentages;
+    }
+
+    /**
+     * Сохраняет карту luckPercentages в текстовый файл таблично.
+     * Формат: строка = eventName, затем колонки -10..10 (проценты с 2 знаками).
+     * В конце добавляется строка "Negative Events Total".
+     */
+    public void saveLuckRangeResultsToFile(Level pLevel, Player pPlayer,
+                                           Map<Integer, Map<String, Double>> luckPercentages,
+                                           int simulationsCount) {
+        MinecraftServer server = pLevel.getServer();
+        if (server == null) return;
+
+        File worldFolder = server.getWorldPath(LevelResource.ROOT).toFile();
+        File resultFile = new File(worldFolder, "enigmatic_die_luck_range_results.txt");
+
+        // Настройки форматирования
+        final int nameColWidth = 40;
+        final int luckColWidth = 8;
+
+        List<Integer> luckLevels = buildCustomLuckLevels();
+
+        try (FileWriter writer = new FileWriter(resultFile)) {
+            writer.write("Simulations per luck level: " + simulationsCount + "\n\n");
+
+            // Заголовок
+            writer.write(String.format("%-" + nameColWidth + "s", "Event Name                  Luck level"));
+            for (int luck : luckLevels) {
+                writer.write(String.format("%" + luckColWidth + "d", luck));
+            }
+            writer.write("\n");
+
+            // Проверка на пустые данные
+            if (luckPercentages.isEmpty()) {
+                writer.write("No data (no events or simulation not run).\n");
+                return;
+            }
+
+            // Используем порядок eventNames чтобы строки были в том же порядке
+            for (String eventName : this.eventNames) {
+                writer.write(String.format("%-" + nameColWidth + "." + (nameColWidth - 1) + "s", eventName));
+                for (int luck : luckLevels) {
+                    Map<String, Double> map = luckPercentages.get(luck);
+                    double pct = 0.0;
+                    if (map != null && map.containsKey(eventName)) pct = map.get(eventName);
+                    writer.write(String.format("%" + luckColWidth + ".2f", pct));
+                }
+                writer.write("\n");
+            }
+
+            // Суммарный шанс негативных ивентов для каждого уровня удачи
+            writer.write("\n");
+            writer.write(String.format("%-" + nameColWidth + "s", "Negative Events Total"));
+
+            Set<String> negativeSet = null;
+            if (EnigmaticDiceConfig.configData != null && EnigmaticDiceConfig.configData.negativeEvents != null) {
+                negativeSet = new HashSet<>(EnigmaticDiceConfig.configData.negativeEvents);
+            }
+
+            for (int luck : luckLevels) {
+                double negativeSum = 0.0;
+                Map<String, Double> map = luckPercentages.get(luck);
+                if (map != null && negativeSet != null) {
+                    for (String neg : negativeSet) {
+                        Double val = map.get(neg);
+                        if (val != null) negativeSum += val;
+                    }
+                }
+                writer.write(String.format("%" + luckColWidth + ".2f", negativeSum));
+            }
+            writer.write("\n\n\n");
+
+            writer.write("In order for the simulation to run correctly, you must have a luck level of 0 and no luck attribute modifiers.\n");
+            writer.write("Use /enigmaticDiceGetLuck to check the value of luck.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Генерирует список уровней удачи по заданным правилам.
+     */
+    private List<Integer> buildCustomLuckLevels() {
+        List<Integer> levels = new ArrayList<>();
+
+        // От -1000 до -100 с шагом 100
+        for (int i = -1000; i <= -100; i += 100) {
+            levels.add(i);
+        }
+
+        // От -100 до -20 с шагом 5
+        for (int i = -100; i <= -20; i += 5) {
+            if (!levels.contains(i)) levels.add(i);
+        }
+
+        // От -20 до 0 с шагом 1
+        for (int i = -20; i <= 0; i++) {
+            if (!levels.contains(i)) levels.add(i);
+        }
+
+        // От 1 до 20 с шагом 1
+        for (int i = 1; i <= 20; i++) {
+            levels.add(i);
+        }
+
+        // От 25 до 100 с шагом 5
+        for (int i = 25; i <= 100; i += 5) {
+            levels.add(i);
+        }
+
+        // От 200 до 1000 с шагом 100
+        for (int i = 200; i <= 1000; i += 100) {
+            levels.add(i);
+        }
+
+        return levels;
     }
 
     public RandomEvent getEventByName(String name) {

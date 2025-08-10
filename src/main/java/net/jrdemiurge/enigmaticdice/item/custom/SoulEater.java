@@ -186,6 +186,7 @@ public class SoulEater extends SwordItem {
                     .withStyle(ChatFormatting.GOLD));
 
         } else {
+            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.soul_eater_0"));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.holdShift"));
         }
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);

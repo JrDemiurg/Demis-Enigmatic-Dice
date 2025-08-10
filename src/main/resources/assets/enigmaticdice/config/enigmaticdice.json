@@ -658,5 +658,22 @@
     "call_of_yucutan:deadly_crypt",
     "call_of_yucutan:overgrown_temple",
     "born_in_chaos_v1:infernal_pumpkin"
+  ],
+  "negativeEvents": [
+    "minecraft_explosion",
+    "minecraft_lightning_strike",
+    "minecraft_teleport_to_world_edge",
+    "minecraft_mass_creeper_summon_1",
+    "minecraft_mass_creeper_summon_2",
+    "minecraft_mass_creeper_summon_3",
+    "minecraft_mass_creeper_summon_4",
+    "minecraft_curse_binding",
+    "enigmaticlegacy_eternal_binding",
+    "alexsmobs_summon_centipede",
+    "alexscaves_nuclear_bomb",
+    "terramity_black_hole_bomb",
+    "terramity_macro_black_hole_bomb",
+    "terramity_antimatter_bomb",
+    "born_in_chaos_brood_awakens"
   ]
 }

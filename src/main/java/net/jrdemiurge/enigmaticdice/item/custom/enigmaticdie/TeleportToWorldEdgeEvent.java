@@ -9,7 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.chunk.ChunkStatus;
 import net.minecraft.world.level.levelgen.Heightmap;
 
-public class TeleportToWorldEdgeEvent implements RandomEvent {
+public class TeleportToWorldEdgeEvent extends RandomEvent {
     private final int rarity;
 
     public TeleportToWorldEdgeEvent(int rarity) {
@@ -19,7 +19,7 @@ public class TeleportToWorldEdgeEvent implements RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, false)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         if (!(pLevel instanceof ServerLevel serverLevel)) {
@@ -64,6 +64,6 @@ public class TeleportToWorldEdgeEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, false);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

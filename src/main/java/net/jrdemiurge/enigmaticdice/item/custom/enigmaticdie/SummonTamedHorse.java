@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-public class SummonTamedHorse implements RandomEvent {
+public class SummonTamedHorse extends RandomEvent {
     private final int rarity;
 
     public SummonTamedHorse(int rarity) {
@@ -22,7 +22,7 @@ public class SummonTamedHorse implements RandomEvent {
 
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
-        if (!guaranteed && !RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) {
+        if (!guaranteed && !RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) {
             return false;
         }
 
@@ -59,6 +59,6 @@ public class SummonTamedHorse implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

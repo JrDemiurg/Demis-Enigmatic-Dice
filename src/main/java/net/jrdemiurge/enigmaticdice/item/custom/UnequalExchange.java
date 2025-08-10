@@ -160,6 +160,7 @@ public class UnequalExchange extends SwordItem {
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.unequal_exchange_9", String.valueOf(Config.UnequalExchangeStatDebuff   * 100) + "%")
                     .withStyle(ChatFormatting.GOLD));
         } else {
+            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.unequal_exchange_0"));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.holdShift"));
         }
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);

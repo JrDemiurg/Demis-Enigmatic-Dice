@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
-public class GoldenRain implements RandomEvent{
+public class GoldenRain extends RandomEvent{
     private static final int NUM_GOLDEN_NUGGETS = 128 * 2;
     private static final int RADIUS = 2;
     private static final int DELAY_TICKS = 1;
@@ -22,7 +22,7 @@ public class GoldenRain implements RandomEvent{
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel,pPlayer, rarity, true)) return false;
+            if (!RandomEvent.rollChance(pLevel,pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         BlockPos pos = pPlayer.blockPosition();
@@ -46,6 +46,6 @@ public class GoldenRain implements RandomEvent{
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

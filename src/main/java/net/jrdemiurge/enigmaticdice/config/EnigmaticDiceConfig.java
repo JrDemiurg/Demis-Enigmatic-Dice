@@ -34,6 +34,7 @@ public class EnigmaticDiceConfig {
             configData.itemEvents = new HashMap<>();
             configData.teleportBiomes = new ArrayList<>();
             configData.teleportStructures = new ArrayList<>();
+            configData.negativeEvents = new ArrayList<>();
         }
     }
 

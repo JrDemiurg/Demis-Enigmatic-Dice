@@ -14,7 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class GiveItemEvent implements RandomEvent {
+public class GiveItemEvent extends RandomEvent {
     private final String itemIdentifier;
     private final int rarity;
     private final int quantity;
@@ -32,7 +32,7 @@ public class GiveItemEvent implements RandomEvent {
     @Override
     public boolean  execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
         ResourceLocation resourceLocation = new ResourceLocation(itemIdentifier);
         Item item = ForgeRegistries.ITEMS.getValue(resourceLocation);
@@ -69,6 +69,6 @@ public class GiveItemEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

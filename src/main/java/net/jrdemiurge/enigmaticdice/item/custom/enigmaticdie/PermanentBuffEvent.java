@@ -9,7 +9,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.Map;
 
-public class PermanentBuffEvent implements RandomEvent {
+public class PermanentBuffEvent extends RandomEvent {
     private static final Map<MobEffect, String> EFFECT_MESSAGES = Map.of(
             // MobEffects.LUCK, "enigmaticdice.effect.luck",
             MobEffects.DAMAGE_BOOST, "enigmaticdice.effect.damage_boost",
@@ -33,7 +33,7 @@ public class PermanentBuffEvent implements RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         MobEffect[] effects = EFFECT_MESSAGES.keySet().toArray(new MobEffect[0]);
@@ -58,7 +58,7 @@ public class PermanentBuffEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }
 

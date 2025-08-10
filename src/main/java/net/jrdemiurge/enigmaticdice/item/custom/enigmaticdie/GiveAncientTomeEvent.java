@@ -17,7 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GiveAncientTomeEvent implements RandomEvent {
+public class GiveAncientTomeEvent extends RandomEvent {
     private final int rarity;
 
     public GiveAncientTomeEvent(int rarity) {
@@ -27,7 +27,7 @@ public class GiveAncientTomeEvent implements RandomEvent {
     @Override
     public boolean  execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         ResourceLocation resourceLocation = new ResourceLocation("quark:ancient_tome");
@@ -78,6 +78,6 @@ public class GiveAncientTomeEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

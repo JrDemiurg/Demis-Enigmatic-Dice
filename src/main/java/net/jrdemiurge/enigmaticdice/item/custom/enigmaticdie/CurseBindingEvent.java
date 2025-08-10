@@ -13,7 +13,7 @@ import java.util.EnumSet;
 import java.util.Map;
 
 
-public class CurseBindingEvent implements RandomEvent {
+public class CurseBindingEvent extends RandomEvent {
     private final int rarity;
 
     public CurseBindingEvent(int rarity) {
@@ -23,7 +23,7 @@ public class CurseBindingEvent implements RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, false)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         boolean enchantedAny = false;
@@ -52,6 +52,6 @@ public class CurseBindingEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, false);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

@@ -22,7 +22,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 
-public class MassCreeperSummonEvent implements RandomEvent {
+public class MassCreeperSummonEvent extends RandomEvent {
     private final int rarity;
     private final int eventLevel;
     private static final int CREEPER_COUNT = 50;
@@ -36,7 +36,7 @@ public class MassCreeperSummonEvent implements RandomEvent {
     @Override
     public boolean  execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, false)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         Random random = new Random();
@@ -143,6 +143,6 @@ public class MassCreeperSummonEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, false);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

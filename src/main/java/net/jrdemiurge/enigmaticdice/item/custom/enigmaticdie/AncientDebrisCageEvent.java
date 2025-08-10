@@ -8,7 +8,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class AncientDebrisCageEvent implements RandomEvent {
+public class AncientDebrisCageEvent extends RandomEvent {
     private final int rarity;
 
     public AncientDebrisCageEvent(int rarity) {
@@ -18,7 +18,7 @@ public class AncientDebrisCageEvent implements RandomEvent {
     @Override
     public boolean  execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, true)) return false;
+            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
         }
 
         BlockPos playerPos = pPlayer.blockPosition();
@@ -43,6 +43,6 @@ public class AncientDebrisCageEvent implements RandomEvent {
 
     @Override
     public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, true);
+        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }
