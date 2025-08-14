@@ -16,6 +16,9 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> SOUL_EATER_CHARGED_HIT = registerSoundEvents("soul_eater_charged_hit");
 
+    public static final RegistryObject<SoundEvent> PERMAFROST_FROZEN = registerSoundEvents("permafrost_frozen");
+
+    public static final RegistryObject<SoundEvent> PERMAFROST_UNFROZEN = registerSoundEvents("permafrost_unfrozen");
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(EnigmaticDice.MOD_ID, name)));

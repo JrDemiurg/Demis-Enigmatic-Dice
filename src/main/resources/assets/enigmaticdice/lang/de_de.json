@@ -11,6 +11,7 @@
   "item.enigmaticdice.gravity_core": "§dGravitationskern",
   "item.enigmaticdice.ring_of_agility": "§dRing der Beweglichkeit",
   "item.enigmaticdice.divine_shield": "§dGöttlicher Schild",
+  "item.enigmaticdice.permafrost": "§dPermafrost",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Würfel aus Blöcken",
   "stat.enigmaticdice.obtained_dice_from_mob": "Würfel von Mobs",
@@ -43,6 +44,14 @@
   "tooltip.enigmaticdice.soul_eater_5": "§dBei Tötung:",
   "tooltip.enigmaticdice.soul_eater_6": "§5- Du stellst §6%1$s §dder maximalen Gesundheit des Ziels wieder her.",
   "tooltip.enigmaticdice.soul_eater_7": "§5- Du erhältst einen Bonus auf maximale Gesundheit in Höhe von §6%1$s §dder maximalen Gesundheit des Ziels §5für §6%2$s §dMinuten§5, jedoch nicht mehr als §6%3$s §ddeiner maximalen Gesundheit.",
+
+  "tooltip.enigmaticdice.permafrost_1": "§dBeim Treffer:",
+  "tooltip.enigmaticdice.permafrost_2": "§5- §6-%1$.1f%% §5zur §dBewegungsgeschwindigkeit§5 und §dKreativfluggeschwindigkeit§5 des Ziels für §6%2$d Sekunden§5.",
+  "tooltip.enigmaticdice.permafrost_3": "§5- Stapelt sich bis zu §6%1$d §5Mal.",
+  "tooltip.enigmaticdice.permafrost_4": "§5- Bei §6maximalen§5 §dStapel§5 wird die Nutzung von §6Elytren§5 verhindert.",
+  "tooltip.enigmaticdice.permafrost_5": "§dInnerhalb eines Radius von §6%1$d §dBlöcken:",
+  "tooltip.enigmaticdice.permafrost_6": "§5- §6-%1$.1f%% §5zur §dBewegungsgeschwindigkeit§5 und §dKreativfluggeschwindigkeit§5 von Feinden.",
+  "tooltip.enigmaticdice.permafrost_7": "§5- §6Friert §dBlöcke§5 ein.",
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + Rechtsklick§5 auf einen Block, um ihn zu §6vernichten§5.",
   "tooltip.enigmaticdice.antimatter.2": "§5Löst außerdem eine sehr starke §6Explosion§5 aus.",
@@ -182,7 +191,11 @@
   "effect.enigmaticdice.soul_eater_charged_hit": "Geladener Treffer",
   "effect.enigmaticdice.soul_eater_health_boost": "Gesundheitsboost",
   "effect.enigmaticdice.unequal_exchange_debuffs": "Ungleicher Tausch",
+  "effect.enigmaticdice.frost_hit": "Frostschlag",
+  "effect.enigmaticdice.frost_aura": "Frostaura",
 
-  "sounds.enigmaticdice.unequal_exchange_hit": "Ungleicher-Tausch-Treffer",
-  "sounds.enigmaticdice.soul_eater_charged_hit": "Seelenfresser Geladener Treffer"
+  "sounds.enigmaticdice.unequal_exchange_hit": "Ungleicher Tausch – Treffer",
+  "sounds.enigmaticdice.soul_eater_charged_hit": "Geladener Seelenfresser-Treffer",
+  "sounds.enigmaticdice.permafrost_frozen": "Permafrost – eingefroren",
+  "sounds.enigmaticdice.permafrost_unfrozen": "Permafrost – aufgetaut"
 }

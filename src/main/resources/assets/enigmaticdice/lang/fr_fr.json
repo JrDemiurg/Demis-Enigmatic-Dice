@@ -11,6 +11,7 @@
   "item.enigmaticdice.gravity_core": "§dNoyau de Gravité",
   "item.enigmaticdice.ring_of_agility": "§dAnneau d'Agilité",
   "item.enigmaticdice.divine_shield": "§dBouclier Divin",
+  "item.enigmaticdice.permafrost": "§dPergélisol",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Dés des blocs",
   "stat.enigmaticdice.obtained_dice_from_mob": "Dés des mobs",
@@ -43,6 +44,14 @@
   "tooltip.enigmaticdice.soul_eater_5": "§dÀ la mort :",
   "tooltip.enigmaticdice.soul_eater_6": "§5- Vous regagnez §6%1$s §dde la vie maximale de la cible.",
   "tooltip.enigmaticdice.soul_eater_7": "§5- Vous obtenez un bonus de vie maximale équivalent à §6%1$s §dde la vie maximale de la cible §5pendant §6%2$s §dminutes§5, mais pas plus de §6%3$s §dde votre propre vie maximale.",
+
+  "tooltip.enigmaticdice.permafrost_1": "§dLors d'un coup :",
+  "tooltip.enigmaticdice.permafrost_2": "§5- §6-%1$.1f%% §5à la §dvitesse de déplacement§5 et à la §dvitesse de vol créatif§5 de la cible pendant §6%2$d secondes§5.",
+  "tooltip.enigmaticdice.permafrost_3": "§5- Cumulable jusqu'à §6%1$d §5fois.",
+  "tooltip.enigmaticdice.permafrost_4": "§5- Au §6maximum§5 de §dcharges§5, empêche la cible d'utiliser l'§6Elytra§5.",
+  "tooltip.enigmaticdice.permafrost_5": "§dDans un rayon de §6%1$d §dblocs :",
+  "tooltip.enigmaticdice.permafrost_6": "§5- §6-%1$.1f%% §5à la §dvitesse de déplacement§5 et à la §dvitesse de vol créatif§5 des ennemis.",
+  "tooltip.enigmaticdice.permafrost_7": "§5- §6Gèle §dles blocs§5.",
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + Clic-droit§5 sur un bloc pour l'§6anéantir§5.",
   "tooltip.enigmaticdice.antimatter.2": "§5Déclenche également une puissante §6explosion.",
@@ -182,7 +191,11 @@
   "effect.enigmaticdice.soul_eater_charged_hit": "Coup Chargé",
   "effect.enigmaticdice.soul_eater_health_boost": "Augmentation de Vie",
   "effect.enigmaticdice.unequal_exchange_debuffs": "Échange Inégal",
+  "effect.enigmaticdice.frost_hit": "Coup de givre",
+  "effect.enigmaticdice.frost_aura": "Aura de givre",
 
-  "sounds.enigmaticdice.unequal_exchange_hit": "Coup d'Échange Inégal",
-  "sounds.enigmaticdice.soul_eater_charged_hit": "Coup Chargé du Dévoreur d’Âmes"
+  "sounds.enigmaticdice.unequal_exchange_hit": "Coup de l’Échange inégal",
+  "sounds.enigmaticdice.soul_eater_charged_hit": "Coup chargé du Dévoreur d’âmes",
+  "sounds.enigmaticdice.permafrost_frozen": "Pergélisol – gelé",
+  "sounds.enigmaticdice.permafrost_unfrozen": "Pergélisol – dégelé"
 }

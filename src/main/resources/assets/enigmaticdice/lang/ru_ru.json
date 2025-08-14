@@ -11,6 +11,7 @@
   "item.enigmaticdice.gravity_core": "§dГравитационное ядро",
   "item.enigmaticdice.ring_of_agility": "§dКольцо ловкости",
   "item.enigmaticdice.divine_shield": "§dБожественный щит",
+  "item.enigmaticdice.permafrost": "§dВечная мерзлота",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Игральных костей из блоков",
   "stat.enigmaticdice.obtained_dice_from_mob": "Игральных костей с мобов",
@@ -43,6 +44,14 @@
   "tooltip.enigmaticdice.soul_eater_5": "§dПри убийстве:",
   "tooltip.enigmaticdice.soul_eater_6": "§5- Вы восстанавливаете §6%1$s §dот максимального здоровья цели.",
   "tooltip.enigmaticdice.soul_eater_7": "§5- Вы получаете прирост к макс. здоровью равный §6%1$s §dот макс. здоровья цели §5на §6%2$s §dминут§5, но не более §6%3$s §dот вашего макс. здоровья.",
+
+  "tooltip.enigmaticdice.permafrost_1": "§dПри ударе:",
+  "tooltip.enigmaticdice.permafrost_2": "§5- §6-%1$.1f%% §5к §dскорости передвижения§5 и §dтворческого полёта§5 цели на §6%2$d секунд.",
+  "tooltip.enigmaticdice.permafrost_3": "§5- Стакается до §6%1$d раз.",
+  "tooltip.enigmaticdice.permafrost_4": "§5- При §6максимальном§5 числе §dстаков§5 §6запрещает§5 цели использовать §6элитры.",
+  "tooltip.enigmaticdice.permafrost_5": "§dВ радиусе §6%1$d блоков:",
+  "tooltip.enigmaticdice.permafrost_6": "§5- §6-%1$.1f%% §5к §dскорости передвижения§5 и §dтворческого полёта§5 врагов.",
+  "tooltip.enigmaticdice.permafrost_7": "§5- §6Замораживает §dблоки.",
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + ПКМ§5 по блоку, чтобы его §6аннигилировать§5.",
   "tooltip.enigmaticdice.antimatter.2": "§5Также вызывает мощный §6взрыв.",
@@ -182,7 +191,11 @@
   "effect.enigmaticdice.soul_eater_charged_hit": "Заряженный удар",
   "effect.enigmaticdice.soul_eater_health_boost": "Прилив здоровья",
   "effect.enigmaticdice.unequal_exchange_debuffs": "Неравный обмен",
+  "effect.enigmaticdice.frost_hit": "Ледяной удар",
+  "effect.enigmaticdice.frost_aura": "Ледяная аура",
 
-  "sounds.enigmaticdice.unequal_exchange_hit": "Удар неравного обмена",
-  "sounds.enigmaticdice.soul_eater_charged_hit": "Заряженный удар пожирателя душ"
+  "sounds.enigmaticdice.unequal_exchange_hit": "Удар Неравноценного обмена",
+  "sounds.enigmaticdice.soul_eater_charged_hit": "Заряженный удар Пожирателя душ",
+  "sounds.enigmaticdice.permafrost_frozen": "Вечная мерзлота — заморожено",
+  "sounds.enigmaticdice.permafrost_unfrozen": "Вечная мерзлота — разморожено"
 }

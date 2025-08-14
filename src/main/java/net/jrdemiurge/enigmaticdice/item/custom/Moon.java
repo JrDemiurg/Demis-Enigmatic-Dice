@@ -29,7 +29,6 @@ public class Moon extends Item {
         super(pProperties);
     }
 
-    // крафт
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!pLevel.isClientSide && pEntity instanceof Player player) {

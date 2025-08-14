@@ -270,6 +270,38 @@ public class Config
             .comment("Duration of invulnerability after blocking damage with Divine Shield, in ticks. (1 second = 20 ticks)")
             .defineInRange("divineShieldImmunityTicks", 40, 0, Integer.MAX_VALUE);
 
+    private static final ForgeConfigSpec.ConfigValue<Double> PERMAFROST_ATTACK_DAMAGE = BUILDER
+            .comment("Permafrost Attack Damage.")
+            .define("permafrostAttackDamage", 10.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> PERMAFROST_ATTACK_SPEED = BUILDER
+            .comment("Permafrost Attack Speed.")
+            .define("permafrostAttackSpeed", 2.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> PERMAFROST_ATTACK_DEBUFF_DURATION = BUILDER
+            .comment("Duration of the Permafrost debuff applied when hitting a target, in ticks. (1 second = 20 ticks)")
+            .defineInRange("permafrostAttackDebuffDuration", 600, 0, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> PERMAFROST_ATTACK_MAX_STACKS = BUILDER
+            .comment("Maximum number of Permafrost stacks applied from attacks.")
+            .defineInRange("permafrostAttackMaxStacks", 10, 0, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> PERMAFROST_ATTACK_REDUCTION_PER_STACK = BUILDER
+            .comment("Movement/Flying speed reduction per Permafrost stack applied from attacks (0.05 = 5% slower).")
+            .defineInRange("permafrostAttackReductionPerStack", 0.05, 0.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> PERMAFROST_AURA_RADIUS = BUILDER
+            .comment("Radius of the Permafrost aura effect in blocks.")
+            .defineInRange("permafrostAuraRadius", 5, 0, 32);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> PERMAFROST_AURA_DEBUFF_DURATION = BUILDER
+            .comment("Duration of the Permafrost aura debuff in ticks. (1 second = 20 ticks)")
+            .defineInRange("permafrostAuraDebuffDuration", 100, 0, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> PERMAFROST_AURA_REDUCTION_FACTOR = BUILDER
+            .comment("Movement/Flying speed reduction factor from Permafrost aura. (0.2 = 20% slower)")
+            .defineInRange("permafrostAuraReductionFactor", 0.2, 0.0, 1.0);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static double EnigmaticDieMobDropChance;
@@ -309,6 +341,14 @@ public class Config
     public static double RingOfAgilityMaxDodgeChance;
     public static int DivineShieldCooldownTicks;
     public static int DivineShieldImmunityTicks;
+    public static double PermafrostAttackDamage;
+    public static double PermafrostAttackSpeed;
+    public static int PermafrostAttackDebuffDuration;
+    public static int PermafrostAttackMaxStacks;
+    public static double PermafrostAttackReductionPerStack;
+    public static int PermafrostAuraRadius;
+    public static int PermafrostAuraDebuffDuration;
+    public static double PermafrostAuraReductionFactor;
 
     public static List<ResourceLocation> lootTables;
 
@@ -357,6 +397,14 @@ public class Config
         RingOfAgilityMaxDodgeChance = RING_OF_AGILITY_MAX_DODGE_CHANCE.get();
         DivineShieldCooldownTicks = DIVINE_SHIELD_COOLDOWN_TICKS.get();
         DivineShieldImmunityTicks = DIVINE_SHIELD_IMMUNITY_TICKS.get();
+        PermafrostAttackDamage = PERMAFROST_ATTACK_DAMAGE.get();
+        PermafrostAttackSpeed = PERMAFROST_ATTACK_SPEED.get();
+        PermafrostAttackDebuffDuration = PERMAFROST_ATTACK_DEBUFF_DURATION.get();
+        PermafrostAttackMaxStacks = PERMAFROST_ATTACK_MAX_STACKS.get();
+        PermafrostAttackReductionPerStack = PERMAFROST_ATTACK_REDUCTION_PER_STACK.get();
+        PermafrostAuraRadius = PERMAFROST_AURA_RADIUS.get();
+        PermafrostAuraDebuffDuration = PERMAFROST_AURA_DEBUFF_DURATION.get();
+        PermafrostAuraReductionFactor = PERMAFROST_AURA_REDUCTION_FACTOR.get();
 
         lootTables = LOOT_TABLES.get().stream()
                 .map(ResourceLocation::new)

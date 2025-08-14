@@ -10,5 +10,17 @@
     "sounds" : [
       "enigmaticdice:soul_eater_charged_hit"
     ]
+  },
+  "permafrost_frozen": {
+    "subtitles": "sounds.enigmaticdice.permafrost_frozen",
+    "sounds" : [
+      "enigmaticdice:permafrost_frozen"
+    ]
+  },
+  "permafrost_unfrozen": {
+    "subtitles": "sounds.enigmaticdice.permafrost_unfrozen",
+    "sounds" : [
+      "enigmaticdice:permafrost_unfrozen"
+    ]
   }
 }

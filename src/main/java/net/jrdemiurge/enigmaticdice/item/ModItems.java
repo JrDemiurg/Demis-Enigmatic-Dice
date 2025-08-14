@@ -46,6 +46,9 @@ public class ModItems {
     public static final RegistryObject<Item> DIVINE_SHIELD = ITEMS.register("divine_shield",
             () -> new DivineShield(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> PERMAFROST  = ITEMS.register("permafrost",
+            () -> new Permafrost(Tiers.NETHERITE, 5, -2F, new Item.Properties().fireResistant()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

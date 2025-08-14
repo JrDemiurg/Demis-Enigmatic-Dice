@@ -11,6 +11,7 @@
   "item.enigmaticdice.gravity_core": "§dNúcleo de Gravedad",
   "item.enigmaticdice.ring_of_agility": "§dAnillo de Agilidad",
   "item.enigmaticdice.divine_shield": "§dEscudo Divino",
+  "item.enigmaticdice.permafrost": "§dPermafrost",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Dados de bloques",
   "stat.enigmaticdice.obtained_dice_from_mob": "Dados de mobs",
@@ -43,6 +44,14 @@
   "tooltip.enigmaticdice.soul_eater_5": "§dAl matar:",
   "tooltip.enigmaticdice.soul_eater_6": "§5- Restauras el §6%1$s §dde la salud máxima del objetivo.",
   "tooltip.enigmaticdice.soul_eater_7": "§5- Ganas un aumento de salud máxima igual al §6%1$s §dde la salud máxima del objetivo §5por §6%2$s §dminutos§5, pero no más del §6%3$s §dde tu salud máxima.",
+
+  "tooltip.enigmaticdice.permafrost_1": "§dAl golpear:",
+  "tooltip.enigmaticdice.permafrost_2": "§5- §6-%1$.1f%% §5a la §dvelocidad de movimiento§5 y a la §dvelocidad de vuelo creativo§5 del objetivo durante §6%2$d segundos§5.",
+  "tooltip.enigmaticdice.permafrost_3": "§5- Se acumula hasta §6%1$d §5veces.",
+  "tooltip.enigmaticdice.permafrost_4": "§5- Con §6el máximo§5 de §dacumulaciones§5, impide que el objetivo use la §6Elytra§5.",
+  "tooltip.enigmaticdice.permafrost_5": "§dEn un radio de §6%1$d §dbloques:",
+  "tooltip.enigmaticdice.permafrost_6": "§5- §6-%1$.1f%% §5a la §dvelocidad de movimiento§5 y a la §dvelocidad de vuelo creativo§5 de los enemigos.",
+  "tooltip.enigmaticdice.permafrost_7": "§5- §6Congela §dlos bloques§5.",
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + Clic derecho§5 en cualquier bloque para §6aniquilarlo§5.",
   "tooltip.enigmaticdice.antimatter.2": "§5También activa una §6explosión muy poderosa.",
@@ -182,7 +191,11 @@
   "effect.enigmaticdice.soul_eater_charged_hit": "Golpe Cargado",
   "effect.enigmaticdice.soul_eater_health_boost": "Aumento de Salud",
   "effect.enigmaticdice.unequal_exchange_debuffs": "Intercambio Desigual",
+  "effect.enigmaticdice.frost_hit": "Golpe de escarcha",
+  "effect.enigmaticdice.frost_aura": "Aura de escarcha",
 
-  "sounds.enigmaticdice.unequal_exchange_hit": "Golpe de Intercambio Desigual",
-  "sounds.enigmaticdice.soul_eater_charged_hit": "Golpe Cargado del Devorador de Almas"
+  "sounds.enigmaticdice.unequal_exchange_hit": "Golpe de Intercambio desigual",
+  "sounds.enigmaticdice.soul_eater_charged_hit": "Golpe cargado del Devorador de almas",
+  "sounds.enigmaticdice.permafrost_frozen": "Permafrost – congelado",
+  "sounds.enigmaticdice.permafrost_unfrozen": "Permafrost – descongelado"
 }
