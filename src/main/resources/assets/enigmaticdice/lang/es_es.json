@@ -120,6 +120,9 @@
   "enigmaticdice.event.eternal_binding": "§cEspero que de verdad te guste tu armadura",
   "enigmaticdice.event.vanilla_random_potion": "§5¿Poción?",
   "enigmaticdice.event.modded_random_potion": "§6¿Poción?",
+  "enigmaticdice.event.skyfall_training": "§cNo se encontró paracaídas. ¡Toma este cubo de agua!",
+  "enigmaticdice.event.day_of_invisibility": "§c¡Felicidades! Hoy nadie notará tus hazañas… ni tus meteduras de pata.",
+  "enigmaticdice.event.teleport_monsters_to_player": "§c¡Aquí se pone animado!",
 
   "enigmaticdice.event.centipede.0": "§c¿Por qué hay tantas patas en este mundo? Ah, claro... Ese es tu problema.",
   "enigmaticdice.event.centipede.1": "§c¿Cuántas patas tiene un ciempiés? Espero que tengas tiempo para contarlas.",

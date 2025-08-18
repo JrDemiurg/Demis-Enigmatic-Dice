@@ -39,7 +39,7 @@ public class GoldenRain extends RandomEvent{
             Scheduler.schedule(() -> {
                 ItemEntity goldNugget = new ItemEntity(pLevel, spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(), Items.GOLD_NUGGET.getDefaultInstance());
                 pLevel.addFreshEntity(goldNugget);
-            }, i * DELAY_TICKS, 0);
+            }, i * DELAY_TICKS);
         }
         return true;
     }

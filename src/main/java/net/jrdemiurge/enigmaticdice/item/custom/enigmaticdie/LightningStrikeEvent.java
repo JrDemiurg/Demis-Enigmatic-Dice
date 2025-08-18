@@ -56,7 +56,7 @@ public class LightningStrikeEvent extends RandomEvent {
                 LightningBolt lightningBolt_3 = new LightningBolt(EntityType.LIGHTNING_BOLT, pLevel);
                 lightningBolt_3.moveTo(strikePos_2.getX(), strikePos_2.getY(), strikePos_2.getZ());
                 pLevel.addFreshEntity(lightningBolt_3);
-            }, delay, 0);
+            }, delay);
         }
 
         pPlayer.displayClientMessage(Component.translatable("enigmaticdice.event.lightning_wrath"), false);

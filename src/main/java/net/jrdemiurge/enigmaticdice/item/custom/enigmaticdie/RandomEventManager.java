@@ -136,6 +136,18 @@ public class RandomEventManager {
                     events.add(new CurseBindingEvent(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "minecraft_skyfall_training" -> {
+                    events.add(new SkyfallTraining(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_day_of_invisibility" -> {
+                    events.add(new DayOfInvisibility(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_teleport_monsters_to_player" -> {
+                    events.add(new TeleportMonstersToPlayer(config.rarity));
+                    eventNames.add(eventName);
+                }
                 case "enigmaticlegacy_eternal_binding" -> {
                     events.add(new EternalBindingEvent(config.rarity));
                     eventNames.add(eventName);

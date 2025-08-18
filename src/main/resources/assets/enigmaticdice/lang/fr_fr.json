@@ -120,6 +120,9 @@
   "enigmaticdice.event.eternal_binding": "§cJ’espère que tu aimes vraiment ton armure",
   "enigmaticdice.event.vanilla_random_potion": "§5Potion ?",
   "enigmaticdice.event.modded_random_potion": "§6Potion ?",
+  "enigmaticdice.event.skyfall_training": "§cPas de parachute trouvé. Tiens, prends ce seau d’eau !",
+  "enigmaticdice.event.day_of_invisibility": "§cFélicitations ! Aujourd’hui, personne ne verra tes exploits… ni tes ratés.",
+  "enigmaticdice.event.teleport_monsters_to_player": "§cÇa devient animé ici !",
 
   "enigmaticdice.event.centipede.0": "§cPourquoi y a-t-il autant de pattes dans ce monde ? Ah oui… C’est ton problème.",
   "enigmaticdice.event.centipede.1": "§cCombien de pattes a un mille-pattes ? J’espère que tu as le temps de les compter.",

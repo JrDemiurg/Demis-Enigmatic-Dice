@@ -51,7 +51,7 @@ public class SummonCarcassEvent extends RandomEvent {
                 entity.moveTo(pos.x, pos.y, pos.z, 0, 0);
                 pLevel.addFreshEntity(entity);
 
-            }, 10 * i, 0);
+            }, 10 * i);
         }
 
         MutableComponent message = Component.translatable("enigmaticdice.event.carcass");

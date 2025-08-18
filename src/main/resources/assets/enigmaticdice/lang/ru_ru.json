@@ -120,6 +120,9 @@
   "enigmaticdice.event.eternal_binding": "§cНадеюсь, тебе очень нравится твоя броня",
   "enigmaticdice.event.vanilla_random_potion": "§5Зелье?",
   "enigmaticdice.event.modded_random_potion": "§6Зелье?",
+  "enigmaticdice.event.skyfall_training": "§cПарашюта не нашлось. Держи ведро воды!",
+  "enigmaticdice.event.day_of_invisibility": "§cПоздравляем! Сегодня никто не заметит твоих подвигов… или промахов.",
+  "enigmaticdice.event.teleport_monsters_to_player": "§cТут становится оживлённо!",
 
   "enigmaticdice.event.centipede.0": "§cПочему в этом мире так много ног? Ах да... Это теперь твоя проблема.",
   "enigmaticdice.event.centipede.1": "§cСколько ног у сороконожки? Надеюсь, у тебя есть время посчитать.",

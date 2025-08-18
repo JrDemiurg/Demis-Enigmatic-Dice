@@ -88,7 +88,7 @@ public class FourLeafClover extends Item {
                         luckAttr.removeModifier(LUCK_MODIFIER_UUID);
                     }
                 }
-            }, 10, 0);
+            }, 10);
         }
     }
 

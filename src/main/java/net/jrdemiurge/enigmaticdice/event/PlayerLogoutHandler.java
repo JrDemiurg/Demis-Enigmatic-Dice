@@ -2,6 +2,7 @@ package net.jrdemiurge.enigmaticdice.event;
 
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
 import net.jrdemiurge.enigmaticdice.item.custom.Permafrost;
+import net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie.DayOfInvisibility;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,5 +20,6 @@ public class PlayerLogoutHandler {
 
         Permafrost.stackMap.remove(playerId);
         Permafrost.auraApplied.remove(playerId);
+        DayOfInvisibility.activePlayers.remove(playerId);
     }
 }

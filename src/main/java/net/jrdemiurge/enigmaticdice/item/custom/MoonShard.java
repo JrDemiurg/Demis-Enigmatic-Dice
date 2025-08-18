@@ -105,7 +105,7 @@ public class MoonShard extends Item {
                             gravityAttributeLater.removeModifier(GRAVITY_MODIFIER_UUID);
                         }
                     }
-                }, 10, 0);
+                }, 10);
             }
         }
     }

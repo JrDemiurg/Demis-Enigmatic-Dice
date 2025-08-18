@@ -1,6 +1,5 @@
 package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 
-import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;

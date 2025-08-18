@@ -67,7 +67,7 @@ public class SummonVallumraptorEvent extends RandomEvent {
                     e.printStackTrace();
                 }
 
-            }, 10 * i, 0);
+            }, 10 * i);
         }
 
         MutableComponent message = Component.translatable("enigmaticdice.event.vallumraptor");

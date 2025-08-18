@@ -165,7 +165,7 @@ public class Permafrost extends SwordItem {
                         stackMap.remove(targetId);
                         lastHitTimeMap.remove(targetId);
                     }
-                }, debuffDuration, 0);
+                }, debuffDuration);
             }
         }
         return super.hurtEnemy(stack, target, attacker);
@@ -252,7 +252,7 @@ public class Permafrost extends SwordItem {
                                 }
                                 lastAuraTimeMap.remove(targetId);
                             }
-                        }, debuffDuration, 0);
+                        }, debuffDuration);
                     }
                 }
 

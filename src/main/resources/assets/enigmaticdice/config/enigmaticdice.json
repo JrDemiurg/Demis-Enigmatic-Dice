@@ -70,6 +70,21 @@
       "requiredMod": "minecraft",
       "rarity": 20
     },
+    "minecraft_skyfall_training": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 20
+    },
+    "minecraft_day_of_invisibility": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 20
+    },
+    "minecraft_teleport_monsters_to_player": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 20
+    },
     "minecraft_curse_binding": {
       "enabled": true,
       "requiredMod": "minecraft",
@@ -683,6 +698,9 @@
     "terramity_black_hole_bomb",
     "terramity_macro_black_hole_bomb",
     "terramity_antimatter_bomb",
-    "born_in_chaos_brood_awakens"
+    "born_in_chaos_brood_awakens",
+    "minecraft_skyfall_training",
+    "minecraft_day_of_invisibility",
+    "minecraft_teleport_monsters_to_player"
   ]
 }

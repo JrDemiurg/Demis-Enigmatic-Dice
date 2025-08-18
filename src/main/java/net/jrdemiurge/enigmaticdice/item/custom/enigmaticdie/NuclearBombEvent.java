@@ -45,7 +45,7 @@ public class NuclearBombEvent extends RandomEvent {
                 pLevel.addFreshEntity(entity);
                 pLevel.playSound(null, BlockPos.containing(spawnPos), SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.2F, 1.0F);
             }
-        }, 20, 0);
+        }, 20);
 
         if (pPlayer instanceof ServerPlayer serverPlayer) {
             Component title = Component.literal("RUN").withStyle(ChatFormatting.DARK_RED);

@@ -75,7 +75,7 @@ public class SummonWarpedToadsEvent extends RandomEvent {
                     e.printStackTrace();
                 }
 
-            }, 10 * i, 0); // 10 тиков = 0.5 секунд задержки
+            }, 10 * i); // 10 тиков = 0.5 секунд задержки
         }
 
         MutableComponent message = Component.translatable("enigmaticdice.event.warped_toads");

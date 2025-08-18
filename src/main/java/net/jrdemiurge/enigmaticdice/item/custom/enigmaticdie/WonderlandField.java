@@ -57,7 +57,7 @@ public class WonderlandField extends RandomEvent {
                     mob.load(entityData);
                     mob.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(0);
                 }
-            }, 20, 0);
+            }, 20);
 
         }
 

@@ -68,7 +68,7 @@ public class Moon extends Item {
                         gravityAttributeLater.removeModifier(GRAVITY_MODIFIER_UUID);
                     }
                 }
-            }, 4, 0);
+            }, 4);
         }
     }
 

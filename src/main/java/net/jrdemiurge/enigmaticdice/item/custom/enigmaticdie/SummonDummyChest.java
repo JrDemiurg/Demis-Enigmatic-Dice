@@ -60,7 +60,7 @@ public class SummonDummyChest extends RandomEvent {
                 entityData.putString("DeathLootTable", "enigmaticdice:entities/dummy_chest_loot_table");
                 mob.load(entityData);
             }
-        }, 20, 0);
+        }, 20);
 
         MutableComponent message = Component.translatable("enigmaticdice.event.dummy_chest");
         pPlayer.displayClientMessage(message, false);
