@@ -148,6 +148,10 @@ public class RandomEventManager {
                     events.add(new TeleportMonstersToPlayer(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "minecraft_accelerate_day_cycle" -> {
+                    events.add(new AccelerateDayCycleEvent(config.rarity));
+                    eventNames.add(eventName);
+                }
                 case "enigmaticlegacy_eternal_binding" -> {
                     events.add(new EternalBindingEvent(config.rarity));
                     eventNames.add(eventName);

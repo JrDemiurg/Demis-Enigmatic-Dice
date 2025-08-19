@@ -123,6 +123,7 @@
   "enigmaticdice.event.skyfall_training": "§cPas de parachute trouvé. Tiens, prends ce seau d’eau !",
   "enigmaticdice.event.day_of_invisibility": "§cFélicitations ! Aujourd’hui, personne ne verra tes exploits… ni tes ratés.",
   "enigmaticdice.event.teleport_monsters_to_player": "§cÇa devient animé ici !",
+  "enigmaticdice.event.accelerate_day_cycle": "§5Le calendrier est sous le choc",
 
   "enigmaticdice.event.centipede.0": "§cPourquoi y a-t-il autant de pattes dans ce monde ? Ah oui… C’est ton problème.",
   "enigmaticdice.event.centipede.1": "§cCombien de pattes a un mille-pattes ? J’espère que tu as le temps de les compter.",

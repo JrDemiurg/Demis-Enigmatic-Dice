@@ -19,5 +19,11 @@ public class NetworkHandler {
                 DoubleJumpPacket::decode,
                 DoubleJumpPacket::handle
         );
+
+        INSTANCE.registerMessage(id++, TimeAccelStartPacket.class,
+                TimeAccelStartPacket::encode,
+                TimeAccelStartPacket::decode,
+                TimeAccelStartPacket::handle
+        );
     }
 }

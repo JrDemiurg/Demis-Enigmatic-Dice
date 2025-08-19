@@ -85,6 +85,11 @@
       "requiredMod": "minecraft",
       "rarity": 20
     },
+    "minecraft_accelerate_day_cycle": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 20
+    },
     "minecraft_curse_binding": {
       "enabled": true,
       "requiredMod": "minecraft",

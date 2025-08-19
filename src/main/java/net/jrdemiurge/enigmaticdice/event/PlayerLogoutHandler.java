@@ -20,6 +20,7 @@ public class PlayerLogoutHandler {
 
         Permafrost.stackMap.remove(playerId);
         Permafrost.auraApplied.remove(playerId);
+
         DayOfInvisibility.activePlayers.remove(playerId);
     }
 }

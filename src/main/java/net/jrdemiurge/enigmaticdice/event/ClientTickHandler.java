@@ -1,7 +1,7 @@
 package net.jrdemiurge.enigmaticdice.event;
 
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
-import net.jrdemiurge.enigmaticdice.item.ModItems;
+import net.jrdemiurge.enigmaticdice.item.custom.GravityCore;
 import net.jrdemiurge.enigmaticdice.network.DoubleJumpPacket;
 import net.jrdemiurge.enigmaticdice.network.NetworkHandler;
 import net.minecraft.client.player.LocalPlayer;
@@ -10,7 +10,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.WeakHashMap;
 
@@ -27,7 +26,7 @@ public class ClientTickHandler {
     public static void onClientTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END || !(event.player instanceof LocalPlayer player)) return;
 
-        if (!isWearingGravityCore(player)) return;
+        if (!GravityCore.isWearingGravityCore(player)) return;
 
         if (player.isCreative() || player.isSpectator()) return;
 
@@ -53,11 +52,5 @@ public class ClientTickHandler {
                 lastJumpPressTick.put(player, -100L);
             }
         }
-    }
-
-    private static boolean isWearingGravityCore(Player player) {
-        return CuriosApi.getCuriosInventory(player)
-                .map(handler -> !handler.findCurios(ModItems.GRAVITY_CORE.get()).isEmpty())
-                .orElse(false);
     }
 }
