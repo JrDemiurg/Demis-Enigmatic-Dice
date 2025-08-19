@@ -1,5 +1,6 @@
 package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 
+import net.jrdemiurge.enigmaticdice.attribute.ModAttributes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -44,6 +45,7 @@ public class SummonMimic extends RandomEvent {
 
         if (entity instanceof LivingEntity livingEntity) {
             livingEntity.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(0);
+            livingEntity.getAttribute(ModAttributes.SIZE_SCALE.get()).setBaseValue(0.5);
         }
 
         MutableComponent message = Component.translatable("enigmaticdice.event.mimic");

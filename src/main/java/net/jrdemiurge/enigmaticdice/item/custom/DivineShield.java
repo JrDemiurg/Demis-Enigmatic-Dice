@@ -2,7 +2,6 @@ package net.jrdemiurge.enigmaticdice.item.custom;
 
 import net.jrdemiurge.enigmaticdice.Config;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
-import net.jrdemiurge.enigmaticdice.mixin.LivingEntityAccessor;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;

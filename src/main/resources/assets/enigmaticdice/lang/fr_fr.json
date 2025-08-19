@@ -18,6 +18,8 @@
 
   "tooltip.enigmaticdice.holdShift": "§5Maintenez §6Shift§5 pour voir les détails.",
 
+  "attribute.enigmaticdice.size_scale": "Échelle de taille",
+
   "tooltip.enigmaticdice.while_hotbar": "§dQuand dans la barre rapide :",
   "tooltip.enigmaticdice.while_held": "§dQuand tenu en main :",
 

@@ -9,12 +9,11 @@
   },
   "mixins": [
     "ClientEventHandlerMixin",
-    "LivingEntityAccessor",
-    "MimicEntityMixin",
+    "LivingEntityMixin",
     "PlayerMixin"
   ],
   "client": [
-    "MimicRendererMixin",
-    "PlayerRendererMixin"
+    "EntityRendererAccessor",
+    "LivingEntityRendererMixin"
   ]
 }

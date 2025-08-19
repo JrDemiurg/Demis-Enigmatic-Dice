@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.jrdemiurge.enigmaticdice.Config;
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
+import net.jrdemiurge.enigmaticdice.attribute.ModAttributes;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -34,6 +35,7 @@ import java.util.*;
 public class GiantsRing extends Item implements ICurioItem {
 
     private static final AttributeModifier STEP_HEIGHT_BONUS = new AttributeModifier(UUID.fromString("979b021d-47b6-42dc-b68c-4c296aca0b01"), "enigmaticdice:giants_ring_step_height", 1, AttributeModifier.Operation.ADDITION);
+    private static final AttributeModifier SIZE_SCALE_MULTIPLIER = new AttributeModifier(UUID.fromString("b3d7b5e8-d381-45bf-8d9f-6291e7e5913d"), "enigmaticdice:giants_ring_size_scale", 0.5, AttributeModifier.Operation.MULTIPLY_TOTAL);
     private final Map<LivingEntity, Integer> stompCooldowns = new WeakHashMap<>();
 
     public GiantsRing(Properties pProperties) {
@@ -49,9 +51,13 @@ public class GiantsRing extends Item implements ICurioItem {
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (slotContext.entity().level().isClientSide || !(slotContext.entity() instanceof Player))
             return;
-        AttributeInstance stepHeight = slotContext.entity().getAttribute((Attribute) ForgeMod.STEP_HEIGHT_ADDITION.get());
+        AttributeInstance stepHeight = slotContext.entity().getAttribute(ForgeMod.STEP_HEIGHT_ADDITION.get());
         if (stepHeight != null && stepHeight.hasModifier(STEP_HEIGHT_BONUS)) {
             stepHeight.removeModifier(STEP_HEIGHT_BONUS);
+        }
+        AttributeInstance sizeScale = slotContext.entity().getAttribute(ModAttributes.SIZE_SCALE.get());
+        if (sizeScale != null && sizeScale.hasModifier(SIZE_SCALE_MULTIPLIER)) {
+            sizeScale.removeModifier(SIZE_SCALE_MULTIPLIER);
         }
     }
 
@@ -59,9 +65,13 @@ public class GiantsRing extends Item implements ICurioItem {
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         if (slotContext.entity().level().isClientSide || !(slotContext.entity() instanceof Player))
             return;
-        AttributeInstance stepHeight = slotContext.entity().getAttribute((Attribute) ForgeMod.STEP_HEIGHT_ADDITION.get());
-        if (!stepHeight.hasModifier(STEP_HEIGHT_BONUS)) {
+        AttributeInstance stepHeight = slotContext.entity().getAttribute(ForgeMod.STEP_HEIGHT_ADDITION.get());
+        if (stepHeight != null && !stepHeight.hasModifier(STEP_HEIGHT_BONUS)) {
             stepHeight.addTransientModifier(STEP_HEIGHT_BONUS);
+        }
+        AttributeInstance sizeScale = slotContext.entity().getAttribute(ModAttributes.SIZE_SCALE.get());
+        if (sizeScale != null && !sizeScale.hasModifier(SIZE_SCALE_MULTIPLIER)) {
+            sizeScale.addTransientModifier(SIZE_SCALE_MULTIPLIER);
         }
     }
 

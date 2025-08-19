@@ -16,6 +16,8 @@
   "stat.enigmaticdice.obtained_dice_from_block": "Игральных костей из блоков",
   "stat.enigmaticdice.obtained_dice_from_mob": "Игральных костей с мобов",
 
+  "attribute.enigmaticdice.size_scale": "Размер существа",
+
   "tooltip.enigmaticdice.holdShift": "§5Удерживайте §6Shift§5 для деталей.",
 
   "tooltip.enigmaticdice.while_hotbar": "§dПока на панели быстрого доступа:",

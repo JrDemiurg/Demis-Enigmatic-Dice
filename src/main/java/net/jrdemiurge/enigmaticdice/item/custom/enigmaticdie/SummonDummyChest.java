@@ -1,5 +1,6 @@
 package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 
+import net.jrdemiurge.enigmaticdice.attribute.ModAttributes;
 import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -51,6 +52,7 @@ public class SummonDummyChest extends RandomEvent {
             mob.getAttribute(Attributes.ARMOR).setBaseValue(30);
             mob.getAttribute(Attributes.ARMOR_TOUGHNESS).setBaseValue(20);
             mob.getAttribute(Attributes.MAX_HEALTH).setBaseValue(1024);
+            mob.getAttribute(ModAttributes.SIZE_SCALE.get()).setBaseValue(2);
         }
 
         Scheduler.schedule(() -> {

@@ -16,6 +16,8 @@
   "stat.enigmaticdice.obtained_dice_from_block": "Enigmatic Dice From Blocks",
   "stat.enigmaticdice.obtained_dice_from_mob": "Enigmatic Dice From Mobs",
 
+  "attribute.enigmaticdice.size_scale": "Size Scale",
+
   "tooltip.enigmaticdice.holdShift": "§5Hold §6Shift§5 to see details.",
 
   "tooltip.enigmaticdice.while_hotbar": "§dWhile in the hotbar:",

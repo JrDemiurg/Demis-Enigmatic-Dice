@@ -16,6 +16,8 @@
   "stat.enigmaticdice.obtained_dice_from_block": "Dados de bloques",
   "stat.enigmaticdice.obtained_dice_from_mob": "Dados de mobs",
 
+  "attribute.enigmaticdice.size_scale": "Escala de tamaño",
+
   "tooltip.enigmaticdice.holdShift": "§5Mantén presionado §6Shift§5 para ver los detalles.",
 
   "tooltip.enigmaticdice.while_hotbar": "§dMientras esté en la barra rápida:",

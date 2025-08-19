@@ -1,6 +1,7 @@
 package net.jrdemiurge.enigmaticdice;
 
 import com.mojang.logging.LogUtils;
+import net.jrdemiurge.enigmaticdice.attribute.ModAttributes;
 import net.jrdemiurge.enigmaticdice.commands.EnigmaticDiceCommand;
 import net.jrdemiurge.enigmaticdice.commands.EnigmaticDiceGetLuckCommand;
 import net.jrdemiurge.enigmaticdice.commands.EnigmaticDiceSimulateCommand;
@@ -46,6 +47,7 @@ public class EnigmaticDice {
         ModSounds.register(modEventBus);
         ModEffects.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModAttributes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
