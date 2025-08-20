@@ -98,9 +98,12 @@ public class GiantsRing extends Item implements ICurioItem {
         }
 
         float radius = 1f;
+
+        AABB playerBox = player.getBoundingBox();
+
         AABB stompBox = new AABB(
-                player.getX() - radius, player.getY() - 0.1, player.getZ() - radius,
-                player.getX() + radius, player.getY() + 0.4, player.getZ() + radius
+                playerBox.minX - radius, player.getY() - 0.1, playerBox.minZ - radius,
+                playerBox.maxX + radius, player.getY() + 0.4, playerBox.maxZ + radius
         );
 
         List<LivingEntity> victims = player.level().getEntitiesOfClass(

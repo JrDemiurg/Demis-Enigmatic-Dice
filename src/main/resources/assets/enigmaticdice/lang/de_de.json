@@ -126,6 +126,9 @@
   "enigmaticdice.event.day_of_invisibility": "§cGlückwunsch! Heute bemerkt niemand deine Heldentaten… oder deine Patzer.",
   "enigmaticdice.event.teleport_monsters_to_player": "§cHier wird es lebendig!",
   "enigmaticdice.event.accelerate_day_cycle": "§5Der Kalender ist schockiert",
+  "enigmaticdice.event.mini_size_shrink": "§5Für die nächsten 10 Minuten bist du ein Mini-Zombie",
+  "enigmaticdice.event.ant_size_shrink": "§6Für die nächsten 10 Minuten bist du eine Ameise",
+  "enigmaticdice.event.summon_spider_fleas": "§cSieht aus wie ein Flohbefall",
 
   "enigmaticdice.event.centipede.0": "§cWarum gibt es in dieser Welt so viele Beine? Ach ja… Das ist dein Problem.",
   "enigmaticdice.event.centipede.1": "§cWie viele Beine hat ein Tausendfüßler? Ich hoffe, du hast genug Zeit zum Zählen.",

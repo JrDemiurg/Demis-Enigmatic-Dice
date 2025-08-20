@@ -126,7 +126,10 @@
   "enigmaticdice.event.day_of_invisibility": "§c¡Felicidades! Hoy nadie notará tus hazañas… ni tus meteduras de pata.",
   "enigmaticdice.event.teleport_monsters_to_player": "§c¡Aquí se pone animado!",
   "enigmaticdice.event.accelerate_day_cycle": "§5El calendario está en shock",
-  
+  "enigmaticdice.event.mini_size_shrink": "§5Durante los próximos 10 minutos eres un mini-zombi",
+  "enigmaticdice.event.ant_size_shrink": "§6Durante los próximos 10 minutos eres una hormiga",
+  "enigmaticdice.event.summon_spider_fleas": "§cParece una infestación de pulgas",
+
   "enigmaticdice.event.centipede.0": "§c¿Por qué hay tantas patas en este mundo? Ah, claro... Ese es tu problema.",
   "enigmaticdice.event.centipede.1": "§c¿Cuántas patas tiene un ciempiés? Espero que tengas tiempo para contarlas.",
   "enigmaticdice.event.centipede.2": "§c¿Alguien pidió un monstruo extra largo? ¡Sin reembolsos!",
