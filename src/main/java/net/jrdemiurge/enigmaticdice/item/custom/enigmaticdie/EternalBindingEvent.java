@@ -15,7 +15,6 @@ import java.util.Map;
 
 
 public class EternalBindingEvent extends RandomEvent {
-    private final int rarity;
     private static final ResourceLocation ETERNAL_BINDING_ID = new ResourceLocation("enigmaticlegacy", "eternal_binding");
 
     public EternalBindingEvent(int rarity) {
@@ -25,7 +24,7 @@ public class EternalBindingEvent extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         Enchantment eternalBinding = ForgeRegistries.ENCHANTMENTS.getValue(ETERNAL_BINDING_ID);
@@ -52,10 +51,5 @@ public class EternalBindingEvent extends RandomEvent {
         }
 
         return false;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

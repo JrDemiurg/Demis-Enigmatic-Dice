@@ -14,7 +14,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 public class SummonTamedHorse extends RandomEvent {
-    private final int rarity;
 
     public SummonTamedHorse(int rarity) {
         this.rarity = rarity;
@@ -22,8 +21,8 @@ public class SummonTamedHorse extends RandomEvent {
 
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
-        if (!guaranteed && !RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) {
-            return false;
+        if (!guaranteed) {
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         Vec3 lookVec = pPlayer.getLookAngle();
@@ -55,10 +54,5 @@ public class SummonTamedHorse extends RandomEvent {
         pPlayer.displayClientMessage(message, false);
 
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

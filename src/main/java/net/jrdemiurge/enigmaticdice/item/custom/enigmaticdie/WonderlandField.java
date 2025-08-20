@@ -20,7 +20,6 @@ import java.util.Random;
 
 
 public class WonderlandField extends RandomEvent {
-    private final int rarity;
     private static final int MIMIC_COUNT = 10;
     private static final int SPAWN_RADIUS = 30;
 
@@ -31,7 +30,7 @@ public class WonderlandField extends RandomEvent {
     @Override
     public boolean  execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         EntityType<?> entityType = EntityType.byString("artifacts:mimic").orElse(null);
@@ -88,10 +87,5 @@ public class WonderlandField extends RandomEvent {
         BlockPos surfacePos = level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, new BlockPos(x, 0, z));
 
         return new Vec3(surfacePos.getX() + 0.5, surfacePos.getY(), surfacePos.getZ() + 0.5);
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

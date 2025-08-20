@@ -5,7 +5,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
 public abstract class RandomEvent {
-    private boolean isPositiveEvent = true;
+    private boolean isNegativeEvent = false;
+    private boolean isNeutralEvent = false;
+    protected int rarity = 2;
 
     public abstract boolean execute(Level pLevel, Player pPlayer, boolean guaranteed);
 
@@ -13,21 +15,27 @@ public abstract class RandomEvent {
         return execute(pLevel, pPlayer, false);
     }
 
-    public abstract boolean simulationExecute(Level pLevel, Player pPlayer);
+    public boolean simulationExecute(Level pLevel, Player pPlayer) {
+        return rollChance(pLevel, pPlayer, rarity);
+    }
 
-    public static boolean rollChance(Level pLevel, Player pPlayer, int rarity, boolean isPositiveEvent) {
+    public boolean rollChance(Level pLevel, Player pPlayer, int rarity) {
         float luck = pPlayer.getLuck();
         RandomSource random = pLevel.getRandom();
 
+        if (isNeutralEvent) {
+            return random.nextInt(rarity) == 0;
+        }
+
         int attempts = 1; // базовая попытка
 
-        if (isPositiveEvent && luck > 0) {
+        if (!isNegativeEvent && luck > 0) {
             for (int i = 0; i < (int) luck; i++) {
                 if (random.nextFloat() < 0.1f) { // 10% шанс за каждое очко
                     attempts++;
                 }
             }
-        } else if (!isPositiveEvent && luck < 0) {
+        } else if (isNegativeEvent && luck < 0) {
             for (int i = 0; i < (int) -luck; i++) {
                 if (random.nextFloat() < 0.1f) { // 10% шанс за каждое очко
                     attempts++;
@@ -45,11 +53,19 @@ public abstract class RandomEvent {
     }
 
 
-    public boolean isPositiveEvent() {
-        return isPositiveEvent;
+    public boolean isNegativeEvent() {
+        return isNegativeEvent;
     }
 
-    public void setPositiveEvent(boolean positiveEvent) {
-        isPositiveEvent = positiveEvent;
+    public void setNegativeEvent(boolean negativeEvent) {
+        isNegativeEvent = negativeEvent;
+    }
+
+    public boolean isNeutralEvent() {
+        return isNeutralEvent;
+    }
+
+    public void setNeutralEvent(boolean neutralEvent) {
+        isNeutralEvent = neutralEvent;
     }
 }

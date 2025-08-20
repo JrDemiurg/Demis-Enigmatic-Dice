@@ -16,7 +16,6 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 public class SummonVallumraptorEvent extends RandomEvent {
-    private final int rarity;
 
     public SummonVallumraptorEvent(int rarity) {
         this.rarity = rarity;
@@ -25,7 +24,7 @@ public class SummonVallumraptorEvent extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         Vec3 playerPos = pPlayer.position();
@@ -73,10 +72,5 @@ public class SummonVallumraptorEvent extends RandomEvent {
         MutableComponent message = Component.translatable("enigmaticdice.event.vallumraptor");
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

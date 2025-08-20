@@ -24,7 +24,6 @@ public class PermanentBuffEvent extends RandomEvent {
 
     private static final int MAX_LEVEL = 2;
     private static final int MAX_LEVEL_SINGLE = 1;
-    private final int rarity;
 
     public PermanentBuffEvent(int rarity) {
         this.rarity = rarity;
@@ -33,7 +32,7 @@ public class PermanentBuffEvent extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         MobEffect[] effects = EFFECT_MESSAGES.keySet().toArray(new MobEffect[0]);
@@ -54,11 +53,6 @@ public class PermanentBuffEvent extends RandomEvent {
             }
         }
         return false;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }
 

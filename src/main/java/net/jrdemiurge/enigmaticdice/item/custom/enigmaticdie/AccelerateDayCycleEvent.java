@@ -12,7 +12,6 @@ import net.minecraft.world.level.Level;
 
 // TODO: Проверить с шейдерами и посмотреть как бегут облака, чтобы выбрать скорость
 public class AccelerateDayCycleEvent extends RandomEvent {
-    private final int rarity;
     public static boolean active;
 
     public AccelerateDayCycleEvent(int rarity) {
@@ -22,7 +21,7 @@ public class AccelerateDayCycleEvent extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
         if (!pLevel.getGameRules().getBoolean(GameRules.RULE_DAYLIGHT)) return false;
 
@@ -50,10 +49,5 @@ public class AccelerateDayCycleEvent extends RandomEvent {
         MutableComponent message = Component.translatable("enigmaticdice.event.accelerate_day_cycle");
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

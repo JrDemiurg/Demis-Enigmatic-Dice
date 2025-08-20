@@ -9,4 +9,5 @@ public class ModConfig {
     public List<String> teleportBiomes;
     public List<String> teleportStructures;
     public List<String> negativeEvents;
+    public List<String> neutralEvents;
 }

@@ -17,7 +17,6 @@ import java.util.UUID;
 
 
 public class DayOfInvisibility extends RandomEvent {
-    private final int rarity;
     public static final Set<UUID> activePlayers = new HashSet<>();
 
     public DayOfInvisibility(int rarity) {
@@ -27,7 +26,7 @@ public class DayOfInvisibility extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         if (!(pLevel instanceof ServerLevel serverLevel)) {
@@ -58,10 +57,5 @@ public class DayOfInvisibility extends RandomEvent {
         MutableComponent message = Component.translatable("enigmaticdice.event.day_of_invisibility");
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

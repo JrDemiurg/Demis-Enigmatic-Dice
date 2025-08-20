@@ -18,7 +18,6 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 public class SummonRaycatEvent extends RandomEvent {
-    private final int rarity;
 
     public SummonRaycatEvent(int rarity) {
         this.rarity = rarity;
@@ -27,7 +26,7 @@ public class SummonRaycatEvent extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         Vec3 lookVec = pPlayer.getLookAngle();
@@ -68,10 +67,5 @@ public class SummonRaycatEvent extends RandomEvent {
         MutableComponent message = Component.translatable("enigmaticdice.event.raycat");
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

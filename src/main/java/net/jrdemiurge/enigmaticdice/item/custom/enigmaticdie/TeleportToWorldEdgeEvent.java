@@ -10,7 +10,6 @@ import net.minecraft.world.level.chunk.ChunkStatus;
 import net.minecraft.world.level.levelgen.Heightmap;
 
 public class TeleportToWorldEdgeEvent extends RandomEvent {
-    private final int rarity;
 
     public TeleportToWorldEdgeEvent(int rarity) {
         this.rarity = rarity;
@@ -19,7 +18,7 @@ public class TeleportToWorldEdgeEvent extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         if (!(pLevel instanceof ServerLevel serverLevel)) {
@@ -60,10 +59,5 @@ public class TeleportToWorldEdgeEvent extends RandomEvent {
             EnigmaticDice.LOGGER.error("Error teleporting to world edge: ", e);
             return false;
         }
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

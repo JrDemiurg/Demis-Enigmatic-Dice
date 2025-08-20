@@ -23,7 +23,6 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 import java.util.List;
 
 public class TeleportToStructureEvent extends RandomEvent {
-    private final int rarity;
 
     public TeleportToStructureEvent(int rarity) {
         this.rarity = rarity;
@@ -32,7 +31,7 @@ public class TeleportToStructureEvent extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         if (!(pLevel instanceof ServerLevel serverLevel)) {
@@ -103,10 +102,5 @@ public class TeleportToStructureEvent extends RandomEvent {
             EnigmaticDice.LOGGER.error("Error while teleporting to structure {}: ", structureId, e);
             return false;
         }
-    }
-
-    @Override
-    public boolean simulationExecute(Level level, Player player) {
-        return RandomEvent.rollChance(level, player, rarity, isPositiveEvent());
     }
 }

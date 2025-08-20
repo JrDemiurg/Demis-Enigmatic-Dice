@@ -9,7 +9,6 @@ import net.minecraft.world.level.Level;
 
 
 public class SkyfallTraining extends RandomEvent {
-    private final int rarity;
 
     public SkyfallTraining(int rarity) {
         this.rarity = rarity;
@@ -18,7 +17,7 @@ public class SkyfallTraining extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         if (!pLevel.dimension().equals(Level.OVERWORLD)) {
@@ -45,10 +44,5 @@ public class SkyfallTraining extends RandomEvent {
         MutableComponent message = Component.translatable("enigmaticdice.event.skyfall_training");
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

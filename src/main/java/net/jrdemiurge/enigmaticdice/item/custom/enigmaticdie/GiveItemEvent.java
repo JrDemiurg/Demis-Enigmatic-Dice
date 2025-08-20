@@ -16,7 +16,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class GiveItemEvent extends RandomEvent {
     private final String itemIdentifier;
-    private final int rarity;
     private final int quantity;
     private final String nbtString;
     private final String chatMessage;
@@ -32,7 +31,7 @@ public class GiveItemEvent extends RandomEvent {
     @Override
     public boolean  execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
         ResourceLocation resourceLocation = new ResourceLocation(itemIdentifier);
         Item item = ForgeRegistries.ITEMS.getValue(resourceLocation);
@@ -65,10 +64,5 @@ public class GiveItemEvent extends RandomEvent {
         MutableComponent message = Component.translatable(chatMessage);
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

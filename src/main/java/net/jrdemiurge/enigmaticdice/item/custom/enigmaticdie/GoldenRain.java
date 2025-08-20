@@ -3,7 +3,6 @@ package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
@@ -13,7 +12,6 @@ public class GoldenRain extends RandomEvent{
     private static final int NUM_GOLDEN_NUGGETS = 128 * 2;
     private static final int RADIUS = 2;
     private static final int DELAY_TICKS = 1;
-    private final int rarity;
 
     public GoldenRain(int rarity) {
         this.rarity = rarity;
@@ -22,7 +20,7 @@ public class GoldenRain extends RandomEvent{
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel,pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel,pPlayer, rarity)) return false;
         }
 
         BlockPos pos = pPlayer.blockPosition();
@@ -42,10 +40,5 @@ public class GoldenRain extends RandomEvent{
             }, i * DELAY_TICKS);
         }
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

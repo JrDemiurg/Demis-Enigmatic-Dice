@@ -1,20 +1,26 @@
 package net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie;
 
+import com.mojang.authlib.GameProfile;
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
 import net.jrdemiurge.enigmaticdice.config.EnigmaticDiceConfig;
 import net.jrdemiurge.enigmaticdice.config.UniqueEventConfig;
 import net.jrdemiurge.enigmaticdice.config.ItemEventConfig;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.LevelResource;
+import net.minecraftforge.common.util.FakePlayer;
+import net.minecraftforge.common.util.FakePlayerFactory;
 import net.minecraftforge.fml.ModList;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class RandomEventManager {
@@ -29,11 +35,20 @@ public class RandomEventManager {
             if (EnigmaticDiceConfig.configData.itemEvents != null) {
                 loadItemEvents();
             }
+
             if (EnigmaticDiceConfig.configData.negativeEvents != null) {
                 for (int i = 0; i < events.size(); i++) {
                     String name = eventNames.get(i);
                     if (EnigmaticDiceConfig.configData.negativeEvents.contains(name)) {
-                        events.get(i).setPositiveEvent(false);
+                        events.get(i).setNegativeEvent(true);
+                    }
+                }
+            }
+            if (EnigmaticDiceConfig.configData.neutralEvents != null) {
+                for (int i = 0; i < events.size(); i++) {
+                    String name = eventNames.get(i);
+                    if (EnigmaticDiceConfig.configData.neutralEvents.contains(name)) {
+                        events.get(i).setNeutralEvent(true);
                     }
                 }
             }
@@ -257,7 +272,7 @@ public class RandomEventManager {
             eventWinCounts.put(eventName, eventWinCounts.get(eventName) + 1);
         }
 
-        saveResultsToFile(pLevel,pPlayer, eventWinCounts, simulationsCount);
+        saveResultsToFile(pLevel, pPlayer, eventWinCounts, simulationsCount);
     }
 
     private void saveResultsToFile(Level pLevel, Player pPlayer, Map<String, Integer> eventWinCounts, int totalSimulations) {
@@ -265,27 +280,63 @@ public class RandomEventManager {
         if (server == null) return;
 
         File worldFolder = server.getWorldPath(LevelResource.ROOT).toFile();
-        File resultFile = new File(worldFolder, "enigmatic_die_simulation_results.txt");
+        File resultFile = new File(worldFolder, "enigmatic_dice_simulation_results.txt");
+
+        // Категории из конфига
+        Set<String> negativeSet = null;
+        Set<String> neutralSet  = null;
+        if (EnigmaticDiceConfig.configData != null) {
+            if (EnigmaticDiceConfig.configData.negativeEvents != null) {
+                negativeSet = new HashSet<>(EnigmaticDiceConfig.configData.negativeEvents);
+            }
+            if (EnigmaticDiceConfig.configData.neutralEvents != null) {
+                neutralSet = new HashSet<>(EnigmaticDiceConfig.configData.neutralEvents);
+            }
+        }
+        // Разруливаем пересечения: negative приоритетнее
+        if (negativeSet != null && neutralSet != null) {
+            negativeSet.removeAll(neutralSet);
+        }
 
         try (FileWriter writer = new FileWriter(resultFile)) {
             writer.write("Total simulations: " + totalSimulations + "\n");
             writer.write("Player Luck: " + String.format("%.2f", pPlayer.getLuck()) + "\n");
+            writer.write("\n");
 
-            // ===== Подсчёт негативных событий =====
-            if (EnigmaticDiceConfig.configData != null && EnigmaticDiceConfig.configData.negativeEvents != null) {
-                int negativeCount = 0;
+            // Подсчёты по категориям
+            int negativeCount = 0;
+            int neutralCount  = 0;
+            int positiveCount = 0;
 
-                for (String negativeEventName : EnigmaticDiceConfig.configData.negativeEvents) {
-                    Integer count = eventWinCounts.get(negativeEventName);
-                    if (count != null) {
-                        negativeCount += count;
-                    }
+            // Если сетов нет — считаем их пустыми
+            Set<String> neg = (negativeSet != null) ? negativeSet : Collections.emptySet();
+            Set<String> neu = (neutralSet  != null) ? neutralSet  : Collections.emptySet();
+
+            for (Map.Entry<String, Integer> e : eventWinCounts.entrySet()) {
+                String name = e.getKey();
+                int count = (e.getValue() != null) ? e.getValue() : 0;
+
+                if (neg.contains(name)) {
+                    negativeCount += count;
+                } else if (neu.contains(name)) {
+                    neutralCount += count;
+                } else {
+                    positiveCount += count; // всё остальное — положительное
                 }
-
-                double negativeChance = (negativeCount / (double) totalSimulations) * 100;
-                writer.write("Negative events total: " + negativeCount + " occurrences (" +
-                        String.format("%.2f", negativeChance) + "%)\n\n");
             }
+
+            // Проценты (защита от деления на ноль)
+            double denom = totalSimulations > 0 ? totalSimulations : 1.0;
+            double negativeChance = (negativeCount / denom) * 100.0;
+            double neutralChance  = (neutralCount  / denom) * 100.0;
+            double positiveChance = (positiveCount / denom) * 100.0;
+
+            writer.write("Negative events total: " + negativeCount + " occurrences (" +
+                    String.format("%.2f", negativeChance) + "%)\n");
+            writer.write("Neutral events total: "  + neutralCount  + " occurrences (" +
+                    String.format("%.2f", neutralChance)  + "%)\n");
+            writer.write("Positive events total: " + positiveCount + " occurrences (" +
+                    String.format("%.2f", positiveChance) + "%)\n\n");
 
             List<Map.Entry<String, Integer>> sortedEntries = new ArrayList<>(eventWinCounts.entrySet());
             sortedEntries.sort((e1, e2) -> {
@@ -310,19 +361,11 @@ public class RandomEventManager {
      * Выполняет симуляции для всех уровней удачи от -10 до 10 и возвращает карту:
      * luckLevel -> ( eventName -> chancePercent )
      */
-    public Map<Integer, Map<String, Double>> buildLuckRangeResults(Level pLevel, Player pPlayer, int simulationsCount) {
-        // Сохраняем оригинальную удачу и подготовка
-        double originalLuck = 0;
-        AttributeInstance luckAttr = pPlayer.getAttribute(Attributes.LUCK);
-        if (luckAttr != null) originalLuck = luckAttr.getBaseValue();
+    public Map<Integer, Map<String, Double>> buildLuckRangeResults(Level pLevel, int simulationsCount) {
+        // Создаём одного фейкового игрока на весь прогон
+        FakePlayer fakePlayer = createCleanFakePlayer((ServerLevel) pLevel);
 
         Map<Integer, Map<String, Double>> luckPercentages = new LinkedHashMap<>(); // сохраняет порядок ключей
-
-        // Кешим набор негативных ивентов для быстрого поиска (можно null-проверить)
-        Set<String> negativeSet = null;
-        if (EnigmaticDiceConfig.configData != null && EnigmaticDiceConfig.configData.negativeEvents != null) {
-            negativeSet = new HashSet<>(EnigmaticDiceConfig.configData.negativeEvents);
-        }
 
         // Локальные ссылки чтобы немного ускорить доступ
         List<RandomEvent> localEvents = this.events;
@@ -333,7 +376,8 @@ public class RandomEventManager {
         // Для каждого уровня удачи один цикл симуляций
         List<Integer> luckLevels = buildCustomLuckLevels();
         for (int luck : luckLevels) {
-            // Устанавливаем удачу игрока (если атрибут есть)
+            // Устанавливаем удачу фейковому игроку
+            AttributeInstance luckAttr = fakePlayer.getAttribute(Attributes.LUCK);
             if (luckAttr != null) {
                 luckAttr.setBaseValue(luck);
             }
@@ -352,7 +396,7 @@ public class RandomEventManager {
                     int idx = pLevel.getRandom().nextInt(eventsCount);
                     event = localEvents.get(idx);
                     eventName = localEventNames.get(idx);
-                    triggered = event.simulationExecute(pLevel, pPlayer);
+                    triggered = event.simulationExecute(pLevel, fakePlayer);
                 } while (!triggered);
 
                 counts.put(eventName, counts.get(eventName) + 1);
@@ -369,10 +413,27 @@ public class RandomEventManager {
             luckPercentages.put(luck, percentages);
         }
 
-        // Восстанавливаем удачу
-        if (luckAttr != null) luckAttr.setBaseValue(originalLuck);
-
         return luckPercentages;
+    }
+
+    private static FakePlayer createCleanFakePlayer(ServerLevel serverLevel) {
+        // Стабильный UUID по строке, чтобы не плодить сущности при множественных вызовах (но можно и randomUUID())
+        UUID uuid = UUID.nameUUIDFromBytes("enigmaticdice-sim".getBytes(StandardCharsets.UTF_8));
+        FakePlayer fp = FakePlayerFactory.get(serverLevel, new GameProfile(uuid, "[EnigmaticDiceSim]"));
+
+        // Позиционируем в безопасную точку (например, спавн мира), чтобы редкие ивенты с позицией не падали
+        BlockPos spawn = serverLevel.getSharedSpawnPos();
+        fp.teleportTo(serverLevel, spawn.getX() + 0.5, spawn.getY(), spawn.getZ() + 0.5, 0.0F, 0.0F);
+
+        // Чистим состояние на всякий случай
+        fp.removeAllEffects();
+        fp.getInventory().clearContent();
+
+        // Обнуляем базовую удачу (модификаторов у FakePlayer обычно нет)
+        AttributeInstance luckAttr = fp.getAttribute(Attributes.LUCK);
+        if (luckAttr != null) luckAttr.setBaseValue(0.0);
+
+        return fp;
     }
 
     /**
@@ -380,20 +441,33 @@ public class RandomEventManager {
      * Формат: строка = eventName, затем колонки -10..10 (проценты с 2 знаками).
      * В конце добавляется строка "Negative Events Total".
      */
-    public void saveLuckRangeResultsToFile(Level pLevel, Player pPlayer,
+    public void saveLuckRangeResultsToFile(Level pLevel,
                                            Map<Integer, Map<String, Double>> luckPercentages,
                                            int simulationsCount) {
         MinecraftServer server = pLevel.getServer();
         if (server == null) return;
 
         File worldFolder = server.getWorldPath(LevelResource.ROOT).toFile();
-        File resultFile = new File(worldFolder, "enigmatic_die_luck_range_results.txt");
+        File resultFile = new File(worldFolder, "enigmatic_dice_luck_range_results.txt");
 
         // Настройки форматирования
         final int nameColWidth = 40;
         final int luckColWidth = 8;
 
         List<Integer> luckLevels = buildCustomLuckLevels();
+
+        Set<String> negativeSet = null;
+        if (EnigmaticDiceConfig.configData != null && EnigmaticDiceConfig.configData.negativeEvents != null) {
+            negativeSet = new HashSet<>(EnigmaticDiceConfig.configData.negativeEvents);
+        }
+        Set<String> neutralSet = null;
+        if (EnigmaticDiceConfig.configData != null && EnigmaticDiceConfig.configData.neutralEvents != null) {
+            neutralSet = new HashSet<>(EnigmaticDiceConfig.configData.neutralEvents);
+        }
+
+        if (negativeSet != null && neutralSet != null) {
+            negativeSet.removeAll(neutralSet);
+        }
 
         try (FileWriter writer = new FileWriter(resultFile)) {
             writer.write("Simulations per luck level: " + simulationsCount + "\n\n");
@@ -423,33 +497,57 @@ public class RandomEventManager {
                 writer.write("\n");
             }
 
-            // Суммарный шанс негативных ивентов для каждого уровня удачи
+
+            // ------- Totals -------
             writer.write("\n");
-            writer.write(String.format("%-" + nameColWidth + "s", "Negative Events Total"));
 
-            Set<String> negativeSet = null;
-            if (EnigmaticDiceConfig.configData != null && EnigmaticDiceConfig.configData.negativeEvents != null) {
-                negativeSet = new HashSet<>(EnigmaticDiceConfig.configData.negativeEvents);
-            }
-
+            // 1) Positive Total (всё, что не в negative и не в neutral)
+            writer.write(String.format("%-" + nameColWidth + "s", "Positive Events Total"));
             for (int luck : luckLevels) {
-                double negativeSum = 0.0;
                 Map<String, Double> map = luckPercentages.get(luck);
-                if (map != null && negativeSet != null) {
-                    for (String neg : negativeSet) {
-                        Double val = map.get(neg);
-                        if (val != null) negativeSum += val;
+                double positiveSum = 0.0;
+                if (map != null) {
+                    for (Map.Entry<String, Double> e : map.entrySet()) {
+                        String name = e.getKey();
+                        if ((negativeSet == null || !negativeSet.contains(name)) &&
+                                (neutralSet == null || !neutralSet.contains(name))) {
+                            Double v = e.getValue();
+                            if (v != null) positiveSum += v;
+                        }
                     }
                 }
-                writer.write(String.format("%" + luckColWidth + ".2f", negativeSum));
+                writer.write(String.format("%" + luckColWidth + ".2f", positiveSum));
             }
-            writer.write("\n\n\n");
+            writer.write("\n");
 
-            writer.write("In order for the simulation to run correctly, you must have a luck level of 0 and no luck attribute modifiers.\n");
-            writer.write("Use /enigmaticDiceGetLuck to check the value of luck.");
+            // 2) Neutral Total
+            writer.write(String.format("%-" + nameColWidth + "s", "Neutral Events Total"));
+            for (int luck : luckLevels) {
+                writer.write(String.format("%" + luckColWidth + ".2f",
+                        sumForSet(luckPercentages.get(luck), neutralSet)));
+            }
+            writer.write("\n");
+
+            // 3) Negative Total
+            writer.write(String.format("%-" + nameColWidth + "s", "Negative Events Total"));
+            for (int luck : luckLevels) {
+                writer.write(String.format("%" + luckColWidth + ".2f",
+                        sumForSet(luckPercentages.get(luck), negativeSet)));
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /** Суммирует значения событий из map только для имен, присутствующих в заданном наборе. */
+    private static double sumForSet(Map<String, Double> map, Set<String> set) {
+        if (map == null || set == null || set.isEmpty()) return 0.0;
+        double sum = 0.0;
+        for (String name : set) {
+            Double v = map.get(name);
+            if (v != null) sum += v;
+        }
+        return sum;
     }
 
     /**

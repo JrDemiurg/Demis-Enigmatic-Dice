@@ -16,7 +16,6 @@ import net.minecraft.world.phys.Vec3;
 
 
 public class BroodAwakensEvent extends RandomEvent {
-    private final int rarity;
 
     public BroodAwakensEvent(int rarity) {
         this.rarity = rarity;
@@ -25,7 +24,7 @@ public class BroodAwakensEvent extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         Vec3 lookVec = pPlayer.getLookAngle();
@@ -81,10 +80,5 @@ public class BroodAwakensEvent extends RandomEvent {
         MutableComponent message = Component.translatable("enigmaticdice.event.brood_awakens");
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

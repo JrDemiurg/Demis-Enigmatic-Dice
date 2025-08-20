@@ -688,10 +688,16 @@
     "call_of_yucutan:overgrown_temple",
     "born_in_chaos_v1:infernal_pumpkin"
   ],
+  "neutralEvents": [
+    "minecraft_teleport_to_biome",
+    "minecraft_teleport_to_structure",
+    "minecraft_teleport_to_world_edge",
+    "minecraft_accelerate_day_cycle",
+    "enigmaticlegacy_give_golden_ring"
+  ],
   "negativeEvents": [
     "minecraft_explosion",
     "minecraft_lightning_strike",
-    "minecraft_teleport_to_world_edge",
     "minecraft_mass_creeper_summon_1",
     "minecraft_mass_creeper_summon_2",
     "minecraft_mass_creeper_summon_3",

@@ -9,7 +9,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class AncientDebrisCageEvent extends RandomEvent {
-    private final int rarity;
 
     public AncientDebrisCageEvent(int rarity) {
         this.rarity = rarity;
@@ -18,7 +17,7 @@ public class AncientDebrisCageEvent extends RandomEvent {
     @Override
     public boolean  execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         BlockPos playerPos = pPlayer.blockPosition();
@@ -39,10 +38,5 @@ public class AncientDebrisCageEvent extends RandomEvent {
         MutableComponent message = Component.translatable("enigmaticdice.event.safe_message");
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

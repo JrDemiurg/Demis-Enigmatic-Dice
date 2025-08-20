@@ -12,7 +12,6 @@ import net.minecraft.world.phys.Vec3;
 
 
 public class SummonMimic extends RandomEvent {
-    private final int rarity;
 
     public SummonMimic(int rarity) {
         this.rarity = rarity;
@@ -21,7 +20,7 @@ public class SummonMimic extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         Vec3 lookVec = pPlayer.getLookAngle();
@@ -51,10 +50,5 @@ public class SummonMimic extends RandomEvent {
         MutableComponent message = Component.translatable("enigmaticdice.event.mimic");
         pPlayer.displayClientMessage(message, false);
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

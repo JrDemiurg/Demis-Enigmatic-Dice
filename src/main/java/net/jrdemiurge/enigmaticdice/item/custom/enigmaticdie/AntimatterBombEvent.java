@@ -18,7 +18,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class AntimatterBombEvent extends RandomEvent {
-    private final int rarity;
 
     public AntimatterBombEvent(int rarity) {
         this.rarity = rarity;
@@ -27,7 +26,7 @@ public class AntimatterBombEvent extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         Vec3 lookVec = pPlayer.getLookAngle();
@@ -53,10 +52,5 @@ public class AntimatterBombEvent extends RandomEvent {
             serverPlayer.connection.send(new ClientboundSetTitlesAnimationPacket(0, 20, 0));
         }
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }

@@ -13,7 +13,6 @@ public class LightningStrikeEvent extends RandomEvent {
     private static final int NUM_LIGHTNING = 15;  // Количество молний
     private static final int DELAY_TICKS = 15;
     private static final int RADIUS = 8;
-    private final int rarity;
 
     public LightningStrikeEvent(int rarity) {
         this.rarity = rarity;
@@ -22,7 +21,7 @@ public class LightningStrikeEvent extends RandomEvent {
     @Override
     public boolean execute(Level pLevel, Player pPlayer, boolean guaranteed) {
         if (!guaranteed) {
-            if (!RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent())) return false;
+            if (!rollChance(pLevel, pPlayer, rarity)) return false;
         }
 
         BlockPos pos = pPlayer.blockPosition();
@@ -61,10 +60,5 @@ public class LightningStrikeEvent extends RandomEvent {
 
         pPlayer.displayClientMessage(Component.translatable("enigmaticdice.event.lightning_wrath"), false);
         return true;
-    }
-
-    @Override
-    public boolean simulationExecute(Level pLevel, Player pPlayer) {
-        return RandomEvent.rollChance(pLevel, pPlayer, rarity, isPositiveEvent());
     }
 }
