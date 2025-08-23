@@ -3,6 +3,7 @@ package net.jrdemiurge.enigmaticdice.item;
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
 import net.jrdemiurge.enigmaticdice.item.custom.*;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -48,6 +49,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> PERMAFROST  = ITEMS.register("permafrost",
             () -> new Permafrost(Tiers.NETHERITE, 5, -2F, new Item.Properties().fireResistant()));
+
+    public static final RegistryObject<Item> KYOMU = ITEMS.register("kyomu",
+            () -> new SwordItem(Tiers.NETHERITE, 5, -2F, new Item.Properties().fireResistant()));
+
+    public static final RegistryObject<Item> PHOENIX = ITEMS.register("phoenix",
+            () -> new SwordItem(Tiers.NETHERITE, 5, -2F, new Item.Properties().fireResistant()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

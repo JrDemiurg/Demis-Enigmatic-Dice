@@ -32,6 +32,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.*;
 
+// TODO: Если есть моды позволяющие одеть тринкетки на мобов или манекен, то убрать проверку на игрока на onEquip и onUnequip, чтобы можно было сделать манекен гигантским
 public class GiantsRing extends Item implements ICurioItem {
 
     private static final AttributeModifier STEP_HEIGHT_BONUS = new AttributeModifier(UUID.fromString("979b021d-47b6-42dc-b68c-4c296aca0b01"), "enigmaticdice:giants_ring_step_height", 1, AttributeModifier.Operation.ADDITION);
