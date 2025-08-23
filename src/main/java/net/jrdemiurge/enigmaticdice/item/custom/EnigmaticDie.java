@@ -1,9 +1,8 @@
 package net.jrdemiurge.enigmaticdice.item.custom;
 
+import net.jrdemiurge.enigmaticdice.EnigmaticDice;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
-import net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie.GiveItemEvent;
 import net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie.RandomEventManager;
-import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -20,7 +19,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class EnigmaticDie extends Item {
-    private RandomEventManager eventManager;
 
     public EnigmaticDie(Properties pProperties) {
         super(pProperties);
@@ -28,16 +26,14 @@ public class EnigmaticDie extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+        if (EnigmaticDice.eventManager == null) EnigmaticDice.eventManager = new RandomEventManager();
+
         ItemStack itemStack = pPlayer.getItemInHand(pUsedHand);
         if (pLevel.isClientSide) {
             return InteractionResultHolder.pass(itemStack);
         }
 
-        if (eventManager == null){
-            eventManager = new RandomEventManager();
-        }
-
-        eventManager.triggerRandomEvent(pLevel, pPlayer);
+        EnigmaticDice.eventManager.triggerRandomEvent(pLevel, pPlayer);
 
         itemStack.shrink(1);
         pPlayer.getCooldowns().addCooldown(ModItems.ENIGAMTIC_DIE.get(), 20);

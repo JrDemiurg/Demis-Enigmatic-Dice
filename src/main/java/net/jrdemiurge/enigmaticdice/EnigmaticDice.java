@@ -14,6 +14,7 @@ import net.jrdemiurge.enigmaticdice.event.MobDropHandler;
 import net.jrdemiurge.enigmaticdice.item.ModCreativeTabs;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
 import net.jrdemiurge.enigmaticdice.item.custom.Antimatter;
+import net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie.RandomEventManager;
 import net.jrdemiurge.enigmaticdice.network.NetworkHandler;
 import net.jrdemiurge.enigmaticdice.scheduler.Scheduler;
 import net.jrdemiurge.enigmaticdice.sound.ModSounds;
@@ -36,6 +37,7 @@ import org.slf4j.Logger;
 public class EnigmaticDice {
     public static final String MOD_ID = "enigmaticdice";
     public static final Logger LOGGER = LogUtils.getLogger();
+    public static RandomEventManager eventManager;
 
     public EnigmaticDice() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

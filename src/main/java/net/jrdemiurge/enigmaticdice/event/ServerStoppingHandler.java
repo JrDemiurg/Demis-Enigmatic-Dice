@@ -12,5 +12,6 @@ public class ServerStoppingHandler {
     @SubscribeEvent
     public static void onServerStopping(ServerStoppingEvent event) {
         AccelerateDayCycleEvent.active = false;
+        EnigmaticDice.eventManager = null;
     }
 }

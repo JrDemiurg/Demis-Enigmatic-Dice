@@ -6,6 +6,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import net.jrdemiurge.enigmaticdice.EnigmaticDice;
 import net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie.RandomEvent;
 import net.jrdemiurge.enigmaticdice.item.custom.enigmaticdie.RandomEventManager;
 import net.minecraft.commands.CommandSourceStack;
@@ -16,8 +17,6 @@ import net.minecraft.world.level.Level;
 import java.util.concurrent.CompletableFuture;
 
 public class EnigmaticDiceCommand {
-
-    private static final RandomEventManager eventManager = new RandomEventManager();
 
     public static LiteralArgumentBuilder<CommandSourceStack> create() {
         return Commands.literal("enigmaticDice")
@@ -31,7 +30,9 @@ public class EnigmaticDiceCommand {
     }
 
     private static CompletableFuture<Suggestions> suggestEventTypes(CommandContext<CommandSourceStack> context, SuggestionsBuilder builder) {
-        for (String eventName : eventManager.getEventNames()) {
+        if (EnigmaticDice.eventManager == null) EnigmaticDice.eventManager = new RandomEventManager();
+
+        for (String eventName : EnigmaticDice.eventManager.getEventNames()) {
             builder.suggest(eventName);
         }
         return builder.buildFuture();
@@ -47,12 +48,14 @@ public class EnigmaticDiceCommand {
     }
 
     private static int executeEvent(CommandContext<CommandSourceStack> context, boolean forceExecution) {
+        if (EnigmaticDice.eventManager == null) EnigmaticDice.eventManager = new RandomEventManager();
+
         CommandSourceStack source = context.getSource();
         Level pLevel = source.getLevel();
         ServerPlayer pPlayer = source.getPlayer();
         String eventType = StringArgumentType.getString(context, "eventType");
 
-        RandomEvent event = eventManager.getEventByName(eventType);
+        RandomEvent event = EnigmaticDice.eventManager.getEventByName(eventType);
         if (event != null) {
             event.execute(pLevel, pPlayer, forceExecution);
             return 1;
@@ -60,26 +63,15 @@ public class EnigmaticDiceCommand {
 
         return 0;
     }
-    /*private static int triggerSpecificEvent(CommandContext<CommandSourceStack> context) {
-        CommandSourceStack source = context.getSource();
-        Level pLevel = source.getLevel();
-        ServerPlayer pPlayer = source.getPlayer();
-        String eventType = StringArgumentType.getString(context, "eventType");
-
-        if (eventManager.getEventByName(eventType) != null) {
-            eventManager.getEventByName(eventType).execute(pLevel, pPlayer);
-            return 1;
-        }
-
-        return 0;
-    }*/
 
     private static int triggerRandomEvent(CommandContext<CommandSourceStack> context) {
+        if (EnigmaticDice.eventManager == null) EnigmaticDice.eventManager = new RandomEventManager();
+
         CommandSourceStack source = context.getSource();
         Level pLevel = source.getLevel();
         ServerPlayer pPlayer = source.getPlayer();
 
-        eventManager.triggerRandomEvent(pLevel, pPlayer);
+        EnigmaticDice.eventManager.triggerRandomEvent(pLevel, pPlayer);
         return 1;
     }
 }
