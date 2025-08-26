@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+// TODO переписать эффекты через планировщик
 public class SoulEater extends SwordItem {
     private Multimap<Attribute, AttributeModifier> configModifiers;
 

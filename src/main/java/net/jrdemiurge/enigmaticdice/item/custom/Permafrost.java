@@ -37,12 +37,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-//  + замедление творческого полёта
-// + замедление врага на 5% при атаке (общий мультипликатор) до 10 стаков
-// + аура замедления 5 блоков 20% (проверка на союзников). Действует 5 сек при касании, есть дебафф
-// + дебафф будет но только как счётчит
-// + морозить воду и лаву в 5 блоках (лаву в базальт) (на месте игрока просто удаляет воду)
-// + возможно на 10 стаках банить работу элитр у противника
 public class Permafrost extends SwordItem {
     private Multimap<Attribute, AttributeModifier> configModifiers;
     public static final String PERSISTENT_DATA_PERMAFROST_STACKS_FLY_SPEED_REDUCTION = "PermafrostStacksFlySpeedReduction";
@@ -177,9 +171,8 @@ public class Permafrost extends SwordItem {
             if (pLevel.getGameTime() % 5L != 0L)  return;
 
             boolean isInMainHand = player.getMainHandItem().is(ModItems.PERMAFROST.get());
-            boolean isInOffHand = player.getOffhandItem().is(ModItems.PERMAFROST.get());
 
-            if (isInMainHand || isInOffHand) {
+            if (isInMainHand) {
                 int auraRadius = Config.PermafrostAuraRadius;
                 int debuffDuration = Config.PermafrostAuraDebuffDuration;
                 double reductionFactor = Config.PermafrostAuraReductionFactor;

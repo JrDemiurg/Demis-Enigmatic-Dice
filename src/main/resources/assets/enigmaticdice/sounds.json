@@ -22,5 +22,33 @@
     "sounds" : [
       "enigmaticdice:permafrost_unfrozen"
     ]
+  },
+  "crucible_of_rile_preattack": {
+    "subtitles": "sounds.enigmaticdice.crucible_of_rile_preattack",
+    "sounds" : [
+      "enigmaticdice:crucible_of_rile_preattack_1",
+      "enigmaticdice:crucible_of_rile_preattack_2",
+      "enigmaticdice:crucible_of_rile_preattack_3"
+    ]
+  },
+  "crucible_of_rile_attack": {
+    "subtitles": "sounds.enigmaticdice.crucible_of_rile_attack",
+    "sounds" : [
+      "enigmaticdice:crucible_of_rile_attack_1",
+      "enigmaticdice:crucible_of_rile_attack_2",
+      "enigmaticdice:crucible_of_rile_attack_3"
+    ]
+  },
+  "crucible_of_rile_use": {
+    "subtitles": "sounds.enigmaticdice.crucible_of_rile_use",
+    "sounds" : [
+      "enigmaticdice:crucible_of_rile_use"
+    ]
+  },
+  "crucible_of_rile_helix": {
+    "subtitles": "sounds.enigmaticdice.crucible_of_rile_helix",
+    "sounds" : [
+      "enigmaticdice:crucible_of_rile_helix"
+    ]
   }
 }

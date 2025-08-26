@@ -12,6 +12,9 @@
   "item.enigmaticdice.ring_of_agility": "§dRing der Beweglichkeit",
   "item.enigmaticdice.divine_shield": "§dGöttlicher Schild",
   "item.enigmaticdice.permafrost": "§dPermafrost",
+  "item.enigmaticdice.kyomu": "§d???",
+  "item.enigmaticdice.phoenix": "§d???",
+  "item.enigmaticdice.crucible_of_rile": "§dSchmelztiegel des Zorns",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Würfel aus Blöcken",
   "stat.enigmaticdice.obtained_dice_from_mob": "Würfel von Mobs",
@@ -22,10 +25,20 @@
 
   "tooltip.enigmaticdice.while_hotbar": "§dWenn in der Schnellzugriffsleiste:",
   "tooltip.enigmaticdice.while_held": "§dWenn gehalten:",
+  "tooltip.enigmaticdice.on_use": "§dBei Verwendung:",
+  "tooltip.enigmaticdice.on_hit": "§dBeim Treffer:",
+  "tooltip.enigmaticdice.on_kill": "§dBeim Töten:",
 
   "tooltip.enigmaticdice.enigmatic_die": "§dEin Geschenk von Pandora...",
   "tooltip.enigmaticdice.enigmatic_die_2": "§5Löst bei Benutzung ein zufälliges §6Ereignis§5 aus.",
   "tooltip.enigmaticdice.enigmatic_die_3": "§4Nicht zu Hause benutzen!",
+
+  "tooltip.enigmaticdice.unfinished_item_1": "§dUnvollendet:",
+  "tooltip.enigmaticdice.unfinished_item_2": "§6Das Schicksal§5 dieses Gegenstands §6ist noch nicht geschrieben.",
+  "tooltip.enigmaticdice.unfinished_item_3": "§5Vielleicht liegt der Schlüssel in §6deiner Vorstellungskraft?",
+  "tooltip.enigmaticdice.unfinished_item_4": "§dBei Verwendung:",
+  "tooltip.enigmaticdice.unfinished_item_5": "§5Öffnet die Tore zu §6Demiurge's Forge.",
+  "tooltip.enigmaticdice.unfinished_item_discord": "§6Teile deine Idee:",
 
   "tooltip.enigmaticdice.unequal_exchange_0": "§dMacht, bezahlt mit Leben.",
   "tooltip.enigmaticdice.unequal_exchange_1": "§dBeim Treffer:",
@@ -54,6 +67,13 @@
   "tooltip.enigmaticdice.permafrost_5": "§dInnerhalb eines Radius von §6%1$d §dBlöcken:",
   "tooltip.enigmaticdice.permafrost_6": "§5- §6-%1$.1f%% §5zur §dBewegungsgeschwindigkeit§5 und §dKreativfluggeschwindigkeit§5 von Feinden.",
   "tooltip.enigmaticdice.permafrost_7": "§5- §6Friert §dBlöcke§5 ein.",
+
+  "tooltip.enigmaticdice.crucible_of_rile_1": "§5- §6Provoziert§5 Gegner im Umkreis von §6%1$d Blöcken.",
+  "tooltip.enigmaticdice.crucible_of_rile_2": "§5- §6+%1$.1f%% §5auf §dRüstung §5und §dRüstungszähigkeit §5für §6%2$d Sekunden.",
+  "tooltip.enigmaticdice.crucible_of_rile_3": "§dNach Erhalt von §6%1$d §dTreffern:",
+  "tooltip.enigmaticdice.crucible_of_rile_4": "§5- Du §6fügst Schaden zu§5 in Höhe deines §6Angriffsschadens §5an Gegnern im Umkreis von §6%1$.1f Blöcken.",
+  "tooltip.enigmaticdice.crucible_of_rile_5": "§5- §6Tötet sofort§5 Gegner mit §6%1$d HP oder weniger.",
+
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + Rechtsklick§5 auf einen Block, um ihn zu §6vernichten§5.",
   "tooltip.enigmaticdice.antimatter.2": "§5Löst außerdem eine sehr starke §6Explosion§5 aus.",
@@ -202,6 +222,8 @@
   "effect.enigmaticdice.unequal_exchange_debuffs": "Ungleicher Tausch",
   "effect.enigmaticdice.frost_hit": "Frostschlag",
   "effect.enigmaticdice.frost_aura": "Frostaura",
+  "effect.enigmaticdice.crucible_of_rile_armor_boost": "Rüstungsbonus",
+  "effect.enigmaticdice.divine_shield_invulnerability": "Göttlicher Schild",
 
   "sounds.enigmaticdice.unequal_exchange_hit": "Ungleicher Tausch – Treffer",
   "sounds.enigmaticdice.soul_eater_charged_hit": "Geladener Seelenfresser-Treffer",

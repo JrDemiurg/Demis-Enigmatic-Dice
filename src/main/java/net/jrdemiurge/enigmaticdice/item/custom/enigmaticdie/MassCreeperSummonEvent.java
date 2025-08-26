@@ -86,7 +86,7 @@ public class MassCreeperSummonEvent extends RandomEvent {
             case 2:
                 creeper.addEffect(new MobEffectInstance(
                         MobEffects.INVISIBILITY,
-                        Integer.MAX_VALUE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         true,
                         true
@@ -96,7 +96,7 @@ public class MassCreeperSummonEvent extends RandomEvent {
             case 3:
                 creeper.addEffect(new MobEffectInstance(
                         MobEffects.INVISIBILITY,
-                        Integer.MAX_VALUE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         false,
                         false
@@ -106,7 +106,7 @@ public class MassCreeperSummonEvent extends RandomEvent {
             case 4:
                 creeper.addEffect(new MobEffectInstance(
                         MobEffects.INVISIBILITY,
-                        Integer.MAX_VALUE,
+                        MobEffectInstance.INFINITE_DURATION,
                         0,
                         false,
                         false
@@ -116,7 +116,7 @@ public class MassCreeperSummonEvent extends RandomEvent {
                 if (randomEffect != null) {
                     creeper.addEffect(new MobEffectInstance(
                             randomEffect,
-                            Integer.MAX_VALUE,
+                            MobEffectInstance.INFINITE_DURATION,
                             0,
                             false,
                             false

@@ -39,6 +39,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.*;
 
+// TODO если возможно то делать модельку игрока фиолетовой под увеличенной гравитацией
 public class GravityCore extends Item implements ICurioItem {
 
     private static final UUID GRAVITY_BOOST_UUID = UUID.fromString("fa944f2a-d00f-48bb-a6c9-b2d0115ba628");

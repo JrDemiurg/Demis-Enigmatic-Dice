@@ -20,6 +20,14 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> PERMAFROST_UNFROZEN = registerSoundEvents("permafrost_unfrozen");
 
+    public static final RegistryObject<SoundEvent> CRUCIBLE_OF_RILE_PREATTACK = registerSoundEvents("crucible_of_rile_preattack");
+
+    public static final RegistryObject<SoundEvent> CRUCIBLE_OF_RILE_ATTACK = registerSoundEvents("crucible_of_rile_attack");
+
+    public static final RegistryObject<SoundEvent> CRUCIBLE_OF_RILE_USE = registerSoundEvents("crucible_of_rile_use");
+
+    public static final RegistryObject<SoundEvent> CRUCIBLE_OF_RILE_HELIX = registerSoundEvents("crucible_of_rile_helix");
+
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(EnigmaticDice.MOD_ID, name)));
     }

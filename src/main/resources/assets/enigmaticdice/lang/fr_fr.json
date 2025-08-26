@@ -12,6 +12,9 @@
   "item.enigmaticdice.ring_of_agility": "§dAnneau d'Agilité",
   "item.enigmaticdice.divine_shield": "§dBouclier Divin",
   "item.enigmaticdice.permafrost": "§dPergélisol",
+  "item.enigmaticdice.kyomu": "§d???",
+  "item.enigmaticdice.phoenix": "§d???",
+  "item.enigmaticdice.crucible_of_rile": "§dCreuset de la Colère",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Dés des blocs",
   "stat.enigmaticdice.obtained_dice_from_mob": "Dés des mobs",
@@ -22,10 +25,20 @@
 
   "tooltip.enigmaticdice.while_hotbar": "§dQuand dans la barre rapide :",
   "tooltip.enigmaticdice.while_held": "§dQuand tenu en main :",
+  "tooltip.enigmaticdice.on_use": "§dLors de l’utilisation :",
+  "tooltip.enigmaticdice.on_hit": "§dLors d’un coup :",
+  "tooltip.enigmaticdice.on_kill": "§dLors d’un kill :",
 
   "tooltip.enigmaticdice.enigmatic_die": "§dUn cadeau de Pandore...",
   "tooltip.enigmaticdice.enigmatic_die_2": "§5Déclenche un §6événement§5 aléatoire lorsqu'il est utilisé.",
   "tooltip.enigmaticdice.enigmatic_die_3": "§4Ne l'utilisez pas chez vous !",
+
+  "tooltip.enigmaticdice.unfinished_item_1": "§dInachevé :",
+  "tooltip.enigmaticdice.unfinished_item_2": "§6Le destin§5 de cet objet §6n’est pas encore écrit.",
+  "tooltip.enigmaticdice.unfinished_item_3": "§5Peut-être que la clé se trouve dans §6ton imagination ?",
+  "tooltip.enigmaticdice.unfinished_item_4": "§dLors de l’utilisation :",
+  "tooltip.enigmaticdice.unfinished_item_5": "§5Ouvre les portes de §6Demiurge's Forge.",
+  "tooltip.enigmaticdice.unfinished_item_discord": "§6Partage ton idée :",
 
   "tooltip.enigmaticdice.unequal_exchange_0": "§dPuissance payée avec la vie.",
   "tooltip.enigmaticdice.unequal_exchange_1": "§dLors de l'attaque :",
@@ -54,6 +67,12 @@
   "tooltip.enigmaticdice.permafrost_5": "§dDans un rayon de §6%1$d §dblocs :",
   "tooltip.enigmaticdice.permafrost_6": "§5- §6-%1$.1f%% §5à la §dvitesse de déplacement§5 et à la §dvitesse de vol créatif§5 des ennemis.",
   "tooltip.enigmaticdice.permafrost_7": "§5- §6Gèle §dles blocs§5.",
+
+  "tooltip.enigmaticdice.crucible_of_rile_1": "§5- §6Provoque§5 les ennemis dans un rayon de §6%1$d blocs.",
+  "tooltip.enigmaticdice.crucible_of_rile_2": "§5- §6+%1$.1f%% §5à l’§darmure §5et à la §drésistance d’armure §5pendant §6%2$d secondes.",
+  "tooltip.enigmaticdice.crucible_of_rile_3": "§dAprès avoir reçu §6%1$d §dattaques :",
+  "tooltip.enigmaticdice.crucible_of_rile_4": "§5- Vous §6infligez des dégâts §5égaux à vos §6dégâts d’attaque §5aux ennemis dans un rayon de §6%1$.1f blocs.",
+  "tooltip.enigmaticdice.crucible_of_rile_5": "§5- §6Exécute instantanément§5 les ennemis avec §6%1$d PV ou moins.",
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + Clic-droit§5 sur un bloc pour l'§6anéantir§5.",
   "tooltip.enigmaticdice.antimatter.2": "§5Déclenche également une puissante §6explosion.",
@@ -202,6 +221,8 @@
   "effect.enigmaticdice.unequal_exchange_debuffs": "Échange Inégal",
   "effect.enigmaticdice.frost_hit": "Coup de givre",
   "effect.enigmaticdice.frost_aura": "Aura de givre",
+  "effect.enigmaticdice.crucible_of_rile_armor_boost": "Bonus d’armure",
+  "effect.enigmaticdice.divine_shield_invulnerability": "Bouclier divin",
 
   "sounds.enigmaticdice.unequal_exchange_hit": "Coup de l’Échange inégal",
   "sounds.enigmaticdice.soul_eater_charged_hit": "Coup chargé du Dévoreur d’âmes",

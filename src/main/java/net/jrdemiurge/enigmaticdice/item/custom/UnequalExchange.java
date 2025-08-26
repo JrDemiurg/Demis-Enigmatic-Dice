@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.UUID;
 
+// TODO переписать эффекты через планировщик
 public class UnequalExchange extends SwordItem {
     private Multimap<Attribute, AttributeModifier> configModifiers;
 

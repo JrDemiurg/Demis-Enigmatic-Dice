@@ -12,6 +12,9 @@
   "item.enigmaticdice.ring_of_agility": "§dКольцо ловкости",
   "item.enigmaticdice.divine_shield": "§dБожественный щит",
   "item.enigmaticdice.permafrost": "§dВечная мерзлота",
+  "item.enigmaticdice.kyomu": "§d???",
+  "item.enigmaticdice.phoenix": "§d???",
+  "item.enigmaticdice.crucible_of_rile": "§dГорнило гнева",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Игральных костей из блоков",
   "stat.enigmaticdice.obtained_dice_from_mob": "Игральных костей с мобов",
@@ -22,10 +25,20 @@
 
   "tooltip.enigmaticdice.while_hotbar": "§dПока на панели быстрого доступа:",
   "tooltip.enigmaticdice.while_held": "§dПока в руке:",
+  "tooltip.enigmaticdice.on_use": "§dПри использовании:",
+  "tooltip.enigmaticdice.on_hit": "§dПри ударе:",
+  "tooltip.enigmaticdice.on_kill": "§dПри убийстве:",
 
   "tooltip.enigmaticdice.enigmatic_die": "§dПодарок Пандоры...",
   "tooltip.enigmaticdice.enigmatic_die_2": "§5Вызывает случайное §6событие§5 при использовании.",
   "tooltip.enigmaticdice.enigmatic_die_3": "§4Не используйте дома!",
+
+  "tooltip.enigmaticdice.unfinished_item_1": "§dНезавершённый:",
+  "tooltip.enigmaticdice.unfinished_item_2": "§6Судьба§5 этого предмета §6ещё не написана.",
+  "tooltip.enigmaticdice.unfinished_item_3": "§5Возможно, ключ к ней в §6твоём воображении?",
+  "tooltip.enigmaticdice.unfinished_item_4": "§dПри использовании:",
+  "tooltip.enigmaticdice.unfinished_item_5": "§5Открывает врата в §6Demiurge's Forge.",
+  "tooltip.enigmaticdice.unfinished_item_discord": "§6Поведай свою идею:",
 
   "tooltip.enigmaticdice.unequal_exchange_0": "§dСила, оплаченная жизнью.",
   "tooltip.enigmaticdice.unequal_exchange_1": "§dПри ударе:",
@@ -54,6 +67,12 @@
   "tooltip.enigmaticdice.permafrost_5": "§dВ радиусе §6%1$d блоков:",
   "tooltip.enigmaticdice.permafrost_6": "§5- §6-%1$.1f%% §5к §dскорости передвижения§5 и §dтворческого полёта§5 врагов.",
   "tooltip.enigmaticdice.permafrost_7": "§5- §6Замораживает §dблоки.",
+
+  "tooltip.enigmaticdice.crucible_of_rile_1": "§5- §6Провоцирует§5 врагов в радиусе §6%1$d блоков.",
+  "tooltip.enigmaticdice.crucible_of_rile_2": "§5- §6+%1$.1f%% §5к §dброне §5и §dтвёрдости брони §5на §6%2$d секунд.",
+  "tooltip.enigmaticdice.crucible_of_rile_3": "§dПри §6%1$d §dполученных атаках:",
+  "tooltip.enigmaticdice.crucible_of_rile_4": "§5- Вы §6наносите урон, §5равный §6силе атаки, §5врагам в ридиусе §6%1$.1f блоков.",
+  "tooltip.enigmaticdice.crucible_of_rile_5": "§5- §6Мгновенно добивает §5врагов с §6%1$d хп или ниже.",
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + ПКМ§5 по блоку, чтобы его §6аннигилировать§5.",
   "tooltip.enigmaticdice.antimatter.2": "§5Также вызывает мощный §6взрыв.",
@@ -202,6 +221,8 @@
   "effect.enigmaticdice.unequal_exchange_debuffs": "Неравный обмен",
   "effect.enigmaticdice.frost_hit": "Ледяной удар",
   "effect.enigmaticdice.frost_aura": "Ледяная аура",
+  "effect.enigmaticdice.crucible_of_rile_armor_boost": "Увеличение брони",
+  "effect.enigmaticdice.divine_shield_invulnerability": "Божественный щит",
 
   "sounds.enigmaticdice.unequal_exchange_hit": "Удар Неравноценного обмена",
   "sounds.enigmaticdice.soul_eater_charged_hit": "Заряженный удар Пожирателя душ",

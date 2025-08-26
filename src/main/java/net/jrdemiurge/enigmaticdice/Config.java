@@ -264,10 +264,14 @@ public class Config
 
     private static final ForgeConfigSpec.ConfigValue<Integer> DIVINE_SHIELD_COOLDOWN_TICKS = BUILDER
             .comment("Cooldown duration of the Divine Shield in ticks. (1 second = 20 ticks)")
-            .defineInRange("divineShieldCooldownTicks", 400, 0, Integer.MAX_VALUE);
+            .defineInRange("divineShieldCooldownTicks", 240, 0, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.BooleanValue DIVINE_SHIELD_GIVE_EFFECT = BUILDER
+            .comment("Whether to give the player the Divine Shield effect as an indicator that the item is not on cooldown.")
+            .define("divineShieldGiveEffect", true);
 
     private static final ForgeConfigSpec.ConfigValue<Integer> DIVINE_SHIELD_IMMUNITY_TICKS = BUILDER
-            .comment("Duration of invulnerability after blocking damage with Divine Shield, in ticks. (1 second = 20 ticks)")
+            .comment("This feature is disabled. Duration of invulnerability after blocking damage with Divine Shield, in ticks. (1 second = 20 ticks)")
             .defineInRange("divineShieldImmunityTicks", 40, 0, Integer.MAX_VALUE);
 
     private static final ForgeConfigSpec.ConfigValue<Double> PERMAFROST_ATTACK_DAMAGE = BUILDER
@@ -301,6 +305,50 @@ public class Config
     private static final ForgeConfigSpec.ConfigValue<Double> PERMAFROST_AURA_REDUCTION_FACTOR = BUILDER
             .comment("Movement/Flying speed reduction factor from Permafrost aura. (0.2 = 20% slower)")
             .defineInRange("permafrostAuraReductionFactor", 0.2, 0.0, 1.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> CRUCIBLE_OF_RILE_ATTACK_DAMAGE = BUILDER
+            .comment("Crucible Of Rile Attack Damage.")
+            .define("crucibleOfRileAttackDamage", 16.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> CRUCIBLE_OF_RILE_ATTACK_SPEED = BUILDER
+            .comment("Crucible Of Rile Attack Speed.")
+            .define("crucibleOfRileAttackSpeed", 1.4);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> CRUCIBLE_OF_RILE_EXECUTE_THRESHOLD = BUILDER
+            .comment("Crucible Of Rile: health threshold at or below which enemies can be executed.")
+            .define("crucibleOfRileExecuteThreshold", 5.0);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> CRUCIBLE_OF_RILE_COOLDOWN = BUILDER
+            .comment("Crucible Of Rile: ability cooldown in ticks. (1 second = 20 ticks)")
+            .defineInRange("crucibleOfRileCooldown", 400, 0, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> CRUCIBLE_OF_RILE_AGGRO_RADIUS = BUILDER
+            .comment("Crucible Of Rile: aggro radius of the ability, in blocks.")
+            .define("crucibleOfRileAggroRadius", 16.0);
+
+    private static final ForgeConfigSpec.BooleanValue CRUCIBLE_OF_RILE_AGGRO_PLAYERS = BUILDER
+            .comment("Crucible Of Rile: whether the ability should aggro players (forcing them to look at the item user).")
+            .define("crucibleOfRileAggroPlayers", true);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> CRUCIBLE_OF_RILE_AGGRO_DURATION = BUILDER
+            .comment("Crucible Of Rile: duration of the forced aggro (camera lock) effect in ticks. (1 second = 20 ticks)")
+            .defineInRange("crucibleOfRileAggroDuration", 100, 0, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> CRUCIBLE_OF_RILE_ARMOR_BUFF_VALUE = BUILDER
+            .comment("Crucible Of Rile: armor buff multiplier applied by the active ability. (0.5 = +50%)")
+            .define("crucibleOfRileArmorBuffValue", 0.5);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> CRUCIBLE_OF_RILE_ARMOR_BUFF_DURATION = BUILDER
+            .comment("Crucible Of Rile: duration of the armor buff from the active ability, in ticks. (1 second = 20 ticks)")
+            .defineInRange("crucibleOfRileArmorBuffDuration", 100, 0, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.ConfigValue<Integer> CRUCIBLE_OF_RILE_HITS_FOR_COUNTERATTACK = BUILDER
+            .comment("Crucible Of Rile: number of hits the player must take before triggering a counterattack.")
+            .defineInRange("crucibleOfRileHitsForCounterattack", 5, 1, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.ConfigValue<Double> CRUCIBLE_OF_RILE_COUNTERATTACK_RADIUS = BUILDER
+            .comment("Crucible Of Rile: radius of the counterattack, in blocks.")
+            .define("crucibleOfRileCounterattackRadius", 3.5);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
@@ -340,6 +388,7 @@ public class Config
     public static double RingOfAgilityChanceScale;
     public static double RingOfAgilityMaxDodgeChance;
     public static int DivineShieldCooldownTicks;
+    public static boolean DivineShieldGiveEffect;
     public static int DivineShieldImmunityTicks;
     public static double PermafrostAttackDamage;
     public static double PermafrostAttackSpeed;
@@ -349,6 +398,17 @@ public class Config
     public static int PermafrostAuraRadius;
     public static int PermafrostAuraDebuffDuration;
     public static double PermafrostAuraReductionFactor;
+    public static double CrucibleOfRileAttackDamage;
+    public static double CrucibleOfRileAttackSpeed;
+    public static double CrucibleOfRileExecuteThreshold;
+    public static int CrucibleOfRileCooldown;
+    public static double CrucibleOfRileAggroRadius;
+    public static boolean CrucibleOfRileAggroPlayers;
+    public static int CrucibleOfRileAggroDuration;
+    public static double CrucibleOfRileArmorBuffValue;
+    public static int CrucibleOfRileArmorBuffDuration;
+    public static int CrucibleOfRileHitsForCounterattack;
+    public static double CrucibleOfRileCounterattackRadius;
 
     public static List<ResourceLocation> lootTables;
 
@@ -396,6 +456,7 @@ public class Config
         RingOfAgilityChanceScale = RING_OF_AGILITY_CHANCE_SCALE.get();
         RingOfAgilityMaxDodgeChance = RING_OF_AGILITY_MAX_DODGE_CHANCE.get();
         DivineShieldCooldownTicks = DIVINE_SHIELD_COOLDOWN_TICKS.get();
+        DivineShieldGiveEffect = DIVINE_SHIELD_GIVE_EFFECT.get();
         DivineShieldImmunityTicks = DIVINE_SHIELD_IMMUNITY_TICKS.get();
         PermafrostAttackDamage = PERMAFROST_ATTACK_DAMAGE.get();
         PermafrostAttackSpeed = PERMAFROST_ATTACK_SPEED.get();
@@ -405,6 +466,17 @@ public class Config
         PermafrostAuraRadius = PERMAFROST_AURA_RADIUS.get();
         PermafrostAuraDebuffDuration = PERMAFROST_AURA_DEBUFF_DURATION.get();
         PermafrostAuraReductionFactor = PERMAFROST_AURA_REDUCTION_FACTOR.get();
+        CrucibleOfRileAttackDamage = CRUCIBLE_OF_RILE_ATTACK_DAMAGE.get();
+        CrucibleOfRileAttackSpeed = CRUCIBLE_OF_RILE_ATTACK_SPEED.get();
+        CrucibleOfRileExecuteThreshold = CRUCIBLE_OF_RILE_EXECUTE_THRESHOLD.get();
+        CrucibleOfRileCooldown = CRUCIBLE_OF_RILE_COOLDOWN.get();
+        CrucibleOfRileAggroRadius = CRUCIBLE_OF_RILE_AGGRO_RADIUS.get();
+        CrucibleOfRileAggroPlayers = CRUCIBLE_OF_RILE_AGGRO_PLAYERS.get();
+        CrucibleOfRileAggroDuration = CRUCIBLE_OF_RILE_AGGRO_DURATION.get();
+        CrucibleOfRileArmorBuffValue = CRUCIBLE_OF_RILE_ARMOR_BUFF_VALUE.get();
+        CrucibleOfRileArmorBuffDuration = CRUCIBLE_OF_RILE_ARMOR_BUFF_DURATION.get();
+        CrucibleOfRileHitsForCounterattack = CRUCIBLE_OF_RILE_HITS_FOR_COUNTERATTACK.get();
+        CrucibleOfRileCounterattackRadius = CRUCIBLE_OF_RILE_COUNTERATTACK_RADIUS.get();
 
         lootTables = LOOT_TABLES.get().stream()
                 .map(ResourceLocation::new)

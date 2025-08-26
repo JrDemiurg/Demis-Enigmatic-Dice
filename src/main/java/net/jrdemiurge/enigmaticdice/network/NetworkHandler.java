@@ -25,5 +25,11 @@ public class NetworkHandler {
                 TimeAccelStartPacket::decode,
                 TimeAccelStartPacket::handle
         );
+
+        INSTANCE.registerMessage(id++, LookAtTargetPacket.class,
+                LookAtTargetPacket::encode,
+                LookAtTargetPacket::decode,
+                LookAtTargetPacket::handle
+        );
     }
 }

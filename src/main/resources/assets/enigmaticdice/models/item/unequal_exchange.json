@@ -139,16 +139,15 @@
 			"scale": [0.7, 0.7, 0.7]
 		},
 		"gui": {
-			"rotation": [-180, 0, 135.25],
-			"translation": [-0.5, -0.25, 0],
+			"rotation": [-180, 180, 135.25],
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"head": {
-			"translation": [0, 27.25, 0]
+			"rotation": [0, 0, -90]
 		},
 		"fixed": {
 			"rotation": [-180, 0, 135.25],
-			"translation": [-0.5, -0.25, -0.75]
+			"translation": [0, 0, -0.75]
 		}
 	},
 	"groups": [
