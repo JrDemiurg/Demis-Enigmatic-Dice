@@ -332,6 +332,24 @@
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.aqua"
     },
+    "enigmaticdice_give_fire_crystal_greatsword": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 1000,
+      "item": "enigmaticdice:fire_crystal_greatsword",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.aqua"
+    },
+    "enigmaticdice_give_fire_crystal_spear": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 1000,
+      "item": "enigmaticdice:fire_crystal_spear",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.aqua"
+    },
     "born_in_chaos_give_phantom_bomb": {
       "enabled": true,
       "requiredMod": "born_in_chaos_v1",

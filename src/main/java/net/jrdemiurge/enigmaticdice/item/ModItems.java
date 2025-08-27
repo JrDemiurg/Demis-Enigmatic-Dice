@@ -59,6 +59,12 @@ public class ModItems {
     public static final RegistryObject<Item> CRUCIBLE_OF_RILE  = ITEMS.register("crucible_of_rile",
             () -> new CrucibleOfRile(Tiers.NETHERITE, 11, -2.6F, new Item.Properties().fireResistant()));
 
+    public static final RegistryObject<Item> FIRE_CRYSTAL_GREATSWORD = ITEMS.register("fire_crystal_greatsword",
+            () -> new UnfinishedWeapon(Tiers.NETHERITE, 11, -2.6F, new Item.Properties().fireResistant()));
+
+    public static final RegistryObject<Item> FIRE_CRYSTAL_SPEAR = ITEMS.register("fire_crystal_spear",
+            () -> new UnfinishedWeapon(Tiers.NETHERITE, 5, -2F, new Item.Properties().fireResistant()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

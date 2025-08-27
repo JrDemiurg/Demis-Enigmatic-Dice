@@ -517,11 +517,11 @@
   "gui_light": "front",
   "display": {
     "thirdperson_righthand": {
-      "translation": [-0.25, 12, 2.25],
+      "translation": [0, 12, 2.25],
       "scale": [1.8, 1.8, 1.8]
     },
     "thirdperson_lefthand": {
-      "translation": [-0.25, 12, 2.25],
+      "translation": [0, 12, 2.25],
       "scale": [1.8, 1.8, 1.8]
     },
     "firstperson_righthand": {
