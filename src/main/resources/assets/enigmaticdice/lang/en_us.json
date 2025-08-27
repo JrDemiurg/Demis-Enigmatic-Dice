@@ -73,6 +73,8 @@
   "tooltip.enigmaticdice.crucible_of_rile_3": "§dAfter receiving §6%1$d §dattacks:",
   "tooltip.enigmaticdice.crucible_of_rile_4": "§5- You §6deal damage §5equal to your §6attack damage §5to enemies within §6%1$.1f blocks.",
   "tooltip.enigmaticdice.crucible_of_rile_5": "§5- §6Instantly executes §5enemies at §6%1$d HP or lower.",
+  "tooltip.enigmaticdice.crucible_of_rile_6": "§dFor each unique executed enemy:",
+  "tooltip.enigmaticdice.crucible_of_rile_7": "§5- The §6Crucible of Rile §5gains §6+%1$.1f%% §5to §darmor §5and §darmor toughness.",
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + Right-click§5 any block to §6annihilate§5 it.",
   "tooltip.enigmaticdice.antimatter.2": "§5Also triggers a very powerful §6explosion.",

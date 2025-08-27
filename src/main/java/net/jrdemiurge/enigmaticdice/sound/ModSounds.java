@@ -28,6 +28,8 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> CRUCIBLE_OF_RILE_HELIX = registerSoundEvents("crucible_of_rile_helix");
 
+    public static final RegistryObject<SoundEvent> CRUCIBLE_OF_RILE_UNIQUE_KILL = registerSoundEvents("crucible_of_rile_unique_kill");
+
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(EnigmaticDice.MOD_ID, name)));
     }

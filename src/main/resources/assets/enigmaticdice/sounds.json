@@ -50,5 +50,11 @@
     "sounds" : [
       "enigmaticdice:crucible_of_rile_helix"
     ]
+  },
+  "crucible_of_rile_unique_kill": {
+    "subtitles": "sounds.enigmaticdice.crucible_of_rile_unique_kill",
+    "sounds" : [
+      "enigmaticdice:crucible_of_rile_unique_kill"
+    ]
   }
 }

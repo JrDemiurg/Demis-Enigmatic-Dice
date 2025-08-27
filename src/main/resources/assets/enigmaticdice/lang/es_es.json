@@ -73,6 +73,8 @@
   "tooltip.enigmaticdice.crucible_of_rile_3": "§dTras recibir §6%1$d §dataques:",
   "tooltip.enigmaticdice.crucible_of_rile_4": "§5- §6Infliges daño §5igual a tu §6daño de ataque §5a los enemigos en un radio de §6%1$.1f bloques.",
   "tooltip.enigmaticdice.crucible_of_rile_5": "§5- §6Ejecuta instantáneamente§5 a los enemigos con §6%1$d de vida o menos.",
+  "tooltip.enigmaticdice.crucible_of_rile_6": "§dPor cada enemigo único ejecutado:",
+  "tooltip.enigmaticdice.crucible_of_rile_7": "§5- El §6Crisol de la Ira §5obtiene §6+%1$.1f%% §5a la §darmadura §5y a la §dresistencia de armadura.",
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + Clic derecho§5 en cualquier bloque para §6aniquilarlo§5.",
   "tooltip.enigmaticdice.antimatter.2": "§5También activa una §6explosión muy poderosa.",

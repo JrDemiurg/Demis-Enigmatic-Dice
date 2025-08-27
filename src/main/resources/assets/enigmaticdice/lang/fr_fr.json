@@ -73,6 +73,8 @@
   "tooltip.enigmaticdice.crucible_of_rile_3": "§dAprès avoir reçu §6%1$d §dattaques :",
   "tooltip.enigmaticdice.crucible_of_rile_4": "§5- Vous §6infligez des dégâts §5égaux à vos §6dégâts d’attaque §5aux ennemis dans un rayon de §6%1$.1f blocs.",
   "tooltip.enigmaticdice.crucible_of_rile_5": "§5- §6Exécute instantanément§5 les ennemis avec §6%1$d PV ou moins.",
+  "tooltip.enigmaticdice.crucible_of_rile_6": "§dPour chaque ennemi unique exécuté :",
+  "tooltip.enigmaticdice.crucible_of_rile_7": "§5- Le §6Creuset de la colère §5gagne §6+%1$.1f%% §5en §darmure §5et en §drésistance d’armure.",
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + Clic-droit§5 sur un bloc pour l'§6anéantir§5.",
   "tooltip.enigmaticdice.antimatter.2": "§5Déclenche également une puissante §6explosion.",

@@ -73,6 +73,8 @@
   "tooltip.enigmaticdice.crucible_of_rile_3": "§dПри §6%1$d §dполученных атаках:",
   "tooltip.enigmaticdice.crucible_of_rile_4": "§5- Вы §6наносите урон, §5равный §6силе атаки, §5врагам в ридиусе §6%1$.1f блоков.",
   "tooltip.enigmaticdice.crucible_of_rile_5": "§5- §6Мгновенно добивает §5врагов с §6%1$d хп или ниже.",
+  "tooltip.enigmaticdice.crucible_of_rile_6": "§dЗа каждого уникального добитого врага:",
+  "tooltip.enigmaticdice.crucible_of_rile_7": "§5- §6Горнило гнева §5получает §6+%1$.1f%% §5к §dброне §5и §dтвёрдости брони.",
 
   "tooltip.enigmaticdice.antimatter.1": "§6Shift + ПКМ§5 по блоку, чтобы его §6аннигилировать§5.",
   "tooltip.enigmaticdice.antimatter.2": "§5Также вызывает мощный §6взрыв.",

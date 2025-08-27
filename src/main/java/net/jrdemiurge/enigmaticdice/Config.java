@@ -350,6 +350,10 @@ public class Config
             .comment("Crucible Of Rile: radius of the counterattack, in blocks.")
             .define("crucibleOfRileCounterattackRadius", 3.5);
 
+    private static final ForgeConfigSpec.ConfigValue<Double> CRUCIBLE_OF_RILE_PERM_ARMOR_PER_UNIQUE = BUILDER
+            .comment("Permanent armor bonus (percent as fraction) per unique killed enemy type. (0.01 = +1%)")
+            .define("crucibleOfRilePermanentArmorPerUnique", 0.005);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static double EnigmaticDieMobDropChance;
@@ -409,6 +413,7 @@ public class Config
     public static int CrucibleOfRileArmorBuffDuration;
     public static int CrucibleOfRileHitsForCounterattack;
     public static double CrucibleOfRileCounterattackRadius;
+    public static double CrucibleOfRilePermanentArmorPerUnique;
 
     public static List<ResourceLocation> lootTables;
 
@@ -477,6 +482,7 @@ public class Config
         CrucibleOfRileArmorBuffDuration = CRUCIBLE_OF_RILE_ARMOR_BUFF_DURATION.get();
         CrucibleOfRileHitsForCounterattack = CRUCIBLE_OF_RILE_HITS_FOR_COUNTERATTACK.get();
         CrucibleOfRileCounterattackRadius = CRUCIBLE_OF_RILE_COUNTERATTACK_RADIUS.get();
+        CrucibleOfRilePermanentArmorPerUnique= CRUCIBLE_OF_RILE_PERM_ARMOR_PER_UNIQUE.get();
 
         lootTables = LOOT_TABLES.get().stream()
                 .map(ResourceLocation::new)

@@ -11,6 +11,9 @@ import net.jrdemiurge.enigmaticdice.sound.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -34,12 +37,17 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
-// TODO Бафф за казнь, броня и скорость
+// TODO Когда буду играть отрегулировать громкость преатаки, атаки, активки, хеликса и добивания
 public class CrucibleOfRile extends SwordItem {
-    public static final String PDATA_RILE_HITS = "enigmaticdice:crucible_of_rile_hits";
+    public static final String PDATA_RILE_HITS = "enigmaticdice_crucible_of_rile_hits";
+    public static final String TAG_UNIQUE_KILLS = "enigmaticdice_crucible_of_rile_unique_kills";
+    private static final UUID ARMOR_MODIFIER_UUID = UUID.fromString("5f4837ed-f638-4e29-8e26-bc26d2c41e2d");
+    private static final UUID ARMOR_TOUGHNESS_MODIFIER_UUID = UUID.fromString("4430c313-c502-4db4-9b9a-ae50d3f446aa");
     private Multimap<Attribute, AttributeModifier> configModifiers;
 
     public CrucibleOfRile(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
@@ -62,10 +70,35 @@ public class CrucibleOfRile extends SwordItem {
         return this.configModifiers;
     }
 
-    // TODO добавить звук казни
+    @Override
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
+        if (slot != EquipmentSlot.MAINHAND)
+            return super.getDefaultAttributeModifiers(slot);
+
+        int kills = getUniqueKills(stack).size();
+
+        if (kills == 0)
+            return super.getAttributeModifiers(slot, stack);
+
+        double armor = Config.CrucibleOfRilePermanentArmorPerUnique * kills;
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+
+        builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,
+                "Weapon modifier", Config.CrucibleOfRileAttackDamage - 1, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID,
+                "Weapon modifier", Config.CrucibleOfRileAttackSpeed - 4, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ARMOR, new AttributeModifier(ARMOR_MODIFIER_UUID, "Weapon modifier",
+                armor, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(ARMOR_TOUGHNESS_MODIFIER_UUID, "Weapon modifier",
+                armor, AttributeModifier.Operation.MULTIPLY_TOTAL));
+
+        return builder.build();
+    }
+
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (!attacker.level().isClientSide && attacker instanceof Player player) {
+
             player.level().playSound(null, target.getX(), target.getY(), target.getZ(),
                     ModSounds.CRUCIBLE_OF_RILE_ATTACK.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
 
@@ -95,7 +128,7 @@ public class CrucibleOfRile extends SwordItem {
         giveArmorBoost(pPlayer);
 
         pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
-                ModSounds.CRUCIBLE_OF_RILE_USE.get(), SoundSource.PLAYERS, 0.8F, 1.0F);
+                ModSounds.CRUCIBLE_OF_RILE_USE.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
 
         pPlayer.getCooldowns().addCooldown(this, Config.CrucibleOfRileCooldown);
         return InteractionResultHolder.success(item);
@@ -209,7 +242,7 @@ public class CrucibleOfRile extends SwordItem {
     // TODO в идеале добавить анимацию крутилки из better combat
     private static void doAoEDamage(LivingEntity livingEntity) {
         livingEntity.level().playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(),
-                ModSounds.CRUCIBLE_OF_RILE_HELIX.get(), SoundSource.PLAYERS, 0.8F, 1.0F);
+                ModSounds.CRUCIBLE_OF_RILE_HELIX.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
 
 
         AABB box = livingEntity.getBoundingBox().inflate(Config.CrucibleOfRileCounterattackRadius);
@@ -233,6 +266,22 @@ public class CrucibleOfRile extends SwordItem {
         }
     }
 
+    public static Set<String> getUniqueKills(ItemStack stack) {
+        CompoundTag tag = stack.getOrCreateTag();
+        Set<String> set = new HashSet<>();
+        if (tag.contains(TAG_UNIQUE_KILLS, Tag.TAG_LIST)) {
+            ListTag list = tag.getList(TAG_UNIQUE_KILLS, Tag.TAG_STRING);
+            for (Tag t : list) set.add(t.getAsString());
+        }
+        return set;
+    }
+
+    public static void setUniqueKills(ItemStack stack, Set<String> ids) {
+        ListTag list = new ListTag();
+        for (String s : ids) list.add(StringTag.valueOf(s));
+        stack.getOrCreateTag().put(TAG_UNIQUE_KILLS, list);
+    }
+
     @Override
     public boolean isDamageable(ItemStack stack) {
         return false;
@@ -248,6 +297,7 @@ public class CrucibleOfRile extends SwordItem {
             int crucibleOfRileArmorBuffDuration = Config.CrucibleOfRileArmorBuffDuration / 20;
             int crucibleOfRileHitsForCounterattack = Config.CrucibleOfRileHitsForCounterattack;
             double crucibleOfRileCounterattackRadius = Config.CrucibleOfRileCounterattackRadius;
+            double crucibleOfRilePermanentArmorPerUnique = Config.CrucibleOfRilePermanentArmorPerUnique * 100;
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.on_use"));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.crucible_of_rile_1", crucibleOfRileAggroRadius)
                     .withStyle(ChatFormatting.GOLD));
@@ -261,6 +311,10 @@ public class CrucibleOfRile extends SwordItem {
             pTooltipComponents.add(Component.literal(" "));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.on_hit"));
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.crucible_of_rile_5", crucibleOfRileExecuteThreshold)
+                    .withStyle(ChatFormatting.GOLD));
+            pTooltipComponents.add(Component.literal(" "));
+            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.crucible_of_rile_6"));
+            pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.crucible_of_rile_7", crucibleOfRilePermanentArmorPerUnique)
                     .withStyle(ChatFormatting.GOLD));
         } else {
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.holdShift"));

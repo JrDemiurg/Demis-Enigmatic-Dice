@@ -305,6 +305,33 @@
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.gold"
     },
+    "enigmaticdice_give_crucible_of_rile": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 100,
+      "item": "enigmaticdice:crucible_of_rile",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.gold"
+    },
+    "enigmaticdice_give_kyomu": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 1000,
+      "item": "enigmaticdice:kyomu",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.aqua"
+    },
+    "enigmaticdice_give_phoenix": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 1000,
+      "item": "enigmaticdice:phoenix",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.aqua"
+    },
     "born_in_chaos_give_phantom_bomb": {
       "enabled": true,
       "requiredMod": "born_in_chaos_v1",
