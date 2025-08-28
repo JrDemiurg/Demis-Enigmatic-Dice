@@ -314,6 +314,15 @@
       "nbt": "",
       "chatMessage": "enigmaticdice.gift.gold"
     },
+    "enigmaticdice_give_moai_charm": {
+      "enabled": true,
+      "requiredMod": "enigmaticdice",
+      "rarity": 100,
+      "item": "enigmaticdice:moai_charm",
+      "amount": 1,
+      "nbt": "",
+      "chatMessage": "enigmaticdice.gift.gold"
+    },
     "enigmaticdice_give_kyomu": {
       "enabled": true,
       "requiredMod": "enigmaticdice",

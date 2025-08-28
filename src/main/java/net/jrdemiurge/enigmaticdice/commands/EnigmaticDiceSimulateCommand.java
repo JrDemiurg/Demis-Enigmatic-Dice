@@ -32,7 +32,7 @@ public class EnigmaticDiceSimulateCommand {
         EnigmaticDice.eventManager.simulationRandomEvent(pLevel, pPlayer, count);
         EnigmaticDice.eventManager.saveLuckRangeResultsToFile(pLevel,EnigmaticDice.eventManager.buildLuckRangeResults(pLevel, count),count);
         pPlayer.displayClientMessage(Component.literal("Simulated " + count + " events successfully!"), false);
-        pPlayer.displayClientMessage(Component.literal("Results saved in the world folder as: enigmatic_dice_simulation_results.txt"), false);
+        pPlayer.displayClientMessage(Component.literal("Results saved in the world folder as: enigmatic_dice_simulation_results.txt and enigmatic_dice_luck_range_results.txt"), false);
         return 1;
     }
 }

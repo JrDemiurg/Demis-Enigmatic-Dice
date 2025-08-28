@@ -17,6 +17,7 @@
   "item.enigmaticdice.crucible_of_rile": "§dCrisol de la Ira",
   "item.enigmaticdice.fire_crystal_greatsword": "§d???",
   "item.enigmaticdice.fire_crystal_spear": "§d???",
+  "item.enigmaticdice.moai_charm": "§dAmuleto Moai",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Dados de bloques",
   "stat.enigmaticdice.obtained_dice_from_mob": "Dados de mobs",
@@ -109,6 +110,8 @@
   "tooltip.enigmaticdice.divine_shield_0": "§dUna chispa de misericordia divina.",
   "tooltip.enigmaticdice.divine_shield_1": "§6Bloquea§5 el daño recibido cada §6%s segundos§5.",
   "tooltip.enigmaticdice.divine_shield_2": "§5Otorga §6%s§5 segundos de §6invulnerabilidad§5 al activarse.",
+
+  "tooltip.enigmaticdice.moai_charm": "§5Desactiva las §6colisiones §5con mobs.",
 
   "enigmaticdice.block_break": "§6¿Cómo terminó esto aquí?",
 

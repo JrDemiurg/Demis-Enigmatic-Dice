@@ -17,6 +17,7 @@
   "item.enigmaticdice.crucible_of_rile": "§dГорнило гнева",
   "item.enigmaticdice.fire_crystal_greatsword": "§d???",
   "item.enigmaticdice.fire_crystal_spear": "§d???",
+  "item.enigmaticdice.moai_charm": "§dАмулет Моаи",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Игральных костей из блоков",
   "stat.enigmaticdice.obtained_dice_from_mob": "Игральных костей с мобов",
@@ -109,6 +110,8 @@
   "tooltip.enigmaticdice.divine_shield_0": "§dИскра божественной милости.",
   "tooltip.enigmaticdice.divine_shield_1": "§6Блокирует§5 входящий урон раз в §6%s секунд§5.",
   "tooltip.enigmaticdice.divine_shield_2": "§5Дарует §6%s§5 секунды §6неуязвимости§5 после активации.",
+
+  "tooltip.enigmaticdice.moai_charm": "§5Отключает §6столкновения §5с мобами.",
 
   "enigmaticdice.block_break": "§6Откуда это здесь?",
 

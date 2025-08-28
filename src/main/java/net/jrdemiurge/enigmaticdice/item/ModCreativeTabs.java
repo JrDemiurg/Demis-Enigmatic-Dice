@@ -30,6 +30,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.GRAVITY_CORE.get());
                         output.accept(ModItems.RING_OF_AGILITY.get());
                         output.accept(ModItems.DIVINE_SHIELD.get());
+                        output.accept(ModItems.MOAI_CHARM.get());
                     })
                     .build());
 

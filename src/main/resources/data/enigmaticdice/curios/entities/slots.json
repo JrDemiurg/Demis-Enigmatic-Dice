@@ -2,6 +2,7 @@
   "entities": ["player"],
   "slots": [
     "ring",
-    "belt"
+    "belt",
+    "necklace"
   ]
 }

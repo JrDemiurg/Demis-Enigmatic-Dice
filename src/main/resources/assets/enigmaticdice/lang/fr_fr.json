@@ -17,6 +17,7 @@
   "item.enigmaticdice.crucible_of_rile": "§dCreuset de la Colère",
   "item.enigmaticdice.fire_crystal_greatsword": "§d???",
   "item.enigmaticdice.fire_crystal_spear": "§d???",
+  "item.enigmaticdice.moai_charm": "§dAmulette Moai",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Dés des blocs",
   "stat.enigmaticdice.obtained_dice_from_mob": "Dés des mobs",
@@ -109,6 +110,8 @@
   "tooltip.enigmaticdice.divine_shield_0": "§dUne étincelle de miséricorde divine.",
   "tooltip.enigmaticdice.divine_shield_1": "§6Bloque§5 les dégâts entrants toutes les §6%s secondes§5.",
   "tooltip.enigmaticdice.divine_shield_2": "§5Confère §6%s§5 secondes d’§6invulnérabilité§5 après activation.",
+
+  "tooltip.enigmaticdice.moai_charm": "§5Désactive les §6collisions §5avec les monstres.",
 
   "enigmaticdice.block_break": "§6Comment cela a-t-il atterri ici ?",
 

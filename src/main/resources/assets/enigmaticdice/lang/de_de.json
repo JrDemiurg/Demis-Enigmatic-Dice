@@ -17,6 +17,7 @@
   "item.enigmaticdice.crucible_of_rile": "§dSchmelztiegel des Zorns",
   "item.enigmaticdice.fire_crystal_greatsword": "§d???",
   "item.enigmaticdice.fire_crystal_spear": "§d???",
+  "item.enigmaticdice.moai_charm": "§dMoai-Amulett",
 
   "stat.enigmaticdice.obtained_dice_from_block": "Würfel aus Blöcken",
   "stat.enigmaticdice.obtained_dice_from_mob": "Würfel von Mobs",
@@ -109,6 +110,8 @@
   "tooltip.enigmaticdice.divine_shield_0": "§dEin Funke göttlicher Gnade.",
   "tooltip.enigmaticdice.divine_shield_1": "§6Blockt§5 eingehenden Schaden alle §6%s Sekunden§5.",
   "tooltip.enigmaticdice.divine_shield_2": "§5Gewährt §6%s§5 Sekunden §6Unverwundbarkeit§5 nach Aktivierung.",
+
+  "tooltip.enigmaticdice.moai_charm": "§5Deaktiviert §6Kollisionen §5mit Monstern.",
 
   "enigmaticdice.block_break": "§6Wie ist das hierher gekommen?",
 

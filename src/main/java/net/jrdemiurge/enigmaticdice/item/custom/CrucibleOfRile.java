@@ -43,6 +43,7 @@ import java.util.Set;
 import java.util.UUID;
 
 // TODO Когда буду играть отрегулировать громкость преатаки, атаки, активки, хеликса и добивания
+// TODO возможно всё таки крутилке надо добавить кд в 0.3 секунды
 public class CrucibleOfRile extends SwordItem {
     public static final String PDATA_RILE_HITS = "enigmaticdice_crucible_of_rile_hits";
     public static final String TAG_UNIQUE_KILLS = "enigmaticdice_crucible_of_rile_unique_kills";

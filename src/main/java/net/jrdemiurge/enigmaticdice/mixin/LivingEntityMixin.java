@@ -1,8 +1,10 @@
 package net.jrdemiurge.enigmaticdice.mixin;
 
 import net.jrdemiurge.enigmaticdice.attribute.ModAttributes;
+import net.jrdemiurge.enigmaticdice.item.custom.MoaiCharm;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -42,5 +44,12 @@ public abstract class LivingEntityMixin extends Entity {
             cir.setReturnValue(original.scale(demis_Enigmatic_Dice_1_20_1$scale));
         }
     }
-}
 
+    @Inject(method = "isPushable", at = @At("HEAD"), cancellable = true)
+    public void onIsPushable(CallbackInfoReturnable<Boolean> cir) {
+        LivingEntity self = (LivingEntity) (Object) this;
+        if (self instanceof Player player && MoaiCharm.isWearingMoaiCharm(player)) {
+            cir.setReturnValue(false);
+        }
+    }
+}

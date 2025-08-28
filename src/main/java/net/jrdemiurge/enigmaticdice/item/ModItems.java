@@ -65,6 +65,9 @@ public class ModItems {
     public static final RegistryObject<Item> FIRE_CRYSTAL_SPEAR = ITEMS.register("fire_crystal_spear",
             () -> new UnfinishedWeapon(Tiers.NETHERITE, 5, -2F, new Item.Properties().fireResistant()));
 
+    public static final RegistryObject<Item> MOAI_CHARM = ITEMS.register("moai_charm",
+            () -> new MoaiCharm(new Item.Properties().stacksTo(1)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
