@@ -45,7 +45,7 @@ public class MoaiCharm extends Item implements ICurioItem {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> attributes = HashMultimap.create();
-        attributes.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.fromString("9b3ef174-e8eb-4ba7-a287-4575bdb540d0"), EnigmaticDice.MOD_ID+":moai_charm_knockback_resistance_bonus", 1, AttributeModifier.Operation.ADDITION));
+        attributes.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.fromString("9b3ef174-e8eb-4ba7-a287-4575bdb540d0"), EnigmaticDice.MOD_ID+":moai_charm_knockback_resistance_bonus", Config.MoaiCharmKnockbackResistanceBonus, AttributeModifier.Operation.ADDITION));
         return attributes;
     }
 

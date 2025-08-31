@@ -216,9 +216,15 @@ public class Config
             .comment("Bonus max health granted by Giant's Ring.")
             .defineInRange("giantsRingMaxHealth", 10.0, 0.0, 1024.0);
 
+/*
     private static final ForgeConfigSpec.ConfigValue<Double> GIANTS_RING_KNOCKBACK_RESISTANCE = BUILDER
             .comment("Bonus knockback resistance granted by Giant's Ring.")
             .defineInRange("giantsRingKnockbackResistance", 1, 0.0, 1.0);
+*/
+
+    private static final ForgeConfigSpec.ConfigValue<Double> GIANTS_RING_SPEED_BONUS = BUILDER
+            .comment("Giant's Ring: movement speed bonus multiplier. (0.2 = +20% of base movement speed)")
+            .define("giantsRingSpeedBonus", 0.2);
 
     private static final ForgeConfigSpec.ConfigValue<Double> MOON_SHARD_GRAVITY_REDUCTION  = BUILDER
             .comment("Gravity change applied while Moon Shard is in hotbar.\n" +
@@ -270,9 +276,11 @@ public class Config
             .comment("Whether to give the player the Divine Shield effect as an indicator that the item is not on cooldown.")
             .define("divineShieldGiveEffect", true);
 
+/*
     private static final ForgeConfigSpec.ConfigValue<Integer> DIVINE_SHIELD_IMMUNITY_TICKS = BUILDER
             .comment("This feature is disabled. Duration of invulnerability after blocking damage with Divine Shield, in ticks. (1 second = 20 ticks)")
             .defineInRange("divineShieldImmunityTicks", 40, 0, Integer.MAX_VALUE);
+*/
 
     private static final ForgeConfigSpec.ConfigValue<Double> PERMAFROST_ATTACK_DAMAGE = BUILDER
             .comment("Permafrost Attack Damage.")
@@ -354,6 +362,10 @@ public class Config
             .comment("Permanent armor bonus (percent as fraction) per unique killed enemy type. (0.01 = +1%)")
             .define("crucibleOfRilePermanentArmorPerUnique", 0.005);
 
+    private static final ForgeConfigSpec.ConfigValue<Double> MOAI_CHARM_KNOCKBACK_RESISTANCE = BUILDER
+            .comment("Moai Charm: knockback resistance bonus. (1.0 = full knockback immunity)")
+            .define("moaiCharmKnockbackResistanceBonus", 1.0);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static double EnigmaticDieMobDropChance;
@@ -381,7 +393,8 @@ public class Config
     public static double SoulEaterAttackSpeed;
     public static double GiantsRingAttackDamage;
     public static double GiantsRingMaxHealth;
-    public static double GiantsRingKnockbackResistance;
+    // public static double GiantsRingKnockbackResistance;
+    public static double GiantsRingSpeedBonus;
     public static double MoonShardGravityReduction;
     public static double MoonGravityReduction;
     public static double GravityCoreGravityMultiplier;
@@ -393,7 +406,7 @@ public class Config
     public static double RingOfAgilityMaxDodgeChance;
     public static int DivineShieldCooldownTicks;
     public static boolean DivineShieldGiveEffect;
-    public static int DivineShieldImmunityTicks;
+    // public static int DivineShieldImmunityTicks;
     public static double PermafrostAttackDamage;
     public static double PermafrostAttackSpeed;
     public static int PermafrostAttackDebuffDuration;
@@ -414,6 +427,7 @@ public class Config
     public static int CrucibleOfRileHitsForCounterattack;
     public static double CrucibleOfRileCounterattackRadius;
     public static double CrucibleOfRilePermanentArmorPerUnique;
+    public static double MoaiCharmKnockbackResistanceBonus;
 
     public static List<ResourceLocation> lootTables;
 
@@ -450,7 +464,8 @@ public class Config
         SoulEaterAttackSpeed = SOUL_EATER_ATTACK_SPEED.get();
         GiantsRingAttackDamage = GIANTS_RING_ATTACK_DAMAGE.get();
         GiantsRingMaxHealth = GIANTS_RING_MAX_HEALTH.get();
-        GiantsRingKnockbackResistance = GIANTS_RING_KNOCKBACK_RESISTANCE.get();
+        // GiantsRingKnockbackResistance = GIANTS_RING_KNOCKBACK_RESISTANCE.get();
+        GiantsRingSpeedBonus = GIANTS_RING_SPEED_BONUS.get();
         MoonShardGravityReduction = MOON_SHARD_GRAVITY_REDUCTION.get();
         MoonGravityReduction = MOON_GRAVITY_REDUCTION.get();
         GravityCoreGravityMultiplier = GRAVITY_CORE_GRAVITY_MULTIPLIER.get();
@@ -462,7 +477,7 @@ public class Config
         RingOfAgilityMaxDodgeChance = RING_OF_AGILITY_MAX_DODGE_CHANCE.get();
         DivineShieldCooldownTicks = DIVINE_SHIELD_COOLDOWN_TICKS.get();
         DivineShieldGiveEffect = DIVINE_SHIELD_GIVE_EFFECT.get();
-        DivineShieldImmunityTicks = DIVINE_SHIELD_IMMUNITY_TICKS.get();
+        // DivineShieldImmunityTicks = DIVINE_SHIELD_IMMUNITY_TICKS.get();
         PermafrostAttackDamage = PERMAFROST_ATTACK_DAMAGE.get();
         PermafrostAttackSpeed = PERMAFROST_ATTACK_SPEED.get();
         PermafrostAttackDebuffDuration = PERMAFROST_ATTACK_DEBUFF_DURATION.get();
@@ -483,6 +498,7 @@ public class Config
         CrucibleOfRileHitsForCounterattack = CRUCIBLE_OF_RILE_HITS_FOR_COUNTERATTACK.get();
         CrucibleOfRileCounterattackRadius = CRUCIBLE_OF_RILE_COUNTERATTACK_RADIUS.get();
         CrucibleOfRilePermanentArmorPerUnique= CRUCIBLE_OF_RILE_PERM_ARMOR_PER_UNIQUE.get();
+        MoaiCharmKnockbackResistanceBonus = MOAI_CHARM_KNOCKBACK_RESISTANCE.get();
 
         lootTables = LOOT_TABLES.get().stream()
                 .map(ResourceLocation::new)

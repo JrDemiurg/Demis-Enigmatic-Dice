@@ -87,7 +87,7 @@ public class DivineShield extends Item implements ICurioItem {
         player.getCooldowns().addCooldown(ModItems.DIVINE_SHIELD.get(), Config.DivineShieldCooldownTicks);
     }
 
-    public static boolean hasActiveImmunity(LivingEntity entity) {
+/*    public static boolean hasActiveImmunity(LivingEntity entity) {
         long gameTime = entity.level().getGameTime();
         return activeImmunity.getOrDefault(entity.getUUID(), 0L) > gameTime;
     }
@@ -96,14 +96,14 @@ public class DivineShield extends Item implements ICurioItem {
         long endTime = entity.level().getGameTime() + Config.DivineShieldImmunityTicks;
         activeImmunity.put(entity.getUUID(), endTime);
         entity.addEffect(new MobEffectInstance(ModEffects.DIVINE_SHIELD_INVULNERABILITY.get(), Config.DivineShieldImmunityTicks, 0));
-    }
+    }*/
 
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
             String formattedCooldown = String.format("%.1f", Config.DivineShieldCooldownTicks / 20F);
-            String formattedImmunityTime = String.format("%.1f", Config.DivineShieldImmunityTicks / 20F);
+            // String formattedImmunityTime = String.format("%.1f", Config.DivineShieldImmunityTicks / 20F);
 
             pTooltipComponents.add(Component.translatable("tooltip.enigmaticdice.divine_shield_1", formattedCooldown)
                     .withStyle(ChatFormatting.GOLD));

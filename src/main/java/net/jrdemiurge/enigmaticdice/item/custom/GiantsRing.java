@@ -158,7 +158,7 @@ public class GiantsRing extends Item implements ICurioItem {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> attributes = HashMultimap.create();
         attributes.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("44aeda56-97d8-40d8-9c57-3727f50bea16"), EnigmaticDice.MOD_ID+":giants_ring_health_bonus", Config.GiantsRingMaxHealth, AttributeModifier.Operation.ADDITION));
-        attributes.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("be2c96bc-2f43-471e-8cff-150ac8750b57"), EnigmaticDice.MOD_ID+":giants_ring_speed_bonus", 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
+        attributes.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("be2c96bc-2f43-471e-8cff-150ac8750b57"), EnigmaticDice.MOD_ID+":giants_ring_speed_bonus", Config.GiantsRingSpeedBonus, AttributeModifier.Operation.MULTIPLY_BASE));
         attributes.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("cc5c05c0-916a-4165-bd3f-61a6b9ccfab0"), EnigmaticDice.MOD_ID+":giants_ring_damage_bonus", Config.GiantsRingAttackDamage, AttributeModifier.Operation.ADDITION));
         //attributes.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.fromString("3c9941fd-4924-4510-9e25-0d8f420e5266"), EnigmaticDice.MOD_ID+":giants_ring_knockback_resistance_bonus", Config.GiantsRingKnockbackResistance, AttributeModifier.Operation.ADDITION));
         return attributes;
