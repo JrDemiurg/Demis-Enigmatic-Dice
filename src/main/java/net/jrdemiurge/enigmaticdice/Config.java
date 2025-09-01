@@ -90,6 +90,16 @@ public class Config
         }
     }
 
+    private static final ForgeConfigSpec.ConfigValue<Boolean> USE_VERSIONED_JSON = BUILDER
+            .comment(
+                    "If true, JSON config file name is enigmatic_dice_<modVersion>.json.",
+                    "This means the config will auto-update to a fresh copy when the mod version changes.",
+                    "If false, a single enigmatic_dice.json is used and never auto-updated.",
+                    "In this mode new events added in mod updates will NOT appear automatically;",
+                    "pack makers will need to add them manually."
+            )
+            .define("useVersionedJson", true);
+
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> LOOT_TABLES = BUILDER
             .comment("The list of chests in which the Enigmatic Die is added")
             .defineListAllowEmpty("lootTables", defaultLootTables, Config::validateLootTable);
@@ -368,6 +378,7 @@ public class Config
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
+    public static boolean UseVersionedJson;
     public static double EnigmaticDieMobDropChance;
     public static double EnigmaticDieBlockDropChance;
     public static double EnigmaticDieChestChance;
@@ -439,6 +450,7 @@ public class Config
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
     {
+        UseVersionedJson = USE_VERSIONED_JSON.get();
         EnigmaticDieMobDropChance = ENIGMATIC_DIE_MOB_DROP_CHANCE.get();
         EnigmaticDieBlockDropChance = ENIGMATIC_DIE_BLOCK_DROP_CHANCE.get();
         EnigmaticDieChestChance = ENIGMATIC_DIE_CHEST_CHANCE.get();

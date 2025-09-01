@@ -2,7 +2,9 @@ package net.jrdemiurge.enigmaticdice.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import net.jrdemiurge.enigmaticdice.Config;
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLPaths;
 
 import java.io.IOException;
@@ -15,15 +17,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EnigmaticDiceConfig {
-    private static final Path CONFIG_PATH = FMLPaths.CONFIGDIR.get().resolve("enigmaticdice.json");
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     public static ModConfig configData;
 
     public static void loadConfig() {
-        if (Files.exists(CONFIG_PATH)) {
-            loadFromFile();
+        Path path = getConfigPath();
+
+        if (Files.exists(path)) {
+            loadFromFile(path);
         } else {
-            copyDefaultConfig();
+            copyDefaultConfigTo(path);
+            loadFromFile(path);
         }
 
         if (configData == null) {
@@ -38,25 +42,42 @@ public class EnigmaticDiceConfig {
         }
     }
 
-    private static void loadFromFile() {
-        try (Reader reader = Files.newBufferedReader(CONFIG_PATH)) {
-            configData = GSON.fromJson(reader, ModConfig.class);
-        } catch (IOException e) {
-            e.printStackTrace();
+    private static Path getConfigPath() {
+        boolean versioned = Config.UseVersionedJson;
+        Path dir = FMLPaths.CONFIGDIR.get();
+        if (versioned) {
+            String ver = getModVersionSafe(); // напр. "1.3.0"
+            return dir.resolve("enigmatic_dice_" + ver + ".json");
+        } else {
+            return dir.resolve("enigmatic_dice.json");
         }
     }
 
-    private static void copyDefaultConfig() {
-        try (InputStream in = EnigmaticDiceConfig.class.getResourceAsStream("/assets/enigmaticdice/config/enigmaticdice.json")) {
-            if (in == null) {
-                EnigmaticDice.LOGGER.error("Не найден конфиг в ресурсах мода!");
-                return;
-            }
+    private static String getModVersionSafe() {
+        return ModList.get().getModContainerById(EnigmaticDice.MOD_ID)
+                .map(c -> c.getModInfo().getVersion().toString())
+                .orElse("unknown");
+    }
 
-            Files.copy(in, CONFIG_PATH, StandardCopyOption.REPLACE_EXISTING);
-            loadFromFile();
+    private static void loadFromFile(Path path) {
+        try (Reader reader = Files.newBufferedReader(path)) {
+            configData = GSON.fromJson(reader, ModConfig.class);
         } catch (IOException e) {
-            e.printStackTrace();
+            EnigmaticDice.LOGGER.error("Failed to read JSON config {}", path, e);
+        }
+    }
+
+    private static void copyDefaultConfigTo(Path target) {
+        try {
+            try (InputStream in = EnigmaticDiceConfig.class.getResourceAsStream("/assets/enigmaticdice/config/enigmatic_dice.json")) {
+                if (in == null) {
+                    EnigmaticDice.LOGGER.error("Default JSON config not found in mod resources!");
+                    return;
+                }
+                Files.copy(in, target, StandardCopyOption.REPLACE_EXISTING);
+            }
+        } catch (IOException e) {
+            EnigmaticDice.LOGGER.error("Failed to copy default JSON to {}", target, e);
         }
     }
 }
