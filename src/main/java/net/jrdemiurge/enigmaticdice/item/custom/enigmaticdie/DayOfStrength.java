@@ -16,10 +16,10 @@ import java.util.Set;
 import java.util.UUID;
 
 
-public class DayOfInvisibility extends RandomEvent {
+public class DayOfStrength extends RandomEvent {
     public static final Set<UUID> activePlayers = new HashSet<>();
 
-    public DayOfInvisibility(int rarity) {
+    public DayOfStrength(int rarity) {
         this.rarity = rarity;
     }
 
@@ -44,7 +44,7 @@ public class DayOfInvisibility extends RandomEvent {
                 AABB area = pPlayer.getBoundingBox().inflate(150);
                 for (LivingEntity entity : serverLevel.getEntitiesOfClass(LivingEntity.class, area)) {
                     if (entity.isAlive()) {
-                        entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0, false, true));
+                        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 1, false, false));
                     }
                 }
             }
@@ -52,7 +52,7 @@ public class DayOfInvisibility extends RandomEvent {
 
         Scheduler.schedule(() -> activePlayers.remove(playerId), dayDuration);
 
-        MutableComponent message = Component.translatable("enigmaticdice.event.day_of_invisibility");
+        MutableComponent message = Component.translatable("enigmaticdice.event.day_of_strength");
         pPlayer.displayClientMessage(message, false);
         return true;
     }

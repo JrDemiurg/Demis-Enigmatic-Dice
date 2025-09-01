@@ -1,6 +1,7 @@
 package net.jrdemiurge.enigmaticdice.event;
 
 import net.jrdemiurge.enigmaticdice.EnigmaticDice;
+import net.jrdemiurge.enigmaticdice.effect.ModEffects;
 import net.jrdemiurge.enigmaticdice.item.ModItems;
 import net.jrdemiurge.enigmaticdice.item.custom.GravityCore;
 import net.minecraft.world.entity.player.Player;
@@ -14,6 +15,11 @@ public class LivingFallHandler {
 
     @SubscribeEvent
     public static void onLivingFall(LivingFallEvent event) {
+        if (event.getEntity().hasEffect(ModEffects.DAY_ON_THE_MOON.get())) {
+            event.setDamageMultiplier(0);
+            return;
+        }
+
         if (!(event.getEntity() instanceof Player player)) return;
 
         if (GravityCore.isWearingGravityCore(player)){

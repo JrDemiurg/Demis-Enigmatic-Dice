@@ -159,6 +159,18 @@ public class RandomEventManager {
                     events.add(new DayOfInvisibility(config.rarity));
                     eventNames.add(eventName);
                 }
+                case "minecraft_day_of_tag" -> {
+                    events.add(new DayOfTag(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_day_of_strength" -> {
+                    events.add(new DayOfStrength(config.rarity));
+                    eventNames.add(eventName);
+                }
+                case "minecraft_day_on_the_moon" -> {
+                    events.add(new DayOnTheMoon(config.rarity));
+                    eventNames.add(eventName);
+                }
                 case "minecraft_teleport_monsters_to_player" -> {
                     events.add(new TeleportMonstersToPlayer(config.rarity));
                     eventNames.add(eventName);

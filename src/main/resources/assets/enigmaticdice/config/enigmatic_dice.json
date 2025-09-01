@@ -80,6 +80,21 @@
       "requiredMod": "minecraft",
       "rarity": 20
     },
+    "minecraft_day_of_tag": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 20
+    },
+    "minecraft_day_of_strength": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 20
+    },
+    "minecraft_day_on_the_moon": {
+      "enabled": true,
+      "requiredMod": "minecraft",
+      "rarity": 20
+    },
     "minecraft_teleport_monsters_to_player": {
       "enabled": true,
       "requiredMod": "minecraft",
@@ -764,7 +779,10 @@
     "minecraft_accelerate_day_cycle",
     "enigmaticlegacy_give_golden_ring",
     "minecraft_mini_size_shrink",
-    "minecraft_ant_size_shrink"
+    "minecraft_ant_size_shrink",
+    "minecraft_day_of_tag",
+    "minecraft_day_of_strength",
+    "minecraft_day_on_the_moon"
   ],
   "negativeEvents": [
     "minecraft_explosion",

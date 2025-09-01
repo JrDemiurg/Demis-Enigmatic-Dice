@@ -4,6 +4,8 @@ import net.jrdemiurge.enigmaticdice.EnigmaticDice;
 import net.jrdemiurge.enigmaticdice.effect.custom.*;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -33,6 +35,16 @@ public class ModEffects {
 
     public static final RegistryObject<MobEffect> DIVINE_SHIELD_INVULNERABILITY = MOB_EFFECTS.register("divine_shield_invulnerability",
             () -> new DivineShieldInvulnerability(MobEffectCategory.BENEFICIAL, 0xffee7d));
+
+    public static final RegistryObject<MobEffect> DAY_ON_THE_MOON = MOB_EFFECTS.register("day_on_the_moon",
+            () -> new DayOnTheMoon(MobEffectCategory.BENEFICIAL, 0xccccff)
+                    .addAttributeModifier(
+                            ForgeMod.ENTITY_GRAVITY.get(),
+                            "954c16b3-1b50-4069-96c8-ab8b6d43f643",
+                            -0.06,
+                            AttributeModifier.Operation.ADDITION
+                    )
+    );
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
